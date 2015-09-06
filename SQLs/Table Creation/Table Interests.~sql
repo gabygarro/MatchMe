@@ -1,0 +1,9 @@
+CREATE TABLE Interests
+  (
+    ID        NUMBER (8) NOT NULL ,
+    interest  VARCHAR2 (30) ,
+    Person_ID NUMBER (3) NOT NULL
+  ) ;
+ALTER TABLE Interests ADD CONSTRAINT Interests_PK PRIMARY KEY ( ID ) ;
+
+ALTER TABLE Interests ADD CONSTRAINT Interests_Person_FK FOREIGN KEY ( Person_ID ) REFERENCES Person ( ID ) ;

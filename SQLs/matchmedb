@@ -1,0 +1,615 @@
+<html>
+   <H2 ALIGN="CENTER">
+      <FONT COLOR="#336699">Crear Base de Datos - Resumen</FONT>
+   </H2>
+   <H3 ALIGN="LEFT">
+      <FONT COLOR="#336699">Resumen de Configuración de Base de Datos</FONT>
+   </H3>
+   <table border="0">
+      <tr>
+         <td align="right">
+            <b>
+               <FONT Face="ARIAL" Size="2" COLOR="#336699">Nombre de la Base de Datos Global:</FONT>
+            </b>
+         </td>
+         <td>
+            <FONT Face="ARIAL" Size="2">matchdb</FONT>
+         </td>
+      </tr>
+      <tr>
+         <td align="right">
+            <b>
+               <FONT Face="ARIAL" Size="2" COLOR="#336699">Tipo de Configuración de Base de Datos:</FONT>
+            </b>
+         </td>
+         <td>
+            <FONT Face="ARIAL" Size="2">Instancia Única</FONT>
+         </td>
+      </tr>
+      <tr>
+         <td align="right">
+            <b>
+               <FONT Face="ARIAL" Size="2" COLOR="#336699">SID:</FONT>
+            </b>
+         </td>
+         <td>
+            <FONT Face="ARIAL" Size="2">matchdb</FONT>
+         </td>
+      </tr>
+      <tr>
+         <td align="right">
+            <b>
+               <FONT Face="ARIAL" Size="2" COLOR="#336699">Tipo de Opción de Gestión:</FONT>
+            </b>
+         </td>
+         <td>
+            <FONT Face="ARIAL" Size="2">Database Control</FONT>
+         </td>
+      </tr>
+      <tr>
+         <td align="right">
+            <b>
+               <FONT Face="ARIAL" Size="2" COLOR="#336699">Tipo de Almacenamiento:</FONT>
+            </b>
+         </td>
+         <td>
+            <FONT Face="ARIAL" Size="2">Sistema de Archivos</FONT>
+         </td>
+      </tr>
+      <tr>
+         <td align="right">
+            <b>
+               <FONT Face="ARIAL" Size="2" COLOR="#336699">Tipo de Configuración de Memoria:</FONT>
+            </b>
+         </td>
+         <td>
+            <FONT Face="ARIAL" Size="2">Gestión Automática de Memoria</FONT>
+         </td>
+      </tr>
+   </table>
+   <H3 ALIGN="LEFT">
+      <FONT COLOR="#336699">Detalles de Configuración de Base de Datos</FONT>
+   </H3>
+   <H4>
+      <FONT COLOR="#336699">Componentes de la Base de Datos</FONT>
+   </H4>
+   <table BORDER="1">
+      <TH BGCOLOR="#cccc99">
+         <FONT FACE="ARIAL" COLOR="#336699" SIZE="2">Componente</FONT>
+      </TH>
+      <TH BGCOLOR="#cccc99">
+         <FONT FACE="ARIAL" COLOR="#336699" SIZE="2">Seleccionado</FONT>
+      </TH>
+      <tbody>
+         <tr>
+            <TD BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2">
+Oracle JVM</FONT>
+            </TD>
+            <TD ALIGN="CENTER" BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2"> 
+true</FONT>
+            </TD>
+         </tr>
+         <tr>
+            <TD BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2">
+Oracle Text</FONT>
+            </TD>
+            <TD ALIGN="CENTER" BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2"> 
+false</FONT>
+            </TD>
+         </tr>
+         <tr>
+            <TD BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2">
+Oracle XML DB</FONT>
+            </TD>
+            <TD ALIGN="CENTER" BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2"> 
+true</FONT>
+            </TD>
+         </tr>
+         <tr>
+            <TD BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2">
+Oracle Multimedia</FONT>
+            </TD>
+            <TD ALIGN="CENTER" BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2"> 
+true</FONT>
+            </TD>
+         </tr>
+         <tr>
+            <TD BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2">
+Oracle OLAP</FONT>
+            </TD>
+            <TD ALIGN="CENTER" BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2"> 
+true</FONT>
+            </TD>
+         </tr>
+         <tr>
+            <TD BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2">
+Oracle Spatial</FONT>
+            </TD>
+            <TD ALIGN="CENTER" BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2"> 
+true</FONT>
+            </TD>
+         </tr>
+         <tr>
+            <TD BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2">
+Oracle Label Security</FONT>
+            </TD>
+            <TD ALIGN="CENTER" BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2"> 
+true</FONT>
+            </TD>
+         </tr>
+         <tr>
+            <TD BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2">
+Esquemas de Ejemplo</FONT>
+            </TD>
+            <TD ALIGN="CENTER" BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2"> 
+false</FONT>
+            </TD>
+         </tr>
+         <tr>
+            <TD BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2">
+Repositorio de Enterprise Manager</FONT>
+            </TD>
+            <TD ALIGN="CENTER" BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2"> 
+true</FONT>
+            </TD>
+         </tr>
+         <tr>
+            <TD BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2">
+Oracle Application Express</FONT>
+            </TD>
+            <TD ALIGN="CENTER" BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2"> 
+true</FONT>
+            </TD>
+         </tr>
+         <tr>
+            <TD BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2">
+Oracle Warehouse Builder</FONT>
+            </TD>
+            <TD ALIGN="CENTER" BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2"> 
+true</FONT>
+            </TD>
+         </tr>
+         <tr>
+            <TD BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2">
+Oracle Database Vault</FONT>
+            </TD>
+            <TD ALIGN="CENTER" BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2"> 
+false</FONT>
+            </TD>
+         </tr>
+         <tr>
+            <TD BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2">
+Oracle Database Extensions for .NET</FONT>
+            </TD>
+            <TD ALIGN="CENTER" BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2"> 
+true</FONT>
+            </TD>
+         </tr>
+      </tbody>
+   </table>
+   <H4>
+      <FONT COLOR="#336699">Parámetros de Inicialización</FONT>
+   </H4>
+   <table BORDER="1">
+      <TH BGCOLOR="#cccc99">
+         <FONT FACE="ARIAL" COLOR="#336699" SIZE="2">Nombre</FONT>
+      </TH>
+      <TH BGCOLOR="#cccc99">
+         <FONT FACE="ARIAL" COLOR="#336699" SIZE="2">Valor</FONT>
+      </TH>
+      <tbody>
+         <tr>
+            <TD BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2">audit_file_dest</FONT>
+            </TD>
+            <TD ALIGN="CENTER" BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2">{ORACLE_BASE}\admin\{DB_UNIQUE_NAME}\adump</FONT>
+            </TD>
+         </tr>
+         <tr>
+            <TD BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2">audit_trail</FONT>
+            </TD>
+            <TD ALIGN="CENTER" BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2">db</FONT>
+            </TD>
+         </tr>
+         <tr>
+            <TD BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2">compatible</FONT>
+            </TD>
+            <TD ALIGN="CENTER" BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2">11.2.0.0.0</FONT>
+            </TD>
+         </tr>
+         <tr>
+            <TD BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2">control_files</FONT>
+            </TD>
+            <TD ALIGN="CENTER" BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2">("{ORACLE_BASE}\oradata\{DB_UNIQUE_NAME}\control01.ctl", "{ORACLE_BASE}\oradata\{DB_UNIQUE_NAME}\control02.ctl")</FONT>
+            </TD>
+         </tr>
+         <tr>
+            <TD BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2">db_block_size</FONT>
+            </TD>
+            <TD ALIGN="CENTER" BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2">8KB</FONT>
+            </TD>
+         </tr>
+         <tr>
+            <TD BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2">db_domain</FONT>
+            </TD>
+            <TD ALIGN="CENTER" BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2"/>
+            </TD>
+         </tr>
+         <tr>
+            <TD BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2">db_name</FONT>
+            </TD>
+            <TD ALIGN="CENTER" BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2">matchdb</FONT>
+            </TD>
+         </tr>
+         <tr>
+            <TD BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2">diagnostic_dest</FONT>
+            </TD>
+            <TD ALIGN="CENTER" BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2">{ORACLE_BASE}</FONT>
+            </TD>
+         </tr>
+         <tr>
+            <TD BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2">dispatchers</FONT>
+            </TD>
+            <TD ALIGN="CENTER" BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2">(PROTOCOL=TCP) (SERVICE={SID}XDB)</FONT>
+            </TD>
+         </tr>
+         <tr>
+            <TD BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2">local_listener</FONT>
+            </TD>
+            <TD ALIGN="CENTER" BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2">LISTENER_MATCHDB</FONT>
+            </TD>
+         </tr>
+         <tr>
+            <TD BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2">memory_target</FONT>
+            </TD>
+            <TD ALIGN="CENTER" BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2">818MB</FONT>
+            </TD>
+         </tr>
+         <tr>
+            <TD BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2">nls_language</FONT>
+            </TD>
+            <TD ALIGN="CENTER" BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2">AMERICAN</FONT>
+            </TD>
+         </tr>
+         <tr>
+            <TD BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2">nls_territory</FONT>
+            </TD>
+            <TD ALIGN="CENTER" BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2">AMERICA</FONT>
+            </TD>
+         </tr>
+         <tr>
+            <TD BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2">open_cursors</FONT>
+            </TD>
+            <TD ALIGN="CENTER" BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2">300</FONT>
+            </TD>
+         </tr>
+         <tr>
+            <TD BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2">processes</FONT>
+            </TD>
+            <TD ALIGN="CENTER" BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2">150</FONT>
+            </TD>
+         </tr>
+         <tr>
+            <TD BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2">remote_login_passwordfile</FONT>
+            </TD>
+            <TD ALIGN="CENTER" BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2">EXCLUSIVE</FONT>
+            </TD>
+         </tr>
+         <tr>
+            <TD BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2">undo_tablespace</FONT>
+            </TD>
+            <TD ALIGN="CENTER" BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2">UNDOTBS1</FONT>
+            </TD>
+         </tr>
+      </tbody>
+   </table>
+   <H4>
+      <FONT COLOR="#336699">Juegos de Caracteres</FONT>
+   </H4>
+   <table BORDER="1">
+      <TH BGCOLOR="#cccc99">
+         <FONT FACE="ARIAL" COLOR="#336699" SIZE="2">Nombre</FONT>
+      </TH>
+      <TH BGCOLOR="#cccc99">
+         <FONT FACE="ARIAL" COLOR="#336699" SIZE="2">Valor</FONT>
+      </TH>
+      <tbody>
+         <tr>
+            <TD BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2">
+Juego de Caracteres de la Base de Datos</FONT>
+            </TD>
+            <TD ALIGN="CENTER" BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2"> 
+WE8MSWIN1252
+</FONT>
+            </TD>
+         </tr>
+         <tr>
+            <TD BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2">
+Juego de Caracteres Nacional</FONT>
+            </TD>
+            <TD ALIGN="CENTER" BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2"> 
+AL16UTF16
+</FONT>
+            </TD>
+         </tr>
+      </tbody>
+   </table>
+   <H4>
+      <FONT COLOR="#336699">Archivos de Control</FONT>
+   </H4>
+   <table BORDER="1">
+      <TH BGCOLOR="#cccc99">
+         <FONT FACE="ARIAL" COLOR="#336699" SIZE="2">Nombre</FONT>
+      </TH>
+      <tbody>
+         <tr>
+            <TD BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2">{ORACLE_BASE}\oradata\{DB_UNIQUE_NAME}\control01.ctl</FONT>
+            </TD>
+         </tr>
+         <tr>
+            <TD BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2">{ORACLE_BASE}\oradata\{DB_UNIQUE_NAME}\control02.ctl</FONT>
+            </TD>
+         </tr>
+      </tbody>
+   </table>
+   <H4>
+      <FONT COLOR="#336699">Tablespaces</FONT>
+   </H4>
+   <table BORDER="1">
+      <TH BGCOLOR="#cccc99">
+         <FONT FACE="ARIAL" COLOR="#336699" SIZE="2">Nombre</FONT>
+      </TH>
+      <TH BGCOLOR="#cccc99">
+         <FONT FACE="ARIAL" COLOR="#336699" SIZE="2">Tipo</FONT>
+      </TH>
+      <TH BGCOLOR="#cccc99">
+         <FONT FACE="ARIAL" COLOR="#336699" SIZE="2">Gestión de Extensiones</FONT>
+      </TH>
+      <tbody>
+         <tr>
+            <TD BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2">SYSAUX</FONT>
+            </TD>
+            <TD BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2"> 
+PERMANENT</FONT>
+            </TD>
+            <TD BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2"> 
+LOCAL
+</FONT>
+            </TD>
+         </tr>
+         <tr>
+            <TD BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2">SYSTEM</FONT>
+            </TD>
+            <TD BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2"> 
+PERMANENT</FONT>
+            </TD>
+            <TD BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2"> 
+LOCAL
+</FONT>
+            </TD>
+         </tr>
+         <tr>
+            <TD BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2">TEMP</FONT>
+            </TD>
+            <TD BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2"> 
+TEMPORARY</FONT>
+            </TD>
+            <TD BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2"> 
+LOCAL
+</FONT>
+            </TD>
+         </tr>
+         <tr>
+            <TD BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2">UNDOTBS1</FONT>
+            </TD>
+            <TD BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2"> 
+PERMANENT 
+, UNDO</FONT>
+            </TD>
+            <TD BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2"> 
+LOCAL
+</FONT>
+            </TD>
+         </tr>
+         <tr>
+            <TD BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2">USERS</FONT>
+            </TD>
+            <TD BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2"> 
+PERMANENT</FONT>
+            </TD>
+            <TD BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2"> 
+LOCAL
+</FONT>
+            </TD>
+         </tr>
+      </tbody>
+   </table>
+   <H4>
+      <FONT COLOR="#336699">Archivos de Datos</FONT>
+   </H4>
+   <table BORDER="1">
+      <TH BGCOLOR="#cccc99">
+         <FONT FACE="ARIAL" COLOR="#336699" SIZE="2">Nombre</FONT>
+      </TH>
+      <TH BGCOLOR="#cccc99">
+         <FONT FACE="ARIAL" COLOR="#336699" SIZE="2">Tablespace</FONT>
+      </TH>
+      <TH BGCOLOR="#cccc99">
+         <FONT FACE="ARIAL" COLOR="#336699" SIZE="2">Tamaño (M)</FONT>
+      </TH>
+      <tbody>
+         <tr>
+            <TD BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2">{ORACLE_BASE}\oradata\{DB_UNIQUE_NAME}\sysaux01.dbf</FONT>
+            </TD>
+            <TD BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2">SYSAUX</FONT>
+            </TD>
+            <TD BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2">600</FONT>
+            </TD>
+         </tr>
+         <tr>
+            <TD BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2">{ORACLE_BASE}\oradata\{DB_UNIQUE_NAME}\system01.dbf</FONT>
+            </TD>
+            <TD BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2">SYSTEM</FONT>
+            </TD>
+            <TD BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2">700</FONT>
+            </TD>
+         </tr>
+         <tr>
+            <TD BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2">{ORACLE_BASE}\oradata\{DB_UNIQUE_NAME}\temp01.dbf</FONT>
+            </TD>
+            <TD BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2">TEMP</FONT>
+            </TD>
+            <TD BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2">20</FONT>
+            </TD>
+         </tr>
+         <tr>
+            <TD BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2">{ORACLE_BASE}\oradata\{DB_UNIQUE_NAME}\undotbs01.dbf</FONT>
+            </TD>
+            <TD BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2">UNDOTBS1</FONT>
+            </TD>
+            <TD BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2">200</FONT>
+            </TD>
+         </tr>
+         <tr>
+            <TD BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2">{ORACLE_BASE}\oradata\{DB_UNIQUE_NAME}\users01.dbf</FONT>
+            </TD>
+            <TD BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2">USERS</FONT>
+            </TD>
+            <TD BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2">5</FONT>
+            </TD>
+         </tr>
+      </tbody>
+   </table>
+   <H4>
+      <FONT COLOR="#336699">Grupos de Redo Logs</FONT>
+   </H4>
+   <table BORDER="1">
+      <TH BGCOLOR="#cccc99">
+         <FONT FACE="ARIAL" COLOR="#336699" SIZE="2">Grupo</FONT>
+      </TH>
+      <TH BGCOLOR="#cccc99">
+         <FONT FACE="ARIAL" COLOR="#336699" SIZE="2">Tamaño (K)</FONT>
+      </TH>
+      <tbody>
+         <tr>
+            <TD BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2">1</FONT>
+            </TD>
+            <TD BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2">51200</FONT>
+            </TD>
+         </tr>
+         <tr>
+            <TD BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2">2</FONT>
+            </TD>
+            <TD BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2">51200</FONT>
+            </TD>
+         </tr>
+         <tr>
+            <TD BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2">3</FONT>
+            </TD>
+            <TD BGCOLOR="#f7f7e7">
+               <FONT FACE="ARIAL" SIZE="2">51200</FONT>
+            </TD>
+         </tr>
+      </tbody>
+   </table>
+</html>

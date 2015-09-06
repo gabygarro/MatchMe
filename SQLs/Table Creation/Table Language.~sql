@@ -1,0 +1,9 @@
+CREATE TABLE Language
+  (
+    languageID   NUMBER (8) NOT NULL ,
+    languageCode VARCHAR2 (3) ,
+    personID     NUMBER (3) NOT NULL
+  ) ;
+ALTER TABLE Language ADD CONSTRAINT Language_PK PRIMARY KEY ( ID ) ;
+
+ALTER TABLE Language ADD CONSTRAINT Language_Person_FK FOREIGN KEY ( Person_ID ) REFERENCES Person ( ID ) ;

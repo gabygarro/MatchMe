@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<!--Prototipo de Proyecto I - match.me
+  Alexis Arguedas - Gabriela Garro - Yanil Gómez
+  Perfil de muestra de la aplicacion -->
+
+<html>
+
+  <head>
+    <link rel="shortcut icon" href= "imgs/logo (1).png">
+    <title>Pepe's Profile - match.me</title>
+
+    <link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="utils/bootstrap.css">
+    <link rel="stylesheet" href="utils/bootstrap.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+    <link rel="stylesheet" href="assets/css/form-elements.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <link rel="stylesheet" href="utils/bootstrap-theme.min.css">
+    <script src="utils/jquery-1.11.1.min.js"></script>
+    <script src="utils/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="css" href="utils/main.css"/>
+
+  </head>
+
+  <body>
+
+    <div class="nav">
+      <div class="container">
+        <ul class = "pull-left">
+            <img src = "imgs/logopeq.png">
+            <li><a href="homepage.html" >match.me</a></li>
+        </ul>
+        <ul class = "pull-right">
+          <li><a href="#">Profile</a></li>
+          <li><a href="#">Messages</a></li>
+          <li><a href="#">Notifications</a></li>
+          <li><a href="#">Settings</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class = "profile-body">
+        <div class = "container">
+            <div class = "row">
+                <div class = "col-md-4">
+                    <div class = "thumbnail">
+                        <img src = "imgs/dog-of-wisdom-profile-picture.png">
+                    </div>
+                    <h2>Pepe (Dog of Wisdom)</h2>
+                    <div class = "tagline">
+                        <p>I give good wisdoms and also knock-knock jokes. Bahp.</p>
+                        <p><b>Interested in: </b>Dogs</p>
+                    </div>
+                    <div class = "message-button">
+                        <button type="button" class="btn btn-primary">Message</button>
+                    </div>
+                    <div class = "wink-button">
+                        <button type="button" class="btn btn-primary">Wink</button>
+                    </div>
+                    <div class = "date-button">
+                        <button type="button" class="btn btn-primary">Schedule a Date</button>
+                    </div>
+                </div>
+                <div class = "col-md-8">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="panel with-nav-tabs panel-default">
+                                    <div class="panel-heading">
+                                            <ul class="nav nav-tabs">
+                                                <li class="active"><a href="#tab1default" data-toggle="tab">Basic Information</a></li>
+                                                <li><a href="#tab2default" data-toggle="tab">Education and Work</a></li>
+                                                <li><a href="#tab3default" data-toggle="tab">Physical Information</a></li>
+                                                <li class="dropdown">
+                                                    <a href="#" data-toggle="dropdown">More <span class="caret"></span></a>
+                                                    <ul class="dropdown-menu" role="menu">
+                                                        <li><a href="#tab4default" data-toggle="tab">LifeStyle</a></li>
+                                                        <li><a href="#tab5default" data-toggle="tab">Interests and Hobbies</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                    </div>
+                                    <div class="panel-body">
+                                        <div class="tab-content">
+                                            <div class="tab-pane fade in active" id="tab1default">
+                                                <h3>Full name</h3>
+                                                <p>Pepe Figueres</p>
+                                                <h3>Surname</h3>
+                                                <p>Dog of Wisdom</p>
+                                                <h3>Birthdate</h3>
+                                                <p>10/11/12</p>
+                                                <h3>Zodiac Sign</h3>
+                                                <p>Libra</p>
+                                                <h3>Gender</h3>
+                                                <p>Dog</p>
+                                                <h3>Email</h3>
+                                                <p>dog@wisdom.org</p>
+                                                <h3>Address</h3>
+                                                <p>Sky, Cloud 9001</p>
+                                            </div>
+                                            <div class="tab-pane fade" id="tab2default">
+                                                <h3>Education</h3>
+                                                <p>University for Peace, Philosophy, Class of 2015</p>
+                                                <h3>Work</h3>
+                                                <p>Philosophy proffessor</p>
+                                                <h3>Salary</h3>
+                                                <p>$45000 a year</p>
+                                                <h3>Languages</h3>
+                                                <p>Dog, Latin, Greek, Chinese Mandarin</p>
+                                                <h3>Relationship status</h3>
+                                                <p>Single</p>
+                                                <h3>Religion</h3>
+                                                <p>Buddhist</p>
+                                            </div>
+                                            <div class="tab-pane fade" id="tab3default">
+                                                <h3>Height</h3>
+                                                <p>0.75 meters</p>
+                                                <h3>Skin color</h3>
+                                                <p>Normal</p>
+                                                <h3>Eye color</h3>
+                                                <p>Chocolate</p>
+                                                <h3>Hair color</h3>
+                                                <p>Mustard</p>
+                                                <h3>Body type</h3>
+                                                <p>Normal</p>
+                                            </div>
+                                            <div class="tab-pane fade" id="tab4default">
+                                                <h3>Smoker</h3>
+                                                <p>No</p>
+                                                <h3>Drinker</h3>
+                                                <p>Ocassional wine</p>
+                                                <h3>Exercise Frequency</h3>
+                                                <p>Never</p>
+                                                <h3>Have kids</h3>
+                                                <p>No</p>
+                                                <h3>Interested in children</h3>
+                                                <p>Yes</p>
+                                                <h3>Likes humans</h3>
+                                                <p>Yes</p>
+
+                                            </div>
+                                            <div class="tab-pane fade" id="tab5default">
+                                                <h3>Interests</h3>
+                                                <ul>
+                                                    <li>Bowling</li>
+                                                    <li>Golf</li>
+                                                    <li>Yoga</li>
+                                                    <li>Pool</li>
+                                                </ul>
+                                                <h3>Hobbies</h3>
+                                                <ul>
+                                                    <li>Book club</li>
+                                                    <li>Coffee and Conversation</li>
+                                                    <li>Music and Concerts</li>
+                                                    <li>Videogames</li>
+                                                    <li>Wine tasting</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--DISCLAIMER MODAL-->
+    <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel3">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Legal Disclaimer</h4>
+          </div>
+          <div class="modal-body">
+            <p>We are not responsible for psychopaths contacting you because of your profile</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class = "footer">
+        <a href = "#" class="btn-link" data-toggle="modal" data-target="#myModal3">Legal Disclaimer</a>
+        <p>Bases de Datos 1, Proyecto 1 - Match.Me, Profesora: Adriana Alvarez</p>
+        <p>Estudiantes: Alexis Arguedas, Gabriela Garro, Yanil Gomez</p>
+        <p>2015, II Semestre</p>
+    </div>
+
+
+  </body>
+</html>

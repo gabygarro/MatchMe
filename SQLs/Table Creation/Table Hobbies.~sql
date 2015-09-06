@@ -1,0 +1,9 @@
+CREATE TABLE Hobbie
+  (
+    hobbieID  NUMBER (8) NOT NULL ,
+    hobbie    VARCHAR2 (30) ,
+    personID NUMBER (3) NOT NULL
+  ) ;
+ALTER TABLE Hobbies ADD CONSTRAINT hobbiePK PRIMARY KEY ( hobbieID ) ;
+
+ALTER TABLE Hobbies ADD CONSTRAINT hobbies_Person_FK FOREIGN KEY ( personID ) REFERENCES Person ( personID ) ;
