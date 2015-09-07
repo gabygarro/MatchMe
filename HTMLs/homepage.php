@@ -1,7 +1,15 @@
-<!DOCTYPE html>
 <!--Prototipo de Proyecto I - match.me
   Alexis Arguedas - Gabriela Garro - Yanil Gómez
   Pagina principal de la aplicacion -->
+<?
+	echo "error";
+  	$connection = oci_connect('administrator', 'ADMINISTRATOR', 'MATCHMEDB');
+  	if (!$connection) {
+  		$error = oci_error();
+  		trigger_error(htmlentities($error['Database connection failed'], ENT_QUOTES), E_USER_ERROR);
+  		ECHO "error";
+  	}
+?>
 
 <html>
 
@@ -31,15 +39,6 @@
   </head>
 
   <body>
-
-	<?
-	  	$connection = oci_connect('administrator', 'ADMINISTRATOR', 'MATCHMEDB');
-	  	if (!$connection) {
-	  		$error = oci_error();
-	  		trigger_error(htmlentities($error['Database connection failed'], ENT_QUOTES), E_USER_ERROR);
-	  		ECHO "error";
-	  	}
-	?>
 
     <!-- SIGN UP MODAL -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
