@@ -1,0 +1,76 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="77BA0BC6-ADE5-5F76-F97F-5B1F5100FFE1" name="email">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-05 19:53:13 UTC</createdTime>
+<generatorID>A469DF86-18AC-747B-BC32-89EF264CD0B6</generatorID>
+<ownerDesignName>logicModel</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID" id="C52035E7-DD83-4101-4FD4-9CEAED86C982">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-05 19:53:13 UTC</createdTime>
+<generatorID>0A1C61A5-8C6A-91FD-FB20-DE97A954F659</generatorID>
+<ownerDesignName>logicModel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="email" id="669DB8D5-C722-997E-8F6F-19649F2C284D">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-05 19:53:13 UTC</createdTime>
+<comment>constraint person_email UNIQUE(email)</comment>
+<generatorID>1407FD54-FA1C-F72D-9D7D-6ACC532E50C4</generatorID>
+<ownerDesignName>logicModel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Person_ID" id="63A37C8B-2010-B256-E76C-30FC86693B90">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-05 20:06:32 UTC</createdTime>
+<comment>has to be continuos</comment>
+<generatorID>5D163810-54DB-54FD-CB5C-D9D286B38A9F</generatorID>
+<ownerDesignName>logicModel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<delegate>2600D61A-C0D4-67EE-CD06-D78D8A18582B</delegate>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="AE3C709D-472A-7136-6BDA-10C21E01C6D9" referredColumn="2600D61A-C0D4-67EE-CD06-D78D8A18582B"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="FC7ADFC7-19B3-FA63-76E3-1857404933F9" name="email__UN">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-05 19:53:13 UTC</createdTime>
+<generatorID>980B8B8C-57E7-26D7-C650-4BC0AFD07862</generatorID>
+<ownerDesignName>logicModel</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C52035E7-DD83-4101-4FD4-9CEAED86C982"/>
+<colUsage columnID="669DB8D5-C722-997E-8F6F-19649F2C284D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="55A75046-2341-5565-7BDF-2DD2F82B0531" name="email_Person_FK">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-05 20:06:32 UTC</createdTime>
+<generatorID>20DAF64F-C0B9-2AF3-BD67-3BDDE00B2D38</generatorID>
+<ownerDesignName>logicModel</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="63A37C8B-2010-B256-E76C-30FC86693B90"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
