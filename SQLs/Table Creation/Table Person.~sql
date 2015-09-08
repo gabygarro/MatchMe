@@ -1,7 +1,7 @@
 CREATE TABLE Person
   (
-    ID                 NUMBER (3) NOT NULL ,
-    name               VARCHAR2 (30) CONSTRAINT person_name_nn NOT NULL ,
+    personID           NUMBER (3) NOT NULL ,
+    personName         VARCHAR2 (30) CONSTRAINT person_name_nn NOT NULL ,
     lastName1          VARCHAR2 (30) CONSTRAINT person_lastName1_nn NOT NULL ,
     lastName2          VARCHAR2 (30) ,
     birthday           DATE CONSTRAINT person_birthday_nn NOT NULL ,
@@ -33,7 +33,7 @@ CREATE TABLE Person
   ) ;
   
 ALTER TABLE Person
-      ADD CONSTRAINT Person_PK PRIMARY KEY ( ID )
+      ADD CONSTRAINT personPK PRIMARY KEY ( personID )
       USING INDEX
       TABLESPACE ADMIN_Ind PCTFREE 20
       STORAGE (INITIAL 10K NEXT 10K PCTINCREASE 0);
