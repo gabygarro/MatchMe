@@ -1,8 +1,8 @@
-create or replace procedure insertInterest (pInterestId number, pInterest varchar2, pPersonId number)
+create or replace procedure insertInterest (pInterest varchar2, pPersonId number)
 as
        BEGIN
          insert into interest (interestId,interest,personId)
-         values(pInterestId, pInterest,pPersonId);
+         values(interestsId_seq.NEXTVAL, pInterest,pPersonId);
 
        --Exception
          --WHEN NO_DATA_FOUND THEN

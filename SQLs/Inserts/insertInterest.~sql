@@ -1,8 +1,8 @@
-create or replace procedure insertHobbie (pHobbie varchar2, pPersonId number)
+create or replace procedure insertInterest (pInterestId number, pInterest varchar2, pPersonId number)
 as
        BEGIN
-         insert into hobbie (hobbieId,hobbie,personId)
-         values(hobbiesId_seq.NEXTVAL, pHobbie,pPersonId);
+         insert into interest (interestId,interest,personId)
+         values(pInterestId, pInterest,pPersonId);
 
        --Exception
          --WHEN NO_DATA_FOUND THEN

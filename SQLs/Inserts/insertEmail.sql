@@ -1,8 +1,8 @@
-create or replace procedure insertEmail (pEmailId number, pEmail varchar2, pPersonId number)
+create or replace procedure insertEmail (pEmail varchar2, pPersonId number)
 as
        BEGIN
          insert into email (emailId,email,personId)
-         values(pemailId, pEmail,pPersonId);
+         values(emailId_seq.NEXTVAL, pEmail,pPersonId);
          
        --Exception
          --WHEN NO_DATA_FOUND THEN
