@@ -16,18 +16,25 @@
 		die();
 	}
 
-	//gets values from index.php
-	$nickname = $_POST["user"];
-	$pass = $_POST["password"];
+	$query = oci_parse($connection, "select * from username");
+	OCI_Execute($query, OCI_NO_AUTO_COMMIT);
 
-	$query = 'INSERT INTO USERNAME (usernameID, usernamePassword) ' . 'VALUES (:nickname, :pass)';
-	$compiled = oci_parse($connection, $query);
+	echo "<table border=\"1\">\n";
+	echo "<tr>";
+	echo "<th>Username</th>";
+	echo "<th>Password</th>";
+	echo "</tr>\n";
 
-	oci_bind_by_name($compiled, ':nickname', $nickname);
-	oci_bind_by_name($compiled, ':pass', $pass);
-	oci_execute($compiled, OCI_NO_AUTO_COMMIT);
+	while (oci_fetch($query)) {
+		$username = oci_result($query, 'USERNAMEID');
+		$password = oci_result($query, 'USERNAMEPASSWORD');
+
+		echo "<tr>";
+		echo "<td>$username</td>";
+		echo "<td>$password</td>";
+		echo "</tr>\n";
+	}
 
 	oci_commit($connection);
 	oci_close($connection);
-	echo "You have registered succesfully!";
 ?>

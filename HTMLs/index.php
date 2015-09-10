@@ -40,7 +40,7 @@
 			            </div>
 						<input type = "submit" value = "Send">
 						<br>
-						<h3><a href = "consult.php">Check registered users</a></h3>
+						<h3><a href = "usersconsult.php">Check registered users</a></h3>
 					</div>
 					<div class = "col-md-4"></div>
 				</div>
