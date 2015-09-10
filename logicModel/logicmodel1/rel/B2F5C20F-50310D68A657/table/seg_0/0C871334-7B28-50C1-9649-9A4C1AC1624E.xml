@@ -1,0 +1,81 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="0C871334-7B28-50C1-9649-9A4C1AC1624E" name="Hobbie">
+<sourceDDLFile>Table Hobbies.sql</sourceDDLFile>
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:42:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<importedID>82F5041E-AFE7-8072-C44C-D1163DAC3B03</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="hobbieID" id="8C120DDC-FC8E-03F7-1BFF-8ACD3EF2B80C">
+<sourceDDLFile>Table Hobbies.sql</sourceDDLFile>
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:42:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<importedID>ABE6E5B6-B8C2-E19E-EABD-7023D704C520</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>2EEABB6B-5645-D1A6-31A3-688B4A70194D</domain>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="hobbie" id="112D4042-0B2C-8D85-9748-C0D34E94656B">
+<sourceDDLFile>Table Hobbies.sql</sourceDDLFile>
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:42:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<importedID>385102EE-BB3D-0CC9-9C2B-F3A9AF62E889</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>5D7D20A5-37AF-3863-1387-7C40DA3049E2</domain>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Person_personID" id="964949CE-3B4B-AE1E-572F-FCF3FABA59A9">
+<sourceDDLFile>Table Hobbies.sql</sourceDDLFile>
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:42:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<importedID>4132B511-8F85-0494-7CEE-071841ED86A3</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>B98CACD9-68CC-E2BD-C8EF-5A864754AE77</domain>
+<delegate>477AC184-8517-8FD4-C391-05C970180863</delegate>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="95ABCAAB-0AEB-8DC1-A8C8-EF363A1549B7" referredColumn="477AC184-8517-8FD4-C391-05C970180863"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="34A20B34-0A86-41C0-F447-74CF9D17FCF2" name="Hobbie_PK">
+<sourceDDLFile>Table Hobbies.sql</sourceDDLFile>
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:42:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<importedID>1A36275D-30B9-A61A-B648-56B717C3F4B4</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8C120DDC-FC8E-03F7-1BFF-8ACD3EF2B80C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4CD8CC04-661C-8225-1328-BB4763EA3DD2" name="Hobbie_Person_FK">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:42:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="964949CE-3B4B-AE1E-572F-FCF3FABA59A9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

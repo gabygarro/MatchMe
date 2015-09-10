@@ -1,0 +1,48 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="Hobbie" directorySegmentName="seg_0" id="0C871334-7B28-50C1-9649-9A4C1AC1624E">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:42:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="hobbie" id="112D4042-0B2C-8D85-9748-C0D34E94656B">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:42:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="hobbieID" id="8C120DDC-FC8E-03F7-1BFF-8ACD3EF2B80C">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:42:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="personID" id="964949CE-3B4B-AE1E-572F-FCF3FABA59A9">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:42:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="hobbie_Person_FK" id="4CD8CC04-661C-8225-1328-BB4763EA3DD2">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:42:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="hobbiePK" id="34A20B34-0A86-41C0-F447-74CF9D17FCF2">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:42:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>

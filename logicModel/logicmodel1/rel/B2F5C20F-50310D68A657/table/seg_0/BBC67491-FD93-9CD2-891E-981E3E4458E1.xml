@@ -1,0 +1,515 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="BBC67491-FD93-9CD2-891E-981E3E4458E1" name="Person">
+<sourceDDLFile>Table Person.sql</sourceDDLFile>
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:42:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<importedID>F8D34245-4C0F-7051-539F-622783097C8D</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="personID" id="477AC184-8517-8FD4-C391-05C970180863">
+<sourceDDLFile>Table Person.sql</sourceDDLFile>
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:42:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<importedID>16072F61-E2FD-1CB8-71D0-3AC30067783B</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>B98CACD9-68CC-E2BD-C8EF-5A864754AE77</domain>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="personName" id="FE64633F-3E97-AF3E-DF8D-7273FE7D42E7">
+<sourceDDLFile>Table Person.sql</sourceDDLFile>
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:42:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<importedID>EABCD397-9B5F-0725-950B-B9B33653CA69</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>5D7D20A5-37AF-3863-1387-7C40DA3049E2</domain>
+<autoIncrementCycle>false</autoIncrementCycle>
+<notNullConstraintName>person_name_nn</notNullConstraintName>
+</Column>
+<Column name="lastName1" id="D5106BEA-BA02-C720-BE98-DFB6A167DE80">
+<sourceDDLFile>Table Person.sql</sourceDDLFile>
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:42:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<importedID>9A7087B6-6392-464B-D586-2988C65582CA</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>5D7D20A5-37AF-3863-1387-7C40DA3049E2</domain>
+<autoIncrementCycle>false</autoIncrementCycle>
+<notNullConstraintName>person_lastName1_nn</notNullConstraintName>
+</Column>
+<Column name="lastName2" id="2FB43A20-24C8-802E-3938-D54D3FF992FB">
+<sourceDDLFile>Table Person.sql</sourceDDLFile>
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:42:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<importedID>8668EA86-4B49-8076-E454-984896C3A92D</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>5D7D20A5-37AF-3863-1387-7C40DA3049E2</domain>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="birthday" id="BC67C255-8F64-25B6-5B12-302DAA72E5BA">
+<sourceDDLFile>Table Person.sql</sourceDDLFile>
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:42:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<importedID>EF772242-D496-ECA3-594D-596661E2A238</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>6B8955E9-0198-D524-B46D-04A1C02303B5</domain>
+<autoIncrementCycle>false</autoIncrementCycle>
+<notNullConstraintName>person_birthday_nn</notNullConstraintName>
+</Column>
+<Column name="registerDate" id="8B6FB881-767E-6A30-B104-7C8C9E16BC4B">
+<sourceDDLFile>Table Person.sql</sourceDDLFile>
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:42:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<importedID>CE48B721-BE0B-C8FD-494B-8FC4BE99D4C3</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<domain>6B8955E9-0198-D524-B46D-04A1C02303B5</domain>
+<defaultValue>SYSDATE</defaultValue>
+<autoIncrementCycle>false</autoIncrementCycle>
+<notNullConstraintName>person_registerDate_nn</notNullConstraintName>
+</Column>
+<Column name="nickname" id="0FE7F015-0DDB-F237-882A-D016A4A8CD62">
+<sourceDDLFile>Table Person.sql</sourceDDLFile>
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:42:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<importedID>38282D28-2E12-A5C3-8E52-DE1390C9E575</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>B1AAF088-3C47-02C8-5B00-1808D863B7F7</domain>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="zodiacSign" id="DAD114C5-EC64-9BDC-E7EE-3A25F8A11EFF">
+<sourceDDLFile>Table Person.sql</sourceDDLFile>
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:42:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<importedID>FA29DA50-44C7-B2C9-DCF0-C98DC25939CC</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>4CFDC349-3F7A-8CEC-B336-B60360E590EC</domain>
+<autoIncrementCycle>false</autoIncrementCycle>
+<notNullConstraintName>person_zodiacSign_nn</notNullConstraintName>
+</Column>
+<Column name="gender" id="3930E3E1-5268-1ADB-46C7-5A003626DEFC">
+<sourceDDLFile>Table Person.sql</sourceDDLFile>
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:42:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<importedID>F652B57F-C602-6E63-3149-08DD419DE161</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>7BDC34B7-7434-D13C-93D7-A6EA519CD8C8</domain>
+<autoIncrementCycle>false</autoIncrementCycle>
+<notNullConstraintName>person_gender_nn</notNullConstraintName>
+</Column>
+<Column name="country" id="3C0C3CFA-D4D0-305E-9B2D-B7165258FBE6">
+<sourceDDLFile>Table Person.sql</sourceDDLFile>
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:42:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<importedID>4E56A256-0693-57AD-F252-073D2AEAEE7A</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>35D93AD8-8230-5A64-E230-6BAD8369D925</domain>
+<autoIncrementCycle>false</autoIncrementCycle>
+<notNullConstraintName>person_country_nn</notNullConstraintName>
+</Column>
+<Column name="address" id="A287641E-092E-73AF-D7EC-8742A29B1575">
+<sourceDDLFile>Table Person.sql</sourceDDLFile>
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:42:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<importedID>CE8BFD3E-3152-1243-0201-E596110D26D4</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>0DA7B6DE-DBA4-9EDF-286A-A0532D7D57D4</domain>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="tagline" id="7877647D-F8F1-5E31-FA33-F0A9760022B2">
+<sourceDDLFile>Table Person.sql</sourceDDLFile>
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:42:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<importedID>FEC3941E-9513-0E6D-4591-B189FF161391</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>78ED226F-565A-9B7C-7AC9-F8B43139BD41</domain>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="education" id="68F9283B-72EC-B5A4-1875-CD20805D42B5">
+<sourceDDLFile>Table Person.sql</sourceDDLFile>
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:42:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<importedID>A004FC83-3A73-B0DC-1079-A6048D00AC0B</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>3ECDDAA6-4B96-FF18-79AA-C7C1DB1379FC</domain>
+<autoIncrementCycle>false</autoIncrementCycle>
+<notNullConstraintName>person_education_nn</notNullConstraintName>
+</Column>
+<Column name="highSchool" id="62F390E0-C8D0-01F2-4DC2-E2B60F273D86">
+<sourceDDLFile>Table Person.sql</sourceDDLFile>
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:42:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<importedID>006E8BA4-5A1E-3E80-2AA0-FC790BB26C08</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>29347A94-D496-350F-1646-56A118CE6A7A</domain>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="university" id="40D61BCF-2F2B-615C-056A-E508D2462451">
+<sourceDDLFile>Table Person.sql</sourceDDLFile>
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:42:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<importedID>61D3C245-D51B-BCAA-342D-BDBA7137E020</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>29347A94-D496-350F-1646-56A118CE6A7A</domain>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="workPlace" id="5346134D-E1C4-366C-B8F3-DC3E3DD43811">
+<sourceDDLFile>Table Person.sql</sourceDDLFile>
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:42:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<importedID>2155420C-D0EF-D57D-3957-0DAF21B30D8B</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>29347A94-D496-350F-1646-56A118CE6A7A</domain>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="salary" id="170D30EC-38AE-5364-79E4-965218F29402">
+<sourceDDLFile>Table Person.sql</sourceDDLFile>
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:42:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<importedID>B3EAFD51-6FFD-42A4-7A90-D1BC2069196B</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>52C97ABB-9FD6-EBA0-0DB3-771E7FD55F4B</domain>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="relationshipStatus" id="124972E0-AA3E-7523-5E87-CC032F54EC53">
+<sourceDDLFile>Table Person.sql</sourceDDLFile>
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:42:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<importedID>07E7FD3A-3C72-1671-59EB-2B3F4433C975</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>35D93AD8-8230-5A64-E230-6BAD8369D925</domain>
+<autoIncrementCycle>false</autoIncrementCycle>
+<notNullConstraintName>person_relationshipStatus_nn</notNullConstraintName>
+</Column>
+<Column name="religion" id="3E2B6271-F5EE-44CE-0964-C44511A9FFDF">
+<sourceDDLFile>Table Person.sql</sourceDDLFile>
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:42:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<importedID>A0C7CB14-9F5F-0F57-DC0D-F7E350E044B2</importedID>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>3ECDDAA6-4B96-FF18-79AA-C7C1DB1379FC</domain>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="height" id="B3BB63D2-1307-0CCA-E889-801BDD91D692">
+<sourceDDLFile>Table Person.sql</sourceDDLFile>
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:42:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<importedID>65998819-5021-335F-5BED-F54979949954</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>B270E1DA-A332-9E2D-8C2B-BB595BFEE365</domain>
+<autoIncrementCycle>false</autoIncrementCycle>
+<notNullConstraintName>person_height_nn</notNullConstraintName>
+</Column>
+<Column name="skinColor" id="0E589F1A-F780-B44C-8C1C-9C6EEA363348">
+<sourceDDLFile>Table Person.sql</sourceDDLFile>
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:42:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<importedID>5E1AA890-240A-3D00-C6A8-B46C78BA8A98</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>35D93AD8-8230-5A64-E230-6BAD8369D925</domain>
+<autoIncrementCycle>false</autoIncrementCycle>
+<notNullConstraintName>person_skinColor_nn</notNullConstraintName>
+</Column>
+<Column name="eyeColor" id="0E3710C1-5467-2F91-5E13-45AA66E9E49F">
+<sourceDDLFile>Table Person.sql</sourceDDLFile>
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:42:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<importedID>8EC39B3C-8BA2-8333-3CC8-D37BBE20ECB7</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>FD46808C-F1ED-6945-3BC2-A68F3C4F137E</domain>
+<autoIncrementCycle>false</autoIncrementCycle>
+<notNullConstraintName>person_eyeColor_nn</notNullConstraintName>
+</Column>
+<Column name="hairColor" id="F7D2696E-CE16-2B16-F1D3-CB95EA071257">
+<sourceDDLFile>Table Person.sql</sourceDDLFile>
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:42:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<importedID>AABFFDC0-7008-7ADD-B520-056893F4A5AC</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>DE04EB7E-3394-708C-5CE4-7C6284DAF32E</domain>
+<autoIncrementCycle>false</autoIncrementCycle>
+<notNullConstraintName>person_hairColor_nn</notNullConstraintName>
+</Column>
+<Column name="bodyType" id="5B3679C0-5F0C-3A6B-0849-035618D65112">
+<sourceDDLFile>Table Person.sql</sourceDDLFile>
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:42:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<importedID>0D382945-A223-D832-094B-1089AB3F9EA4</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>DE04EB7E-3394-708C-5CE4-7C6284DAF32E</domain>
+<autoIncrementCycle>false</autoIncrementCycle>
+<notNullConstraintName>person_bodyType_nn</notNullConstraintName>
+</Column>
+<Column name="smoker" id="2E0C7521-3165-3AF4-9702-7F1615679F50">
+<sourceDDLFile>Table Person.sql</sourceDDLFile>
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:42:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<importedID>795D21F0-CA01-C83C-6282-1AE6963C377B</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<domain>F85DEECF-08FF-A535-9FFD-A87F84CF578B</domain>
+<autoIncrementCycle>false</autoIncrementCycle>
+<notNullConstraintName>person_smoker_nn</notNullConstraintName>
+</Column>
+<Column name="drinker" id="97166FC8-3B12-1D28-344F-6076A7A99665">
+<sourceDDLFile>Table Person.sql</sourceDDLFile>
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:42:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<importedID>388545E9-EF2F-02F3-112C-B855132DBD59</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>7BDC34B7-7434-D13C-93D7-A6EA519CD8C8</domain>
+<autoIncrementCycle>false</autoIncrementCycle>
+<notNullConstraintName>person_drinker_nn</notNullConstraintName>
+</Column>
+<Column name="exerciseFrequency" id="21F9B3B3-3092-34AD-E6B4-8D3D1699691B">
+<sourceDDLFile>Table Person.sql</sourceDDLFile>
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:42:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<importedID>B0B05E11-7983-9DC2-78C6-86EFA072F956</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>3ECDDAA6-4B96-FF18-79AA-C7C1DB1379FC</domain>
+<autoIncrementCycle>false</autoIncrementCycle>
+<notNullConstraintName>person_excerciseFrequency_nn</notNullConstraintName>
+</Column>
+<Column name="kids" id="1A184AA7-7CEF-B90F-8FDA-8F3D84E9A3F8">
+<sourceDDLFile>Table Person.sql</sourceDDLFile>
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:42:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<importedID>F05B6F5E-F76F-1E46-C9E7-058B497B9011</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<domain>F85DEECF-08FF-A535-9FFD-A87F84CF578B</domain>
+<autoIncrementCycle>false</autoIncrementCycle>
+<notNullConstraintName>person_kids_nn</notNullConstraintName>
+</Column>
+<Column name="interestedKids" id="BA9F1FB8-4261-B897-E5FF-D1EAD5855717">
+<sourceDDLFile>Table Person.sql</sourceDDLFile>
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:42:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<importedID>1CD967AC-6057-6E67-F5F6-3C07BC99D0AE</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<domain>F85DEECF-08FF-A535-9FFD-A87F84CF578B</domain>
+<autoIncrementCycle>false</autoIncrementCycle>
+<notNullConstraintName>person_interestedKids_nn</notNullConstraintName>
+</Column>
+<Column name="likesPets" id="3D40C3F2-B564-C767-0E27-E0A11B2A6BA2">
+<sourceDDLFile>Table Person.sql</sourceDDLFile>
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:42:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<importedID>40169922-0BE7-6FEF-81D3-6AC191E1E313</importedID>
+<use>0</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<domain>F85DEECF-08FF-A535-9FFD-A87F84CF578B</domain>
+<autoIncrementCycle>false</autoIncrementCycle>
+<notNullConstraintName>person_likesPets_nn</notNullConstraintName>
+</Column>
+<Column name="username_usernameID" id="674D4B22-5B8B-2D38-7DA4-56F2F52227AB">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:53:06 UTC</createdTime>
+<generatorID>B78E0B9B-7E6A-26A2-D27C-3350295F1AB7</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<delegate>800C15F4-D096-099C-77C0-0D931D8B9F1A</delegate>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E4E54A03-79AE-41E7-5456-1559A85C8BEC" referredColumn="800C15F4-D096-099C-77C0-0D931D8B9F1A"/>
+</associations>
+</Column>
+<Column name="username_nickname" id="BBAFF0EC-6289-3361-6251-E7975940B030">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:53:06 UTC</createdTime>
+<generatorID>4AC6CD18-F9C1-5EE4-814C-DF07F6C6E171</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<delegate>1D8BF457-B828-E510-840B-6D61FD91518C</delegate>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E4E54A03-79AE-41E7-5456-1559A85C8BEC" referredColumn="1D8BF457-B828-E510-840B-6D61FD91518C"/>
+</associations>
+</Column>
+<Column name="username_nickname1" id="C99E102E-61A9-C3BC-4DE3-BE61705CEB7B">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 04:00:35 UTC</createdTime>
+<generatorID>37CDD6F9-585A-DB10-DA9F-3F7612398DFF</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<delegate>1D8BF457-B828-E510-840B-6D61FD91518C</delegate>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="973AB511-7BBD-5700-9DE8-0F1E6535C4E3" referredColumn="1D8BF457-B828-E510-840B-6D61FD91518C"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="5692AF1E-A0F7-A6CE-FD8B-3AC117C920F9" name="Person_PK">
+<sourceDDLFile>Table Person.sql</sourceDDLFile>
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:42:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<importedID>67D5B7C7-EBC9-0205-60E8-03B3A354013E</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="477AC184-8517-8FD4-C391-05C970180863"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D5DB5802-9592-85CF-E5EB-B4C2910BCB69" name="Person__IDX">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:53:06 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>FCA5BC6E-90D6-D95B-7F8D-6A2803E96018</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="674D4B22-5B8B-2D38-7DA4-56F2F52227AB"/>
+<colUsage columnID="BBAFF0EC-6289-3361-6251-E7975940B030"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="07756DE9-1E63-E643-2DEA-DA403BF12A5B" name="Person__IDXv1">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 04:00:35 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>BF953CEC-0865-BA21-B6B5-717A6955201E</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="C99E102E-61A9-C3BC-4DE3-BE61705CEB7B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D706563A-8AE0-65D0-EF07-B78B8881F383" name="Person_username_FK">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:53:06 UTC</createdTime>
+<generatorID>FCA5BC6E-90D6-D95B-7F8D-6A2803E96018</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="674D4B22-5B8B-2D38-7DA4-56F2F52227AB"/>
+<colUsage columnID="BBAFF0EC-6289-3361-6251-E7975940B030"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2CE4C8DE-8C17-302F-5D2A-29AACE41DC30" name="Person_username_FKv1">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 04:00:35 UTC</createdTime>
+<generatorID>BF953CEC-0865-BA21-B6B5-717A6955201E</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C99E102E-61A9-C3BC-4DE3-BE61705CEB7B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

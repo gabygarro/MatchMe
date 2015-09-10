@@ -1,0 +1,48 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="email" directorySegmentName="seg_0" id="EC47232B-3688-FCB3-1C96-30E003CB77F9">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:42:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="email" id="6384941A-FB42-4382-1A2C-50086F2E59F0">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:42:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="personID" id="7E07FE55-3C72-92C9-F631-4B9C4A543E23">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:42:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="emailID" id="D4F7D907-880F-5D4D-31E2-8ADDCDBDBA27">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:42:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="email_Person_FK" id="47253972-CBE6-2F41-8B94-82180005113F">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:42:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<uniqueKeys>
+<UniqueKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.UniqueOraclev10g" name="INDEX_1" id="17FA8E4A-EA1F-E369-F15C-AB80F3E6F820">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:42:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</UniqueKey>
+</uniqueKeys>
+</TableProxyOraclev11g>

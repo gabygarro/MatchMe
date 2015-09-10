@@ -1,0 +1,218 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<DomainFile class="oracle.dbtools.crest.model.design.DomainFileWrapper" fileName="Table email_Domains">
+   <domains>
+      <Domain class="oracle.dbtools.crest.model.design.Domain" name="VARCHAR_0_0_100" id="0DA7B6DE-DBA4-9EDF-286A-A0532D7D57D4">
+         <createdBy>aarguedas</createdBy>
+         <createdTime>2015-09-10 03:42:56 UTC</createdTime>
+         <generatorID>Generado por el Usuario</generatorID>
+         <ownerDesignName>logicmodel1</ownerDesignName>
+         <avTSortOrder>0</avTSortOrder>
+         <dataTypePrecision>0</dataTypePrecision>
+         <dataTypeScale>0</dataTypeScale>
+         <dataTypeSize>100</dataTypeSize>
+         <fileName>Table email_Domains</fileName>
+         <logicalDatatype>LOGDT024</logicalDatatype>
+      </Domain>
+      <Domain class="oracle.dbtools.crest.model.design.Domain" name="VARCHAR_0_0_50" id="29347A94-D496-350F-1646-56A118CE6A7A">
+         <createdBy>aarguedas</createdBy>
+         <createdTime>2015-09-10 03:42:56 UTC</createdTime>
+         <generatorID>Generado por el Usuario</generatorID>
+         <ownerDesignName>logicmodel1</ownerDesignName>
+         <avTSortOrder>0</avTSortOrder>
+         <dataTypePrecision>0</dataTypePrecision>
+         <dataTypeScale>0</dataTypeScale>
+         <dataTypeSize>50</dataTypeSize>
+         <fileName>Table email_Domains</fileName>
+         <logicalDatatype>LOGDT024</logicalDatatype>
+      </Domain>
+      <Domain class="oracle.dbtools.crest.model.design.Domain" name="NUMERIC_8_0_0" id="2EEABB6B-5645-D1A6-31A3-688B4A70194D">
+         <createdBy>aarguedas</createdBy>
+         <createdTime>2015-09-10 03:42:56 UTC</createdTime>
+         <generatorID>Generado por el Usuario</generatorID>
+         <ownerDesignName>logicmodel1</ownerDesignName>
+         <avTSortOrder>0</avTSortOrder>
+         <dataTypePrecision>8</dataTypePrecision>
+         <dataTypeScale>0</dataTypeScale>
+         <dataTypeSize>0</dataTypeSize>
+         <fileName>Table email_Domains</fileName>
+         <logicalDatatype>LOGDT019</logicalDatatype>
+      </Domain>
+      <Domain class="oracle.dbtools.crest.model.design.Domain" name="VARCHAR_0_0_2" id="35D93AD8-8230-5A64-E230-6BAD8369D925">
+         <createdBy>aarguedas</createdBy>
+         <createdTime>2015-09-10 03:42:56 UTC</createdTime>
+         <generatorID>Generado por el Usuario</generatorID>
+         <ownerDesignName>logicmodel1</ownerDesignName>
+         <avTSortOrder>0</avTSortOrder>
+         <dataTypePrecision>0</dataTypePrecision>
+         <dataTypeScale>0</dataTypeScale>
+         <dataTypeSize>2</dataTypeSize>
+         <fileName>Table email_Domains</fileName>
+         <logicalDatatype>LOGDT024</logicalDatatype>
+      </Domain>
+      <Domain class="oracle.dbtools.crest.model.design.Domain" name="VARCHAR_0_0_3" id="3ECDDAA6-4B96-FF18-79AA-C7C1DB1379FC">
+         <createdBy>aarguedas</createdBy>
+         <createdTime>2015-09-10 03:42:56 UTC</createdTime>
+         <generatorID>Generado por el Usuario</generatorID>
+         <ownerDesignName>logicmodel1</ownerDesignName>
+         <avTSortOrder>0</avTSortOrder>
+         <dataTypePrecision>0</dataTypePrecision>
+         <dataTypeScale>0</dataTypeScale>
+         <dataTypeSize>3</dataTypeSize>
+         <fileName>Table email_Domains</fileName>
+         <logicalDatatype>LOGDT024</logicalDatatype>
+      </Domain>
+      <Domain class="oracle.dbtools.crest.model.design.Domain" name="VARCHAR_0_0_11" id="4CFDC349-3F7A-8CEC-B336-B60360E590EC">
+         <createdBy>aarguedas</createdBy>
+         <createdTime>2015-09-10 03:42:56 UTC</createdTime>
+         <generatorID>Generado por el Usuario</generatorID>
+         <ownerDesignName>logicmodel1</ownerDesignName>
+         <avTSortOrder>0</avTSortOrder>
+         <dataTypePrecision>0</dataTypePrecision>
+         <dataTypeScale>0</dataTypeScale>
+         <dataTypeSize>11</dataTypeSize>
+         <fileName>Table email_Domains</fileName>
+         <logicalDatatype>LOGDT024</logicalDatatype>
+      </Domain>
+      <Domain class="oracle.dbtools.crest.model.design.Domain" name="NUMERIC_7_0_0" id="52C97ABB-9FD6-EBA0-0DB3-771E7FD55F4B">
+         <createdBy>aarguedas</createdBy>
+         <createdTime>2015-09-10 03:42:56 UTC</createdTime>
+         <generatorID>Generado por el Usuario</generatorID>
+         <ownerDesignName>logicmodel1</ownerDesignName>
+         <avTSortOrder>0</avTSortOrder>
+         <dataTypePrecision>7</dataTypePrecision>
+         <dataTypeScale>0</dataTypeScale>
+         <dataTypeSize>0</dataTypeSize>
+         <fileName>Table email_Domains</fileName>
+         <logicalDatatype>LOGDT019</logicalDatatype>
+      </Domain>
+      <Domain class="oracle.dbtools.crest.model.design.Domain" name="NUMERIC_4_0_0" id="58689214-AE48-E2BB-58FB-CA84CCEF40D2">
+         <createdBy>aarguedas</createdBy>
+         <createdTime>2015-09-10 03:42:56 UTC</createdTime>
+         <generatorID>Generado por el Usuario</generatorID>
+         <ownerDesignName>logicmodel1</ownerDesignName>
+         <avTSortOrder>0</avTSortOrder>
+         <dataTypePrecision>4</dataTypePrecision>
+         <dataTypeScale>0</dataTypeScale>
+         <dataTypeSize>0</dataTypeSize>
+         <fileName>Table email_Domains</fileName>
+         <logicalDatatype>LOGDT019</logicalDatatype>
+      </Domain>
+      <Domain class="oracle.dbtools.crest.model.design.Domain" name="VARCHAR_0_0_30" id="5D7D20A5-37AF-3863-1387-7C40DA3049E2">
+         <createdBy>aarguedas</createdBy>
+         <createdTime>2015-09-10 03:42:56 UTC</createdTime>
+         <generatorID>Generado por el Usuario</generatorID>
+         <ownerDesignName>logicmodel1</ownerDesignName>
+         <avTSortOrder>0</avTSortOrder>
+         <dataTypePrecision>0</dataTypePrecision>
+         <dataTypeScale>0</dataTypeScale>
+         <dataTypeSize>30</dataTypeSize>
+         <fileName>Table email_Domains</fileName>
+         <logicalDatatype>LOGDT024</logicalDatatype>
+      </Domain>
+      <Domain class="oracle.dbtools.crest.model.design.Domain" name="Date_0_0_0" id="6B8955E9-0198-D524-B46D-04A1C02303B5">
+         <createdBy>aarguedas</createdBy>
+         <createdTime>2015-09-10 03:42:56 UTC</createdTime>
+         <generatorID>Generado por el Usuario</generatorID>
+         <ownerDesignName>logicmodel1</ownerDesignName>
+         <avTSortOrder>0</avTSortOrder>
+         <fileName>Table email_Domains</fileName>
+         <logicalDatatype>LOGDT007</logicalDatatype>
+      </Domain>
+      <Domain class="oracle.dbtools.crest.model.design.Domain" name="VARCHAR_0_0_200" id="78ED226F-565A-9B7C-7AC9-F8B43139BD41">
+         <createdBy>aarguedas</createdBy>
+         <createdTime>2015-09-10 03:42:56 UTC</createdTime>
+         <generatorID>Generado por el Usuario</generatorID>
+         <ownerDesignName>logicmodel1</ownerDesignName>
+         <avTSortOrder>0</avTSortOrder>
+         <dataTypePrecision>0</dataTypePrecision>
+         <dataTypeScale>0</dataTypeScale>
+         <dataTypeSize>200</dataTypeSize>
+         <fileName>Table email_Domains</fileName>
+         <logicalDatatype>LOGDT024</logicalDatatype>
+      </Domain>
+      <Domain class="oracle.dbtools.crest.model.design.Domain" name="VARCHAR_0_0_1" id="7BDC34B7-7434-D13C-93D7-A6EA519CD8C8">
+         <createdBy>aarguedas</createdBy>
+         <createdTime>2015-09-10 03:42:56 UTC</createdTime>
+         <generatorID>Generado por el Usuario</generatorID>
+         <ownerDesignName>logicmodel1</ownerDesignName>
+         <avTSortOrder>0</avTSortOrder>
+         <dataTypePrecision>0</dataTypePrecision>
+         <dataTypeScale>0</dataTypeScale>
+         <dataTypeSize>1</dataTypeSize>
+         <fileName>Table email_Domains</fileName>
+         <logicalDatatype>LOGDT024</logicalDatatype>
+      </Domain>
+      <Domain class="oracle.dbtools.crest.model.design.Domain" name="VARCHAR_0_0_20" id="B1AAF088-3C47-02C8-5B00-1808D863B7F7">
+         <createdBy>aarguedas</createdBy>
+         <createdTime>2015-09-10 03:42:56 UTC</createdTime>
+         <generatorID>Generado por el Usuario</generatorID>
+         <ownerDesignName>logicmodel1</ownerDesignName>
+         <avTSortOrder>0</avTSortOrder>
+         <dataTypePrecision>0</dataTypePrecision>
+         <dataTypeScale>0</dataTypeScale>
+         <dataTypeSize>20</dataTypeSize>
+         <fileName>Table email_Domains</fileName>
+         <logicalDatatype>LOGDT024</logicalDatatype>
+      </Domain>
+      <Domain class="oracle.dbtools.crest.model.design.Domain" name="NUMERIC_1_2_0" id="B270E1DA-A332-9E2D-8C2B-BB595BFEE365">
+         <createdBy>aarguedas</createdBy>
+         <createdTime>2015-09-10 03:42:56 UTC</createdTime>
+         <generatorID>Generado por el Usuario</generatorID>
+         <ownerDesignName>logicmodel1</ownerDesignName>
+         <avTSortOrder>0</avTSortOrder>
+         <dataTypePrecision>1</dataTypePrecision>
+         <dataTypeScale>2</dataTypeScale>
+         <dataTypeSize>0</dataTypeSize>
+         <fileName>Table email_Domains</fileName>
+         <logicalDatatype>LOGDT019</logicalDatatype>
+      </Domain>
+      <Domain class="oracle.dbtools.crest.model.design.Domain" name="NUMERIC_3_0_0" id="B98CACD9-68CC-E2BD-C8EF-5A864754AE77">
+         <createdBy>aarguedas</createdBy>
+         <createdTime>2015-09-10 03:42:56 UTC</createdTime>
+         <generatorID>Generado por el Usuario</generatorID>
+         <ownerDesignName>logicmodel1</ownerDesignName>
+         <avTSortOrder>0</avTSortOrder>
+         <dataTypePrecision>3</dataTypePrecision>
+         <dataTypeScale>0</dataTypeScale>
+         <dataTypeSize>0</dataTypeSize>
+         <fileName>Table email_Domains</fileName>
+         <logicalDatatype>LOGDT019</logicalDatatype>
+      </Domain>
+      <Domain class="oracle.dbtools.crest.model.design.Domain" name="VARCHAR_0_0_5" id="DE04EB7E-3394-708C-5CE4-7C6284DAF32E">
+         <createdBy>aarguedas</createdBy>
+         <createdTime>2015-09-10 03:42:56 UTC</createdTime>
+         <generatorID>Generado por el Usuario</generatorID>
+         <ownerDesignName>logicmodel1</ownerDesignName>
+         <avTSortOrder>0</avTSortOrder>
+         <dataTypePrecision>0</dataTypePrecision>
+         <dataTypeScale>0</dataTypeScale>
+         <dataTypeSize>5</dataTypeSize>
+         <fileName>Table email_Domains</fileName>
+         <logicalDatatype>LOGDT024</logicalDatatype>
+      </Domain>
+      <Domain class="oracle.dbtools.crest.model.design.Domain" name="CHAR_0_0_1" id="F85DEECF-08FF-A535-9FFD-A87F84CF578B">
+         <createdBy>aarguedas</createdBy>
+         <createdTime>2015-09-10 03:42:56 UTC</createdTime>
+         <generatorID>Generado por el Usuario</generatorID>
+         <ownerDesignName>logicmodel1</ownerDesignName>
+         <avTSortOrder>0</avTSortOrder>
+         <dataTypePrecision>0</dataTypePrecision>
+         <dataTypeScale>0</dataTypeScale>
+         <dataTypeSize>1</dataTypeSize>
+         <fileName>Table email_Domains</fileName>
+         <logicalDatatype>LOGDT025</logicalDatatype>
+      </Domain>
+      <Domain class="oracle.dbtools.crest.model.design.Domain" name="VARCHAR_0_0_4" id="FD46808C-F1ED-6945-3BC2-A68F3C4F137E">
+         <createdBy>aarguedas</createdBy>
+         <createdTime>2015-09-10 03:42:56 UTC</createdTime>
+         <generatorID>Generado por el Usuario</generatorID>
+         <ownerDesignName>logicmodel1</ownerDesignName>
+         <avTSortOrder>0</avTSortOrder>
+         <dataTypePrecision>0</dataTypePrecision>
+         <dataTypeScale>0</dataTypeScale>
+         <dataTypeSize>4</dataTypeSize>
+         <fileName>Table email_Domains</fileName>
+         <logicalDatatype>LOGDT024</logicalDatatype>
+      </Domain>
+   </domains>
+</DomainFile>

@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="3D6DA3D0-C931-5DDF-0CC1-E0B8D4105CC5" name="Language_Person_FK">
+<sourceDDLFile>Table Person.sql</sourceDDLFile>
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:42:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<importedID>1F85D046-8F29-12B6-AE02-24826BC3002D</importedID>
+<containerWithKeyObject>538A404E-1CA8-C7BA-D0FF-0DD9992D1754</containerWithKeyObject>
+<deleteRule>NO ACTION</deleteRule>
+<localFKIndex>EBACBC92-1526-C196-665E-2CCC02FC9B78</localFKIndex>
+<keyObject>5692AF1E-A0F7-A6CE-FD8B-3AC117C920F9</keyObject>
+<mandatory>true</mandatory>
+<transferable>true</transferable>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

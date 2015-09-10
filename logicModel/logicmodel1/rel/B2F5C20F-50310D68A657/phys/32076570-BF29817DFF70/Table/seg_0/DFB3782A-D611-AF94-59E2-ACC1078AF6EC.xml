@@ -1,0 +1,47 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="username" directorySegmentName="seg_0" id="DFB3782A-D611-AF94-59E2-ACC1078AF6EC">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:53:06 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="nickname" id="1D8BF457-B828-E510-840B-6D61FD91518C">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:53:06 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="usernamePassword" id="46580996-2FF8-9B72-D587-C5C6F90BCEEC">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:53:06 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="usernameID" id="800C15F4-D096-099C-77C0-0D931D8B9F1A">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:53:06 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="administrator" id="92CE55DB-D268-87DB-60D6-7581939F7C22">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:53:06 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="username_PK" id="6C1711EC-324C-EDD7-9E30-E64F9C00B448">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:53:06 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>

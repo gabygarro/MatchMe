@@ -1,0 +1,208 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="Person" directorySegmentName="seg_0" id="BBC67491-FD93-9CD2-891E-981E3E4458E1">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:42:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="eyeColor" id="0E3710C1-5467-2F91-5E13-45AA66E9E49F">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:42:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="skinColor" id="0E589F1A-F780-B44C-8C1C-9C6EEA363348">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:42:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="nickname" id="0FE7F015-0DDB-F237-882A-D016A4A8CD62">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:42:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="relationshipStatus" id="124972E0-AA3E-7523-5E87-CC032F54EC53">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:42:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="salary" id="170D30EC-38AE-5364-79E4-965218F29402">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:42:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="kids" id="1A184AA7-7CEF-B90F-8FDA-8F3D84E9A3F8">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:42:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="exerciseFrequency" id="21F9B3B3-3092-34AD-E6B4-8D3D1699691B">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:42:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="smoker" id="2E0C7521-3165-3AF4-9702-7F1615679F50">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:42:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="lastName2" id="2FB43A20-24C8-802E-3938-D54D3FF992FB">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:42:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="gender" id="3930E3E1-5268-1ADB-46C7-5A003626DEFC">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:42:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="country" id="3C0C3CFA-D4D0-305E-9B2D-B7165258FBE6">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:42:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="likesPets" id="3D40C3F2-B564-C767-0E27-E0A11B2A6BA2">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:42:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="religion" id="3E2B6271-F5EE-44CE-0964-C44511A9FFDF">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:42:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="university" id="40D61BCF-2F2B-615C-056A-E508D2462451">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:42:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="personID" id="477AC184-8517-8FD4-C391-05C970180863">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:42:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="workPlace" id="5346134D-E1C4-366C-B8F3-DC3E3DD43811">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:42:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="bodyType" id="5B3679C0-5F0C-3A6B-0849-035618D65112">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:42:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="highSchool" id="62F390E0-C8D0-01F2-4DC2-E2B60F273D86">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:42:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="education" id="68F9283B-72EC-B5A4-1875-CD20805D42B5">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:42:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="tagline" id="7877647D-F8F1-5E31-FA33-F0A9760022B2">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:42:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="registerDate" id="8B6FB881-767E-6A30-B104-7C8C9E16BC4B">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:42:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<defaultValue>SYSDATE</defaultValue>
+</ColumnProxy>
+<ColumnProxy name="drinker" id="97166FC8-3B12-1D28-344F-6076A7A99665">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:42:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="address" id="A287641E-092E-73AF-D7EC-8742A29B1575">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:42:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="height" id="B3BB63D2-1307-0CCA-E889-801BDD91D692">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:42:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="interestedKids" id="BA9F1FB8-4261-B897-E5FF-D1EAD5855717">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:42:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="birthday" id="BC67C255-8F64-25B6-5B12-302DAA72E5BA">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:42:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="lastName1" id="D5106BEA-BA02-C720-BE98-DFB6A167DE80">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:42:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="zodiacSign" id="DAD114C5-EC64-9BDC-E7EE-3A25F8A11EFF">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:42:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="hairColor" id="F7D2696E-CE16-2B16-F1D3-CB95EA071257">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:42:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="personName" id="FE64633F-3E97-AF3E-DF8D-7273FE7D42E7">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:42:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="personPK" id="5692AF1E-A0F7-A6CE-FD8B-3AC117C920F9">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:42:56 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<logging></logging>
+<segment>AF9755D4-0779-99A6-62E0-BD114AB0B554</segment>
+<tableSpace>7C60C3B1-D019-16D6-16AB-3A79D4CE7BBA</tableSpace>
+<indexSegment>AF9755D4-0779-99A6-62E0-BD114AB0B554</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>

@@ -1,0 +1,11 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SegmentOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.SegmentOraclev10g" name="Storage2" directorySegmentName="seg_0" id="AF9755D4-0779-99A6-62E0-BD114AB0B554">
+<sourceDDLFile>Table Person.sql</sourceDDLFile>
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:42:23 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<pcTFree>20</pcTFree>
+<scInitialExtent>10240</scInitialExtent>
+<scNextExtent>10240</scNextExtent>
+</SegmentOraclev10g>

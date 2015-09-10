@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="interest_Person_FK" directorySegmentName="seg_0" id="CF76A7EA-E297-7283-8DC2-6DC8CE3076F1">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:44:03 UTC</createdTime>
+<generatorID>A82033AC-440C-A4F2-D26F-B0CDC4EF38B9</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<engineerTo>
+<item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="true"/>
+</engineerTo>
+<sourcePk>4C630E1B-B711-44D6-CD1A-F8979BDE1615</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>DC2843DE-B039-4730-17E0-A0F7D55FC3DC</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>E3FE8894-7040-F417-173F-22885B4AFFC3</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

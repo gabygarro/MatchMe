@@ -1,0 +1,14 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.logical.LogicalDesign>
+   <object objectType="Entity" objectID="475B25CF-7333-0B8D-9CE6-AFF69071A427" name="Language" seqName="seg_0"/>
+   <object objectType="Entity" objectID="803CE95C-4D75-E117-8EE7-5EC345229ADB" name="email" seqName="seg_0"/>
+   <object objectType="Entity" objectID="8BAED558-7A18-DC85-3CD2-136D0D886085" name="Hobbie" seqName="seg_0"/>
+   <object objectType="Entity" objectID="DC2843DE-B039-4730-17E0-A0F7D55FC3DC" name="Person" seqName="seg_0"/>
+   <object objectType="Entity" objectID="DC9F1A88-135E-EAF5-2950-55AAF821DF9A" name="username" seqName="seg_0"/>
+   <object objectType="Entity" objectID="E3FE8894-7040-F417-173F-22885B4AFFC3" name="Interest" seqName="seg_0"/>
+   <object objectType="Relation" objectID="007E0554-88FD-F071-A379-1C3828A6D69C" name="language_Person_FK" seqName="seg_0"/>
+   <object objectType="Relation" objectID="A3201078-A12C-381A-A7AE-114E9334B27F" name="hobbie_Person_FK" seqName="seg_0"/>
+   <object objectType="Relation" objectID="BF953CEC-0865-BA21-B6B5-717A6955201E" name="username-person" seqName="seg_0"/>
+   <object objectType="Relation" objectID="C080D283-2970-E709-E104-B32094232E9F" name="email_Person_FK" seqName="seg_0"/>
+   <object objectType="Relation" objectID="CF76A7EA-E297-7283-8DC2-6DC8CE3076F1" name="interest_Person_FK" seqName="seg_0"/>
+</oracle.dbtools.crest.model.design.logical.LogicalDesign>

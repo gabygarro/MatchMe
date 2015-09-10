@@ -1,0 +1,74 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="E3FE8894-7040-F417-173F-22885B4AFFC3" name="Interest">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:44:03 UTC</createdTime>
+<generatorID>8A6B9D9C-5036-C618-9637-9E72DDE1E48C</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<engineerTo>
+<item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="interestID" id="8B1856A7-3DF9-C2DD-2C3C-BE4148AA4223">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:44:03 UTC</createdTime>
+<generatorID>E706BCAE-94FB-DC6C-4893-1F9963E46D89</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<engineerTo>
+<item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="true"/>
+</engineerTo>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>2EEABB6B-5645-D1A6-31A3-688B4A70194D</domain>
+</Attribute>
+<Attribute name="interest" id="A392D5A6-2115-9691-3231-AAED1CA7D905">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:44:03 UTC</createdTime>
+<generatorID>671AEB36-9DAA-1E55-4000-BFA9F89E4A2C</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<engineerTo>
+<item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>5D7D20A5-37AF-3863-1387-7C40DA3049E2</domain>
+</Attribute>
+<Attribute name="personID" id="CB7430F1-E9D5-370B-0751-F3AA235F328F">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:44:03 UTC</createdTime>
+<generatorID>CF76A7EA-E297-7283-8DC2-6DC8CE3076F1</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<engineerTo>
+<item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="true"/>
+</engineerTo>
+<referedAttribute>685AA793-6425-0C9C-E072-CFE88E1DD328</referedAttribute>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>B98CACD9-68CC-E2BD-C8EF-5A864754AE77</domain>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="AC992ED6-02C6-E406-A474-25D0BE29655D" name="interestPK">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:44:03 UTC</createdTime>
+<generatorID>D397B1DF-D12E-2EC5-6CEA-8E28F54A9C2C</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>8B1856A7-3DF9-C2DD-2C3C-BE4148AA4223</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

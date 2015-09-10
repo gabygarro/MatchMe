@@ -1,0 +1,15 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.oracle.v11g.StorageDesignOraclev11g>
+   <object objectType="TSpace" objectID="7C60C3B1-D019-16D6-16AB-3A79D4CE7BBA" name="ADMIN_Ind" seqName="seg_0"/>
+   <object objectType="User" objectID="MDSYS" name="MDSYS" seqName="seg_0"/>
+   <object objectType="User" objectID="PUBLIC" name="PUBLIC" seqName="seg_0"/>
+   <object objectType="SType" objectID="47E390DE-0671-C4B1-8428-0F45CBEE18F8" name="SDO_GEOMETRY" seqName="seg_0"/>
+   <object objectType="SType" objectID="F72C39E0-D1CA-8821-2AD7-A1E95A37D3D1" name="XMLTYPE" seqName="seg_0"/>
+   <object objectType="Table" objectID="0C871334-7B28-50C1-9649-9A4C1AC1624E" name="Hobbie" seqName="seg_0"/>
+   <object objectType="Table" objectID="538A404E-1CA8-C7BA-D0FF-0DD9992D1754" name="Language" seqName="seg_0"/>
+   <object objectType="Table" objectID="8A6B9D9C-5036-C618-9637-9E72DDE1E48C" name="Interest" seqName="seg_0"/>
+   <object objectType="Table" objectID="BBC67491-FD93-9CD2-891E-981E3E4458E1" name="Person" seqName="seg_0"/>
+   <object objectType="Table" objectID="DFB3782A-D611-AF94-59E2-ACC1078AF6EC" name="username" seqName="seg_0"/>
+   <object objectType="Table" objectID="EC47232B-3688-FCB3-1C96-30E003CB77F9" name="email" seqName="seg_0"/>
+   <object objectType="Segment" objectID="AF9755D4-0779-99A6-62E0-BD114AB0B554" name="Storage2" seqName="seg_0"/>
+</oracle.dbtools.crest.model.design.storage.oracle.v11g.StorageDesignOraclev11g>

@@ -1,0 +1,69 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="DFB3782A-D611-AF94-59E2-ACC1078AF6EC" name="username">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:53:06 UTC</createdTime>
+<generatorID>DC9F1A88-135E-EAF5-2950-55AAF821DF9A</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="usernameID" id="800C15F4-D096-099C-77C0-0D931D8B9F1A">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:53:06 UTC</createdTime>
+<generatorID>A3EEF5B1-DD27-0767-81B2-AED65990956B</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nickname" id="1D8BF457-B828-E510-840B-6D61FD91518C">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:53:06 UTC</createdTime>
+<generatorID>628EFA1F-46DF-63B3-B1DD-3947A5E52F6E</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="usernamePassword" id="46580996-2FF8-9B72-D587-C5C6F90BCEEC">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:53:06 UTC</createdTime>
+<generatorID>A6752DF8-7472-7748-AE32-C92A9D4AD4CB</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="administrator" id="92CE55DB-D268-87DB-60D6-7581939F7C22">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:53:06 UTC</createdTime>
+<generatorID>0019716C-6D18-66E2-AEBE-0C427CB94164</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="6C1711EC-324C-EDD7-9E30-E64F9C00B448" name="username_PK">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:53:06 UTC</createdTime>
+<generatorID>E3DFDAEC-A8B9-6169-A460-43FAEC38A055</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1D8BF457-B828-E510-840B-6D61FD91518C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
