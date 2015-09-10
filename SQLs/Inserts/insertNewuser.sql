@@ -1,8 +1,8 @@
-create or replace procedure newuser (pInterest varchar2, pPersonId number)
+create or replace procedure newuser (pUsername Varchar2, pPassword Varchar2)
 as
        BEGIN
-         insert into interest (interestId,interest,personId)
-         values(interestsId_seq.NEXTVAL, pInterest,pPersonId);
+         insert into username (usernameId,email,usernamepassword)
+         values(usernameId_seq.NEXTVAL, pUsername,pPassword);
 
        --Exception
          --WHEN NO_DATA_FOUND THEN
