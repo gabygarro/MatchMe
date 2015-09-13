@@ -21,23 +21,21 @@
 <createdTime>2015-09-10 03:44:31 UTC</createdTime>
 <generatorID>Generado por el Usuario</generatorID>
 <ownerDesignName>logicmodel1</ownerDesignName>
-<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="false"/>
+<item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>3</dataTypePrecision>
 </Attribute>
-<Attribute name="nickname" id="628EFA1F-46DF-63B3-B1DD-3947A5E52F6E">
+<Attribute name="userEmail" id="628EFA1F-46DF-63B3-B1DD-3947A5E52F6E">
 <createdBy>aarguedas</createdBy>
 <createdTime>2015-09-10 03:45:36 UTC</createdTime>
 <generatorID>Generado por el Usuario</generatorID>
 <ownerDesignName>logicmodel1</ownerDesignName>
-<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="false"/>
+<item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -49,28 +47,27 @@
 <createdTime>2015-09-10 03:46:52 UTC</createdTime>
 <generatorID>Generado por el Usuario</generatorID>
 <ownerDesignName>logicmodel1</ownerDesignName>
-<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="false"/>
+<item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>50</dataTypeSize>
 </Attribute>
-<Attribute name="administrator" id="0019716C-6D18-66E2-AEBE-0C427CB94164">
+<Attribute name="userTypeID" id="49747BA5-3C7B-7EF3-3C38-A07AB110AE47">
 <createdBy>aarguedas</createdBy>
-<createdTime>2015-09-10 03:49:08 UTC</createdTime>
-<generatorID>Generado por el Usuario</generatorID>
+<createdTime>2015-09-13 01:49:50 UTC</createdTime>
+<generatorID>220EDEB2-E670-5E6E-4CCF-C66F422192E5</generatorID>
 <ownerDesignName>logicmodel1</ownerDesignName>
-<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="false"/>
+<item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="true"/>
 </engineerTo>
+<referedAttribute>61842BA3-2241-D64F-D41E-74C8C2068700</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT006</logicalDatatype>
-<dataTypeSize>1</dataTypeSize>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>1</dataTypePrecision>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
@@ -84,7 +81,7 @@
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
-<attributeRef>628EFA1F-46DF-63B3-B1DD-3947A5E52F6E</attributeRef>
+<attributeRef>A3EEF5B1-DD27-0767-81B2-AED65990956B</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>

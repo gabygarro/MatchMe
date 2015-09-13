@@ -18,7 +18,7 @@
 <dataTypePrecision>3</dataTypePrecision>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="nickname" id="1D8BF457-B828-E510-840B-6D61FD91518C">
+<Column name="userEmail" id="1D8BF457-B828-E510-840B-6D61FD91518C">
 <createdBy>aarguedas</createdBy>
 <createdTime>2015-09-10 03:53:06 UTC</createdTime>
 <generatorID>628EFA1F-46DF-63B3-B1DD-3947A5E52F6E</generatorID>
@@ -40,16 +40,21 @@
 <dataTypeSize>50</dataTypeSize>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="administrator" id="92CE55DB-D268-87DB-60D6-7581939F7C22">
+<Column name="userTypeCatalog_userTypeID" id="C4479008-F374-0C18-87F6-377C05C6288A">
 <createdBy>aarguedas</createdBy>
-<createdTime>2015-09-10 03:53:06 UTC</createdTime>
-<generatorID>0019716C-6D18-66E2-AEBE-0C427CB94164</generatorID>
+<createdTime>2015-09-13 03:47:08 UTC</createdTime>
+<generatorID>49747BA5-3C7B-7EF3-3C38-A07AB110AE47</generatorID>
 <ownerDesignName>logicmodel1</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT006</logicalDatatype>
-<dataTypeSize>1</dataTypeSize>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>1</dataTypePrecision>
+<delegate>B2AC214E-393B-1BB6-C804-8EB7128F0987</delegate>
+<previousColumn>false</previousColumn>
 <autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="FB37898F-84F1-C7EF-5E13-1C07FAF846C1" referredColumn="B2AC214E-393B-1BB6-C804-8EB7128F0987"/>
+</associations>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
@@ -62,7 +67,18 @@
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="1D8BF457-B828-E510-840B-6D61FD91518C"/>
+<colUsage columnID="800C15F4-D096-099C-77C0-0D931D8B9F1A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8A66B11E-1C01-EF9E-41C7-B3EB1140F5E2" name="username_userTypeCatalog_FK">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-13 03:47:08 UTC</createdTime>
+<generatorID>220EDEB2-E670-5E6E-4CCF-C66F422192E5</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C4479008-F374-0C18-87F6-377C05C6288A"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

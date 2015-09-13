@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="8A6B9D9C-5036-C618-9637-9E72DDE1E48C" name="Interest">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="8A6B9D9C-5036-C618-9637-9E72DDE1E48C" name="interestCatalog">
 <sourceDDLFile>Table Interests.sql</sourceDDLFile>
 <createdBy>aarguedas</createdBy>
 <createdTime>2015-09-10 03:42:56 UTC</createdTime>
@@ -16,39 +16,24 @@
 <generatorID>Generado por el Usuario</generatorID>
 <ownerDesignName>logicmodel1</ownerDesignName>
 <importedID>4ABCCEEC-38F1-153B-2292-232CDB664929</importedID>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
-<domain>2EEABB6B-5645-D1A6-31A3-688B4A70194D</domain>
+<dataTypePrecision>3</dataTypePrecision>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="interest" id="671AEB36-9DAA-1E55-4000-BFA9F89E4A2C">
+<Column name="interestName" id="671AEB36-9DAA-1E55-4000-BFA9F89E4A2C">
 <sourceDDLFile>Table Interests.sql</sourceDDLFile>
 <createdBy>aarguedas</createdBy>
 <createdTime>2015-09-10 03:42:56 UTC</createdTime>
 <generatorID>Generado por el Usuario</generatorID>
 <ownerDesignName>logicmodel1</ownerDesignName>
 <importedID>FD985CAF-77B2-1C05-8808-77933782520B</importedID>
-<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
 <use>0</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
 <domain>5D7D20A5-37AF-3863-1387-7C40DA3049E2</domain>
 <autoIncrementCycle>false</autoIncrementCycle>
-</Column>
-<Column name="Person_personID" id="A846A37C-4A0C-AFEF-BE46-4D9F5B7692C1">
-<sourceDDLFile>Table Interests.sql</sourceDDLFile>
-<createdBy>aarguedas</createdBy>
-<createdTime>2015-09-10 03:42:56 UTC</createdTime>
-<generatorID>Generado por el Usuario</generatorID>
-<ownerDesignName>logicmodel1</ownerDesignName>
-<importedID>0AF2030F-FF34-FFFC-334D-6BBD390FB85C</importedID>
-<use>0</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<domain>B98CACD9-68CC-E2BD-C8EF-5A864754AE77</domain>
-<delegate>477AC184-8517-8FD4-C391-05C970180863</delegate>
-<autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="A82033AC-440C-A4F2-D26F-B0CDC4EF38B9" referredColumn="477AC184-8517-8FD4-C391-05C970180863"/>
-</associations>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
@@ -64,17 +49,6 @@
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
 <colUsage columnID="E706BCAE-94FB-DC6C-4893-1F9963E46D89"/>
-</indexColumnUsage>
-</ind_PK_UK>
-<ind_PK_UK id="1F9C9ADF-1CE0-2841-5DD9-FC76D1FC8964" name="Interest_Person_FK">
-<createdBy>aarguedas</createdBy>
-<createdTime>2015-09-10 03:42:56 UTC</createdTime>
-<generatorID>Generado por el Usuario</generatorID>
-<ownerDesignName>logicmodel1</ownerDesignName>
-<indexState>Foreign Key</indexState>
-<isSurrogateKey>false</isSurrogateKey>
-<indexColumnUsage>
-<colUsage columnID="A846A37C-4A0C-AFEF-BE46-4D9F5B7692C1"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

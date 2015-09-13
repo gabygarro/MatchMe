@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="personZodiacSign" directorySegmentName="seg_0" id="E05A9571-9287-99A7-E482-444011AE85C3">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-13 02:48:34 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<engineerTo>
+<item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="true"/>
+</engineerTo>
+<sourcePk>C88CFC22-4B06-B162-9AF2-8119894580D8</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>56E7E6F3-84F4-FF10-3886-5E52CEFE54D2</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>DC2843DE-B039-4730-17E0-A0F7D55FC3DC</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

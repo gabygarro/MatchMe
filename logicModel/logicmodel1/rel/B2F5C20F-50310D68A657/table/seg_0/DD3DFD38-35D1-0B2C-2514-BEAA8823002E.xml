@@ -1,0 +1,47 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="DD3DFD38-35D1-0B2C-2514-BEAA8823002E" name="eyeColorCatalog">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-12 19:50:35 UTC</createdTime>
+<generatorID>28E7AE9E-EA84-CC99-F7A2-852AA6615BE0</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="eyeColorID" id="A0162B9A-D910-CC58-5459-304D0F215D7C">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-12 19:50:35 UTC</createdTime>
+<generatorID>ED23BC15-AB8B-8DFC-8216-A8C437C41757</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="eyeColor" id="2D8F8CE7-7E50-1410-9374-F85356B5699F">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-12 19:50:35 UTC</createdTime>
+<generatorID>C6D6FCE8-E227-B3B2-AE36-7319AFBC6E83</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="462B5F45-D398-8E96-F579-A3AA1EE7B393" name="eyesColor_PK">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-12 19:50:35 UTC</createdTime>
+<generatorID>8D77344C-64FF-F682-C407-CC801C66D170</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A0162B9A-D910-CC58-5459-304D0F215D7C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

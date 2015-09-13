@@ -1,0 +1,84 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="911122C7-F2F2-98FD-A088-0A159E895817" name="event">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-12 22:43:24 UTC</createdTime>
+<generatorID>1B06A557-96DF-64D0-E13E-1173F6038E26</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="eventID" id="1DB25616-CC25-F117-441B-DB6EEEC97CB9">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-12 22:43:24 UTC</createdTime>
+<generatorID>66CA2088-0310-C212-09A5-1471D4C2B53D</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="eventName" id="E3B8F09C-CB93-C982-BCD7-0F318DA4553A">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-12 22:43:24 UTC</createdTime>
+<generatorID>E5854631-C05F-3BA5-5C87-DCDC58279D20</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="eventDate" id="7B55A06C-C123-FA0B-823E-47014A54EF51">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-12 22:43:24 UTC</createdTime>
+<generatorID>275A6625-560C-D7B8-4ACF-D8FFD0C9CC2E</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="city_cityId" id="8112BA76-7237-481B-5172-EB88AFAE50CA">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-13 01:21:26 UTC</createdTime>
+<generatorID>BF054C36-3B26-F1E8-B5CB-ACF3D3D719E7</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<delegate>44BFF2F4-0004-D005-84E7-AFEEA25D281C</delegate>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="7C7585B8-65B1-810B-54B9-FB2918090C9B" referredColumn="44BFF2F4-0004-D005-84E7-AFEEA25D281C"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="9F5CDCF2-C6B5-4208-6622-AF19448ACA30" name="event_PK">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-12 22:43:24 UTC</createdTime>
+<generatorID>3B8A03F5-6704-96A4-ADE3-491CEDBA0279</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1DB25616-CC25-F117-441B-DB6EEEC97CB9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C1CB0089-F184-CDB8-606E-DC8572B359A9" name="event_city_FK">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-13 01:21:26 UTC</createdTime>
+<generatorID>FEF61F6A-2D0C-0BBE-2CDB-E07DA99F09F8</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8112BA76-7237-481B-5172-EB88AFAE50CA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

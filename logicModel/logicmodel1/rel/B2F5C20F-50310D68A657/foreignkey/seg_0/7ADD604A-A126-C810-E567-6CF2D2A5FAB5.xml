@@ -1,0 +1,14 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="7ADD604A-A126-C810-E567-6CF2D2A5FAB5" name="visitLog_Person_FK">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-13 03:47:08 UTC</createdTime>
+<generatorID>76603B7D-AB3A-70E1-F5CE-59FCAE01786F</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<containerWithKeyObject>B33B010D-2D97-7806-DEE0-4250341A26FB</containerWithKeyObject>
+<deleteRule>NO ACTION</deleteRule>
+<localFKIndex>88FDB240-04BE-C140-3EE0-5D1972BEFAEF</localFKIndex>
+<keyObject>5692AF1E-A0F7-A6CE-FD8B-3AC117C920F9</keyObject>
+<mandatory>true</mandatory>
+<transferable>true</transferable>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

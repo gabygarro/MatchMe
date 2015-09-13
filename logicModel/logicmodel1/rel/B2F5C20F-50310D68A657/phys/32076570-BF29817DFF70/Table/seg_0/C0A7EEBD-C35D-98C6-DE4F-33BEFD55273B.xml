@@ -1,0 +1,35 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="city" directorySegmentName="seg_0" id="C0A7EEBD-C35D-98C6-DE4F-33BEFD55273B">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-12 19:50:35 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="cityId" id="44BFF2F4-0004-D005-84E7-AFEEA25D281C">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-12 19:50:35 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="cityName" id="9A7F9564-96A9-D60C-3339-1323F3478A19">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-12 19:50:35 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="city_PK" id="5DCD82AA-86EF-7E7B-FA24-8B8D44A67906">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-12 19:50:35 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>

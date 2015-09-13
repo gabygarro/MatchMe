@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="personEyeColor" directorySegmentName="seg_0" id="C28C9A3F-B4D4-6AFC-FE3C-AB6725E03051">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-12 19:49:03 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<engineerTo>
+<item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="true"/>
+</engineerTo>
+<sourcePk>8D77344C-64FF-F682-C407-CC801C66D170</sourcePk>
+<identifying>false</identifying>
+<nameOnTarget>eyesColorId</nameOnTarget>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>28E7AE9E-EA84-CC99-F7A2-852AA6615BE0</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>DC2843DE-B039-4730-17E0-A0F7D55FC3DC</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

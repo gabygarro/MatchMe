@@ -1,0 +1,47 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="DA66F701-931D-9F59-5B5B-61A55BE9B6D7" name="zodiacSignCatalog">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-13 03:47:08 UTC</createdTime>
+<generatorID>56E7E6F3-84F4-FF10-3886-5E52CEFE54D2</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="zodiacSignID" id="7D337310-0343-CCBD-DD26-3C5B2AD438C3">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-13 03:47:08 UTC</createdTime>
+<generatorID>625C6B28-86BF-C4F0-598D-089B73965A49</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="zodiacSignName" id="CB745712-0DDB-A37F-FC15-81F971F14C14">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-13 03:47:08 UTC</createdTime>
+<generatorID>CFA4BFF2-9E64-C0F9-2337-3FAF666E07B9</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="5A6ADC6B-F29B-8CE2-0627-E3A33E78A8DD" name="zodiacSignCatalog_PK">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-13 03:47:08 UTC</createdTime>
+<generatorID>C88CFC22-4B06-B162-9AF2-8119894580D8</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7D337310-0343-CCBD-DD26-3C5B2AD438C3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

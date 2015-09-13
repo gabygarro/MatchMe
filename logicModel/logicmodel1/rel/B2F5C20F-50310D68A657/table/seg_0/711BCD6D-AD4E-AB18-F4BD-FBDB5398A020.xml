@@ -1,0 +1,47 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="711BCD6D-AD4E-AB18-F4BD-FBDB5398A020" name="hairColorCatalog">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-13 03:47:08 UTC</createdTime>
+<generatorID>88EF1416-B8C4-B64D-B43D-56311C86C7DC</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="hairColorID" id="69A4E76C-A1CC-A731-25F6-86B6B58A026E">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-13 03:47:08 UTC</createdTime>
+<generatorID>8DCEC4CE-FC87-CC5F-A0D7-D9C0A654CE80</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="hairColor" id="CA94B8E2-BD84-68DF-9415-14AC70447B1A">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-13 03:47:08 UTC</createdTime>
+<generatorID>2C70C679-CE12-1916-613C-3B2451B5A426</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="FFA48467-A7EC-B3EF-827C-95C30286A0FB" name="hairColorCatalog_PK">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-13 03:47:08 UTC</createdTime>
+<generatorID>62BB7B76-5FE0-C120-8C02-62186EE79A6C</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="69A4E76C-A1CC-A731-25F6-86B6B58A026E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

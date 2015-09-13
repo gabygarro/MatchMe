@@ -1,0 +1,14 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="FBC5CC7C-4976-4366-53AE-5AE938C6A7B8" name="Person_eyesColor_FK">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-12 19:50:35 UTC</createdTime>
+<generatorID>C28C9A3F-B4D4-6AFC-FE3C-AB6725E03051</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<containerWithKeyObject>BBC67491-FD93-9CD2-891E-981E3E4458E1</containerWithKeyObject>
+<deleteRule>NO ACTION</deleteRule>
+<localFKIndex>4DF8B8D1-80A0-F286-3D45-435410D1494B</localFKIndex>
+<keyObject>462B5F45-D398-8E96-F579-A3AA1EE7B393</keyObject>
+<mandatory>true</mandatory>
+<transferable>true</transferable>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

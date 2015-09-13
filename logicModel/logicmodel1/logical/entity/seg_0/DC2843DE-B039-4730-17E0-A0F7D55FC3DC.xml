@@ -24,21 +24,10 @@
 <engineerTo>
 <item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="true"/>
 </engineerTo>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
-<domain>B98CACD9-68CC-E2BD-C8EF-5A864754AE77</domain>
-</Attribute>
-<Attribute name="personName" id="6B07B9E1-DDE7-FC78-D773-64D91B9F5972">
-<createdBy>aarguedas</createdBy>
-<createdTime>2015-09-10 03:44:03 UTC</createdTime>
-<generatorID>FE64633F-3E97-AF3E-DF8D-7273FE7D42E7</generatorID>
-<ownerDesignName>logicmodel1</ownerDesignName>
-<engineerTo>
-<item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="true"/>
-</engineerTo>
-<use>0</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<domain>5D7D20A5-37AF-3863-1387-7C40DA3049E2</domain>
+<dataTypePrecision>3</dataTypePrecision>
 </Attribute>
 <Attribute name="lastName1" id="4B584163-51AC-04FB-4033-20EBB4345CA1">
 <createdBy>aarguedas</createdBy>
@@ -48,9 +37,23 @@
 <engineerTo>
 <item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="true"/>
 </engineerTo>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<domain>5D7D20A5-37AF-3863-1387-7C40DA3049E2</domain>
+<dataTypeSize>50</dataTypeSize>
+</Attribute>
+<Attribute name="firstName" id="6B07B9E1-DDE7-FC78-D773-64D91B9F5972">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-10 03:44:03 UTC</createdTime>
+<generatorID>FE64633F-3E97-AF3E-DF8D-7273FE7D42E7</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<engineerTo>
+<item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
 </Attribute>
 <Attribute name="lastName2" id="E7413370-8BF2-6433-6B03-9E1C0740DAC6">
 <createdBy>aarguedas</createdBy>
@@ -61,9 +64,10 @@
 <item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<domain>5D7D20A5-37AF-3863-1387-7C40DA3049E2</domain>
+<dataTypeSize>50</dataTypeSize>
 </Attribute>
 <Attribute name="birthday" id="095B8CE2-03EA-675D-C06F-4E7C5D6B6E56">
 <createdBy>aarguedas</createdBy>
@@ -73,9 +77,9 @@
 <engineerTo>
 <item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="true"/>
 </engineerTo>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
 <logicalDatatype>LOGDT007</logicalDatatype>
-<domain>6B8955E9-0198-D524-B46D-04A1C02303B5</domain>
 </Attribute>
 <Attribute name="registerDate" id="0F122208-C977-5DCD-2EB7-E76681B4D714">
 <createdBy>aarguedas</createdBy>
@@ -85,9 +89,9 @@
 <engineerTo>
 <item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="true"/>
 </engineerTo>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
 <logicalDatatype>LOGDT007</logicalDatatype>
-<domain>6B8955E9-0198-D524-B46D-04A1C02303B5</domain>
 <defaultValue>SYSDATE</defaultValue>
 </Attribute>
 <Attribute name="nickname" id="2935A0AA-E16A-4530-B0A5-A0D5316FFD32">
@@ -99,45 +103,10 @@
 <item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<domain>B1AAF088-3C47-02C8-5B00-1808D863B7F7</domain>
-</Attribute>
-<Attribute name="zodiacSign" id="43151717-79ED-DF24-5EEE-B8F835133B22">
-<createdBy>aarguedas</createdBy>
-<createdTime>2015-09-10 03:44:03 UTC</createdTime>
-<generatorID>DAD114C5-EC64-9BDC-E7EE-3A25F8A11EFF</generatorID>
-<ownerDesignName>logicmodel1</ownerDesignName>
-<engineerTo>
-<item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="true"/>
-</engineerTo>
-<use>0</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<domain>4CFDC349-3F7A-8CEC-B336-B60360E590EC</domain>
-</Attribute>
-<Attribute name="gender" id="2900AB70-02AB-2E98-68B0-9D86D8DE1E9A">
-<createdBy>aarguedas</createdBy>
-<createdTime>2015-09-10 03:44:03 UTC</createdTime>
-<generatorID>3930E3E1-5268-1ADB-46C7-5A003626DEFC</generatorID>
-<ownerDesignName>logicmodel1</ownerDesignName>
-<engineerTo>
-<item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="true"/>
-</engineerTo>
-<use>0</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<domain>7BDC34B7-7434-D13C-93D7-A6EA519CD8C8</domain>
-</Attribute>
-<Attribute name="country" id="E134D671-6BD8-BB62-B6B4-FCEBB5ED57D2">
-<createdBy>aarguedas</createdBy>
-<createdTime>2015-09-10 03:44:03 UTC</createdTime>
-<generatorID>3C0C3CFA-D4D0-305E-9B2D-B7165258FBE6</generatorID>
-<ownerDesignName>logicmodel1</ownerDesignName>
-<engineerTo>
-<item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="true"/>
-</engineerTo>
-<use>0</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<domain>35D93AD8-8230-5A64-E230-6BAD8369D925</domain>
+<dataTypeSize>25</dataTypeSize>
 </Attribute>
 <Attribute name="address" id="84CD2903-61BB-F381-1C7F-00F47C07AFD7">
 <createdBy>aarguedas</createdBy>
@@ -148,9 +117,10 @@
 <item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<domain>0DA7B6DE-DBA4-9EDF-286A-A0532D7D57D4</domain>
+<dataTypeSize>140</dataTypeSize>
 </Attribute>
 <Attribute name="tagline" id="45729A76-AA54-8549-8D73-374C3E71FF5C">
 <createdBy>aarguedas</createdBy>
@@ -161,21 +131,10 @@
 <item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<domain>78ED226F-565A-9B7C-7AC9-F8B43139BD41</domain>
-</Attribute>
-<Attribute name="education" id="416CBB43-0C2B-60F4-8FD8-05C201D02B48">
-<createdBy>aarguedas</createdBy>
-<createdTime>2015-09-10 03:44:03 UTC</createdTime>
-<generatorID>68F9283B-72EC-B5A4-1875-CD20805D42B5</generatorID>
-<ownerDesignName>logicmodel1</ownerDesignName>
-<engineerTo>
-<item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="true"/>
-</engineerTo>
-<use>0</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<domain>3ECDDAA6-4B96-FF18-79AA-C7C1DB1379FC</domain>
+<dataTypeSize>200</dataTypeSize>
 </Attribute>
 <Attribute name="highSchool" id="B58E716C-C461-FD91-760F-A9B37BA39E74">
 <createdBy>aarguedas</createdBy>
@@ -186,9 +145,10 @@
 <item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<domain>29347A94-D496-350F-1646-56A118CE6A7A</domain>
+<dataTypeSize>100</dataTypeSize>
 </Attribute>
 <Attribute name="university" id="9D8CB5E9-D4D6-E755-7817-8CBA908F7891">
 <createdBy>aarguedas</createdBy>
@@ -199,9 +159,10 @@
 <item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<domain>29347A94-D496-350F-1646-56A118CE6A7A</domain>
+<dataTypeSize>100</dataTypeSize>
 </Attribute>
 <Attribute name="workPlace" id="AEF69089-0BB6-EFF1-1010-0AD7DED6B767">
 <createdBy>aarguedas</createdBy>
@@ -212,9 +173,10 @@
 <item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<domain>29347A94-D496-350F-1646-56A118CE6A7A</domain>
+<dataTypeSize>100</dataTypeSize>
 </Attribute>
 <Attribute name="salary" id="23AC745C-A949-2D91-E275-D7D71D5A0DE6">
 <createdBy>aarguedas</createdBy>
@@ -225,34 +187,10 @@
 <item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
-<domain>52C97ABB-9FD6-EBA0-0DB3-771E7FD55F4B</domain>
-</Attribute>
-<Attribute name="relationshipStatus" id="4F43199A-BF70-413B-8B13-81690BAAD7B7">
-<createdBy>aarguedas</createdBy>
-<createdTime>2015-09-10 03:44:03 UTC</createdTime>
-<generatorID>124972E0-AA3E-7523-5E87-CC032F54EC53</generatorID>
-<ownerDesignName>logicmodel1</ownerDesignName>
-<engineerTo>
-<item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="true"/>
-</engineerTo>
-<use>0</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<domain>35D93AD8-8230-5A64-E230-6BAD8369D925</domain>
-</Attribute>
-<Attribute name="religion" id="F5156106-A68B-64CC-6CAC-0CDA2CE4F6A7">
-<createdBy>aarguedas</createdBy>
-<createdTime>2015-09-10 03:44:03 UTC</createdTime>
-<generatorID>3E2B6271-F5EE-44CE-0964-C44511A9FFDF</generatorID>
-<ownerDesignName>logicmodel1</ownerDesignName>
-<engineerTo>
-<item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="true"/>
-</engineerTo>
-<nullsAllowed>true</nullsAllowed>
-<use>0</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<domain>3ECDDAA6-4B96-FF18-79AA-C7C1DB1379FC</domain>
+<dataTypePrecision>7</dataTypePrecision>
 </Attribute>
 <Attribute name="height" id="15F4420F-E063-1245-B691-0E34BF1D3F53">
 <createdBy>aarguedas</createdBy>
@@ -262,95 +200,27 @@
 <engineerTo>
 <item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="true"/>
 </engineerTo>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
-<domain>B270E1DA-A332-9E2D-8C2B-BB595BFEE365</domain>
-</Attribute>
-<Attribute name="skinColor" id="76647979-CA83-758E-7482-52D25A46ED2E">
-<createdBy>aarguedas</createdBy>
-<createdTime>2015-09-10 03:44:03 UTC</createdTime>
-<generatorID>0E589F1A-F780-B44C-8C1C-9C6EEA363348</generatorID>
-<ownerDesignName>logicmodel1</ownerDesignName>
-<engineerTo>
-<item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="true"/>
-</engineerTo>
-<use>0</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<domain>35D93AD8-8230-5A64-E230-6BAD8369D925</domain>
-</Attribute>
-<Attribute name="eyeColor" id="EB742B26-AB16-E2FF-9A1D-C894010746C2">
-<createdBy>aarguedas</createdBy>
-<createdTime>2015-09-10 03:44:03 UTC</createdTime>
-<generatorID>0E3710C1-5467-2F91-5E13-45AA66E9E49F</generatorID>
-<ownerDesignName>logicmodel1</ownerDesignName>
-<engineerTo>
-<item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="true"/>
-</engineerTo>
-<use>0</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<domain>FD46808C-F1ED-6945-3BC2-A68F3C4F137E</domain>
-</Attribute>
-<Attribute name="hairColor" id="24D5494E-1C3C-AF6F-DB80-D173A3462C83">
-<createdBy>aarguedas</createdBy>
-<createdTime>2015-09-10 03:44:03 UTC</createdTime>
-<generatorID>F7D2696E-CE16-2B16-F1D3-CB95EA071257</generatorID>
-<ownerDesignName>logicmodel1</ownerDesignName>
-<engineerTo>
-<item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="true"/>
-</engineerTo>
-<use>0</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<domain>DE04EB7E-3394-708C-5CE4-7C6284DAF32E</domain>
-</Attribute>
-<Attribute name="bodyType" id="253F2657-AD2B-F0D1-670E-1BF32998E5CD">
-<createdBy>aarguedas</createdBy>
-<createdTime>2015-09-10 03:44:03 UTC</createdTime>
-<generatorID>5B3679C0-5F0C-3A6B-0849-035618D65112</generatorID>
-<ownerDesignName>logicmodel1</ownerDesignName>
-<engineerTo>
-<item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="true"/>
-</engineerTo>
-<use>0</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<domain>DE04EB7E-3394-708C-5CE4-7C6284DAF32E</domain>
+<dataTypePrecision>2</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
 </Attribute>
 <Attribute name="smoker" id="763860F9-0340-822E-CBFF-1989A385B46E">
 <createdBy>aarguedas</createdBy>
 <createdTime>2015-09-10 03:44:03 UTC</createdTime>
+<comment>treated as a boolean</comment>
 <generatorID>2E0C7521-3165-3AF4-9702-7F1615679F50</generatorID>
 <ownerDesignName>logicmodel1</ownerDesignName>
 <engineerTo>
 <item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="true"/>
 </engineerTo>
-<use>0</use>
-<logicalDatatype>LOGDT025</logicalDatatype>
-<domain>F85DEECF-08FF-A535-9FFD-A87F84CF578B</domain>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>1</dataTypePrecision>
 </Attribute>
-<Attribute name="drinker" id="56CE1095-0A8D-1DFF-E77B-1A5D77758F5B">
-<createdBy>aarguedas</createdBy>
-<createdTime>2015-09-10 03:44:03 UTC</createdTime>
-<generatorID>97166FC8-3B12-1D28-344F-6076A7A99665</generatorID>
-<ownerDesignName>logicmodel1</ownerDesignName>
-<engineerTo>
-<item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="true"/>
-</engineerTo>
-<use>0</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<domain>7BDC34B7-7434-D13C-93D7-A6EA519CD8C8</domain>
-</Attribute>
-<Attribute name="exerciseFrequency" id="D5B8057C-1D8D-2ABC-22B2-0EE9CCBC3516">
-<createdBy>aarguedas</createdBy>
-<createdTime>2015-09-10 03:44:03 UTC</createdTime>
-<generatorID>21F9B3B3-3092-34AD-E6B4-8D3D1699691B</generatorID>
-<ownerDesignName>logicmodel1</ownerDesignName>
-<engineerTo>
-<item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="true"/>
-</engineerTo>
-<use>0</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<domain>3ECDDAA6-4B96-FF18-79AA-C7C1DB1379FC</domain>
-</Attribute>
-<Attribute name="kids" id="0C6469E4-9B4B-B34C-309A-DCD4F0AE6DFE">
+<Attribute name="numberOfKids" id="0C6469E4-9B4B-B34C-309A-DCD4F0AE6DFE">
 <createdBy>aarguedas</createdBy>
 <createdTime>2015-09-10 03:44:03 UTC</createdTime>
 <generatorID>1A184AA7-7CEF-B90F-8FDA-8F3D84E9A3F8</generatorID>
@@ -358,58 +228,230 @@
 <engineerTo>
 <item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="true"/>
 </engineerTo>
-<use>0</use>
-<logicalDatatype>LOGDT025</logicalDatatype>
-<domain>F85DEECF-08FF-A535-9FFD-A87F84CF578B</domain>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
 </Attribute>
-<Attribute name="interestedKids" id="BA7F9B71-A9A5-9FE7-24BE-B737D49C3382">
+<Attribute name="interestedInKids" id="BA7F9B71-A9A5-9FE7-24BE-B737D49C3382">
 <createdBy>aarguedas</createdBy>
 <createdTime>2015-09-10 03:44:03 UTC</createdTime>
+<comment>treated as a Boolean</comment>
 <generatorID>BA9F1FB8-4261-B897-E5FF-D1EAD5855717</generatorID>
 <ownerDesignName>logicmodel1</ownerDesignName>
 <engineerTo>
 <item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="true"/>
 </engineerTo>
-<use>0</use>
-<logicalDatatype>LOGDT025</logicalDatatype>
-<domain>F85DEECF-08FF-A535-9FFD-A87F84CF578B</domain>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>1</dataTypePrecision>
 </Attribute>
 <Attribute name="likesPets" id="9854F108-F289-E70F-851F-217F3806DC44">
 <createdBy>aarguedas</createdBy>
 <createdTime>2015-09-10 03:44:03 UTC</createdTime>
+<comment>treated as Boolean</comment>
 <generatorID>3D40C3F2-B564-C767-0E27-E0A11B2A6BA2</generatorID>
 <ownerDesignName>logicmodel1</ownerDesignName>
 <engineerTo>
 <item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="true"/>
 </engineerTo>
-<use>0</use>
-<logicalDatatype>LOGDT025</logicalDatatype>
-<domain>F85DEECF-08FF-A535-9FFD-A87F84CF578B</domain>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>1</dataTypePrecision>
 </Attribute>
-<Attribute name="nickname1" id="37CDD6F9-585A-DB10-DA9F-3F7612398DFF">
+<Attribute name="eyeColorID" id="5C01CE74-1EF1-0B6B-4B7C-BF34B0288927">
 <createdBy>aarguedas</createdBy>
-<createdTime>2015-09-10 04:00:02 UTC</createdTime>
-<generatorID>BF953CEC-0865-BA21-B6B5-717A6955201E</generatorID>
+<createdTime>2015-09-12 19:49:03 UTC</createdTime>
+<generatorID>C28C9A3F-B4D4-6AFC-FE3C-AB6725E03051</generatorID>
 <ownerDesignName>logicmodel1</ownerDesignName>
 <engineerTo>
 <item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="true"/>
 </engineerTo>
-<referedAttribute>628EFA1F-46DF-63B3-B1DD-3947A5E52F6E</referedAttribute>
+<referedAttribute>ED23BC15-AB8B-8DFC-8216-A8C437C41757</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>30</dataTypeSize>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+</Attribute>
+<Attribute name="genderID" id="084B5F10-A139-B0DA-7860-7E012C72E941">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-13 02:08:16 UTC</createdTime>
+<generatorID>A41EE887-A4DA-68D5-A55E-79C62600D955</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<engineerTo>
+<item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="true"/>
+</engineerTo>
+<referedAttribute>14EA8F8F-E097-3598-A670-B69BDFE6F63F</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+</Attribute>
+<Attribute name="usernameID" id="0D4E8050-9745-3D4B-A55D-98F556814FE7">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-13 02:11:14 UTC</createdTime>
+<generatorID>B93EEF8E-3175-98D2-9A84-A6160A55DB53</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<engineerTo>
+<item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="true"/>
+</engineerTo>
+<referedAttribute>A3EEF5B1-DD27-0767-81B2-AED65990956B</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+</Attribute>
+<Attribute name="orientationID" id="1B712FCB-AA2D-99F1-D5D2-7E5E5A1F2814">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-13 02:34:20 UTC</createdTime>
+<generatorID>7B50E8A5-5AE1-2336-3FF4-99FB6CF223D0</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<engineerTo>
+<item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="true"/>
+</engineerTo>
+<referedAttribute>095886E0-FF95-FFF8-42E1-F555197F8503</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+</Attribute>
+<Attribute name="rangeID" id="302E86DE-E35B-8783-6395-8C26ADACB5FA">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-13 02:38:40 UTC</createdTime>
+<generatorID>92DD8C1B-A072-6F55-3DF2-40B0A7549E9D</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<engineerTo>
+<item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="true"/>
+</engineerTo>
+<referedAttribute>1900847A-9BF1-856A-584A-0AD9A4AAB08E</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+</Attribute>
+<Attribute name="skinColorID" id="97471C3B-46CA-476A-1AE7-DF1A7193A437">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-13 02:42:38 UTC</createdTime>
+<generatorID>7ABC2E8E-12DC-5E27-DD75-B27F6C1099EA</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<engineerTo>
+<item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="true"/>
+</engineerTo>
+<referedAttribute>38F3515E-1F52-0EAF-C85E-6A0B3C0B4CA3</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+</Attribute>
+<Attribute name="hairColorID" id="8FE1FA45-FF08-AE16-004D-CEB2E4D8026D">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-13 02:44:53 UTC</createdTime>
+<generatorID>01E5CD70-AA44-DEAC-4B06-FB688E2AFF0C</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<engineerTo>
+<item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="true"/>
+</engineerTo>
+<referedAttribute>8DCEC4CE-FC87-CC5F-A0D7-D9C0A654CE80</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+</Attribute>
+<Attribute name="religionID" id="CBF10689-C747-ACBF-0779-654A617BA7E8">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-13 02:46:57 UTC</createdTime>
+<generatorID>D1836319-4DFD-9CE7-753A-D2AF09E2BB7E</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<engineerTo>
+<item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="true"/>
+</engineerTo>
+<referedAttribute>4F1A1904-FFC0-B2AE-9A7D-5E985E416BDB</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+</Attribute>
+<Attribute name="zodiacSignID" id="01C326CD-6C8D-D4BA-E81D-E708EB07BD85">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-13 02:48:34 UTC</createdTime>
+<generatorID>E05A9571-9287-99A7-E482-444011AE85C3</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<engineerTo>
+<item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="true"/>
+</engineerTo>
+<referedAttribute>625C6B28-86BF-C4F0-598D-089B73965A49</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+</Attribute>
+<Attribute name="relationshipStatusID" id="73DCA8BD-13A2-3947-60CA-91A734FF9078">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-13 02:49:30 UTC</createdTime>
+<generatorID>B4077A77-B6AD-4534-4DCE-480425A3CDAB</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<engineerTo>
+<item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="true"/>
+</engineerTo>
+<referedAttribute>566EDB54-BB8A-2472-393B-66FA10C638C0</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+</Attribute>
+<Attribute name="bodyTypeID" id="642309F7-DD02-FA38-DFD0-8B04FFF2CA93">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-13 02:53:57 UTC</createdTime>
+<generatorID>DED1CC67-83C0-BCE8-9EA5-4E58CCC49816</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<engineerTo>
+<item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="true"/>
+</engineerTo>
+<referedAttribute>D023B0F4-78C3-475C-2075-E96DF0951729</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>1</dataTypePrecision>
+</Attribute>
+<Attribute name="exerciseFreqID" id="1A5F2BD0-A0CA-A76F-68A7-87982A259845">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-13 02:57:26 UTC</createdTime>
+<generatorID>AF2F4049-C61F-2949-3E78-B4927FDB0A49</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<engineerTo>
+<item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="true"/>
+</engineerTo>
+<referedAttribute>0EE85D3A-400C-D573-1366-4D99E7D70942</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>1</dataTypePrecision>
+</Attribute>
+<Attribute name="cityID" id="B63C871A-F9E9-DD2F-7172-F39112B077A6">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-13 03:29:59 UTC</createdTime>
+<generatorID>584E5C08-585B-6B10-516E-CA93FD9093E8</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<engineerTo>
+<item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="true"/>
+</engineerTo>
+<referedAttribute>9CB82B9F-C9A3-5E0D-27D6-04CA043B48E5</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
-<identifier id="4C630E1B-B711-44D6-CD1A-F8979BDE1615" name="personPK">
+<identifier id="4C630E1B-B711-44D6-CD1A-F8979BDE1615" name="Person_PK">
 <createdBy>aarguedas</createdBy>
 <createdTime>2015-09-10 03:44:03 UTC</createdTime>
 <generatorID>5692AF1E-A0F7-A6CE-FD8B-3AC117C920F9</generatorID>
 <ownerDesignName>logicmodel1</ownerDesignName>
-<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="false"/>
+<item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="true"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>

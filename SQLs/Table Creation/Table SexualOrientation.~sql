@@ -1,0 +1,7 @@
+CREATE TABLE sexualOrientationCatalog
+  (
+    orientationID   NUMBER (3) NOT NULL ,
+    orientationName VARCHAR2 (20) NOT NULL
+  )
+  LOGGING ;
+ALTER TABLE sexualOrientationCatalog ADD CONSTRAINT sexualOrientationPK PRIMARY KEY ( orientationID ) ;

@@ -1,0 +1,47 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="9B373B63-18FE-CB71-D0A6-888FF88F6409" name="skinColor">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-12 19:57:03 UTC</createdTime>
+<generatorID>F368F1E7-DE03-14EB-0882-2A05C81904D1</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="skinColorID" id="A93EA2A0-42A0-8C78-E02C-2DADA2232730">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-12 19:57:03 UTC</createdTime>
+<generatorID>38F3515E-1F52-0EAF-C85E-6A0B3C0B4CA3</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="skinColor" id="924E1CDE-163C-F7C2-CBD9-1E6785463E83">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-12 19:57:03 UTC</createdTime>
+<generatorID>43B2BFAA-616D-C49B-1A0B-478088080878</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="9F6C5162-5D13-62FE-9435-F8DDE2180274" name="skinColor_PK">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-12 19:57:03 UTC</createdTime>
+<generatorID>3517FF7A-E573-34A7-CCF0-660610BA108D</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A93EA2A0-42A0-8C78-E02C-2DADA2232730"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

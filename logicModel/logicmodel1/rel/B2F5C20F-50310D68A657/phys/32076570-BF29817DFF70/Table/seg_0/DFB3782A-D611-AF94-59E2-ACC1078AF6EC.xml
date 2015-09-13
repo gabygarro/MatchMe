@@ -28,12 +28,6 @@
 <generatorID>Generado por el Usuario</generatorID>
 <ownerDesignName>logicmodel1</ownerDesignName>
 </ColumnProxy>
-<ColumnProxy name="administrator" id="92CE55DB-D268-87DB-60D6-7581939F7C22">
-<createdBy>aarguedas</createdBy>
-<createdTime>2015-09-10 03:53:06 UTC</createdTime>
-<generatorID>Generado por el Usuario</generatorID>
-<ownerDesignName>logicmodel1</ownerDesignName>
-</ColumnProxy>
 </columnProxies>
 <primaryKeys>
 <PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="username_PK" id="6C1711EC-324C-EDD7-9E30-E64F9C00B448">

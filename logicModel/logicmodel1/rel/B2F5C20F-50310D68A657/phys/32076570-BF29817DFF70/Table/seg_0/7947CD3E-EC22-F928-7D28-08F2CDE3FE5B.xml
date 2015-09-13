@@ -1,0 +1,35 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="country" directorySegmentName="seg_0" id="7947CD3E-EC22-F928-7D28-08F2CDE3FE5B">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-12 04:44:19 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="countryName" id="15AE41AB-8CF1-7CBB-B835-BBAE3EEA3544">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-12 04:44:19 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="countryId" id="82252089-E2DA-DDA1-B067-7F30D3874D46">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-12 04:44:19 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="country_PK" id="C5B579CD-B7FB-356D-DA4F-7AD0058167AA">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-12 04:44:19 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>

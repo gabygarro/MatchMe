@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="475B25CF-7333-0B8D-9CE6-AFF69071A427" name="Language">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="475B25CF-7333-0B8D-9CE6-AFF69071A427" name="languageCatalog">
 <createdBy>aarguedas</createdBy>
 <createdTime>2015-09-10 03:44:03 UTC</createdTime>
 <generatorID>538A404E-1CA8-C7BA-D0FF-0DD9992D1754</generatorID>
@@ -16,18 +16,6 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="languageID" id="62754D4A-DA6B-F6EE-4FCB-1DCA87C0D01C">
-<createdBy>aarguedas</createdBy>
-<createdTime>2015-09-10 03:44:03 UTC</createdTime>
-<generatorID>81435469-D30E-A8D3-49B3-E0E3C4F43124</generatorID>
-<ownerDesignName>logicmodel1</ownerDesignName>
-<engineerTo>
-<item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="true"/>
-</engineerTo>
-<use>0</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<domain>2EEABB6B-5645-D1A6-31A3-688B4A70194D</domain>
-</Attribute>
 <Attribute name="languageCode" id="C5169F61-7865-2BA3-99C1-87ED53EC855F">
 <createdBy>aarguedas</createdBy>
 <createdTime>2015-09-10 03:44:03 UTC</createdTime>
@@ -36,38 +24,37 @@
 <engineerTo>
 <item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<domain>3ECDDAA6-4B96-FF18-79AA-C7C1DB1379FC</domain>
+<dataTypeSize>3</dataTypeSize>
 </Attribute>
-<Attribute name="personID" id="038B061A-BB7F-8610-41A8-8C28E44A6B2A">
+<Attribute name="languageName" id="D158FC74-0D60-B45B-9DC9-9AC6212DA8C3">
 <createdBy>aarguedas</createdBy>
-<createdTime>2015-09-10 03:44:03 UTC</createdTime>
-<generatorID>007E0554-88FD-F071-A379-1C3828A6D69C</generatorID>
+<createdTime>2015-09-13 01:54:11 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
 <ownerDesignName>logicmodel1</ownerDesignName>
 <engineerTo>
 <item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="true"/>
 </engineerTo>
-<referedAttribute>685AA793-6425-0C9C-E072-CFE88E1DD328</referedAttribute>
-<use>0</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<domain>B98CACD9-68CC-E2BD-C8EF-5A864754AE77</domain>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
-<identifier id="F77C29D6-1CBC-9454-2429-87221C350D37" name="LanguagePK">
+<identifier id="F77C29D6-1CBC-9454-2429-87221C350D37" name="Language_PK">
 <createdBy>aarguedas</createdBy>
 <createdTime>2015-09-10 03:44:03 UTC</createdTime>
 <generatorID>77B1B528-9DB3-5A2D-2BFE-3D4C3F3E4FCF</generatorID>
 <ownerDesignName>logicmodel1</ownerDesignName>
-<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="false"/>
+<item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="true"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
-<attributeRef>62754D4A-DA6B-F6EE-4FCB-1DCA87C0D01C</attributeRef>
+<attributeRef>C5169F61-7865-2BA3-99C1-87ED53EC855F</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>

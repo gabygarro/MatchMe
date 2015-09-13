@@ -1,0 +1,90 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="1A565F7E-0F00-C5F0-8618-C6C71CE9F941" name="winkPerson">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-12 21:20:27 UTC</createdTime>
+<generatorID>1270ADF4-43F3-B336-0E09-FF2A0248ACEC</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="winkID" id="4758FE4D-C3E0-7EE3-364A-79F979F2901E">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-12 21:20:27 UTC</createdTime>
+<generatorID>2DD1A454-7FA2-F2FD-FDF8-92DBF4F3FC9D</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Person_personID1" id="36D22958-E93C-9AAD-76C9-9B29F1FC941E">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-13 03:47:08 UTC</createdTime>
+<generatorID>4D153A05-7301-88F3-CFC9-144866E9E439</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>B98CACD9-68CC-E2BD-C8EF-5A864754AE77</domain>
+<delegate>477AC184-8517-8FD4-C391-05C970180863</delegate>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C3C50423-2301-9410-E648-7D3866F01BBC" referredColumn="477AC184-8517-8FD4-C391-05C970180863"/>
+</associations>
+</Column>
+<Column name="Person_personID" id="5593A1A3-6D30-91B0-C266-8312DDDC6898">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-13 03:47:08 UTC</createdTime>
+<generatorID>10A7658E-17CB-E991-2DD3-23226E0F2DEE</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>B98CACD9-68CC-E2BD-C8EF-5A864754AE77</domain>
+<delegate>477AC184-8517-8FD4-C391-05C970180863</delegate>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="21D2E055-A73E-48CC-242F-E1749D2B57EE" referredColumn="477AC184-8517-8FD4-C391-05C970180863"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="2377F659-029A-CDC4-E8F9-848CC84EE1D2" name="winkPerson_PK">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-12 21:20:27 UTC</createdTime>
+<generatorID>D16DBE61-8EF7-3FC6-1D76-28921230559B</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4758FE4D-C3E0-7EE3-364A-79F979F2901E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B59FA8ED-625C-3586-DCF5-970AB27B4B6B" name="winkPerson_Person_FK">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-13 03:47:08 UTC</createdTime>
+<generatorID>6ABE63A7-AD5B-1AA3-0059-0F535A846C62</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5593A1A3-6D30-91B0-C266-8312DDDC6898"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F8484FE8-5682-75E1-CA46-6393E2AA88DE" name="winkPerson_Person_FKv1">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-13 03:47:08 UTC</createdTime>
+<generatorID>9AF7FD1C-1B6A-012C-01CB-3567B0FCC488</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="36D22958-E93C-9AAD-76C9-9B29F1FC941E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

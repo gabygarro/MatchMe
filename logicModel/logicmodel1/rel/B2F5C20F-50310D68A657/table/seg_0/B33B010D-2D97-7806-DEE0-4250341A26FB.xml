@@ -1,0 +1,100 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="B33B010D-2D97-7806-DEE0-4250341A26FB" name="visitLog">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-13 03:47:08 UTC</createdTime>
+<generatorID>BEB88A16-0860-21C8-29C0-0522152D2B76</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="logNumber" id="0AFE7B92-0F91-B7E4-C64E-52AFBDC8648C">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-13 03:47:08 UTC</createdTime>
+<generatorID>DCC88D96-DC8E-26A0-3AB3-BECDE9397251</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="logDate" id="E090BCE8-CF74-AE4E-092C-D26066658336">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-13 03:47:08 UTC</createdTime>
+<generatorID>F5A1316D-73DD-C98B-6A28-BBF955E86CC4</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Person_personID1" id="9272525E-3F2C-AA3E-7C86-6B45D18F338D">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-13 03:47:08 UTC</createdTime>
+<generatorID>CA7D18AD-427D-A9F4-FBC4-E5D8DC3DFF0E</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>B98CACD9-68CC-E2BD-C8EF-5A864754AE77</domain>
+<delegate>477AC184-8517-8FD4-C391-05C970180863</delegate>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="4C366A06-8494-4E00-4365-AB49D8A570BE" referredColumn="477AC184-8517-8FD4-C391-05C970180863"/>
+</associations>
+</Column>
+<Column name="Person_personID" id="777583D3-9208-2850-91E0-A69BDA858525">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-13 03:47:08 UTC</createdTime>
+<generatorID>4B064462-7BB3-B38E-E284-85E6CA4FF6B6</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>B98CACD9-68CC-E2BD-C8EF-5A864754AE77</domain>
+<delegate>477AC184-8517-8FD4-C391-05C970180863</delegate>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="7ADD604A-A126-C810-E567-6CF2D2A5FAB5" referredColumn="477AC184-8517-8FD4-C391-05C970180863"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="378A9EA7-462F-5DE3-05C3-85C659D7F617" name="visitLog_PK">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-13 03:47:08 UTC</createdTime>
+<generatorID>C12C6CC1-53E6-6465-4B04-E2C0130B7CEC</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0AFE7B92-0F91-B7E4-C64E-52AFBDC8648C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="88FDB240-04BE-C140-3EE0-5D1972BEFAEF" name="visitLog_Person_FK">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-13 03:47:08 UTC</createdTime>
+<generatorID>76603B7D-AB3A-70E1-F5CE-59FCAE01786F</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="777583D3-9208-2850-91E0-A69BDA858525"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="61F88F69-364A-0FB3-EE80-4179EAB4121A" name="visitLog_Person_FKv1">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-13 03:47:08 UTC</createdTime>
+<generatorID>3E12B9E0-83EC-CDE6-9FB3-ED438FFA408E</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9272525E-3F2C-AA3E-7C86-6B45D18F338D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

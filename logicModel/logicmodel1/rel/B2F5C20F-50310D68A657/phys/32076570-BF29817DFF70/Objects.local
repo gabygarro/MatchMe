@@ -5,11 +5,34 @@
    <object objectType="User" objectID="PUBLIC" name="PUBLIC" seqName="seg_0"/>
    <object objectType="SType" objectID="47E390DE-0671-C4B1-8428-0F45CBEE18F8" name="SDO_GEOMETRY" seqName="seg_0"/>
    <object objectType="SType" objectID="F72C39E0-D1CA-8821-2AD7-A1E95A37D3D1" name="XMLTYPE" seqName="seg_0"/>
-   <object objectType="Table" objectID="0C871334-7B28-50C1-9649-9A4C1AC1624E" name="Hobbie" seqName="seg_0"/>
-   <object objectType="Table" objectID="538A404E-1CA8-C7BA-D0FF-0DD9992D1754" name="Language" seqName="seg_0"/>
-   <object objectType="Table" objectID="8A6B9D9C-5036-C618-9637-9E72DDE1E48C" name="Interest" seqName="seg_0"/>
+   <object objectType="Table" objectID="0C871334-7B28-50C1-9649-9A4C1AC1624E" name="hobbieCatalog" seqName="seg_0"/>
+   <object objectType="Table" objectID="0CFE0CAC-E92E-F86A-FE2B-8C39646CC816" name="hobbiesByPerson" seqName="seg_0"/>
+   <object objectType="Table" objectID="1A565F7E-0F00-C5F0-8618-C6C71CE9F941" name="winkPerson" seqName="seg_0"/>
+   <object objectType="Table" objectID="295C3CCD-D74A-6165-973A-D15C47E4157D" name="languageByPerson" seqName="seg_0"/>
+   <object objectType="Table" objectID="538A404E-1CA8-C7BA-D0FF-0DD9992D1754" name="languageCatalog" seqName="seg_0"/>
+   <object objectType="Table" objectID="54BAAC7C-5AA2-6812-2BCD-62E551370904" name="religionCatalog" seqName="seg_0"/>
+   <object objectType="Table" objectID="5B6112E2-51F5-3657-6638-CFDC83D3CD21" name="userTypeCatalog" seqName="seg_0"/>
+   <object objectType="Table" objectID="631D9609-6138-F1DE-D814-05779F76B9CB" name="Parameter" seqName="seg_0"/>
+   <object objectType="Table" objectID="711BCD6D-AD4E-AB18-F4BD-FBDB5398A020" name="hairColorCatalog" seqName="seg_0"/>
+   <object objectType="Table" objectID="77356477-B65A-629E-2449-964FE9420D36" name="genderCatalog" seqName="seg_0"/>
+   <object objectType="Table" objectID="7947CD3E-EC22-F928-7D28-08F2CDE3FE5B" name="countryCatalog" seqName="seg_0"/>
+   <object objectType="Table" objectID="7D6810C4-4AD7-EFEB-F3A2-C803FD1F091E" name="sexualOrientationCatalog" seqName="seg_0"/>
+   <object objectType="Table" objectID="84DD6110-5AA4-8F5D-D152-59B66B7A0A9C" name="bodyTypeCatalog" seqName="seg_0"/>
+   <object objectType="Table" objectID="8719698D-6471-E19A-65EF-B4E67FCF1BB7" name="matchedPersons" seqName="seg_0"/>
+   <object objectType="Table" objectID="8A6B9D9C-5036-C618-9637-9E72DDE1E48C" name="interestCatalog" seqName="seg_0"/>
+   <object objectType="Table" objectID="911122C7-F2F2-98FD-A088-0A159E895817" name="event" seqName="seg_0"/>
+   <object objectType="Table" objectID="9452BEF0-E8DF-E458-EFBA-110C40106691" name="exerciseFrequencyCatalog" seqName="seg_0"/>
+   <object objectType="Table" objectID="9B373B63-18FE-CB71-D0A6-888FF88F6409" name="skinColor" seqName="seg_0"/>
+   <object objectType="Table" objectID="AFED0A61-AD58-E049-8B0B-B750575A74F1" name="ageRangeCatalog" seqName="seg_0"/>
+   <object objectType="Table" objectID="B33B010D-2D97-7806-DEE0-4250341A26FB" name="visitLog" seqName="seg_0"/>
    <object objectType="Table" objectID="BBC67491-FD93-9CD2-891E-981E3E4458E1" name="Person" seqName="seg_0"/>
+   <object objectType="Table" objectID="C0A7EEBD-C35D-98C6-DE4F-33BEFD55273B" name="cityCatalog" seqName="seg_0"/>
+   <object objectType="Table" objectID="C5F356F6-FA87-10FF-F645-79CEFF76CF62" name="relationshipStatusCatalog" seqName="seg_0"/>
+   <object objectType="Table" objectID="DA66F701-931D-9F59-5B5B-61A55BE9B6D7" name="zodiacSignCatalog" seqName="seg_0"/>
+   <object objectType="Table" objectID="DD3DFD38-35D1-0B2C-2514-BEAA8823002E" name="eyeColorCatalog" seqName="seg_0"/>
    <object objectType="Table" objectID="DFB3782A-D611-AF94-59E2-ACC1078AF6EC" name="username" seqName="seg_0"/>
-   <object objectType="Table" objectID="EC47232B-3688-FCB3-1C96-30E003CB77F9" name="email" seqName="seg_0"/>
+   <object objectType="Table" objectID="E7FC5B85-2B70-E750-281C-697269803FE5" name="eventsByPerson" seqName="seg_0"/>
+   <object objectType="Table" objectID="EC47232B-3688-FCB3-1C96-30E003CB77F9" name="emailsByPerson" seqName="seg_0"/>
+   <object objectType="Table" objectID="F6304F32-80E4-ED2C-BC91-1E6E2DD6851B" name="interestsByPerson" seqName="seg_0"/>
    <object objectType="Segment" objectID="AF9755D4-0779-99A6-62E0-BD114AB0B554" name="Storage2" seqName="seg_0"/>
 </oracle.dbtools.crest.model.design.storage.oracle.v11g.StorageDesignOraclev11g>

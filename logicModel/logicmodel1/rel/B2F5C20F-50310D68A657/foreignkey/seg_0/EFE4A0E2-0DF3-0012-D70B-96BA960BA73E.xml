@@ -1,0 +1,14 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="EFE4A0E2-0DF3-0012-D70B-96BA960BA73E" name="Person_hairColorCatalog_FK">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-13 03:47:08 UTC</createdTime>
+<generatorID>01E5CD70-AA44-DEAC-4B06-FB688E2AFF0C</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<containerWithKeyObject>BBC67491-FD93-9CD2-891E-981E3E4458E1</containerWithKeyObject>
+<deleteRule>NO ACTION</deleteRule>
+<localFKIndex>B6346D50-3B57-8807-478C-95552B5ACF12</localFKIndex>
+<keyObject>FFA48467-A7EC-B3EF-827C-95C30286A0FB</keyObject>
+<mandatory>true</mandatory>
+<transferable>true</transferable>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

@@ -1,0 +1,88 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="BEB88A16-0860-21C8-29C0-0522152D2B76" name="visitLog">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-13 03:20:54 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<engineerTo>
+<item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="logNumber" id="DCC88D96-DC8E-26A0-3AB3-BECDE9397251">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-13 03:21:15 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<engineerTo>
+<item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+</Attribute>
+<Attribute name="logDate" id="F5A1316D-73DD-C98B-6A28-BBF955E86CC4">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-13 03:22:04 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<engineerTo>
+<item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+</Attribute>
+<Attribute name="personID" id="CA7D18AD-427D-A9F4-FBC4-E5D8DC3DFF0E">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-13 03:28:01 UTC</createdTime>
+<generatorID>3E12B9E0-83EC-CDE6-9FB3-ED438FFA408E</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<engineerTo>
+<item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="true"/>
+</engineerTo>
+<referedAttribute>685AA793-6425-0C9C-E072-CFE88E1DD328</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+</Attribute>
+<Attribute name="personID1" id="4B064462-7BB3-B38E-E284-85E6CA4FF6B6">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-13 03:29:25 UTC</createdTime>
+<generatorID>76603B7D-AB3A-70E1-F5CE-59FCAE01786F</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<engineerTo>
+<item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="true"/>
+</engineerTo>
+<referedAttribute>685AA793-6425-0C9C-E072-CFE88E1DD328</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="C12C6CC1-53E6-6465-4B04-E2C0130B7CEC" name="databaseLog PK">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-13 03:22:02 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<engineerTo>
+<item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>DCC88D96-DC8E-26A0-3AB3-BECDE9397251</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

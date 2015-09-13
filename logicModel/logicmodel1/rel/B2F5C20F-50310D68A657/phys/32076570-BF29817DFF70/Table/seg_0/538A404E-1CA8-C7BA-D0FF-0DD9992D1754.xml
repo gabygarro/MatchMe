@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="Language" directorySegmentName="seg_0" id="538A404E-1CA8-C7BA-D0FF-0DD9992D1754">
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="languageCatalog" directorySegmentName="seg_0" id="538A404E-1CA8-C7BA-D0FF-0DD9992D1754">
 <createdBy>aarguedas</createdBy>
 <createdTime>2015-09-10 03:42:56 UTC</createdTime>
 <generatorID>Generado por el Usuario</generatorID>
@@ -9,15 +9,9 @@
 <accessDriverType>oracle_loader</accessDriverType>
 <rejectLimit></rejectLimit>
 <columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
-<ColumnProxy name="languageID" id="81435469-D30E-A8D3-49B3-E0E3C4F43124">
+<ColumnProxy name="languageName" id="A37C0C89-AB2B-C716-28E8-DA5C970390F5">
 <createdBy>aarguedas</createdBy>
-<createdTime>2015-09-10 03:42:56 UTC</createdTime>
-<generatorID>Generado por el Usuario</generatorID>
-<ownerDesignName>logicmodel1</ownerDesignName>
-</ColumnProxy>
-<ColumnProxy name="personID" id="ACE7C741-4440-8F0D-92A5-F0D77F29E034">
-<createdBy>aarguedas</createdBy>
-<createdTime>2015-09-10 03:42:56 UTC</createdTime>
+<createdTime>2015-09-13 03:47:08 UTC</createdTime>
 <generatorID>Generado por el Usuario</generatorID>
 <ownerDesignName>logicmodel1</ownerDesignName>
 </ColumnProxy>
@@ -28,16 +22,8 @@
 <ownerDesignName>logicmodel1</ownerDesignName>
 </ColumnProxy>
 </columnProxies>
-<foreignKeys>
-<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="language_Person_FK" id="EBACBC92-1526-C196-665E-2CCC02FC9B78">
-<createdBy>aarguedas</createdBy>
-<createdTime>2015-09-10 03:42:56 UTC</createdTime>
-<generatorID>Generado por el Usuario</generatorID>
-<ownerDesignName>logicmodel1</ownerDesignName>
-</ForeignKey>
-</foreignKeys>
 <primaryKeys>
-<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="LanguagePK" id="77B1B528-9DB3-5A2D-2BFE-3D4C3F3E4FCF">
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="Language_PK" id="77B1B528-9DB3-5A2D-2BFE-3D4C3F3E4FCF">
 <createdBy>aarguedas</createdBy>
 <createdTime>2015-09-10 03:42:56 UTC</createdTime>
 <generatorID>Generado por el Usuario</generatorID>

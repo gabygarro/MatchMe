@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="8BAED558-7A18-DC85-3CD2-136D0D886085" name="Hobbie">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="8BAED558-7A18-DC85-3CD2-136D0D886085" name="hobbieCatalog">
 <createdBy>aarguedas</createdBy>
 <createdTime>2015-09-10 03:44:03 UTC</createdTime>
 <generatorID>0C871334-7B28-50C1-9649-9A4C1AC1624E</generatorID>
@@ -24,11 +24,12 @@
 <engineerTo>
 <item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="true"/>
 </engineerTo>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
-<domain>2EEABB6B-5645-D1A6-31A3-688B4A70194D</domain>
+<dataTypePrecision>3</dataTypePrecision>
 </Attribute>
-<Attribute name="hobbie" id="DA014551-E839-B329-35BC-258BAFFE7E67">
+<Attribute name="hobbieName" id="DA014551-E839-B329-35BC-258BAFFE7E67">
 <createdBy>aarguedas</createdBy>
 <createdTime>2015-09-10 03:44:03 UTC</createdTime>
 <generatorID>112D4042-0B2C-8D85-9748-C0D34E94656B</generatorID>
@@ -36,34 +37,20 @@
 <engineerTo>
 <item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<domain>5D7D20A5-37AF-3863-1387-7C40DA3049E2</domain>
-</Attribute>
-<Attribute name="personID" id="E653A609-1761-495A-BBE2-28DFD9CA6215">
-<createdBy>aarguedas</createdBy>
-<createdTime>2015-09-10 03:44:03 UTC</createdTime>
-<generatorID>A3201078-A12C-381A-A7AE-114E9334B27F</generatorID>
-<ownerDesignName>logicmodel1</ownerDesignName>
-<engineerTo>
-<item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="true"/>
-</engineerTo>
-<referedAttribute>685AA793-6425-0C9C-E072-CFE88E1DD328</referedAttribute>
-<use>0</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<domain>B98CACD9-68CC-E2BD-C8EF-5A864754AE77</domain>
+<dataTypeSize>30</dataTypeSize>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
-<identifier id="4583B560-C401-33CF-27C8-A7DB3B51BDBD" name="hobbiePK">
+<identifier id="4583B560-C401-33CF-27C8-A7DB3B51BDBD" name="Hobbie_PK">
 <createdBy>aarguedas</createdBy>
 <createdTime>2015-09-10 03:44:03 UTC</createdTime>
 <generatorID>34A20B34-0A86-41C0-F447-74CF9D17FCF2</generatorID>
 <ownerDesignName>logicmodel1</ownerDesignName>
-<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="false"/>
+<item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="true"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>

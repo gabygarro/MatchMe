@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="citiesByCountry" directorySegmentName="seg_0" id="4A3B38A3-E4FC-319C-152A-823F6CF4AFA7">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-13 01:39:28 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<engineerTo>
+<item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="true"/>
+</engineerTo>
+<sourcePk>03F5F62D-7907-109F-D63E-1411A72C18B6</sourcePk>
+<targetPk>F0EB7EB2-F76D-22B5-67E7-970180FE9BDA</targetPk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>*</sourceCardinality>
+<sourceEntity>33C509E9-2769-7B61-D161-5996F6CE3D11</sourceEntity>
+<targetCardinalityString>1</targetCardinalityString>
+<targetEntity>BC0C2917-F5F4-CDF7-0044-8B74218FC98D</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

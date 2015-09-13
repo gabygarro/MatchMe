@@ -1,0 +1,7 @@
+CREATE TABLE ageRangeCatalog
+  (
+    rangeID  NUMBER (3) CONSTRAINT rangeID_nn NOT NULL ,
+    ageRange VARCHAR2 (6) CONSTRAINT ageRange_nn NOT NULL
+  );
+  
+ALTER TABLE ageRangeCatalog ADD CONSTRAINT ageRangePK PRIMARY KEY ( rangeID ) ;

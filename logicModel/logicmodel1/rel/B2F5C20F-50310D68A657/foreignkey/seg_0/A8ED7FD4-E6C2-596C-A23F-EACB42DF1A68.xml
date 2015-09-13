@@ -1,0 +1,14 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="A8ED7FD4-E6C2-596C-A23F-EACB42DF1A68" name="cityCatalog_countryCatalog_FK">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-13 03:47:08 UTC</createdTime>
+<generatorID>4A3B38A3-E4FC-319C-152A-823F6CF4AFA7</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<containerWithKeyObject>C0A7EEBD-C35D-98C6-DE4F-33BEFD55273B</containerWithKeyObject>
+<deleteRule>NO ACTION</deleteRule>
+<localFKIndex>2D966963-7924-494B-A9B9-704CAF74CC0A</localFKIndex>
+<keyObject>C5B579CD-B7FB-356D-DA4F-7AD0058167AA</keyObject>
+<mandatory>false</mandatory>
+<transferable>true</transferable>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

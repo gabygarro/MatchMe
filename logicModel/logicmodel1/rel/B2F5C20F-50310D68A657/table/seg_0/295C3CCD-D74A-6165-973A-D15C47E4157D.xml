@@ -1,0 +1,67 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="295C3CCD-D74A-6165-973A-D15C47E4157D" name="languageByPerson">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-13 03:47:08 UTC</createdTime>
+<generatorID>935621B8-D51A-3294-09C7-21B30A3B6FE4</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="languageCatalog_languageCode" id="BAC04DF4-67D6-8D1B-9F4A-D793859C5F51">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-13 03:47:08 UTC</createdTime>
+<generatorID>DB7B8C41-1253-795E-4508-F71C27B8D7E0</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<domain>3ECDDAA6-4B96-FF18-79AA-C7C1DB1379FC</domain>
+<delegate>B78BE9E7-2A2F-53C2-E2A7-4B76A33464CA</delegate>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="814C79AD-4236-CEDD-3413-9F1C694C94AD" referredColumn="B78BE9E7-2A2F-53C2-E2A7-4B76A33464CA"/>
+</associations>
+</Column>
+<Column name="Person_personID" id="DC28BB8A-6544-C9A2-F5DA-76FC85C96D2A">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-13 03:47:08 UTC</createdTime>
+<generatorID>9F4EC496-75F1-49C8-603F-DEDFC4AAEC99</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>0</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<domain>B98CACD9-68CC-E2BD-C8EF-5A864754AE77</domain>
+<delegate>477AC184-8517-8FD4-C391-05C970180863</delegate>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="3057F240-8F9F-7B69-3141-06FE827B272C" referredColumn="477AC184-8517-8FD4-C391-05C970180863"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="430501E9-232E-0377-5CF8-19F2F86696D0" name="languageByPerson_languageCatalog_FK">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-13 03:47:08 UTC</createdTime>
+<generatorID>76033885-B600-EF28-BC34-C48F7BAD825C</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BAC04DF4-67D6-8D1B-9F4A-D793859C5F51"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="51F67911-A499-B34D-1DAF-CE065554F6B6" name="languageByPerson_Person_FK">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-13 03:47:08 UTC</createdTime>
+<generatorID>F88C29E9-FE58-CDA6-14BA-185FB005C63F</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DC28BB8A-6544-C9A2-F5DA-76FC85C96D2A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

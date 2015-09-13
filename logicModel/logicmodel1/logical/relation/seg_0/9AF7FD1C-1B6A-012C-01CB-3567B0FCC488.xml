@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="winker" directorySegmentName="seg_0" id="9AF7FD1C-1B6A-012C-01CB-3567B0FCC488">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-13 03:38:36 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<engineerTo>
+<item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="true"/>
+</engineerTo>
+<sourcePk>4C630E1B-B711-44D6-CD1A-F8979BDE1615</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>DC2843DE-B039-4730-17E0-A0F7D55FC3DC</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>1270ADF4-43F3-B336-0E09-FF2A0248ACEC</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

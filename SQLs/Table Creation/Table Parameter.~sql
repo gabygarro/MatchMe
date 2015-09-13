@@ -1,0 +1,9 @@
+CREATE TABLE Parameter
+  (
+    parameterId          NUMBER (3) NOT NULL ,
+    parameterName        VARCHAR2 (20) ,
+    parameterValue       NUMBER (3),
+    parameterDescription VARCHAR2 (30)
+  );
+  
+  ALTER TABLE Parameter ADD CONSTRAINT Parameter_PK PRIMARY KEY ( parameterId );

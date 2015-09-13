@@ -1,0 +1,35 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="eyesColor" directorySegmentName="seg_0" id="DD3DFD38-35D1-0B2C-2514-BEAA8823002E">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-12 19:50:35 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="eyesColor" id="2D8F8CE7-7E50-1410-9374-F85356B5699F">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-12 19:50:35 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="eyesColorId" id="A0162B9A-D910-CC58-5459-304D0F215D7C">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-12 19:50:35 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="eyesColor_PK" id="462B5F45-D398-8E96-F579-A3AA1EE7B393">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-12 19:50:35 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>
