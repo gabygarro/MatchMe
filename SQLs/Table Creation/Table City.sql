@@ -2,7 +2,7 @@ CREATE TABLE cityCatalog
   (
     cityID                   NUMBER (3) NOT NULL ,
     cityName                 VARCHAR2 (50) NOT NULL ,
-    countryID                NUMBER (3)
+    countryID                VARCHAR2 (3)
   ) ;
 ALTER TABLE cityCatalog ADD CONSTRAINT cityPK PRIMARY KEY ( cityID ) ;
 

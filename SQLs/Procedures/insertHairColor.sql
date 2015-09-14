@@ -1,0 +1,15 @@
+create or replace procedure insertHairColorCat (pHairColor varchar2)
+as
+       BEGIN
+         insert into hairColorCatalog (hairColorID,hairColor)
+         values(HairColorID_seq.nextval,pHairColor);
+
+        Exception
+         WHEN INVALID_NUMBER THEN
+              DBMS_OUTPUT.PUT_LINE ('Hair Color ID error ');
+         WHEN OTHERS THEN
+              DBMS_OUTPUT.PUT_LINE ('Unexpected error');
+              RAISE;
+         commit;
+
+       END;

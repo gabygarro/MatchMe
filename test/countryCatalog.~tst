@@ -1,0 +1,14 @@
+PL/SQL Developer Test script 3.0
+10
+-- Created on 13/09/2015 by AARGUEDAS 
+declare 
+  -- Local variables here
+  i integer;
+begin
+  -- Test statements here
+     insertCountry('CR','Costa Rica');
+     insertCountry('CL','Chile');
+     insertCountry('CN','China');
+end;
+0
+0
