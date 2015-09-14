@@ -1,0 +1,8 @@
+CREATE TABLE hairColor
+  (
+    hairColorId NUMBER (3) NOT NULL ,
+    hairColor   VARCHAR2 (20) NOT NULL
+  );
+ALTER TABLE hairColor ADD CONSTRAINT hairColor_PK PRIMARY KEY ( hairColorId ) ;
+
+ALTER TABLE Person ADD CONSTRAINT hairColor_FK FOREIGN KEY (hairColorId ) REFERENCES hairColor ( hairColorId );

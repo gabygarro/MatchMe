@@ -1,0 +1,8 @@
+CREATE TABLE country
+  (
+    countryId   NUMBER (3) NOT NULL ,
+    countryName VARCHAR2 (50) NOT NULL
+  );
+ALTER TABLE country ADD CONSTRAINT country_PK PRIMARY KEY ( countryId ) ;
+
+--ALTER TABLE Person ADD CONSTRAINT country_FK FOREIGN KEY ( countryId ) REFERENCES country ( countryId ) ;

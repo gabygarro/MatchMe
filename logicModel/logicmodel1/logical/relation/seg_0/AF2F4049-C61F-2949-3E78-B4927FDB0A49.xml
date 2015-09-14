@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="personExerciseFrequency" directorySegmentName="seg_0" id="AF2F4049-C61F-2949-3E78-B4927FDB0A49">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-13 02:57:26 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<engineerTo>
+<item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="true"/>
+</engineerTo>
+<sourcePk>C2128F15-E1D4-E51C-3EA9-3575D6DC599C</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>79F51027-536D-9411-628E-59EFA8BB3BDC</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>DC2843DE-B039-4730-17E0-A0F7D55FC3DC</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

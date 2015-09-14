@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="EC47232B-3688-FCB3-1C96-30E003CB77F9" name="email">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="EC47232B-3688-FCB3-1C96-30E003CB77F9" name="emailsByPerson">
 <sourceDDLFile>Table email.sql</sourceDDLFile>
 <createdBy>aarguedas</createdBy>
 <createdTime>2015-09-10 03:42:56 UTC</createdTime>
@@ -16,6 +16,7 @@
 <generatorID>Generado por el Usuario</generatorID>
 <ownerDesignName>logicmodel1</ownerDesignName>
 <importedID>DD20540B-B599-EEE5-AAD8-0D1A89A46EFA</importedID>
+<useDomainConstraints>false</useDomainConstraints>
 <use>0</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <domain>58689214-AE48-E2BB-58FB-CA84CCEF40D2</domain>
@@ -28,6 +29,7 @@
 <generatorID>Generado por el Usuario</generatorID>
 <ownerDesignName>logicmodel1</ownerDesignName>
 <importedID>EDDD344D-13E9-BFAD-C1A5-BC7010C041F6</importedID>
+<useDomainConstraints>false</useDomainConstraints>
 <use>0</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
 <domain>5D7D20A5-37AF-3863-1387-7C40DA3049E2</domain>

@@ -1,0 +1,47 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="935621B8-D51A-3294-09C7-21B30A3B6FE4" name="languageByPerson">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-13 01:55:28 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<engineerTo>
+<item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="languageCode" id="DB7B8C41-1253-795E-4508-F71C27B8D7E0">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-13 01:56:38 UTC</createdTime>
+<generatorID>76033885-B600-EF28-BC34-C48F7BAD825C</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<engineerTo>
+<item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="true"/>
+</engineerTo>
+<referedAttribute>C5169F61-7865-2BA3-99C1-87ED53EC855F</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>3</dataTypeSize>
+</Attribute>
+<Attribute name="personID" id="9F4EC496-75F1-49C8-603F-DEDFC4AAEC99">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-13 01:56:50 UTC</createdTime>
+<generatorID>F88C29E9-FE58-CDA6-14BA-185FB005C63F</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<engineerTo>
+<item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="true"/>
+</engineerTo>
+<referedAttribute>685AA793-6425-0C9C-E072-CFE88E1DD328</referedAttribute>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+</Attribute>
+</attributes>
+</Entity>

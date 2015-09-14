@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="538A404E-1CA8-C7BA-D0FF-0DD9992D1754" name="Language">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="538A404E-1CA8-C7BA-D0FF-0DD9992D1754" name="languageCatalog">
 <sourceDDLFile>Table Language.sql</sourceDDLFile>
 <createdBy>aarguedas</createdBy>
 <createdTime>2015-09-10 03:42:56 UTC</createdTime>
@@ -9,18 +9,6 @@
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="languageID" id="81435469-D30E-A8D3-49B3-E0E3C4F43124">
-<sourceDDLFile>Table Language.sql</sourceDDLFile>
-<createdBy>aarguedas</createdBy>
-<createdTime>2015-09-10 03:42:56 UTC</createdTime>
-<generatorID>Generado por el Usuario</generatorID>
-<ownerDesignName>logicmodel1</ownerDesignName>
-<importedID>AFA77B3A-96AB-FD43-7DD2-E82405B8BDFD</importedID>
-<use>0</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<domain>2EEABB6B-5645-D1A6-31A3-688B4A70194D</domain>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
 <Column name="languageCode" id="B78BE9E7-2A2F-53C2-E2A7-4B76A33464CA">
 <sourceDDLFile>Table Language.sql</sourceDDLFile>
 <createdBy>aarguedas</createdBy>
@@ -28,27 +16,22 @@
 <generatorID>Generado por el Usuario</generatorID>
 <ownerDesignName>logicmodel1</ownerDesignName>
 <importedID>BAE96F99-6EDD-529E-74ED-102793A0F249</importedID>
-<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
 <use>0</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
 <domain>3ECDDAA6-4B96-FF18-79AA-C7C1DB1379FC</domain>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="Person_personID" id="ACE7C741-4440-8F0D-92A5-F0D77F29E034">
-<sourceDDLFile>Table Language.sql</sourceDDLFile>
+<Column name="languageName" id="A37C0C89-AB2B-C716-28E8-DA5C970390F5">
 <createdBy>aarguedas</createdBy>
-<createdTime>2015-09-10 03:42:56 UTC</createdTime>
-<generatorID>Generado por el Usuario</generatorID>
+<createdTime>2015-09-13 03:47:08 UTC</createdTime>
+<generatorID>D158FC74-0D60-B45B-9DC9-9AC6212DA8C3</generatorID>
 <ownerDesignName>logicmodel1</ownerDesignName>
-<importedID>3EBEF91A-D574-9A82-3791-B7DC2AD1B74C</importedID>
-<use>0</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<domain>B98CACD9-68CC-E2BD-C8EF-5A864754AE77</domain>
-<delegate>477AC184-8517-8FD4-C391-05C970180863</delegate>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
 <autoIncrementCycle>false</autoIncrementCycle>
-<associations>
-<colAssociation fkAssociation="3D6DA3D0-C931-5DDF-0CC1-E0B8D4105CC5" referredColumn="477AC184-8517-8FD4-C391-05C970180863"/>
-</associations>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
@@ -63,18 +46,7 @@
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="81435469-D30E-A8D3-49B3-E0E3C4F43124"/>
-</indexColumnUsage>
-</ind_PK_UK>
-<ind_PK_UK id="EBACBC92-1526-C196-665E-2CCC02FC9B78" name="Language_Person_FK">
-<createdBy>aarguedas</createdBy>
-<createdTime>2015-09-10 03:42:56 UTC</createdTime>
-<generatorID>Generado por el Usuario</generatorID>
-<ownerDesignName>logicmodel1</ownerDesignName>
-<indexState>Foreign Key</indexState>
-<isSurrogateKey>false</isSurrogateKey>
-<indexColumnUsage>
-<colUsage columnID="ACE7C741-4440-8F0D-92A5-F0D77F29E034"/>
+<colUsage columnID="B78BE9E7-2A2F-53C2-E2A7-4B76A33464CA"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

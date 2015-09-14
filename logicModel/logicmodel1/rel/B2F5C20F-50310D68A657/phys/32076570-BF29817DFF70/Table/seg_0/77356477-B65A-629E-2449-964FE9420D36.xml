@@ -1,0 +1,43 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="genderCatalog" directorySegmentName="seg_0" id="77356477-B65A-629E-2449-964FE9420D36">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-12 02:26:05 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="Gender__IDX" id="9DE3123F-1BEA-01C9-9B89-141F77E01E87">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-12 02:51:29 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+</IndexProxy>
+</indexProxies>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="genderID" id="7227E2F5-75CF-C23A-A927-6A13124301B4">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-12 02:26:05 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="gender" id="D7EDCB14-A0FC-7A73-0B48-76ED577D4C73">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-12 02:26:05 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="Gender_PK" id="7963710B-E703-91A8-EFF3-1C0B34756CC9">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-12 02:26:05 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>

@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="803CE95C-4D75-E117-8EE7-5EC345229ADB" name="email">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="803CE95C-4D75-E117-8EE7-5EC345229ADB" name="emailsByPerson">
 <createdBy>aarguedas</createdBy>
 <createdTime>2015-09-10 03:44:03 UTC</createdTime>
 <generatorID>EC47232B-3688-FCB3-1C96-30E003CB77F9</generatorID>
@@ -24,9 +24,10 @@
 <engineerTo>
 <item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="true"/>
 </engineerTo>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
-<domain>58689214-AE48-E2BB-58FB-CA84CCEF40D2</domain>
+<dataTypePrecision>4</dataTypePrecision>
 </Attribute>
 <Attribute name="email" id="3E779D3C-4343-1C30-76E3-36F3ABE28630">
 <createdBy>aarguedas</createdBy>
@@ -36,11 +37,12 @@
 <engineerTo>
 <item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="true"/>
 </engineerTo>
-<use>0</use>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<domain>5D7D20A5-37AF-3863-1387-7C40DA3049E2</domain>
+<dataTypeSize>30</dataTypeSize>
 </Attribute>
-<Attribute name="personID" id="93FE851C-A851-338D-743C-815D377F8982">
+<Attribute name="Person personID" id="93FE851C-A851-338D-743C-815D377F8982">
 <createdBy>aarguedas</createdBy>
 <createdTime>2015-09-10 03:44:03 UTC</createdTime>
 <generatorID>C080D283-2970-E709-E104-B32094232E9F</generatorID>
@@ -49,20 +51,19 @@
 <item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="true"/>
 </engineerTo>
 <referedAttribute>685AA793-6425-0C9C-E072-CFE88E1DD328</referedAttribute>
-<use>0</use>
+<use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
-<domain>B98CACD9-68CC-E2BD-C8EF-5A864754AE77</domain>
+<dataTypePrecision>3</dataTypePrecision>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
-<identifier id="9D166872-A1D5-2AE3-5A9B-2B4D4D8D3C2A" name="INDEX 1">
+<identifier id="9D166872-A1D5-2AE3-5A9B-2B4D4D8D3C2A" name="email__UN">
 <createdBy>aarguedas</createdBy>
 <createdTime>2015-09-10 03:44:03 UTC</createdTime>
 <generatorID>17FA8E4A-EA1F-E369-F15C-AB80F3E6F820</generatorID>
 <ownerDesignName>logicmodel1</ownerDesignName>
-<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="false"/>
+<item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="true"/>
 </engineerTo>
 <usedAttributes>
 <attributeRef>3E779D3C-4343-1C30-76E3-36F3ABE28630</attributeRef>

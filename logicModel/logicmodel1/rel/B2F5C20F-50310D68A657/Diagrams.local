@@ -1,4 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
 <oracle.dbtools.crest.model.design.relational.RelationalDesign>
    <object objectType="main_view" objectID="94F497F2-FDC2-4593-DBD5-1A2883A091FD" name="Relational_1" visible="true"/>
+   <object objectType="sub_view" objectID="B4E4E8A7-E8A3-08C1-521A-B9F44897BC8E" name="From_LM_Logical - SubView_1" visible="false"/>
+   <object objectType="sub_view" objectID="77C4C2F4-B474-4297-9F74-34C0B342D90D" name="From_LM_Logical - SubView_2" visible="false"/>
+   <object objectType="sub_view" objectID="AF8DC602-385A-27D9-4A6B-9A653D958B83" name="From_LM_Logical - SubView_3" visible="false"/>
 </oracle.dbtools.crest.model.design.relational.RelationalDesign>

@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="orientationByPerson" directorySegmentName="seg_0" id="7B50E8A5-5AE1-2336-3FF4-99FB6CF223D0">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-13 02:33:28 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<engineerTo>
+<item key="B2F5C20F-AAE8-B97F-9536-50310D68A657" value="true"/>
+</engineerTo>
+<sourcePk>585348A9-E97F-065F-CC60-A7EF46589DE8</sourcePk>
+<targetPk>4C630E1B-B711-44D6-CD1A-F8979BDE1615</targetPk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>D9316227-BBB4-B252-C4E4-2EEC660D385A</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>DC2843DE-B039-4730-17E0-A0F7D55FC3DC</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

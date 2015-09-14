@@ -1,0 +1,13 @@
+CREATE TABLE Gender
+  (
+    genderID        NUMBER (3) NOT NULL ,
+    gender          VARCHAR2 (20) ,
+    personID NUMBER (3) NOT NULL
+  )
+  LOGGING ;
+CREATE UNIQUE INDEX Gender__IDX ON Gender
+  (
+    personID ASC
+  )
+  LOGGING ;
+  ALTER TABLE Gender ADD CONSTRAINT Gender_PK PRIMARY KEY ( genderID ) ;

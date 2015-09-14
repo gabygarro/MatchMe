@@ -21,23 +21,9 @@
 <generatorID>Generado por el Usuario</generatorID>
 <ownerDesignName>logicmodel1</ownerDesignName>
 </ColumnProxy>
-<ColumnProxy name="personID" id="964949CE-3B4B-AE1E-572F-FCF3FABA59A9">
-<createdBy>aarguedas</createdBy>
-<createdTime>2015-09-10 03:42:56 UTC</createdTime>
-<generatorID>Generado por el Usuario</generatorID>
-<ownerDesignName>logicmodel1</ownerDesignName>
-</ColumnProxy>
 </columnProxies>
-<foreignKeys>
-<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="hobbie_Person_FK" id="4CD8CC04-661C-8225-1328-BB4763EA3DD2">
-<createdBy>aarguedas</createdBy>
-<createdTime>2015-09-10 03:42:56 UTC</createdTime>
-<generatorID>Generado por el Usuario</generatorID>
-<ownerDesignName>logicmodel1</ownerDesignName>
-</ForeignKey>
-</foreignKeys>
 <primaryKeys>
-<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="hobbiePK" id="34A20B34-0A86-41C0-F447-74CF9D17FCF2">
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="Hobbie_PK" id="34A20B34-0A86-41C0-F447-74CF9D17FCF2">
 <createdBy>aarguedas</createdBy>
 <createdTime>2015-09-10 03:42:56 UTC</createdTime>
 <generatorID>Generado por el Usuario</generatorID>

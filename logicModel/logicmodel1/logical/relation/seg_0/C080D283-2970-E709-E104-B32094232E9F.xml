@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="email_Person_FK" directorySegmentName="seg_0" id="C080D283-2970-E709-E104-B32094232E9F">
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="emailsByPerson" directorySegmentName="seg_0" id="C080D283-2970-E709-E104-B32094232E9F">
 <createdBy>aarguedas</createdBy>
 <createdTime>2015-09-10 03:44:03 UTC</createdTime>
 <generatorID>030A2288-A6D8-9957-9899-A8F6E1A8CD27</generatorID>

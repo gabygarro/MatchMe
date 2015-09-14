@@ -15,12 +15,6 @@
 <generatorID>Generado por el Usuario</generatorID>
 <ownerDesignName>logicmodel1</ownerDesignName>
 </ColumnProxy>
-<ColumnProxy name="personID" id="A846A37C-4A0C-AFEF-BE46-4D9F5B7692C1">
-<createdBy>aarguedas</createdBy>
-<createdTime>2015-09-10 03:42:56 UTC</createdTime>
-<generatorID>Generado por el Usuario</generatorID>
-<ownerDesignName>logicmodel1</ownerDesignName>
-</ColumnProxy>
 <ColumnProxy name="interestID" id="E706BCAE-94FB-DC6C-4893-1F9963E46D89">
 <createdBy>aarguedas</createdBy>
 <createdTime>2015-09-10 03:42:56 UTC</createdTime>
@@ -28,16 +22,8 @@
 <ownerDesignName>logicmodel1</ownerDesignName>
 </ColumnProxy>
 </columnProxies>
-<foreignKeys>
-<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="interest_Person_FK" id="1F9C9ADF-1CE0-2841-5DD9-FC76D1FC8964">
-<createdBy>aarguedas</createdBy>
-<createdTime>2015-09-10 03:42:56 UTC</createdTime>
-<generatorID>Generado por el Usuario</generatorID>
-<ownerDesignName>logicmodel1</ownerDesignName>
-</ForeignKey>
-</foreignKeys>
 <primaryKeys>
-<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="interestPK" id="D397B1DF-D12E-2EC5-6CEA-8E28F54A9C2C">
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="Interest_PK" id="D397B1DF-D12E-2EC5-6CEA-8E28F54A9C2C">
 <createdBy>aarguedas</createdBy>
 <createdTime>2015-09-10 03:42:56 UTC</createdTime>
 <generatorID>Generado por el Usuario</generatorID>

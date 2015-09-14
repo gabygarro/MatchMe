@@ -1,0 +1,55 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="event" directorySegmentName="seg_0" id="911122C7-F2F2-98FD-A088-0A159E895817">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-12 22:43:24 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="eventId" id="1DB25616-CC25-F117-441B-DB6EEEC97CB9">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-12 22:43:24 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="eventDate" id="7B55A06C-C123-FA0B-823E-47014A54EF51">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-12 22:43:24 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="city_cityId" id="8112BA76-7237-481B-5172-EB88AFAE50CA">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-13 01:21:26 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="eventName" id="E3B8F09C-CB93-C982-BCD7-0F318DA4553A">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-12 22:43:24 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="event_city_FK" id="C1CB0089-F184-CDB8-606E-DC8572B359A9">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-13 01:21:26 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="event_PK" id="9F5CDCF2-C6B5-4208-6622-AF19448ACA30">
+<createdBy>aarguedas</createdBy>
+<createdTime>2015-09-12 22:43:24 UTC</createdTime>
+<generatorID>Generado por el Usuario</generatorID>
+<ownerDesignName>logicmodel1</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>
