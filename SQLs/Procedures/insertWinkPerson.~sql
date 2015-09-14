@@ -1,8 +1,8 @@
-create or replace procedure insertWinkperson (pWinkID number, pwinker number, pwinker number)
+create or replace procedure insertWinkperson (pWinkID number, pwinker number, pWinkedPerson number)
 as
        BEGIN
-         insert into winkPerson (WinkID,winker,winker)
-         values(pWinkID,pwinker,pwinker);
+         insert into winkPerson (WinkID,winker,winkedPerson)
+         values(pWinkID,pwinker,pWinkedPerson);
 
         Exception
          WHEN INVALID_NUMBER THEN
