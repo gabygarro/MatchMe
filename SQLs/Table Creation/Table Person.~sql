@@ -33,12 +33,14 @@ CREATE TABLE Person
     exerciseFreqID         NUMBER (1) CONSTRAINT exerciseFreqID_nn NOT NULL ,
     cityID                 NUMBER (3) CONSTRAINT cityID_nn NOT NULL
   ) ;
-
+  
   ALTER TABLE Person
         ADD CONSTRAINT PersonPK PRIMARY KEY ( personID )
         USING INDEX
         TABLESPACE ADMIN_Ind PCTFREE 20
         STORAGE ( INITIAL 10K NEXT 10K PCTINCREASE 0) ;
+        
+ALTER TABLE Person ADD CONSTRAINT Person_usernameID_FK FOREIGN KEY ( personID ) REFERENCES username ( usernameid ) ;
 
 ALTER TABLE Person ADD CONSTRAINT Person_ageRangeCatalog_FK FOREIGN KEY ( rangeID ) REFERENCES ageRangeCatalog ( rangeID );
 

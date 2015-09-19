@@ -34,6 +34,8 @@ CREATE TABLE Person
     cityID                 NUMBER (3) CONSTRAINT cityID_nn NOT NULL
   ) ;
   
+
+  
   ALTER TABLE Person
         ADD CONSTRAINT PersonPK PRIMARY KEY ( personID )
         USING INDEX

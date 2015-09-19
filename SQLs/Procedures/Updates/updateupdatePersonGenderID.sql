@@ -1,8 +1,8 @@
-create or replace procedure updatePersonLastname2 (pPersonID number, pLastName2 varchar2)
+create or replace procedure updatePersonGenderID (pPersonID number, pGenderID number)
 as
        BEGIN
            UPDATE Person
-           SET LastName2 = pLastName2
+           SET GenderID = pGenderID
            WHERE pPersonID = personID;
 
         Exception

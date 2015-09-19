@@ -1,4 +1,4 @@
-create or replace procedure updatePersonLastname2 (pPersonID number, pLastName2 varchar2)
+reate or replace procedure updatePersonLastname2 (pPersonID number, pLastName2 varchar2)
 as
        BEGIN
            UPDATE Person
