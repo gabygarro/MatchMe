@@ -6,7 +6,7 @@ as
 
         Exception
          WHEN INVALID_NUMBER THEN
-              DBMS_OUTPUT.PUT_LINE ('Username or Password error ');
+              DBMS_OUTPUT.PUT_LINE ('UserName or Password error ');
          WHEN OTHERS THEN
               DBMS_OUTPUT.PUT_LINE ('Unexpected error');
               RAISE;

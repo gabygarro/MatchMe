@@ -2602,7 +2602,8 @@ input[type="search"] {
   input[type="date"].form-control,
   input[type="time"].form-control,
   input[type="datetime-local"].form-control,
-  input[type="month"].form-control {
+  input[type="month"].form-control 
+  input[type="password"].form-control{
     line-height: 34px;
   }
   input[type="date"].input-sm,

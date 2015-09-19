@@ -2,20 +2,21 @@
   Alexis Arguedas - Gabriela Garro - Yanil Gómez
   Pagina principal de la aplicacion -->
 <?
-	echo "error";
-  	$connection = oci_connect('administrator', 'ADMINISTRATOR', 'MATCHMEDB');
-  	if (!$connection) {
-  		$error = oci_error();
-  		trigger_error(htmlentities($error['Database connection failed'], ENT_QUOTES), E_USER_ERROR);
-  		ECHO "Error connecting to the database";
-  	}
+   $registererror = " ";
+   $loginerror = " ";
+   include('login.php'); // Includes Login Script
+   include('register.php') //Includes Register Script
+   //if(isset($_SESSION['userID'])) {
+   //   header("Location: profile.php");
+   //}
 ?>
 
+<!DOCTYPE html>
 <html>
 
   <head>
     <link rel="shortcut icon" href= "imgs/logo (1).png">
-    <title>Match Me Homepage</title>
+    <title>Match Me</title>
 
     <link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
@@ -39,84 +40,89 @@
   </head>
 
   <body>
-
     <!-- SIGN UP MODAL -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+   <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
       <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="myModalLabel">Sign up</h4>
-          </div>
-          <div class="modal-body">
-            <form role="form" action="register.php" method="POST" class="registration-form">
-                <div class="form-group">
+         <div class="modal-content">
+            <div class="modal-header">
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+               <h4 class="modal-title" id="myModalLabel">Sign up</h4>
+            </div>
+            <div class="modal-body">
+               <form role="form" action="register.php" method="POST" class="registration-form">
+                  <div class="form-group">
+                     <span><?php //echo $registererror; ?></span>
+                     <label for="form-email">Email</label>
+                     <input type="text" name="form-email" placeholder="example@example.com" class="form-email form-control" id="form-email"
+                        >
+                  </div>
+                  <div class = "form-group">
+                     <label for="exampleInputPassword1">Password</label>
+                     <input type="password" name = "password1" class="form-control" id="exampleInputPassword1" placeholder="Password..."
+                        >
+                  </div>
+                  <div class = "form-group">
+                     <label for="exampleInputPassword1">Confirm password</label>
+                      <input type="password" name = "password2" class="form-control" id="exampleInputPassword1" placeholder="Confirm password..."
+                        >
+                  </div>
+                  <div class = "form-group">
+                     <input type = "checkbox" name = "admin"><b> Administrator</b><br>
+                  </div>
+                  <div class="modal-footer">
+                     <div class = "container">
+                        <div class ="row">
+                           <div class = "col-md-2">
+                              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                           </div>
+                           <div class = "col-md-2">
+                              <input type = "submit" value = "Register">
+                           </div>
+                        </div>
+                     </div>                   
+                  </div>
+               </form>
+            </div>
+         </div>
+      </div>
+   </div>
+
+   <!--LOG IN MODAL-->
+   <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
+      <div class="modal-dialog" role="document">
+         <div class="modal-content">
+            <div class="modal-header">
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+               <h4 class="modal-title" id="myModalLabel">Log in</h4>
+            </div>
+            <div class="modal-body">
+               <form role="form" action="login.php" method="post" class="registration-form">
+                  <div class="form-group">
+                  <span><?php //echo $loginerror; ?></span>
                     <label for="form-email">Email</label>
                     <input type="text" name="form-email" placeholder="Email..." class="form-email form-control" id="form-email">
-                </div>
-                <div class = "form-group">
+                  </div>
+                  <div class = "form-group">
                     <label for="exampleInputPassword1">Password</label>
                     <input type="password" name = "password1" class="form-control" id="exampleInputPassword1" placeholder="Password...">
-                </div>
-                <div class = "form-group">
-                    <label for="exampleInputPassword1">Confirm password</label>
-                    <input type="password" name = "password2" class="form-control" id="exampleInputPassword1" placeholder="Confirm password...">
-                </div>
-                <div class="modal-footer">
-		          	<div class = "container">
-		          		<div class = "row">
-		          			<div class = "col-md-2">
-		            			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-		            		</div>
-		            		<div class = "col-md-3">
-								<input type = "submit" class="btn btn-default" value = "Register">
-		            		</div>
-		            	</div>
-		            </div>
-		        </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!--LOG IN MODAL-->
-    <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="myModalLabel">Log in</h4>
-          </div>
-          <div class="modal-body">
-            <form role="form" action="login.php" method="post" class="registration-form">
-                <div class="form-group">
-                    <label for="form-email">Email</label>
-                    <input type="text" name="form-email" placeholder="Email..." class="form-email form-control" id="form-email">
-                </div>
-                <div class = "form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input type="password" name = "pass" class="form-control" id="exampleInputPassword1" placeholder="Password...">
-                </div>
-            	<div class="modal-footer">
-		            <div class="modal-footer">
+                  </div>
+               	<div class="modal-footer">
 			          	<div class = "container">
-			          		<div class = "row">
-			          			<div class = "col-md-2">
-			            			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-			            		</div>
-			            		<div class = "col-md-3">
-			            			<input type = "submit" value = "Login">
-			            		</div>
-			            	</div>
-			            </div>
-			        </div>
-		        </div>
-            </form>
-          </div>
-        </div>
+                        <div class ="row">
+                           <div class = "col-md-2">
+                              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                           </div>
+                           <div class = "col-md-2">
+                              <input name = "submit" type = "submit" value = "Log in">
+                           </div>
+                        </div>
+                     </div>
+   			      </div>
+               </form>
+            </div>
+         </div>
       </div>
-    </div>
+   </div>
 
 
     <div class="nav">

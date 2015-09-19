@@ -137,8 +137,17 @@ img { max-width: 100%; }
 	height: 100px;
 }
 
+.modal-body form password {
+	height: 100px;
+}
+
 .modal-body form .input-error {
 	border-color: #fd625e;
+}
+
+.modal-footer {
+	margin: auto;
+	width: 80%;
 }
 
 
