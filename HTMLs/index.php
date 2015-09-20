@@ -2,8 +2,6 @@
   Alexis Arguedas - Gabriela Garro - Yanil Gómez
   Pagina principal de la aplicacion -->
 <?
-   $registererror = " ";
-   $loginerror = " ";
    include('login.php'); // Includes Login Script
    include('register.php') //Includes Register Script
    //if(isset($_SESSION['userID'])) {
@@ -51,7 +49,11 @@
             <div class="modal-body">
                <form role="form" action="register.php" method="POST" class="registration-form">
                   <div class="form-group">
-                     <span><?php //echo $registererror; ?></span>
+                     <span>
+                     <?php
+                        if (isset($_POST['registererror'])) echo $_POST['registererror'];
+                     ?>
+                  </span>
                      <label for="form-email">Email</label>
                      <input type="text" name="form-email" placeholder="example@example.com" class="form-email form-control" id="form-email"
                         >
@@ -96,9 +98,13 @@
                <h4 class="modal-title" id="myModalLabel">Log in</h4>
             </div>
             <div class="modal-body">
-               <form role="form" action="login.php" method="post" class="registration-form">
+               <form role="form" action="login.php" method="POST" class="registration-form">
                   <div class="form-group">
-                  <span><?php //echo $loginerror; ?></span>
+                  <span>
+                     <?php
+                        if (isset($_POST['loginerror'])) echo $_POST['loginerror'];
+                     ?>
+                  </span>
                     <label for="form-email">Email</label>
                     <input type="text" name="form-email" placeholder="Email..." class="form-email form-control" id="form-email">
                   </div>
@@ -129,7 +135,7 @@
       <div class="container">
         <ul class = "pull-left">
             <img src = "imgs/logopeq.png">
-            <li><a href="homepage.html" >match.me</a></li>
+            <li><a href="index.php" >match.me</a></li>
             <li><a href="#">about us</a></li>
         </ul>
         <ul class = "pull-right">

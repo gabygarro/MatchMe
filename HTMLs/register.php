@@ -2,6 +2,7 @@
 	$registerError = " ";
 	if (empty($_POST["form-email"]) || empty($_POST["password1"]) || empty($_POST["password2"])) {
 		$registerError = "Username or Passwords are invalid";
+		$_POST['registerError'] = $registerError;
 		header("Location: http://localhost/MatchMe/HTMLs/index.php#invaliddata");
     }
     else { //if the data wasn't empty
@@ -37,9 +38,11 @@
 			
 			echo "Registration successful. ";
 			echo "<a href = \"index.php\">Continue to log in.</a>";
+			//Should redirect to "create profile"
 		}
 		else {					//if passwords don't match
 			$registerError = "Passwords did not match";
+			$_POST['registerError'] = $registerError;
 			oci_close($connection);
 			header("Location: http://localhost/MatchMe/HTMLs/index.php#passwordsdontnotmatch");
 		}
