@@ -6,13 +6,14 @@
 	//if (isset($_POST["submit"])) {
 		if (empty($_POST['form-email']) || empty($_POST['password1'])) {
 		$loginerror = "Username or Password is invalid";
+		$_POST['loginerror'] = $loginerror;
 		header("Location: http://localhost/MatchMe/HTMLs/index.php#invalidData");
 		}
 		else {
 			//establishes a connection to the db
 			$connection = oci_connect("ADMINISTRATOR", "ADMINISTRATOR", "(DESCRIPTION = (ADDRESS_LIST =
-															      (ADDRESS = (PROTOCOL = TCP)(HOST = 172.26.50.20)(PORT = 1521)))
-															    (CONNECT_DATA = (SID = MATCHDB) (SERVER = DEDICATED)))");
+										(ADDRESS = (PROTOCOL = TCP)(HOST = 172.26.50.20)(PORT = 1521)))
+										(CONNECT_DATA = (SID = MATCHDB) (SERVER = DEDICATED)))");
 			if (!$connection) {
 				echo "Invalid connection " . var_dump(ocierror());
 				die();
@@ -22,7 +23,7 @@
 			$email = $_POST["form-email"];
 			$pass = $_POST["password1"];
 			$usernameID = 0;
-			$passCheck = 0;					//variable to check if username+password match
+			$passCheck = 0;		//variable to check if username+password match
 
 			$query = 'BEGIN checkpassword(:email, :pass, :passCheck); END;';
 			$compiled = oci_parse($connection, $query);
@@ -52,8 +53,12 @@
 				oci_execute($compiled, OCI_NO_AUTO_COMMIT);
 				oci_commit($connection);
 
-				//Initialize session
+				//Store the type of user
+				$_SESSION['userType'] = $userType;
+
+				//Store the user ID
 				$_SESSION["userID"] = $usernameID;
+
 				if ($userType == 1) { //if user is administrator
 					header("Location: http://localhost/MatchMe/HTMLs/admin-homepage.php");
 				}
@@ -63,13 +68,14 @@
 			}
 			else {			//if the combination username+password were denied by the db
 				$loginerror = "Username and password combination were invalid.";
-				header("Location: http://localhost/MatchMe/HTMLs/index.php#username+passworddontnotmatch");
+				$_POST['loginerror'] = $loginerror;
+				header("Location: http://localhost/MatchMe/HTMLs/index.php#username+passworddonotmatch");
 			}
 			oci_close($connection);
 		}
 	//}
 	//else {		//if the submit action wasn't set, redirect
-		//echo "?";
-		//header("Location: http://localhost/MatchMe/HTMLs/index.php");
+	//	echo "?";
+	//	header("Location: http://localhost/MatchMe/HTMLs/index.php#login");
 	//}
 ?>
