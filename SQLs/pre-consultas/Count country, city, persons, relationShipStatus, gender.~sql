@@ -69,3 +69,5 @@ where p.gotmarried = 0
 select count (*)
 from person p
 where p.gotmarried = 1
+
+select 

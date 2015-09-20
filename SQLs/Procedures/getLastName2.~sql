@@ -1,0 +1,7 @@
+create or replace procedure getLastName2(pUserID in number, pLastName2 out varchar2) as
+       BEGIN
+         select LastName2 
+         into pLastName2
+         from person
+         where personID = pUserID;
+       END;

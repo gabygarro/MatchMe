@@ -67,3 +67,9 @@ ALTER TABLE Person ADD CONSTRAINT Person_skinColor_FK FOREIGN KEY ( skinColorID 
 ALTER TABLE Person ADD CONSTRAINT Person_username_FK FOREIGN KEY ( usernameID ) REFERENCES username ( usernameID ) ;
 
 ALTER TABLE Person ADD CONSTRAINT Person_zodiacSignCatalog_FK FOREIGN KEY ( zodiacSignID ) REFERENCES zodiacSignCatalog ( zodiacSignID ) ;
+
+alter table Person add FoundPartner number(1);
+
+alter table Person add GotMarried number(1);
+
+alter table Person add Drinker number(1);

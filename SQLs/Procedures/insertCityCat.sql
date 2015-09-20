@@ -1,8 +1,8 @@
-create or replace procedure insertCityCat(pcityID number, pCityName varchar2, pCountryID varchar2)
+create or replace procedure insertCityCat(pCityName varchar2, pCountryID varchar2)
 as
        BEGIN
-         insert into cityCatalog (cityID,cityName,countryID)
-         values(pcityID,pCityName,pCountryID);
+         insert into cityCatalog (cityid,cityName,countryID)
+         values(cityID_seq.Nextval,pCityName,pCountryID);
 
         Exception
          WHEN INVALID_NUMBER THEN
