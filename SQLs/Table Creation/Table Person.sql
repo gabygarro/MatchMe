@@ -1,6 +1,5 @@
 CREATE TABLE Person
   (
-    personID               NUMBER (3) CONSTRAINT personID_nn NOT NULL ,
     --CONSTRAINT personID_unique UNIQUE (personID) ,
     firstName              VARCHAR2 (50) CONSTRAINT firstName_nn NOT NULL ,
     lastName1              VARCHAR2 (50) CONSTRAINT lastName1_nn NOT NULL ,
@@ -21,7 +20,7 @@ CREATE TABLE Person
     likesPets              NUMBER (1) CONSTRAINT likesPets_nn NOT NULL ,
     eyesColorId            NUMBER (3) CONSTRAINT eyesColorID_nn NOT NULL ,
     genderID               NUMBER (3) CONSTRAINT genderID_nn NOT NULL ,
-    usernameID             NUMBER (3) CONSTRAINT usernameID_nn NOT NULL ,
+    usernameID             NUMBER (5) CONSTRAINT usernameID_nn NOT NULL ,
     orientationID          NUMBER (3) CONSTRAINT orientationID_nn NOT NULL ,
     rangeID                NUMBER (3) CONSTRAINT rangeID_nn NOT NULL ,
     skinColorID            NUMBER (3) CONSTRAINT skinColorID_nn NOT NULL ,
@@ -31,18 +30,18 @@ CREATE TABLE Person
     relationshipStatusID   NUMBER (2) CONSTRAINT relationshipStatusID_nn NOT NULL ,
     bodyTypeID             NUMBER (1) CONSTRAINT bodyTypeID_nn NOT NULL ,
     exerciseFreqID         NUMBER (1) CONSTRAINT exerciseFreqID_nn NOT NULL ,
-    cityID                 NUMBER (3) CONSTRAINT cityID_nn NOT NULL
+    cityID                 NUMBER (4) CONSTRAINT cityID_nn NOT NULL
   ) ;
   
 
   
   ALTER TABLE Person
-        ADD CONSTRAINT PersonPK PRIMARY KEY ( personID )
+        ADD CONSTRAINT PersonPK PRIMARY KEY ( usernameID )
         USING INDEX
         TABLESPACE ADMIN_Ind PCTFREE 20
         STORAGE ( INITIAL 10K NEXT 10K PCTINCREASE 0) ;
         
-ALTER TABLE Person ADD CONSTRAINT Person_usernameID_FK FOREIGN KEY ( personID ) REFERENCES username ( usernameid ) ;
+ALTER TABLE Person ADD CONSTRAINT Person_usernameID_FK FOREIGN KEY ( usernameID ) REFERENCES username ( usernameid ) ;
 
 ALTER TABLE Person ADD CONSTRAINT Person_ageRangeCatalog_FK FOREIGN KEY ( rangeID ) REFERENCES ageRangeCatalog ( rangeID );
 
@@ -63,8 +62,6 @@ ALTER TABLE Person ADD CONSTRAINT Person_religionCatalog_FK FOREIGN KEY ( religi
 ALTER TABLE Person ADD CONSTRAINT Person_sexualOrientation_FK FOREIGN KEY ( orientationID ) REFERENCES sexualOrientationCatalog ( orientationID ) ;
 
 ALTER TABLE Person ADD CONSTRAINT Person_skinColor_FK FOREIGN KEY ( skinColorID ) REFERENCES skinColorCatalog ( skinColorID ) ;
-
-ALTER TABLE Person ADD CONSTRAINT Person_username_FK FOREIGN KEY ( usernameID ) REFERENCES username ( usernameID ) ;
 
 ALTER TABLE Person ADD CONSTRAINT Person_zodiacSignCatalog_FK FOREIGN KEY ( zodiacSignID ) REFERENCES zodiacSignCatalog ( zodiacSignID ) ;
 

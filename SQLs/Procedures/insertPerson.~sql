@@ -12,7 +12,7 @@ create or replace procedure insertPerson (pPersonID number, pFirstName varchar2,
                                        
 as
        BEGIN
-         insert into person (personID, firstName, lastName1,
+         insert into person (firstName, lastName1,
                              lastName2, birthday, registerDate,
                              nickName, address, tagline,
                              highSchool, university, workPlace,  
@@ -23,7 +23,7 @@ as
                              religionID, zodiacSignID, relationShipStatusID,
                              bodyTypeID, exerciseFreqID, cityID)
 
-         values(pPersonID, pFirstName, pLastName1,
+         values(pFirstName, pLastName1,
                 pLastName2, pBirthday, pRegisterDate,
                 pNickName,pAddress,pTagline,
                 pHighSchool,pUniversity,pWorkPlace,  

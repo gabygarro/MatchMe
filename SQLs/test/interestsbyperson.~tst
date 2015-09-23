@@ -6,23 +6,23 @@ declare
   i integer;
 begin
   -- Test statements here
-  insert interestsbyperson(2,41);
-  insert interestsbyperson(5,41);
-  insert interestsbyperson(72,41);
-  insert interestsbyperson(50,41);
-  insert interestsbyperson(57,41);
-  insert interestsbyperson(67,41);
-  insert interestsbyperson(37,41);
-  insert interestsbyperson(27,41);
-  insert interestsbyperson(6,41);
-  insert interestsbyperson(12,24);
-  insert interestsbyperson(13,24);
-  insert interestsbyperson(14,24);
-  insert interestsbyperson(15,24);
-  insert interestsbyperson(17,24);
-  insert interestsbyperson(18,24);
-  insert interestsbyperson(19,24);
-  insert interestsbyperson(17,24);
+  insertinterestsbyperson(2,41);
+  insertinterestsbyperson(5,41);
+  insertinterestsbyperson(72,41);
+  insertinterestsbyperson(50,41);
+  insertinterestsbyperson(57,41);
+  insertinterestsbyperson(67,41);
+  insertinterestsbyperson(37,41);
+  insertinterestsbyperson(27,41);
+  insertinterestsbyperson(6,41);
+  insertinterestsbyperson(12,24);
+  insertinterestsbyperson(13,24);
+  insertinterestsbyperson(14,24);
+  insertinterestsbyperson(15,24);
+  insertinterestsbyperson(17,24);
+  insertinterestsbyperson(18,24);
+  insertinterestsbyperson(19,24);
+  insertinterestsbyperson(17,24);
 end;
 0
 0

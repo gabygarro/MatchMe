@@ -1,5 +1,5 @@
 ﻿PL/SQL Developer Test script 3.0
-2681
+2690
  
 declare 
 
@@ -291,6 +291,14 @@ begin
 
     insertCityCat('Cambodia','KH');
 
+    insertCityCat('Alajuela','CR');
+    insertCityCat('Heredia','CR');
+    insertCityCat('Cartago','CR');
+    insertCityCat('San José','CR');
+    insertCityCat('Puntarenas','CR');
+    insertCityCat('Guanacaste','CR');
+    insertCityCat('Limón','CR');
+    
     insertCityCat('Adamawa','CM');
     insertCityCat('Centre','CM');
     insertCityCat('East','CM');
@@ -555,6 +563,7 @@ begin
     insertCityCat('Tena','EC');
     insertCityCat('Tulcán','EC');
     insertCityCat('Zamora','EC');
+    insertCityCat('Quito','EC');
 
     insertCityCat('Alexandria','EG');
     insertCityCat('Arish','EG');

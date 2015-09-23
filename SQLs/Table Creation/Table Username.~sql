@@ -7,4 +7,4 @@ CREATE TABLE username
   ) ;
 ALTER TABLE username ADD CONSTRAINT usernamePK PRIMARY KEY ( usernameID ) ;
 
-ALTER TABLE username ADD CONSTRAINT username_userTypeCatalog_FK FOREIGN KEY ( userTypeCatalog_userTypeID ) REFERENCES userTypeCatalog ( userTypeID ) NOT DEFERRABLE ;
+ALTER TABLE username ADD CONSTRAINT username_userTypeCatalog_FK FOREIGN KEY ( userTypeID ) REFERENCES userTypeCatalog ( userTypeID ) ;

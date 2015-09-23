@@ -70,4 +70,24 @@ select count (*)
 from person p
 where p.gotmarried = 1
 
-select 
+select top 10 from Person,WinkPerson
+order by (
+
+select count(winkedperson) select Person.Firstname,Person.Lastname1
+from Winkperson, Person
+where winkperson.winkedperson = Person.personID;
+
+select winkedPerson, count(*) as total from WinkPerson
+where ROWNUM <= 10
+group by winkedPerson
+order by total;
+
+select rangeid, count(*) as total from Person
+group by rangeid
+order by total;
+
+select matcher, count(*) as total from MatchedPersons
+where matchedPerson = 4 and ROWNUM <=10
+group by matcher
+order by total;
+

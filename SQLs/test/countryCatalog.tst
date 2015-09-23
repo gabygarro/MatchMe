@@ -5,10 +5,10 @@ declare
 
 begin
 
-    -- insertCountry('CR','Costa Rica');
-    -- insertCountry('CL','Chile');
-    -- insertCountry('CN','China');
-    -- insertCountry('EC','Ecuador');
+      insertCountry('CR','Costa Rica');
+      insertCountry('CL','Chile');
+      insertCountry('CN','China');
+     insertCountry('EC','Ecuador');
      insertCountry('AF','Afghanistan');
      insertCountry('AX','Aland Islands');
      insertCountry('AL','Albania');
