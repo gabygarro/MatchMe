@@ -1,5 +1,5 @@
 ﻿PL/SQL Developer Test script 3.0
-2689
+2690
  
 declare 
 
@@ -563,6 +563,7 @@ begin
     insertCityCat('Tena','EC');
     insertCityCat('Tulcán','EC');
     insertCityCat('Zamora','EC');
+    insertCityCat('Quito','EC');
 
     insertCityCat('Alexandria','EG');
     insertCityCat('Arish','EG');

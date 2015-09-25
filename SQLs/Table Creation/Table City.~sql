@@ -1,6 +1,6 @@
 CREATE TABLE cityCatalog
   (
-    cityID                   NUMBER (3) NOT NULL ,
+    cityID                   NUMBER (4) NOT NULL ,
     cityName                 VARCHAR2 (50) NOT NULL ,
     countryID                VARCHAR2 (3)
   ) ;

@@ -1,13 +1,16 @@
 PL/SQL Developer Test script 3.0
-9
+12
 -- Created on 13/09/2015 by AARGUEDAS 
 declare 
   -- Local variables here
   i integer;
 begin
   -- Test statements here
-     inserts.userTypeCat('Administrator',1);
-     inserts.userTypeCat('Normal',2);
+     insertBodyTypeCat(1,'Ectomorph');
+     insertBodyTypeCat(2,'Mesomorph');
+     insertBodyTypeCat(3,'Endomorph'); 
+  
+  
 end;
 0
 0

@@ -6,9 +6,9 @@ declare
   i integer;
 begin
   -- Test statements here
-     insertBodyTypeCat(1,'Ectomorph');
-     insertBodyTypeCat(2,'Mesomorph');
-     insertBodyTypeCat(3,'Endomorph'); 
+     inserts.BodyTypeCat(1,'Ectomorph');
+     inserts.BodyTypeCat(2,'Mesomorph');
+     inserts.BodyTypeCat(3,'Endomorph'); 
   
   
 end;

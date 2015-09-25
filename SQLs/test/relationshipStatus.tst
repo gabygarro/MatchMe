@@ -5,11 +5,11 @@ declare
 
 
 begin
-  insertRelationShipStatusCat('Single');
-  insertRelationShipStatusCat('Married');
-  insertRelationShipStatusCat('On a relationship');
-  insertRelationShipStatusCat('Divorced');
-  insertRelationShipStatusCat('On an open relationship');
+  inserts.RelationShipStatusCat('Single');
+  inserts.RelationShipStatusCat('Married');
+  inserts.RelationShipStatusCat('On a relationship');
+  inserts.RelationShipStatusCat('Divorced');
+  inserts.RelationShipStatusCat('On an open relationship');
   
 end;
 0

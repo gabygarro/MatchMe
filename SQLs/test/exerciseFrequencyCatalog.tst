@@ -6,12 +6,12 @@ declare
   i integer;
 begin
   -- Test statements here
-     insertExerciseFrequencyCat('Every day');
-     insertExerciseFrequencyCat('5 days');
-     insertExerciseFrequencyCat('2-4 days');
-     insertExerciseFrequencyCat('Once a week');    
-     insertExerciseFrequencyCat('Less than once a week');
-     insertExerciseFrequencyCat('Never');
+     inserts.ExerciseFrequencyCat('Every day');
+     inserts.ExerciseFrequencyCat('5 days');
+     inserts.ExerciseFrequencyCat('2-4 days');
+     inserts.ExerciseFrequencyCat('Once a week');    
+     inserts.ExerciseFrequencyCat('Less than once a week');
+     inserts.ExerciseFrequencyCat('Never');
 end;
 0
 0

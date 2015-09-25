@@ -1,11 +1,10 @@
 PL/SQL Developer Test script 3.0
-8
--- Created on 13/09/2015 by AARGUEDAS 
+7
+
 declare 
-  -- Local variables here
-  i integer;
+
 begin
-  -- Test statements here
+  updatePersonSkinColorID(41,6);
   
 end;
 0

@@ -27,16 +27,8 @@ create or replace package getperson is
        procedure BodyType(pUserID in number, pBodyType out Varchar2);
        procedure ExerciseFreq(pUserID in number, pExerciseFreq out Varchar2);
        procedure City_Country(pUserID in number, pCity out Varchar2,pCountry out Varchar2);
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
+       procedure FoundPartner(pUserID in number, pFoundPartner out Number);
+       procedure Got_Married(pUserID in number, pGotMarried out Number);
+       procedure Person_Drinker(pUserID in number, pDrinker out Number);
+      
  END getperson;

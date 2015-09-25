@@ -4,7 +4,7 @@ procedure FirstName(pUserID in number, pFirstName out varchar2) as
        BEGIN
          select firstname into pFirstName
          from person where
-         personID = pUserID;
+         userNameID = pUserID;
          Exception
          WHEN NO_DATA_FOUND THEN
               DBMS_OUTPUT.PUT_LINE ('Person no found:' || pUserID);
@@ -15,7 +15,7 @@ procedure LastName1(pUserID in number, pLastName1 out varchar2) as
          select LastName1 
          into pLastName1
          from person
-         where personID = pUserID;
+         where userNameID = pUserID;
          Exception
          WHEN NO_DATA_FOUND THEN
               DBMS_OUTPUT.PUT_LINE ('Person no found:' || pUserID);
@@ -26,7 +26,7 @@ procedure LastName2(pUserID in number, pLastName2 out varchar2) as
          select LastName2 
          into pLastName2
          from person
-         where personID = pUserID;
+         where userNameID = pUserID;
          Exception
          WHEN NO_DATA_FOUND THEN
               DBMS_OUTPUT.PUT_LINE ('Person no found:' || pUserID);
@@ -37,7 +37,7 @@ procedure Birthday(pUserID in number, pBirthday out date) as
          select Birthday 
          into pBirthday
          from person
-         where personID = pUserID;
+         where userNameID = pUserID;
          Exception
          WHEN NO_DATA_FOUND THEN
               DBMS_OUTPUT.PUT_LINE ('Person no found:' || pUserID);
@@ -49,7 +49,7 @@ procedure NickName(pUserID in number, pNickName out varchar2) as
          select NickName 
          into pNickName
          from person
-         where personID = pUserID;
+         where userNameID = pUserID;
          Exception
          WHEN NO_DATA_FOUND THEN
               DBMS_OUTPUT.PUT_LINE ('Person no found:' || pUserID);
@@ -60,7 +60,7 @@ procedure Address(pUserID in number, pAddress out varchar2) as
          select Address 
          into pAddress
          from person
-         where personID = pUserID;
+         where userNameID = pUserID;
          Exception
          WHEN NO_DATA_FOUND THEN
               DBMS_OUTPUT.PUT_LINE ('Person no found:' || pUserID);
@@ -71,7 +71,7 @@ procedure TagLine(pUserID in number, pTagLine out varchar2) as
          select TagLine 
          into pTagLine
          from person
-         where personID = pUserID;
+         where userNameID = pUserID;
          Exception
          WHEN NO_DATA_FOUND THEN
               DBMS_OUTPUT.PUT_LINE ('Person no found:' || pUserID);
@@ -82,7 +82,7 @@ procedure HighSchool(pUserID in number, pHighSchool out varchar2) as
          select HighSchool 
          into pHighSchool
          from person
-         where personID = pUserID;
+         where userNameID = pUserID;
          Exception
          WHEN NO_DATA_FOUND THEN
               DBMS_OUTPUT.PUT_LINE ('Person no found:' || pUserID);
@@ -93,7 +93,7 @@ procedure University(pUserID in number, pUniversity out varchar2) as
          select University 
          into pUniversity
          from person
-         where personID = pUserID;
+         where userNameID = pUserID;
          Exception
          WHEN NO_DATA_FOUND THEN
               DBMS_OUTPUT.PUT_LINE ('Person no found:' || pUserID);
@@ -104,7 +104,7 @@ procedure WorkPlace(pUserID in number, pWorkPlace out varchar2) as
          select WorkPlace 
          into pWorkPlace
          from person
-         where personID = pUserID;
+         where userNameID = pUserID;
          Exception
          WHEN NO_DATA_FOUND THEN
               DBMS_OUTPUT.PUT_LINE ('Person no found:' || pUserID);
@@ -115,7 +115,7 @@ procedure Salary(pUserID in number, pSalary out Number) as
          select Salary 
          into pSalary
          from person
-         where personID = pUserID;
+         where userNameID = pUserID;
          Exception
          WHEN NO_DATA_FOUND THEN
               DBMS_OUTPUT.PUT_LINE ('Person no found:' || pUserID);
@@ -126,7 +126,7 @@ procedure Height(pUserID in number, pHeight out Number) as
          select Height 
          into pHeight
          from person
-         where personID = pUserID;
+         where userNameID = pUserID;
          Exception
          WHEN NO_DATA_FOUND THEN
               DBMS_OUTPUT.PUT_LINE ('Person no found:' || pUserID);
@@ -137,7 +137,7 @@ procedure Smoker(pUserID in number, pSmoker out Number) as
          select Smoker 
          into pSmoker
          from person
-         where personID = pUserID;
+         where userNameID = pUserID;
          Exception
          WHEN NO_DATA_FOUND THEN
               DBMS_OUTPUT.PUT_LINE ('Person no found:' || pUserID);
@@ -148,7 +148,7 @@ procedure NumberOfKids(pUserID in number, pNumberOfKids out Number) as
          select NumberOfKids 
          into pNumberOfKids
          from person
-         where personID = pUserID;
+         where userNameID = pUserID;
          Exception
          WHEN NO_DATA_FOUND THEN
               DBMS_OUTPUT.PUT_LINE ('Person no found:' || pUserID);
@@ -159,7 +159,7 @@ procedure InterestedInKids(pUserID in number, pInterestedInKids out Number) as
          select InterestedInKids 
          into pInterestedInKids
          from person
-         where personID = pUserID;
+         where userNameID = pUserID;
          Exception
          WHEN NO_DATA_FOUND THEN
               DBMS_OUTPUT.PUT_LINE ('Person no found:' || pUserID);
@@ -170,7 +170,7 @@ procedure LikesPets(pUserID in number, pLikesPets out Number) as
          select LikesPets 
          into pLikesPets
          from person
-         where personID = pUserID;
+         where userNameID = pUserID;
          Exception
          WHEN NO_DATA_FOUND THEN
               DBMS_OUTPUT.PUT_LINE ('Person no found:' || pUserID);
@@ -183,7 +183,7 @@ procedure EyeColor(pUserID in number, pEyeColor out Varchar2) as
          from EyeColorCatalog ECC
          where ECC.eyecolorid = (select eyescolorid
                                  from person P
-                                 Where p.personid =pUserID);
+                                 Where p.userNameID =pUserID);
          Exception
          WHEN NO_DATA_FOUND THEN
               DBMS_OUTPUT.PUT_LINE ('Person no found:' || pUserID);
@@ -196,7 +196,7 @@ procedure Gender(pUserID in number, pGender out Varchar2) as
          from GenderCatalog GC
          where GC.genderid = (select genderId
                                  from person P
-                                 Where p.personid = pUserID);
+                                 Where p.userNameID = pUserID);
          Exception
          WHEN NO_DATA_FOUND THEN
               DBMS_OUTPUT.PUT_LINE ('Person no found:' || pUserID);
@@ -209,7 +209,7 @@ procedure Orientation(pUserID in number, pOrientation out Varchar2) as
          from Sexualorientationcatalog SOC
          where SOC.OrientationId = (select OrientationId
                                  from person P
-                                 Where p.personid = pUserID);
+                                 Where p.userNameID = pUserID);
          Exception
          WHEN NO_DATA_FOUND THEN
               DBMS_OUTPUT.PUT_LINE ('Person no found:' || pUserID);
@@ -222,7 +222,7 @@ procedure Age_Range(pUserID in number, pAgeRange out Varchar2) as
          from AgeRangeCatalog ARC
          where ARC.RangeId = (select RangeId
                                  from person P
-                                 Where p.personid = pUserID);
+                                 Where p.userNameID = pUserID);
          Exception
          WHEN NO_DATA_FOUND THEN
               DBMS_OUTPUT.PUT_LINE ('Person no found:' || pUserID);
@@ -235,7 +235,7 @@ procedure SkinColor(pUserID in number, pSkinColor out Varchar2) as
          from SkinColorCatalog ECC
          where ECC.SkinColorId = (select SkinColorId
                                  from person P
-                                 Where p.personid = pUserID);
+                                 Where p.userNameID = pUserID);
          Exception
          WHEN NO_DATA_FOUND THEN
               DBMS_OUTPUT.PUT_LINE ('Person no found:' || pUserID);
@@ -248,7 +248,7 @@ procedure HairColor(pUserID in number, pHairColor out Varchar2) as
          from Haircolorcatalog HCC
          where HCC.HairColorId = (select HairColorId
                                   from person P
-                                  Where p.personid = pUserID);
+                                  Where p.userNameID = pUserID);
          Exception
          WHEN NO_DATA_FOUND THEN
               DBMS_OUTPUT.PUT_LINE ('Person no found:' || pUserID);
@@ -261,7 +261,7 @@ procedure Religion(pUserID in number, pReligion out Varchar2) as
          from Religioncatalog RC
          where RC.ReligionId = (select ReligionId
                                   from person P
-                                  Where p.personid = pUserID);
+                                  Where p.userNameID = pUserID);
          Exception
          WHEN NO_DATA_FOUND THEN
               DBMS_OUTPUT.PUT_LINE ('Person no found:' || pUserID);
@@ -274,7 +274,7 @@ procedure ZodiacSign(pUserID in number, pZodiacSign out Varchar2) as
          from Zodiacsigncatalog ZSC
          where ZSC.ZODIACSIGNID = (select ZODIACSIGNID
                                   from person P
-                                  Where p.personid = pUserID);
+                                  Where p.userNameID = pUserID);
          Exception
          WHEN NO_DATA_FOUND THEN
               DBMS_OUTPUT.PUT_LINE ('Person no found:' || pUserID);
@@ -287,7 +287,7 @@ procedure RelationShipStatus(pUserID in number, pRelationShipStatus out Varchar2
          from RelationShipStatusCatalog RSS
          where RSS.RelationShipStatusId = (select RelationShipStatusId
                                   from person P
-                                  Where p.personid = pUserID);
+                                  Where p.userNameID = pUserID);
          Exception
          WHEN NO_DATA_FOUND THEN
               DBMS_OUTPUT.PUT_LINE ('Person no found:' || pUserID);
@@ -300,7 +300,7 @@ procedure BodyType(pUserID in number, pBodyType out Varchar2) as
          from BodyTypecatalog BT
          where BT.BodyTypeId = (select BodyTypeId
                                   from person P
-                                  Where p.personid = pUserID);
+                                  Where p.userNameID = pUserID);
          Exception
          WHEN NO_DATA_FOUND THEN
               DBMS_OUTPUT.PUT_LINE ('Person no found:' || pUserID);
@@ -313,7 +313,7 @@ procedure ExerciseFreq(pUserID in number, pExerciseFreq out Varchar2) as
          from ExerciseFrequencycatalog EFC
          where EFC.ExerciseFreqId = (select ExerciseFreqId
                                   from person P
-                                  Where p.personid = pUserID);
+                                  Where p.userNameID = pUserID);
          Exception
          WHEN NO_DATA_FOUND THEN
               DBMS_OUTPUT.PUT_LINE ('Person no found:' || pUserID);
@@ -326,7 +326,7 @@ procedure City_Country(pUserID in number, pCity out Varchar2, pCountry out Varch
          from Citycatalog CC
          where CC.CityId = (select CityId
                                   from person P
-                                  Where p.personid = pUserID);
+                                  Where p.userNameID = pUserID);
                
          -------
          
@@ -335,7 +335,7 @@ procedure City_Country(pUserID in number, pCity out Varchar2, pCountry out Varch
          from Countrycatalog CC
          where CC.CountryId = (select CountryId
                                   from CityCatalog CityC, Person p
-                                  Where CityC.Cityid = p.Cityid  and p.personid = pUserID);
+                                  Where CityC.Cityid = p.Cityid  and p.userNameID = pUserID);
          Exception
          WHEN NO_DATA_FOUND THEN
               DBMS_OUTPUT.PUT_LINE ('Person no found:' || pUserID);
@@ -348,7 +348,7 @@ procedure FoundPartner(pUserID in number, pFoundPartner out Number) as
          select FoundPartner 
          into pFoundPartner
          from person
-         where personID = pUserID;
+         where userNameID = pUserID;
          Exception
          WHEN NO_DATA_FOUND THEN
               DBMS_OUTPUT.PUT_LINE ('Person no found:' || pUserID);
@@ -359,7 +359,7 @@ procedure Got_Married(pUserID in number, pGotMarried out Number) as
          select GotMarried 
          into pGotMarried
          from person
-         where personID = pUserID;
+         where userNameID = pUserID;
          Exception
          WHEN NO_DATA_FOUND THEN
               DBMS_OUTPUT.PUT_LINE ('Person no found:' || pUserID);
@@ -371,7 +371,7 @@ procedure Person_Drinker(pUserID in number, pDrinker out Number) as
          select Drinker 
          into pDrinker
          from person
-         where personID = pUserID;
+         where userNameID = pUserID;
          Exception
          WHEN NO_DATA_FOUND THEN
               DBMS_OUTPUT.PUT_LINE ('Person no found:' || pUserID);

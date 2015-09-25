@@ -6,9 +6,9 @@ declare
   i integer;
 begin
   -- Test statements here
-  inserts.GenderCat ('Male');
-  inserts.GenderCat ('Female');
-  inserts.GenderCat ('Transsex');
+  insertGenderCat ('Male');
+  insertGenderCat ('Female');
+  insertGenderCat ('Transsex');
  
 
  

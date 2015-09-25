@@ -4,12 +4,12 @@ PL/SQL Developer Test script 3.0
 declare 
 
 begin
-  insertSkinColorCat('Light');
-  insertSkinColorCat('Fair');
-  insertSkinColorCat('Medium');
-  insertSkinColorCat('Olive');
-  insertSkinColorCat('Brown');
-  insertSkinColorCat('Black');
+  inserts.SkinColorCat('Light');
+  inserts.SkinColorCat('Fair');
+  inserts.SkinColorCat('Medium');
+  inserts.SkinColorCat('Olive');
+  inserts.SkinColorCat('Brown');
+  inserts.SkinColorCat('Black');
   
 end;
 0

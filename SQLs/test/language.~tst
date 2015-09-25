@@ -5,16 +5,16 @@ declare
 
 
 begin
-  --insertLanguageCat('FRA','French');
-  --insertLanguageCat('SPA','Spanish');
-  --insertLanguageCat('DEU','German');
-  --insertLanguageCat('ITA','Italian');
-  --insertLanguageCat('ZHO','Chinese');
-  --insertLanguageCat('VIE','Vietnamese');
-  --insertLanguageCat('POR','Portuguese');
-  --insertLanguageCat('JPN','Japanese');
-  --insertLanguageCat('RUS','Russia');
-  --insertLanguageCat('ENG','English');
+  insertLanguageCat('FRA','French');
+  insertLanguageCat('SPA','Spanish');
+  insertLanguageCat('DEU','German');
+  insertLanguageCat('ITA','Italian');
+  insertLanguageCat('ZHO','Chinese');
+  insertLanguageCat('VIE','Vietnamese');
+  insertLanguageCat('POR','Portuguese');
+  insertLanguageCat('JPN','Japanese');
+  insertLanguageCat('RUS','Russia');
+  insertLanguageCat('ENG','English');
   
   insertLanguageCat('TGL','Tagalog');
   insertLanguageCat('POL','Polish');

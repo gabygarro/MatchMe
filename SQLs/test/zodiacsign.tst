@@ -5,18 +5,18 @@ declare
   
   
 begin
-  insertZodiacSignCat('Aries');
-  insertZodiacSignCat('Taurus');
-  insertZodiacSignCat('Gemini');
-  insertZodiacSignCat('Cancer');
-  insertZodiacSignCat('Leo');
-  insertZodiacSignCat('Virgo');
-  insertZodiacSignCat('Libra');
-  insertZodiacSignCat('Scorpio');
-  insertZodiacSignCat('Sagittarius');
-  insertZodiacSignCat('Capricorn');
-  insertZodiacSignCat('Aquarius');
-  insertZodiacSignCat('Pisces');
+  inserts.ZodiacSignCat('Aries');
+  inserts.ZodiacSignCat('Taurus');
+  inserts.ZodiacSignCat('Gemini');
+  inserts.ZodiacSignCat('Cancer');
+  inserts.ZodiacSignCat('Leo');
+  inserts.ZodiacSignCat('Virgo');
+  inserts.ZodiacSignCat('Libra');
+  inserts.ZodiacSignCat('Scorpio');
+  inserts.ZodiacSignCat('Sagittarius');
+  inserts.ZodiacSignCat('Capricorn');
+  inserts.ZodiacSignCat('Aquarius');
+  inserts.ZodiacSignCat('Pisces');
   
 end;
 0

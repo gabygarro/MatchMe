@@ -4,32 +4,32 @@ PL/SQL Developer Test script 3.0
 declare 
 
 begin
-  insertReligionCat('African Traditional and Diasporic');
-  insertReligionCat('Agnostic');
-  insertReligionCat('Atheist');
-  insertReligionCat('Baha i');
-  insertReligionCat('Buddhism');
-  insertReligionCat('Cao Dai');
-  insertReligionCat('Chinese traditional religion');
-  insertReligionCat('Christianity');
-  insertReligionCat('Hinduism');
-  insertReligionCat('Islam');
-  insertReligionCat('Jainism');
-  insertReligionCat('Juche');
-  insertReligionCat('Judaism');
-  insertReligionCat('Neo-Paganism');
-  insertReligionCat('Nonreligious');
-  insertReligionCat('Rastafarianism');
-  insertReligionCat('Secular');
-  insertReligionCat('Shinto');
-  insertReligionCat('Sikhism');
-  insertReligionCat('Spiritism');
-  insertReligionCat('Tenrikyo');
-  insertReligionCat('Unitarian-Universalism');
-  insertReligionCat('Zoroastrianism');
-  insertReligionCat('Primal-indigenous');
-  insertReligionCat('Pastafarianism');
-  insertReligionCat('Other');
+  inserts.ReligionCat('African Traditional and Diasporic');
+  inserts.ReligionCat('Agnostic');
+  inserts.ReligionCat('Atheist');
+  inserts.ReligionCat('Baha i');
+  inserts.ReligionCat('Buddhism');
+  inserts.ReligionCat('Cao Dai');
+  inserts.ReligionCat('Chinese traditional religion');
+  inserts.ReligionCat('Christianity');
+  inserts.ReligionCat('Hinduism');
+  inserts.ReligionCat('Islam');
+  inserts.ReligionCat('Jainism');
+  inserts.ReligionCat('Juche');
+  inserts.ReligionCat('Judaism');
+  inserts.ReligionCat('Neo-Paganism');
+  inserts.ReligionCat('Nonreligious');
+  inserts.ReligionCat('Rastafarianism');
+  inserts.ReligionCat('Secular');
+  inserts.ReligionCat('Shinto');
+  inserts.ReligionCat('Sikhism');
+  inserts.ReligionCat('Spiritism');
+  inserts.ReligionCat('Tenrikyo');
+  inserts.ReligionCat('Unitarian-Universalism');
+  inserts.ReligionCat('Zoroastrianism');
+  inserts.ReligionCat('Primal-indigenous');
+  inserts.ReligionCat('Pastafarianism');
+  inserts.ReligionCat('Other');
   
 end;
 0

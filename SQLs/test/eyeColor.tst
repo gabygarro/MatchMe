@@ -4,15 +4,15 @@ PL/SQL Developer Test script 3.0
 declare 
 
 begin
-  insertEyeColorCat('Amber or Golden');
-  insertEyeColorCat('Black');
-  insertEyeColorCat('Blue');
-  insertEyeColorCat('Chocolate Brown');
-  insertEyeColorCat('Gray');
-  insertEyeColorCat('Jade Green');
-  insertEyeColorCat('Grass Green');
-  insertEyeColorCat('Hazel');
-  insertEyeColorCat('Violet');
+  inserts.EyeColorCat('Amber or Golden');
+  inserts.EyeColorCat('Black');
+  inserts.EyeColorCat('Blue');
+  inserts.EyeColorCat('Chocolate Brown');
+  inserts.EyeColorCat('Gray');
+  inserts.EyeColorCat('Jade Green');
+  inserts.EyeColorCat('Grass Green');
+  inserts.EyeColorCat('Hazel');
+  inserts.EyeColorCat('Violet');
 end;
 0
 0

@@ -5,15 +5,15 @@ declare
   -- Local variables here
 begin
   -- Test statements here
-     insertAgeRangeCat(1,'18-25');
-     insertAgeRangeCat(2,'26-30');
-     insertAgeRangeCat(3,'31-35');
-     insertAgeRangeCat(4,'36-40');
-     insertAgeRangeCat(5,'41-45');
-     insertAgeRangeCat(6,'46-50');
-     insertAgeRangeCat(7,'51-55');
-     insertAgeRangeCat(8,'56-60');
-     insertAgeRangeCat(9,'61-Más');
+     inserts.AgeRangeCat(1,'18-25');
+     inserts.AgeRangeCat(2,'26-30');
+     inserts.AgeRangeCat(3,'31-35');
+     inserts.AgeRangeCat(4,'36-40');
+     inserts.AgeRangeCat(5,'41-45');
+     inserts.AgeRangeCat(6,'46-50');
+     inserts.AgeRangeCat(7,'51-55');
+     inserts.AgeRangeCat(8,'56-60');
+     inserts.AgeRangeCat(9,'61-Más');
      
      
      
