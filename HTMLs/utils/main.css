@@ -44,11 +44,13 @@
   font-size: 48px;  
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: bold;
+  text-shadow: 2px 2px 8px gray;
 }
 
 .jumbotron p {
   font-size: 20px;
   color: #fff;
+  text-shadow: 2px 2px 8px gray;
 }
 
 .neighborhood-guides {
@@ -230,7 +232,7 @@ input[type=password] {
 .thumbnail-container {
   padding-top: 15px;
 }
-.thumbnail {
+.thumbnail-container .thumbnail {
     -moz-border-radius: 50%;
     -webkit-border-radius: 50%;
     border-radius: 50%;

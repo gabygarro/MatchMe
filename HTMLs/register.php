@@ -7,8 +7,8 @@
     }
     else { //if the data wasn't empty
     	$connection = oci_connect("ADMINISTRATOR", "ADMINISTRATOR", "(DESCRIPTION = (ADDRESS_LIST =
-													      (ADDRESS = (PROTOCOL = TCP)(HOST = 172.26.50.20)(PORT = 1521)))
-													    (CONNECT_DATA = (SID = MATCHDB) (SERVER = DEDICATED)))");
+      							(ADDRESS = (PROTOCOL = TCP)(HOST = 172.26.50.118)(PORT = 1521)))
+								(CONNECT_DATA =(SERVICE_NAME = MATCHME)))");
 		if (!$connection) {
 			echo "Invalid connection " . var_dump(ocierror());
 			die();
