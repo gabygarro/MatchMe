@@ -378,7 +378,77 @@ procedure Person_Drinker(pUserID in number, pDrinker out Number) as
        END;
 
 -------------------------------------------------------------------------------
+procedure interests (pUserNameID in number, pInterestName out sys_refcursor) as
+begin
+  open pInterestName for
+  select interestName as interest
+         from interestcatalog, InterestsByPerson
+         where InterestCatalog.InterestID = InterestsByPerson.interestID
+               and personID = pUserNameID
+         order by interestName;
+end interests;
 
+-------------------------------------------------------------------------------
+procedure Email (pEmail in varchar2, pUserNameIDs  out sys_refcursor) as
+begin
+  open pUserNameIDs for
+  select userNameID
+  from username
+  where pEmail = userEmail or userEmail like '%' || userEmail || '%'
+  order by userNameID;
 
+end email;
 
+-------------------------------------------------------------------------------
+procedure userName (pName in varchar2, pUserIDs  out sys_refcursor) as
+begin
+  open pUserIDs for
+  select userNameID, firstName
+  from person
+  where pName = firstName or firstName like '%' || pName || '%'
+  order by userNameID;
+
+end userName;
+-------------------------------------------------------------------------------
+procedure hobbies (pUserNameID in number, pHobbieName out sys_refcursor) as
+begin
+  open pHobbieName for
+  select hobbieName as hobbie
+         from hobbiecatalog HC, hobbiesByPerson HP
+         where HC.hobbieID = HP.hobbieID
+               and personID = pUserNameID
+         order by hobbieName;
+end hobbies;
+-------------------------------------------------------------------------------
+procedure lastName2 (pLastName2 in varchar2, pUserIDs  out sys_refcursor) as
+begin
+  open pUserIDs for
+  select userNameID, lastName2
+  from person
+  where pLastName2 = lastName2 or lastName1 like '%' || pLastName2 || '%'
+  order by userNameID;
+
+end lastName2;
+-------------------------------------------------------------------------------
+procedure lastName1 (pLastName1 in varchar2, pUserIDs  out sys_refcursor) as
+begin
+  open pUserIDs for
+  select userNameID, lastName1
+  from person
+  where pLastName1 = lastName1 or lastName1 like '%' || pLastName1 || '%'
+  order by userNameID;
+
+end lastName1;
+-------------------------------------------------------------------------------
+procedure nickName (pNickName in varchar2, pNickNameIDs  out sys_refcursor) as
+begin
+  open pNickNameIDs for
+  select userNameID
+  from person
+  where pNickName = nickName or nickName like '%' || nickName || '%'
+  order by userNameID;
+
+end nickName;
+-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
 END getperson;

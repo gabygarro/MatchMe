@@ -1,0 +1,9 @@
+create or replace procedure getPersonByLastName1 (pLastName1 in varchar2, pUserIDs  out sys_refcursor) as
+begin
+  open pUserIDs for
+  select userNameID, lastName1
+  from person
+  where pLastName1 = lastName1 or lastName1 like '%' || pLastName1 || '%'
+  order by userNameID;
+  
+end getPersonByLastName1;

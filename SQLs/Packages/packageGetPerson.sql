@@ -30,5 +30,15 @@ create or replace package getperson is
        procedure FoundPartner(pUserID in number, pFoundPartner out Number);
        procedure Got_Married(pUserID in number, pGotMarried out Number);
        procedure Person_Drinker(pUserID in number, pDrinker out Number);
+       procedure interests (pUserNameID in number, pInterestName out sys_refcursor);
+       
+       procedure Email (pEmail in varchar2, pUserNameIDs  out sys_refcursor);
+       procedure userName (pName in varchar2, pUserIDs  out sys_refcursor);
+       procedure hobbies (pUserNameID in number, pHobbieName out sys_refcursor);
+       procedure lastName2 (pLastName2 in varchar2, pUserIDs  out sys_refcursor);
+       procedure lastName1 (pLastName1 in varchar2, pUserIDs  out sys_refcursor);
+       procedure nickName (pNickName in varchar2, pNickNameIDs  out sys_refcursor);
+       
+       
       
  END getperson;

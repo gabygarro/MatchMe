@@ -1,0 +1,19 @@
+PL/SQL Developer Test script 3.0
+15
+-- Created on 25/09/2015 by AARGUEDAS 
+declare 
+  -- Local variables here
+  i integer;
+begin
+  -- Test statements here
+  getPersonByName('M',person);}
+  loop
+     fetch person
+     into UserNameID,
+      exit when person %notfound;
+      dbms_output.put.line(UserNameID ||' | ' || vlast_name ||' | ' || vemployee_id);
+  end loop;
+  close empleados;
+end;
+0
+0
