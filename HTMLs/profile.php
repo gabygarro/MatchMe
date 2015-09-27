@@ -12,7 +12,7 @@
 ?>
 
 <!DOCTYPE html>
-<!--Prototipo de Proyecto I - match.me
+<!--match.me
   Alexis Arguedas - Gabriela Garro - Yanil Gómez
   Perfil de muestra de la aplicacion -->
 
@@ -229,135 +229,178 @@
                                     <div class="panel-body">
                                         <div class="tab-content">
                                             <div class="tab-pane fade in active" id="tab1default">
-                                                <h3>Full name</h3>
-                                                <p>
-                                                    <?php
-                                                        $lastname1 = "";
-                                                        $query = 'BEGIN getPerson.LastName1(:userID,:lastname1); END;';
-                                                        $compiled = oci_parse($connection, $query);
-                                                        oci_bind_by_name($compiled, ':userID', $_SESSION['userID'], 5);
-                                                        oci_bind_by_name($compiled, ':lastname1', $lastname1, 50);
-                                                        oci_execute($compiled, OCI_NO_AUTO_COMMIT);
-                                                        oci_commit($connection);
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <h3>Full name</h3>
+                                                        <p>
+                                                            <?php
+                                                                $lastname1 = "";
+                                                                $query = 'BEGIN getPerson.LastName1(:userID,:lastname1); END;';
+                                                                $compiled = oci_parse($connection, $query);
+                                                                oci_bind_by_name($compiled, ':userID', $_SESSION['userID'], 5);
+                                                                oci_bind_by_name($compiled, ':lastname1', $lastname1, 50);
+                                                                oci_execute($compiled, OCI_NO_AUTO_COMMIT);
+                                                                oci_commit($connection);
 
-                                                        $lastname2 = "";
-                                                        $query = 'BEGIN getPerson.LastName2(:userID,:lastname2); END;';
-                                                        $compiled = oci_parse($connection, $query);
-                                                        oci_bind_by_name($compiled, ':userID', $_SESSION['userID'], 5);
-                                                        oci_bind_by_name($compiled, ':lastname2', $lastname2, 50);
-                                                        oci_execute($compiled, OCI_NO_AUTO_COMMIT);
-                                                        oci_commit($connection);
-                                                        
-                                                        echo $_SESSION['firstName'] . " " . $lastname1 . " " . $lastname2;
-                                                    ?>
-                                                </p>
-                                                
-                                                <h3>Surname</h3>
-                                                <p><?php
-                                                    $nickname = "";
-                                                    $query = 'BEGIN getPerson.Nickname(:userID,:nickname); END;';
-                                                    $compiled = oci_parse($connection, $query);
-                                                    oci_bind_by_name($compiled, ':userID', $_SESSION['userID'], 5);
-                                                    oci_bind_by_name($compiled, ':nickname', $nickname, 25);
-                                                    oci_execute($compiled, OCI_NO_AUTO_COMMIT);
-                                                    oci_commit($connection);
+                                                                $lastname2 = "";
+                                                                $query = 'BEGIN getPerson.LastName2(:userID,:lastname2); END;';
+                                                                $compiled = oci_parse($connection, $query);
+                                                                oci_bind_by_name($compiled, ':userID', $_SESSION['userID'], 5);
+                                                                oci_bind_by_name($compiled, ':lastname2', $lastname2, 50);
+                                                                oci_execute($compiled, OCI_NO_AUTO_COMMIT);
+                                                                oci_commit($connection);
+                                                                
+                                                                echo $_SESSION['firstName'] . " " . $lastname1 . " " . $lastname2;
+                                                            ?>
+                                                        </p>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <h3>Nickname</h3>
+                                                        <p><?php
+                                                            $nickname = "";
+                                                            $query = 'BEGIN getPerson.Nickname(:userID,:nickname); END;';
+                                                            $compiled = oci_parse($connection, $query);
+                                                            oci_bind_by_name($compiled, ':userID', $_SESSION['userID'], 5);
+                                                            oci_bind_by_name($compiled, ':nickname', $nickname, 25);
+                                                            oci_execute($compiled, OCI_NO_AUTO_COMMIT);
+                                                            oci_commit($connection);
 
-                                                    echo $nickname;
-                                                ?></p>
-                                               
-                                                <h3>Birthdate</h3>
-                                                <p>
-                                                    <?php
-                                                        $birthday;
-                                                        $query = 'BEGIN getPerson.birthday(:userID,:birthday); END;';
-                                                        $compiled = oci_parse($connection, $query);
-                                                        oci_bind_by_name($compiled, ':userID', $_SESSION['userID'], 5);
-                                                        oci_bind_by_name($compiled, ':birthday', $birthday, 25);
-                                                        oci_execute($compiled, OCI_NO_AUTO_COMMIT);
-                                                        oci_commit($connection);
+                                                            echo $nickname;
+                                                        ?></p>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <h3>Birthdate</h3>
+                                                        <p><?php
+                                                            $birthday;
+                                                            $query = 'BEGIN getPerson.birthday(:userID,:birthday); END;';
+                                                            $compiled = oci_parse($connection, $query);
+                                                            oci_bind_by_name($compiled, ':userID', $_SESSION['userID'], 5);
+                                                            oci_bind_by_name($compiled, ':birthday', $birthday, 25);
+                                                            oci_execute($compiled, OCI_NO_AUTO_COMMIT);
+                                                            oci_commit($connection);
 
-                                                        echo $birthday;
-                                                    ?>
-                                                </p>
-                                                
-                                                <h3>Zodiac Sign</h3>
-                                                <p><?php
-                                                    $zodiacsign;
-                                                    $query = 'BEGIN getPerson.zodiacsign(:userID,:zodiacsign); END;';
-                                                    $compiled = oci_parse($connection, $query);
-                                                    oci_bind_by_name($compiled, ':userID', $_SESSION['userID'], 5);
-                                                    oci_bind_by_name($compiled, ':zodiacsign', $zodiacsign, 20);
-                                                    oci_execute($compiled, OCI_NO_AUTO_COMMIT);
-                                                    oci_commit($connection);
+                                                            echo $birthday;
+                                                        ?></p>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <h3>Zodiac Sign</h3>
+                                                        <p><?php
+                                                            $zodiacsign;
+                                                            $query = 'BEGIN getPerson.zodiacsign(:userID,:zodiacsign); END;';
+                                                            $compiled = oci_parse($connection, $query);
+                                                            oci_bind_by_name($compiled, ':userID', $_SESSION['userID'], 5);
+                                                            oci_bind_by_name($compiled, ':zodiacsign', $zodiacsign, 20);
+                                                            oci_execute($compiled, OCI_NO_AUTO_COMMIT);
+                                                            oci_commit($connection);
 
-                                                    echo $zodiacsign;
-                                                ?></p>
-                                                
-                                                <h3>Gender</h3>
-                                                <p><?php
-                                                    $gender;
-                                                    $query = 'BEGIN getPerson.gender(:userID,:gender); END;';
-                                                    $compiled = oci_parse($connection, $query);
-                                                    oci_bind_by_name($compiled, ':userID', $_SESSION['userID'], 5);
-                                                    oci_bind_by_name($compiled, ':gender', $gender, 15);
-                                                    oci_execute($compiled, OCI_NO_AUTO_COMMIT);
-                                                    oci_commit($connection);
+                                                            echo $zodiacsign;
+                                                        ?></p>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <h3>Gender</h3>
+                                                        <p><?php
+                                                            $gender;
+                                                            $query = 'BEGIN getPerson.gender(:userID,:gender); END;';
+                                                            $compiled = oci_parse($connection, $query);
+                                                            oci_bind_by_name($compiled, ':userID', $_SESSION['userID'], 5);
+                                                            oci_bind_by_name($compiled, ':gender', $gender, 15);
+                                                            oci_execute($compiled, OCI_NO_AUTO_COMMIT);
+                                                            oci_commit($connection);
 
-                                                    echo $gender;
-                                                ?></p>
-                                                
-                                                <h3>Sexual Orientation</h3>
-                                                <p><?php
-                                                    $orientation;
-                                                    $query = 'BEGIN getPerson.orientation(:userID,:orientation); END;';
-                                                    $compiled = oci_parse($connection, $query);
-                                                    oci_bind_by_name($compiled, ':userID', $_SESSION['userID'], 5);
-                                                    oci_bind_by_name($compiled, ':orientation', $orientation, 20);
-                                                    oci_execute($compiled, OCI_NO_AUTO_COMMIT);
-                                                    oci_commit($connection);
+                                                            echo $gender;
+                                                        ?></p>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <h3>Sexual Orientation</h3>
+                                                        <p><?php
+                                                            $orientation;
+                                                            $query = 'BEGIN getPerson.orientation(:userID,:orientation); END;';
+                                                            $compiled = oci_parse($connection, $query);
+                                                            oci_bind_by_name($compiled, ':userID', $_SESSION['userID'], 5);
+                                                            oci_bind_by_name($compiled, ':orientation', $orientation, 20);
+                                                            oci_execute($compiled, OCI_NO_AUTO_COMMIT);
+                                                            oci_commit($connection);
 
-                                                    echo $orientation;
-                                                ?></p>
+                                                            echo $orientation;
+                                                        ?></p>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <h3>Relationship Status</h3>
+                                                        <p><?php
+                                                            $relationshipstatus;
+                                                            $query = 'BEGIN getPerson.relationshipstatus(:userID,:relationshipstatus); END;';
+                                                            $compiled = oci_parse($connection, $query);
+                                                            oci_bind_by_name($compiled, ':userID', $_SESSION['userID'], 5);
+                                                            oci_bind_by_name($compiled, ':relationshipstatus', $relationshipstatus, 30);
+                                                            oci_execute($compiled, OCI_NO_AUTO_COMMIT);
+                                                            oci_commit($connection);
 
-                                                <h3>Relationship Status</h3>
-                                                <p><?php
-                                                    $relationshipstatus;
-                                                    $query = 'BEGIN getPerson.relationshipstatus(:userID,:relationshipstatus); END;';
-                                                    $compiled = oci_parse($connection, $query);
-                                                    oci_bind_by_name($compiled, ':userID', $_SESSION['userID'], 5);
-                                                    oci_bind_by_name($compiled, ':relationshipstatus', $relationshipstatus, 30);
-                                                    oci_execute($compiled, OCI_NO_AUTO_COMMIT);
-                                                    oci_commit($connection);
+                                                            echo $relationshipstatus;
+                                                        ?></p>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <h3>Email</h3>
+                                                        <p><?php
+                                                            $email;
+                                                            $query = 'BEGIN email(:userID,:email); END;';
+                                                            $compiled = oci_parse($connection, $query);
+                                                            oci_bind_by_name($compiled, ':userID', $_SESSION['userID'], 5);
+                                                            oci_bind_by_name($compiled, ':email', $email, 30);
+                                                            oci_execute($compiled, OCI_NO_AUTO_COMMIT);
+                                                            oci_commit($connection);
 
-                                                    echo $relationshipstatus;
-                                                ?></p>
-                                                
-                                                <h3>Address</h3>
-                                                <p><?php
-                                                    $address;
-                                                    $query = 'BEGIN getPerson.address(:userID,:address); END;';
-                                                    $compiled = oci_parse($connection, $query);
-                                                    oci_bind_by_name($compiled, ':userID', $_SESSION['userID'], 5);
-                                                    oci_bind_by_name($compiled, ':address', $address, 140);
-                                                    oci_execute($compiled, OCI_NO_AUTO_COMMIT);
-                                                    oci_commit($connection);
+                                                            echo $email;
+                                                        ?></p>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <h3>Address</h3>
+                                                        <p><?php
+                                                            $address;
+                                                            $query = 'BEGIN getPerson.address(:userID,:address); END;';
+                                                            $compiled = oci_parse($connection, $query);
+                                                            oci_bind_by_name($compiled, ':userID', $_SESSION['userID'], 5);
+                                                            oci_bind_by_name($compiled, ':address', $address, 140);
+                                                            oci_execute($compiled, OCI_NO_AUTO_COMMIT);
+                                                            oci_commit($connection);
 
-                                                    echo $address;
-                                                ?></p>
+                                                            echo $address;
+                                                        ?></p>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <h3>City</h3>
+                                                        <p><?php
+                                                            $city = "";
+                                                            $country = "";
+                                                            $query = 'BEGIN getPerson.city_country(:userID, :city, :country); END;';
+                                                            $compiled = oci_parse($connection, $query);
+                                                            oci_bind_by_name($compiled, ':userID', $_SESSION['userID'], 5);
+                                                            oci_bind_by_name($compiled, ':city', $city, 50);
+                                                            oci_bind_by_name($compiled, ':country', $country, 50);
+                                                            oci_execute($compiled, OCI_NO_AUTO_COMMIT);
+                                                            oci_commit($connection);
 
-                                                <h3>Email</h3>
-                                                <p><?php
-                                                    $email;
-                                                    $query = 'BEGIN email(:userID,:email); END;';
-                                                    $compiled = oci_parse($connection, $query);
-                                                    oci_bind_by_name($compiled, ':userID', $_SESSION['userID'], 5);
-                                                    oci_bind_by_name($compiled, ':email', $email, 30);
-                                                    oci_execute($compiled, OCI_NO_AUTO_COMMIT);
-                                                    oci_commit($connection);
-
-                                                    echo $email;
-                                                ?></p>
+                                                            echo $city;
+                                                        ?></p>
+                                                    </div>
+                                                    <div class="col-md-3">
+                                                        <h3>Country</h3>
+                                                        <p>
+                                                            <?php
+                                                                echo $country;
+                                                            ?>
+                                                        </p>
+                                                    </div>
+                                                </div>
                                             </div>
+
                                             <div class="tab-pane fade" id="tab2default">
                                                 <h3>Highschool</h3>
                                                 <p>

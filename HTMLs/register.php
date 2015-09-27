@@ -35,10 +35,7 @@
 			oci_bind_by_name($compiled, ':userType', $userType);
 			oci_execute($compiled, OCI_NO_AUTO_COMMIT);
 			oci_commit($connection);
-			
-			echo "Registration successful. ";
-			echo "<a href = \"index.php\">Continue to log in.</a>";
-			//Should redirect to "create profile"
+			header("Location: http://localhost/MatchMe/HTMLs/create-profile.php");
 		}
 		else {					//if passwords don't match
 			$registerError = "Passwords did not match";
