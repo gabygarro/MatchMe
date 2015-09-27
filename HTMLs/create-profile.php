@@ -18,7 +18,7 @@
 
   <head>
     <link rel="shortcut icon" href= "imgs/logo (1).png">
-    <title><?php echo "Create profile - match.me"</title>
+    <title><?php echo "Create profile - match.me"?></title>
 
     <link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
@@ -264,6 +264,24 @@
 
                         <h3>Address</h3>
                         <input type="text" name = "adress" placeholder = "Address..." maxlength="140">
+
+                        <h3><b>Partner information</b></h3><hr>
+                        <h3>Desired age range</h3>
+                        <select name = "age-range"><?php
+                            $cursor = oci_new_cursor($connection);
+                            $query = 'BEGIN getCatalog.agerange(:cursor); END;';
+                            $compiled = oci_parse($connection, $query);
+                            oci_bind_by_name($compiled, ':cursor', $cursor, -1, OCI_B_CURSOR);
+                            oci_execute($compiled);
+
+                            oci_execute($cursor, OCI_DEFAULT);       //execute the cursor like a normal statement
+                            while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
+                                echo "<option value=" . $row['TYPENAMEID'] . ">" . $row['TYPENAME'] . "</option>";
+                            }
+                            oci_free_statement($compiled);
+                            oci_free_statement($cursor);
+                        ?></select>
+
 
                         <br><br>
                         <h3><b>Education and work</b></h3>

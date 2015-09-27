@@ -4,7 +4,34 @@
 	$error = ""; 						// Variable to store error message
 	//tomar todos los campos desde el form y escribirlos en el array Session
 	$_SESSION['name'] = $_POST['name'];
-	$_SESSION['last-name'] = $_POST['last-name'];
+	$_SESSION['lastName'] = $_POST['last-name'];
+	$_SESSION['lastName2'] = $_POST['second-last-name2'];
+	$_SESSION['nickname'] = $_POST['nickname'];	
+	$_SESSION['bday'] = $_POST['bday'];
+	$_SESSION['zodiac'] = $_POST['zodiac'];
+	$_SESSION['tagline'] = $_POST['tagline'];
+	$_SESSION['gender'] = $_POST['gender'];
+	$_SESSION['sexualOrientation'] = $_POST['sexual-orientation'];
+	$_SESSION['relationshipStatus'] = $_POST['relationship-status'];
+	$_SESSION['state'] = $_POST['state'];
+	$_SESSION['address'] = $_POST['address'];
+	$_SESSION['highschool'] = $_POST['highschool'];
+	$_SESSION['university'] = $_POST['university'];
+	$_SESSION['work'] = $_POST['work'];
+	$_SESSION['salary'] = $_POST['salary'];
+	$_SESSION['religion'] = $_POST['religion'];
+	$_SESSION['height'] = $_POST['height'];
+	$_SESSION['bodyType'] = $_POST['body-type'];
+	$_SESSION['skinColor'] = $_POST['skin-color'];
+	$_SESSION['eyeColor'] = $_POST['eye-color'];
+	$_SESSION['hairColor'] = $_POST['hair-color'];
+	$_SESSION['smoker'] = $_POST['smoker'];
+	$_SESSION['drinker'] = $_POST['drinker'];
+	$_SESSION['exerciseFrequency'] = $_POST['exercise-frequency'];
+	$_SESSION['numberKids'] = $_POST['number-kids'];
+	$_SESSION['interestedChildren'] = $_POST['interested-children'];
+	$_SESSION['likesPets'] = $_POST['likes-pets'];
+	$_SESSION['ageRange'] = $_POST['age-range'];
 
 	//if (isset($_POST["submit"])) {
 		if (empty($_POST['name']) || empty($_POST['last-name']) || empty($_POST['bday']) || empty($_POST['zodiac'])
@@ -13,9 +40,9 @@
 			 || empty($_POST['body-type']) || empty($_POST['skin-color']) || empty($_POST['eye-color']) || empty($_POST['hair-color']) 
 			 || empty($_POST['smoker']) || empty($_POST['drinker']) || empty($_POST['bday'])  || empty($_POST['exercise-frequency']) 
 			 || empty($_POST['number-kids']) || empty($_POST['interested-children']) || empty($_POST['likes-pets']) ) {
-		$error = "One or more null values";
-		$_POST['error'] = $error;
-		header("Location: http://localhost/MatchMe/HTMLs/create-profile.php#invalidData");
+			$error = "One or more null values";
+			$_POST['error'] = $error;
+			header("Location: http://localhost/MatchMe/HTMLs/create-profile.php#invalidData");
 		}
 		else {
 			//establishes a connection to the db
@@ -28,7 +55,7 @@
 			}
 
 			// gets values from create-profile.php
-			$name = $_POST["name"];
+			/*$name = $_POST["name"];
 			$lastName = $_POST["last-name"];
 			$lastName2 = $_POST["last-name2"];
 			$nickname = $_POST["nickname"];
@@ -56,17 +83,29 @@
 			$excerciseFreq = $_POST["exercise-frequency"];
 			$numberKids = $_POST["number-kids"];
 			$interestedChildren = $_POST["interested-children"];
-			$likesPets = $_POST["likes-pets"];
+			$likesPets = $_POST["likes-pets"];*/
 
-			/*$usernameID = 0;
-			$passCheck = 0;		//variable to check if username+password match
-
-			$query = 'BEGIN insertPerson(:email, :pass, :passCheck); END;';
+			$query = 'BEGIN inserts.Person(:usernameID, :firstName, :lastName, :lastName2, :birthday, :nickname, :address, :tagline,
+						:highschool, :university, :work, :salary, :height, :smoker, :numberKids, :interestedChildren, :likesPets,
+						:eyeColor, :gender, :sexualOrientation, :ageRange, :skinColor, :hairColor, :religion, :zodiac, :relationshipStatus,
+						:bodyType, :exerciseFrequency, :city, :foundPartner, :gotMarried, :drinker); END;';
 			$compiled = oci_parse($connection, $query);
 
-			oci_bind_by_name($compiled, ':email', $email);
-			oci_bind_by_name($compiled, ':pass', $pass);
-			oci_bind_by_name($compiled, ':passCheck', $passCheck);
+			oci_bind_by_name($compiled, ':usernameID', $_SESSION['usernameID']);
+			oci_bind_by_name($compiled, ':firstName', $_SESSION['firstName']);
+			oci_bind_by_name($compiled, ':lastName', $_SESSION['lastName']);
+			oci_bind_by_name($compiled, ':lastName2', $_SESSION['lastName2']);
+			oci_bind_by_name($compiled, ':birthday', $_SESSION['birthday']);
+			oci_bind_by_name($compiled, ':nickname', $_SESSION['nickname']);
+			oci_bind_by_name($compiled, ':address', $_SESSION['address']);
+			oci_bind_by_name($compiled, ':tagline', $_SESSION['tagline']);
+			oci_bind_by_name($compiled, ':highschool', $_SESSION['highschool']);
+			oci_bind_by_name($compiled, ':university', $_SESSION['university']);
+			oci_bind_by_name($compiled, ':work', $_SESSION['work']);
+			oci_bind_by_name($compiled, ':salary', $_SESSION['salary']);
+			oci_bind_by_name($compiled, ':height', $_SESSION['height']);
+			oci_bind_by_name($compiled, ':smoker', $_SESSION['smoker']);
+			oci_bind_by_name($compiled, ':smoker', $_SESSION['smoker']);
 
 			oci_execute($compiled, OCI_NO_AUTO_COMMIT);
 			oci_commit($connection);
@@ -82,7 +121,7 @@
 				$loginerror = "Username and password combination were invalid.";
 				$_POST['loginerror'] = $loginerror;
 				header("Location: http://localhost/MatchMe/HTMLs/index.php#username+passworddonotmatch");
-			}*/
+			}
 			oci_close($connection);
 		}
 	//}

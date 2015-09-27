@@ -40,7 +40,7 @@
 				$compiled = oci_parse($connection, $query);
 
 				oci_bind_by_name($compiled, ':email', $email, 50);
-				oci_bind_by_name($compiled, ':usernameID', $usernameID, 3);
+				oci_bind_by_name($compiled, ':usernameID', $usernameID, 5);
 				oci_execute($compiled, OCI_NO_AUTO_COMMIT);
 				oci_commit($connection);
 				
@@ -48,7 +48,7 @@
 				$userType = 2; 													//Assume it's a normal user by default
 				$query = 'BEGIN getUserType(:usernameID, :userType); END;';
 				$compiled = oci_parse($connection, $query);
-				oci_bind_by_name($compiled, ':usernameID', $usernameID, 3); 	//bind the usernameID just to be sure
+				oci_bind_by_name($compiled, ':usernameID', $usernameID, 5); 	//bind the usernameID just to be sure
 				oci_bind_by_name($compiled, ':userType', $userType, 1);
 				oci_execute($compiled, OCI_NO_AUTO_COMMIT);
 				oci_commit($connection);
@@ -57,7 +57,7 @@
 				$_SESSION['userType'] = $userType;
 
 				//Store the user ID
-				$_SESSION["userID"] = $usernameID;
+				$_SESSION["usernameID"] = $usernameID;
 
 				if ($userType == 1) { //if user is administrator
 					header("Location: http://localhost/MatchMe/HTMLs/admin-homepage.php");
