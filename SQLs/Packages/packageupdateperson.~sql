@@ -27,8 +27,7 @@ procedure Smoker (pPersonID number, pSmoker number);
 procedure TagLine (pPersonID number, pTagLine varchar2);
 procedure University (pPersonID number, pUniversity varchar2);
 procedure ZodiacSignID (pPersonID number, pZodiacSignID number);
-procedure EyesColorID (pPersonID number, pEyesColorID number);
-procedure GenderID (pPersonID number, pGenderID number);
+
 
 
 END updateperson;

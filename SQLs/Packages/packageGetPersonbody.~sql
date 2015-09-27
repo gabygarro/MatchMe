@@ -181,7 +181,7 @@ procedure EyeColor(pUserID in number, pEyeColor out Varchar2) as
          select EyeColor 
          into pEyeColor
          from EyeColorCatalog ECC
-         where ECC.eyecolorid = (select eyescolorid
+         where ECC.eyecolorid = (select eyecolorid
                                  from person P
                                  Where p.userNameID =pUserID);
          Exception
@@ -440,6 +440,15 @@ begin
 
 end lastName1;
 -------------------------------------------------------------------------------
+procedure nickName (pNickName in varchar2, pNickNameIDs  out sys_refcursor) as
+begin
+  open pNickNameIDs for
+  select userNameID
+  from person
+  where pNickName = nickName or nickName like '%' || nickName || '%'
+  order by userNameID;
+
+end nickName;
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
 END getperson;

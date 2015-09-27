@@ -25,6 +25,7 @@ create or replace package inserts is
     procedure Visitlog (logDate date, pVisitor number, pVisitedPerson number);
     procedure Winkperson (pwinker number, pWinkedPerson number);
     procedure ZodiacSignCat (pZodiacSignName varchar2);
+    procedure userTypeCat (pUserTypeName Varchar2, puserTypeID number);
     procedure Person (puserNameID number, pFirstName varchar2, pLastName1 varchar2,
                   pLastName2 varchar2, pBirthday date, pRegisterDate date,
                   pNickName varchar2,pAddress varchar2,pTagline varchar2,

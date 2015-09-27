@@ -31,7 +31,7 @@ create or replace package inserts is
                   pNickName varchar2,pAddress varchar2,pTagline varchar2,
                   pHighSchool varchar2,pUniversity varchar2,pWorkPlace varchar2,  
                   pSalary number,pHeight number,pSmoker number, pNumberOfKids number, 
-                  pInterestedInKids number, pLikesPets number,pEyesColorID number,
+                  pInterestedInKids number, pLikesPets number,pEyeColorID number,
                   pGenderID number, pOrientationID number, pRangeID number, 
                   pSkinColorID number, pHairColorID number, pReligionID number,
                   pZodiacSignID number, pRelationShipStatusID number, pBodyTypeID number,

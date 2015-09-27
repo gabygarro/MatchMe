@@ -1,6 +1,8 @@
 CREATE OR REPLACE PACKAGE BODY getperson AS
 -------------------------------------------------------------------------------
 procedure FirstName(pUserID in number, pFirstName out varchar2) as
+  --obtiene a partir del userid el nombre del usuario y le regresa 
+  --por el parametro de salida pFirstName.
        BEGIN
          select firstname into pFirstName
          from person where
@@ -11,6 +13,9 @@ procedure FirstName(pUserID in number, pFirstName out varchar2) as
        END;
 -------------------------------------------------------------------------------
 procedure LastName1(pUserID in number, pLastName1 out varchar2) as
+  --obtiene a partir del userid el primer apellido del usuario y le regresa 
+  --por el parametro de salida pLastName1.
+
        BEGIN
          select LastName1 
          into pLastName1
@@ -22,6 +27,8 @@ procedure LastName1(pUserID in number, pLastName1 out varchar2) as
        END;
 -------------------------------------------------------------------------------
 procedure LastName2(pUserID in number, pLastName2 out varchar2) as
+  --obtiene a partir del userid el primer apellido del usuario y le regresa 
+  --por el parametro de salida pLastName2.
        BEGIN
          select LastName2 
          into pLastName2
@@ -181,7 +188,7 @@ procedure EyeColor(pUserID in number, pEyeColor out Varchar2) as
          select EyeColor 
          into pEyeColor
          from EyeColorCatalog ECC
-         where ECC.eyecolorid = (select eyescolorid
+         where ECC.eyecolorid = (select eyecolorid
                                  from person P
                                  Where p.userNameID =pUserID);
          Exception

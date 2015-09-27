@@ -89,11 +89,11 @@ as
        END;
 
 -------------------------------------------------------------------------------
-procedure EyesColorID (pPersonID number, pEyesColorID number)
+procedure EyeColorID (pPersonID number, pEyeColorID number)
 as
        BEGIN        
            UPDATE Person
-           SET EyesColorID = pEyesColorID
+           SET EyeColorID = pEyeColorID
            WHERE pPersonID = userNameID;
          
         Exception
