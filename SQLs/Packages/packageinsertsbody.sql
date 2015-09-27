@@ -1,6 +1,7 @@
 CREATE OR REPLACE PACKAGE BODY inserts AS
 -------------------------------------------------------------------------------
 procedure AgeRangeCat (pRangeID number, pAgeRange varchar2)
+  --inserta en la tabla AgeRangeCat de rango de edad
 as
        BEGIN
          insert into agerangecatalog (rangeID,ageRange)
@@ -17,6 +18,7 @@ as
        END;
 -------------------------------------------------------------------------------
 procedure BodyTypeCat (pBodyTypeID number, pBodyTypeName varchar2)
+    --inserta en la tabla BodyTypeCat los tipos de cuerpos
 as
        BEGIN
          insert into bodyTypeCatalog (BodyTypeID,BodyTypeName)
@@ -33,6 +35,7 @@ as
        END;
 -------------------------------------------------------------------------------
 procedure CityCat(pCityName varchar2, pCountryID varchar2)
+   --inserta en la tabla CityCat las ciudades ligados a paises
 as
        BEGIN
          insert into cityCatalog (cityid,cityName,countryID)
@@ -49,6 +52,7 @@ as
        END;
 -------------------------------------------------------------------------------
  procedure Country (pCountryID varchar2, pCountryName varchar2)
+    --inserta en la tabla CityCat las ciudades ligados a paises  
 as
        BEGIN
          insert into countryCatalog (countryID,countryName)
@@ -65,6 +69,8 @@ as
        END;
 -------------------------------------------------------------------------------
 procedure EmailsByPerson ( pEmail varchar2, pPersonID number)
+      --inserta en la tabla EmailsByPerson las personas por 
+
 as
        BEGIN
          insert into emailsByPerson ( emailID, email, personID)
@@ -449,7 +455,7 @@ procedure Person (puserNameID number, pFirstName varchar2, pLastName1 varchar2,
                   pNickName varchar2,pAddress varchar2,pTagline varchar2,
                   pHighSchool varchar2,pUniversity varchar2,pWorkPlace varchar2,  
                   pSalary number,pHeight number,pSmoker number, pNumberOfKids number, 
-                  pInterestedInKids number, pLikesPets number,pEyesColorID number,
+                  pInterestedInKids number, pLikesPets number,pEyeColorID number,
                   pGenderID number, pOrientationID number, pRangeID number, 
                   pSkinColorID number, pHairColorID number, pReligionID number,
                   pZodiacSignID number, pRelationShipStatusID number, pBodyTypeID number,
@@ -464,7 +470,7 @@ as
                              nickName, address, tagline,
                              highSchool, university, workPlace,  
                              salary, height, smoker, numberOfKids, 
-                             interestedInKids, likesPets, eyesColorID,
+                             interestedInKids, likesPets, eyeColorID,
                              genderID,  orientationID, rangeID,
                              skinColorID, hairColorID, religionID,
                              zodiacSignID, relationShipStatusID,
@@ -476,7 +482,7 @@ as
                 pNickName,pAddress,pTagline,
                 pHighSchool,pUniversity,pWorkPlace,  
                 pSalary,pHeight,pSmoker, pNumberOfKids, 
-                pInterestedInKids, pLikesPets,pEyesColorID,
+                pInterestedInKids, pLikesPets,pEyeColorID,
                 pGenderID,  pOrientationID,
                 pRangeID, pSkinColorID, pHairColorID,
                 pReligionID, pZodiacSignID, pRelationShipStatusID,

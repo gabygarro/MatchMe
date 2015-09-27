@@ -22,7 +22,7 @@ as
        BEGIN        
            UPDATE Person
            SET Birthday = pBirthday
-           WHERE pPersonID = personID;
+           WHERE pPersonID = userNameID;
          
         Exception
          WHEN NO_DATA_FOUND THEN
@@ -40,7 +40,7 @@ as
        BEGIN        
            UPDATE Person
            SET BodyTypeID = pBodyTypeID
-           WHERE pPersonID = personID;
+           WHERE pPersonID = userNameID;
          
         Exception
          WHEN NO_DATA_FOUND THEN
@@ -58,7 +58,7 @@ as
        BEGIN        
            UPDATE Person
            SET CityID = pCityID
-           WHERE pPersonID = personID;
+           WHERE pPersonID = userNameID;
          
         Exception
          WHEN NO_DATA_FOUND THEN
@@ -76,7 +76,7 @@ as
        BEGIN        
            UPDATE Person
            SET ExerciseFreqID = pExerciseFreqID
-           WHERE pPersonID = personID;
+           WHERE pPersonID = userNameID;
          
         Exception
          WHEN NO_DATA_FOUND THEN
@@ -94,7 +94,7 @@ as
        BEGIN        
            UPDATE Person
            SET EyesColorID = pEyesColorID
-           WHERE pPersonID = personID;
+           WHERE pPersonID = userNameID;
          
         Exception
          WHEN NO_DATA_FOUND THEN
@@ -112,7 +112,7 @@ as
        BEGIN        
            UPDATE Person
            SET firstname = pFirstName
-           WHERE pPersonID = personID;
+           WHERE pPersonID = userNameID;
          
         Exception
          WHEN NO_DATA_FOUND THEN
@@ -130,7 +130,7 @@ as
        BEGIN        
            UPDATE Person
            SET GenderID = pGenderID
-           WHERE pPersonID = personID;
+           WHERE pPersonID = userNameID;
          
         Exception
          WHEN NO_DATA_FOUND THEN
@@ -148,7 +148,7 @@ as
        BEGIN        
            UPDATE Person
            SET HairColorID = pHairColorID
-           WHERE pPersonID = personID;
+           WHERE pPersonID = userNameID;
          
         Exception
          WHEN NO_DATA_FOUND THEN
@@ -166,7 +166,7 @@ as
        BEGIN        
            UPDATE Person
            SET Height = pHeight
-           WHERE pPersonID = personID;
+           WHERE pPersonID = userNameID;
          
         Exception
          WHEN NO_DATA_FOUND THEN
@@ -184,7 +184,7 @@ as
        BEGIN        
            UPDATE Person
            SET HighSchool = pHighSchool
-           WHERE pPersonID = personID;
+           WHERE pPersonID = userNameID;
          
         Exception
          WHEN NO_DATA_FOUND THEN
@@ -202,7 +202,7 @@ as
        BEGIN        
            UPDATE Person
            SET InterestedInKids = pInterestedInKids
-           WHERE pPersonID = personID;
+           WHERE pPersonID = userNameID;
          
         Exception
          WHEN NO_DATA_FOUND THEN
@@ -221,7 +221,7 @@ as
        BEGIN
            UPDATE Person
            SET LastName1 = pLastName1
-           WHERE pPersonID = personID;
+           WHERE pPersonID = userNameID;
 
         Exception
          WHEN NO_DATA_FOUND THEN
@@ -239,7 +239,7 @@ as
        BEGIN
            UPDATE Person
            SET LastName2 = pLastName2
-           WHERE pPersonID = personID;
+           WHERE pPersonID = userNameID;
 
         Exception
          WHEN NO_DATA_FOUND THEN
@@ -257,7 +257,7 @@ as
        BEGIN        
            UPDATE Person
            SET LikesPets = pLikesPets
-           WHERE pPersonID = personID;
+           WHERE pPersonID = userNameID;
          
         Exception
          WHEN NO_DATA_FOUND THEN
@@ -275,7 +275,7 @@ as
        BEGIN        
            UPDATE Person
            SET NickName = pNickName
-           WHERE pPersonID = personID;
+           WHERE pPersonID = userNameID;
          
         Exception
          WHEN NO_DATA_FOUND THEN
@@ -293,7 +293,7 @@ as
        BEGIN        
            UPDATE Person
            SET NumberOfKids = pNumberOfKids
-           WHERE pPersonID = personID;
+           WHERE pPersonID = userNameID;
          
         Exception
          WHEN NO_DATA_FOUND THEN
@@ -311,7 +311,7 @@ as
        BEGIN        
            UPDATE Person
            SET OrientationID = pOrientationID
-           WHERE pPersonID = personID;
+           WHERE pPersonID = userNameID;
          
         Exception
          WHEN NO_DATA_FOUND THEN
@@ -329,7 +329,7 @@ as
        BEGIN        
            UPDATE Person
            SET RangeID = pRangeID
-           WHERE pPersonID = personID;
+           WHERE pPersonID = userNameID;
          
         Exception
          WHEN NO_DATA_FOUND THEN
@@ -347,7 +347,7 @@ as
        BEGIN        
            UPDATE Person
            SET RelationShipStatusID = pRelationShipStatusID
-           WHERE pPersonID = personID;
+           WHERE pPersonID = userNameID;
          
         Exception
          WHEN NO_DATA_FOUND THEN
@@ -365,7 +365,7 @@ as
        BEGIN        
            UPDATE Person
            SET ReligionID = pReligionID
-           WHERE pPersonID = personID;
+           WHERE pPersonID = userNameID;
          
         Exception
          WHEN NO_DATA_FOUND THEN
@@ -382,7 +382,7 @@ as
        BEGIN
            UPDATE Person
            SET Salary = pSalary
-           WHERE pPersonID = personID;
+           WHERE pPersonID = userNameID;
 
         Exception
          WHEN NO_DATA_FOUND THEN
@@ -400,7 +400,7 @@ as
        BEGIN        
            UPDATE Person
            SET SkinColorID = pSkinColorID
-           WHERE pPersonID = personID;
+           WHERE pPersonID = userNameID;
          
         Exception
          WHEN NO_DATA_FOUND THEN
@@ -418,7 +418,7 @@ as
        BEGIN        
            UPDATE Person
            SET Smoker = pSmoker
-           WHERE pPersonID = personID;
+           WHERE pPersonID = userNameID;
          
         Exception
          WHEN NO_DATA_FOUND THEN
@@ -436,7 +436,7 @@ as
        BEGIN        
            UPDATE Person
            SET TagLine = pTagLine
-           WHERE pPersonID = personID;
+           WHERE pPersonID = userNameID;
          
         Exception
          WHEN NO_DATA_FOUND THEN
@@ -454,7 +454,7 @@ as
        BEGIN        
            UPDATE Person
            SET University = pUniversity
-           WHERE pPersonID = personID;
+           WHERE pPersonID = userNameID;
          
         Exception
          WHEN NO_DATA_FOUND THEN
@@ -474,7 +474,7 @@ as
        BEGIN        
            UPDATE Person
            SET ZodiacSignID = pZodiacSignID
-           WHERE pPersonID = personID;
+           WHERE pPersonID = userNameID;
          
         Exception
          WHEN NO_DATA_FOUND THEN

@@ -5,7 +5,7 @@ procedure Birthday (pPersonID number, pBirthday date);
 procedure BodyTypeID (pPersonID number, pBodyTypeID number);
 procedure CityID (pPersonID number, pCityID number);
 procedure ExerciseFreqID (pPersonID number, pExerciseFreqID number);
-procedure EyesColorID (pPersonID number, pEyesColorID number);
+procedure EyeColorID (pPersonID number, pEyeColorID number);
 procedure GenderID (pPersonID number, pGenderID number);
 procedure HairColorID (pPersonID number, pHairColorID number);
 procedure Height (pPersonID number, pHeight number);

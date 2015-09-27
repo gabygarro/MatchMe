@@ -422,6 +422,21 @@ as
        END;
 
 -------------------------------------------------------------------------------
+ procedure userTypeCat (pUserTypeName Varchar2, puserTypeID number)
+as
+       BEGIN
+         insert into userTypeCatalog (UserTypeName,userTypeID)
+         values(pUserTypeName, puserTypeID);
+
+       Exception
+         WHEN INVALID_NUMBER THEN
+              DBMS_OUTPUT.PUT_LINE ('Type UserID error ' || puserTypeID);
+        -- WHEN OTHERS THEN
+          --    DBMS_OUTPUT.PUT_LINE ('Unexpected error');
+            --  RAISE;
+         commit;
+
+       END;
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
@@ -434,7 +449,7 @@ procedure Person (puserNameID number, pFirstName varchar2, pLastName1 varchar2,
                   pNickName varchar2,pAddress varchar2,pTagline varchar2,
                   pHighSchool varchar2,pUniversity varchar2,pWorkPlace varchar2,  
                   pSalary number,pHeight number,pSmoker number, pNumberOfKids number, 
-                  pInterestedInKids number, pLikesPets number,pEyesColorID number,
+                  pInterestedInKids number, pLikesPets number,pEyeColorID number,
                   pGenderID number, pOrientationID number, pRangeID number, 
                   pSkinColorID number, pHairColorID number, pReligionID number,
                   pZodiacSignID number, pRelationShipStatusID number, pBodyTypeID number,
@@ -449,7 +464,7 @@ as
                              nickName, address, tagline,
                              highSchool, university, workPlace,  
                              salary, height, smoker, numberOfKids, 
-                             interestedInKids, likesPets, eyesColorID,
+                             interestedInKids, likesPets, eyeColorID,
                              genderID,  orientationID, rangeID,
                              skinColorID, hairColorID, religionID,
                              zodiacSignID, relationShipStatusID,
@@ -461,7 +476,7 @@ as
                 pNickName,pAddress,pTagline,
                 pHighSchool,pUniversity,pWorkPlace,  
                 pSalary,pHeight,pSmoker, pNumberOfKids, 
-                pInterestedInKids, pLikesPets,pEyesColorID,
+                pInterestedInKids, pLikesPets,pEyeColorID,
                 pGenderID,  pOrientationID,
                 pRangeID, pSkinColorID, pHairColorID,
                 pReligionID, pZodiacSignID, pRelationShipStatusID,
