@@ -209,8 +209,8 @@ procedure skinColor (pSkinColorCatalog  out sys_refcursor) as
 -------------------------------------------------------------------------------
 
 procedure userType (pUserTypeCatalog  out sys_refcursor) as
+  -- obtiene todos los tipos de usuarios  y regresa los nombres en el sys_refcursor.
        BEGIN
-          -- obtiene todos los tipos de usuarios  y regresa los nombres en el sys_refcursor.
          open pUserTypeCatalog for
          select USERTYPENAME as typeNameID, USERTYPEID as typeName
          from userTypeCatalog
@@ -222,10 +222,8 @@ procedure userType (pUserTypeCatalog  out sys_refcursor) as
        
 -------------------------------------------------------------------------------
 procedure City (pCountryName in varchar2, pcityCatalog  out sys_refcursor) as
-       
+  --con el id del pais obtiene todas las ciudades del mismo y las regresa en el sys_refcursor.       
        BEGIN
-       
-         --con el id del pais obtiene todas las ciudades del mismo y las regresa en el sys_refcursor.
          open pcityCatalog for
          select cityID as typeNameID, cityName as typeName
          from cityCatalog
@@ -237,8 +235,8 @@ procedure City (pCountryName in varchar2, pcityCatalog  out sys_refcursor) as
        END;
 -------------------------------------------------------------------------------
 procedure Country (pCountryCatalog  out sys_refcursor) as
+  -- obtiene todos los paises  y regresa los nombres en el sys_refcursor.
        BEGIN
-         -- obtiene todos los paises  y regresa los nombres en el sys_refcursor.
          open pCountryCatalog for
          select COUNTRYID as typeNameID, COUNTRYNAME as typeName
          from countryCatalog

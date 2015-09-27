@@ -144,7 +144,6 @@ procedure languages (pLanguageCatalog  out sys_refcursor, pLanguages out number)
          open pLanguageCatalog for
          select LANGUAGECODE as typeNameID, LANGUAGENAME as typeName
          from languageCatalog
-         order by typeName
          order by typeName;
          Exception
          WHEN NO_DATA_FOUND THEN
