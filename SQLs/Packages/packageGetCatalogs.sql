@@ -18,6 +18,7 @@ create or replace package getcatalog is
     procedure City (pCountryName in varchar2, pcityCatalog  out sys_refcursor);
     procedure Country (pCountryCatalog  out sys_refcursor);
     procedure NumberofCountries (pNumberofCountries  out number); 
-
+    procedure CityID (pcityName in varchar2, pcityID out Number);
+    
  
 END getcatalog;

@@ -1,9 +1,10 @@
 PL/SQL Developer Test script 3.0
-32
+33
 
 declare 
 
 begin
+  inserts.ReligionCat('None');
   inserts.ReligionCat('African Traditional and Diasporic');
   inserts.ReligionCat('Agnostic');
   inserts.ReligionCat('Atheist');

@@ -37,7 +37,7 @@ create or replace package getperson is
        procedure hobbies (pUserNameID in number, pHobbieName out sys_refcursor);
        procedure lastName2 (pLastName2 in varchar2, pUserIDs  out sys_refcursor);
        procedure lastName1 (pLastName1 in varchar2, pUserIDs  out sys_refcursor);
-       
+       procedure nickName (pNickName in varchar2, pNickNameIDs  out sys_refcursor);
        
        
       

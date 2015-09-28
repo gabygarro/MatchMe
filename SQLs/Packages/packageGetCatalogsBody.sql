@@ -2,12 +2,12 @@ CREATE OR REPLACE PACKAGE BODY getcatalog AS
 -------------------------------------------------------------------------------
 
 procedure zodiacSign(pZodiacSignCatalog  out sys_refcursor) as
-  -- obtiene todos los tipos de signo zodiacal  y regresa los nombres en el sys_refcursor.
+  -- Gets all types of zodiacal sign and return the names in the sys_refcursor.
        BEGIN
          open pZodiacSignCatalog for
          select ZODIACSIGNID as typeNameID, ZODIACSIGNNAME as typeName
-         from zodiacSignCatalog
-         order by typeName;
+         from zodiacSignCatalog;
+         --order by typeName;
          Exception
          WHEN NO_DATA_FOUND THEN
               DBMS_OUTPUT.PUT_LINE ('Catalog no found:');
@@ -17,7 +17,7 @@ procedure zodiacSign(pZodiacSignCatalog  out sys_refcursor) as
 -------------------------------------------------------------------------------
 
 procedure ageRange(pAgeRangeCatalog  out sys_refcursor) as
-  -- obtiene todos los tipos de reango de edad  y regresa los nombres en el sys_refcursor.
+  -- Gets all types of age range and return the names in the sys_refcursor.
        BEGIN
          open pAgeRangeCatalog for
          select rangeID as typeNameID, ageRange as typeName
@@ -31,7 +31,7 @@ procedure ageRange(pAgeRangeCatalog  out sys_refcursor) as
 -------------------------------------------------------------------------------
 
 procedure bodyType (pBodyTypeCatalog  out sys_refcursor) as
-  -- obtiene todos los tipos de cuerpo  y regresa los nombres en el sys_refcursor.
+  -- Gets all types of body type and return the names in the sys_refcursor.
        BEGIN
          open pBodyTypeCatalog for
          select BODYTYPEID as typeNameID, BODYTYPENAME as typeName
@@ -46,8 +46,8 @@ procedure bodyType (pBodyTypeCatalog  out sys_refcursor) as
 -------------------------------------------------------------------------------
 
 procedure exercisefrequency (pExerciseFrequencyCatalog  out sys_refcursor) as
-  -- obtiene todos los tipos de frecuencia de ejercicio  y regresa los nombres en el sys_refcursor.
-       BEGIN
+ -- Gets all types of exercise frequency and return the names in the sys_refcursor.
+        BEGIN
          open pExerciseFrequencyCatalog for
          select EXERCISEFREQID as typeNameID, EXERCISEFREQNAME as typeName
          from exerciseFrequencyCatalog
@@ -60,7 +60,7 @@ procedure exercisefrequency (pExerciseFrequencyCatalog  out sys_refcursor) as
 -------------------------------------------------------------------------------
 
 procedure eyeColor (pEyeColorCatalog  out sys_refcursor) as
-  -- obtiene todos los tipos de color de ojos  y regresa los nombres en el sys_refcursor.
+ -- Gets all types of eyes Colors and return the names in the sys_refcursor.
        BEGIN
          open pEyeColorCatalog for
          select EYECOLORID as typeNameID, EYECOLOR as typeName
@@ -74,7 +74,7 @@ procedure eyeColor (pEyeColorCatalog  out sys_refcursor) as
 -------------------------------------------------------------------------------
 
 procedure gender (pGenderCatalog  out sys_refcursor) as
-  -- obtiene todos los tipos de género  y regresa los nombres en el sys_refcursor.
+ -- Gets all types of genders and return the names in the sys_refcursor.
        BEGIN
          open pGenderCatalog for
          select GENDERID as typeNameID, GENDER as typeName
@@ -87,7 +87,7 @@ procedure gender (pGenderCatalog  out sys_refcursor) as
 -------------------------------------------------------------------------------
 
 procedure hairColor (pHairColorCatalog  out sys_refcursor) as
-  -- obtiene todos los tipos de color de cabello  y regresa los nombres en el sys_refcursor.
+ -- Gets all types of hairs colors and return the names in the sys_refcursor.
        BEGIN
          open pHairColorCatalog for
          select HAIRCOLORID as typeNameID, HAIRCOLOR as typeName
@@ -101,7 +101,7 @@ procedure hairColor (pHairColorCatalog  out sys_refcursor) as
 -------------------------------------------------------------------------------
 
 procedure hobbie (pHobbieCatalog  out sys_refcursor, pHobbie out number) as
-  -- obtiene todos los tipos de hobbies  y regresa los nombres en el sys_refcursor.
+ -- Gets all types of hobbie and return the names in the sys_refcursor.
        BEGIN
          select count(*) into pHobbie
          from hobbieCatalog;
@@ -118,7 +118,7 @@ procedure hobbie (pHobbieCatalog  out sys_refcursor, pHobbie out number) as
 -------------------------------------------------------------------------------
 
 procedure interest (pInterestCatalog  out sys_refcursor, pInterest out number) as
-  -- obtiene todos los tipos de intereses  y regresa los nombres en el sys_refcursor.
+ -- Gets all types of interest and return the names in the sys_refcursor.
        BEGIN
          select count(*) into pInterest
          from interestCatalog;
@@ -135,8 +135,8 @@ procedure interest (pInterestCatalog  out sys_refcursor, pInterest out number) a
 -------------------------------------------------------------------------------
 
 procedure languages (pLanguageCatalog  out sys_refcursor, pLanguages out number) as
- -- obtiene todos los tipos de lenguages  y regresa los nombres en el sys_refcursor.  
-       BEGIN
+ -- Gets all types of languages and return the names in the sys_refcursor.
+     BEGIN
          select count(*) into pLanguages
          from languageCatalog;
          
@@ -153,7 +153,7 @@ procedure languages (pLanguageCatalog  out sys_refcursor, pLanguages out number)
 -------------------------------------------------------------------------------
 
 procedure relationShipStatus (pRelationShipStatusCatalog  out sys_refcursor) as
-   -- obtiene todos los tipos de usuarios  y regresa los nombres en el sys_refcursor.
+ -- Gets all types of relationShipStatus and return the names in the sys_refcursor.
        BEGIN
          open pRelationShipStatusCatalog for
          select RELATIONSHIPSTATUSID as typeNameID, RELATIONSHIPNAME as typeName
@@ -256,6 +256,16 @@ procedure NumberofCountries (pNumberofCountries  out number) as
               DBMS_OUTPUT.PUT_LINE ('Catalog no found:');
        END;
 -------------------------------------------------------------------------------
+procedure CityID (pcityName in varchar2, pcityID out Number) as
+  --con el id del pais obtiene el nombre de la ciudad y lo regresa en pcityID.       
+       BEGIN
+         select cityID into pcityID
+         from cityCatalog cc
+         where cc.cityname = pcityName;
+         Exception
+         WHEN NO_DATA_FOUND THEN
+              DBMS_OUTPUT.PUT_LINE ('Catalog no found:');
+       END;
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
 END getCatalog;
