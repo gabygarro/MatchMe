@@ -451,7 +451,7 @@ as
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
 procedure Person (puserNameID number, pFirstName varchar2, pLastName1 varchar2,
-                  pLastName2 varchar2, pBirthday date, pRegisterDate date,
+                  pLastName2 varchar2, pBirthday varchar2,
                   pNickName varchar2,pAddress varchar2,pTagline varchar2,
                   pHighSchool varchar2,pUniversity varchar2,pWorkPlace varchar2,  
                   pSalary number,pHeight number,pSmoker number, pNumberOfKids number, 
@@ -478,7 +478,7 @@ as
                              foundpartner,gotmarried,drinker)
 
          values(puserNameID, pFirstName, pLastName1,
-                pLastName2, pBirthday, pRegisterDate,
+                pLastName2, to_date(pBirthday,'DD/MM/YYYY'), sysdate,
                 pNickName,pAddress,pTagline,
                 pHighSchool,pUniversity,pWorkPlace,  
                 pSalary,pHeight,pSmoker, pNumberOfKids, 
@@ -492,9 +492,9 @@ as
        Exception
          WHEN INVALID_NUMBER THEN
               DBMS_OUTPUT.PUT_LINE ('Person ID error ');
-         WHEN OTHERS THEN
-              DBMS_OUTPUT.PUT_LINE ('Unexpected error');
-              RAISE;
+         --WHEN OTHERS THEN
+              --DBMS_OUTPUT.PUT_LINE ('Unexpected error');
+              --RAISE;
          commit;
 
        END;

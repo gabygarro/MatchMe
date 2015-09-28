@@ -1,5 +1,5 @@
 create or replace procedure insertPerson (pPersonID number, pFirstName varchar2, pLastName1 varchar2,
-                                          pLastName2 varchar2, pBirthday date, pRegisterDate date,
+                                          pLastName2 varchar2, pBirthday date, pRegister date,
                                           pNickName varchar2,pAddress varchar2,pTagline varchar2,
                                           pHighSchool varchar2,pUniversity varchar2,pWorkPlace varchar2,  
                                           pSalary number,pHeight number,pSmoker number, pNumberOfKids number, 

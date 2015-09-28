@@ -27,11 +27,11 @@ create or replace package inserts is
     procedure ZodiacSignCat (pZodiacSignName varchar2);
     procedure userTypeCat (pUserTypeName Varchar2, puserTypeID number);
     procedure Person (puserNameID number, pFirstName varchar2, pLastName1 varchar2,
-                  pLastName2 varchar2, pBirthday date, pRegisterDate date,
+                  pLastName2 varchar2, pBirthday VARCHAR2,
                   pNickName varchar2,pAddress varchar2,pTagline varchar2,
                   pHighSchool varchar2,pUniversity varchar2,pWorkPlace varchar2,  
                   pSalary number,pHeight number,pSmoker number, pNumberOfKids number, 
-                  pInterestedInKids number, pLikesPets number,pEyesColorID number,
+                  pInterestedInKids number, pLikesPets number,pEyeColorID number,
                   pGenderID number, pOrientationID number, pRangeID number, 
                   pSkinColorID number, pHairColorID number, pReligionID number,
                   pZodiacSignID number, pRelationShipStatusID number, pBodyTypeID number,
