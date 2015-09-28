@@ -2,13 +2,12 @@
     //user homepage
 	//include ('login.php');
 	include('session.php');
-	if(!isset($_SESSION['userID'])) {
+	if(!isset($_SESSION['usernameID'])) {
 		header("Location: http://localhost/MatchMe/HTMLs/index.php#notloggedin");
 	}
     if ($_SESSION['userType'] != 2) { //if it's not a normal user
         header("Location: http://localhost/MatchMe/HTMLs/index.php#notnormaluser");
     }
-    //echo $_SESSION['firstName'];
 ?>
 
 <!DOCTYPE html>

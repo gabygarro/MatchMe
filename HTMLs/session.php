@@ -46,7 +46,7 @@
     oci_commit($connection);
     $_SESSION['sexualOrientation'] = $sexualOrientation;	
 
-     //Store the user's gender
+    //Store the user's gender
     $gender;
     $query = 'BEGIN getPerson.gender(:usernameID,:gender); END;';
     $compiled = oci_parse($connection, $query);
@@ -58,7 +58,7 @@
 
     //Store the user's age range
     $ageRange;
-    $query = 'BEGIN getPerson.age_Range(:userID,:ageRange); END;';
+    $query = 'BEGIN getPerson.age_Range(:usernameID,:ageRange); END;';
     $compiled = oci_parse($connection, $query);
     oci_bind_by_name($compiled, ':usernameID', $_SESSION['usernameID'], 5);
     oci_bind_by_name($compiled, ':ageRange', $ageRange, 20);
@@ -66,9 +66,27 @@
     oci_commit($connection);
     $_SESSION['ageRange'] = $ageRange;
 
-    //Store the user's 
+    //Store the user's city and country
+    $city = "";
+    $country = "";
+    $query = 'BEGIN getPerson.city_country(:userID, :city, :country); END;';
+    $compiled = oci_parse($connection, $query);
+    oci_bind_by_name($compiled, ':userID', $_SESSION['userID'], 5);
+    oci_bind_by_name($compiled, ':city', $city, 50);
+    oci_bind_by_name($compiled, ':country', $country, 50);
+    oci_execute($compiled, OCI_NO_AUTO_COMMIT);
+    oci_commit($connection);
+
     
-    //Store the user's 
+    //Store the user's found partner variable
+    $foundPartner;
+    $query = 'BEGIN getPerson.foundPartner(:usernameID, :foundPartner); END;';
+    $compiled = oci_parse($connection, $query);
+    oci_bind_by_name($compiled, ':usernameID', $_SESSION['usernameID'], 5);
+    oci_bind_by_name($compiled, ':foundPartner', $foundPartner, 1);
+    oci_execute($compiled, OCI_NO_AUTO_COMMIT);
+    oci_commit($connection);
+    
     //Store the user's 
     //Store the user's 
     //Store the user's 

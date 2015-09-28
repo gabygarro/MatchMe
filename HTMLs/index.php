@@ -1,12 +1,11 @@
 ﻿<!--Prototipo de Proyecto I - match.me
   Alexis Arguedas - Gabriela Garro - Yanil Gómez
   Pagina principal de la aplicacion -->
-<?
-   include('login.php'); // Includes Login Script
-   include('register.php') //Includes Register Script
-   //if(isset($_SESSION['userID'])) {
-   //   header("Location: profile.php");
-   //}
+<?php
+  //include('login.php'); // Includes Login Script
+  //include('register.php'); //Includes Register Script
+  session_start();
+  session_destroy(); // Destroying All Sessions
 ?>
 
 <!DOCTYPE html>

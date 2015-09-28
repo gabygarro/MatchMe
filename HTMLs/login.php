@@ -57,7 +57,7 @@
 				$_SESSION['userType'] = $userType;
 
 				//Store the user ID
-				$_SESSION["usernameID"] = $usernameID;
+				$_SESSION['usernameID'] = $usernameID;
 
 				if ($userType == 1) { //if user is administrator
 					header("Location: http://localhost/MatchMe/HTMLs/admin-homepage.php");

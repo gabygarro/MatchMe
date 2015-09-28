@@ -1,14 +1,22 @@
 <?php
-    //user profile
     //include ('login.php');
-    include('session.php');
-    if(!isset($_SESSION['userID'])) {
-        header("Location: http://localhost/MatchMe/HTMLs/index.php#notloggedin");
+    //include('session.php');
+    //establishes a connection to the db
+    $connection = oci_connect("ADMINISTRATOR", "ADMINISTRATOR", "(DESCRIPTION = (ADDRESS_LIST =
+                                (ADDRESS = (PROTOCOL = TCP)(HOST = 172.26.50.118)(PORT = 1521)))
+                                (CONNECT_DATA =(SERVICE_NAME = MATCHME)))");
+    if (!$connection) {
+        echo "Invalid connection " . var_dump(ocierror());
+        die();
     }
-    if ($_SESSION['userType'] != 2) { //if it's not a normal user
+
+    session_start();
+    if(!isset($_SESSION['usernameID'])) {
+        //header("Location: http://localhost/MatchMe/HTMLs/index.php#notloggedin");
+    }
+    if($_SESSION['userType'] != 2) { //if it's not a normal user
         header("Location: http://localhost/MatchMe/HTMLs/index.php#notnormaluser");
     }
-    //echo $_SESSION['firstName'];
 ?>
 
 <!DOCTYPE html>
@@ -142,48 +150,71 @@
             <div class="panel with-nav-tabs panel-default">
                 <form role="form" action="create-person.php" method="POST">
                     <div class = "create-profile-container">
+                        <div class = "obligatory-field">
+                            <p>* indicates an obligatory field</p> 
+                        </div>
+
+                        <div class = "error">
+                            <?php if (isset($_SESSION['error'])) {
+                                echo $_SESSION['error'];
+                                $_SESSION['error'] = "";
+                            } ?>
+                        </div>
+                                                   
                         <h3><b>Basic information</b></h3>
                         <hr>
 
                         <div class = "row">
                             <div class = "col-md-4">
-                                <h3>Name</h3>
+                                <h3>Name<b> *</b></h3>
                                 <input type="text" name="name" placeholder="Name..." class="form-full-name form-control" 
                                     id="form-full-name" maxlength="50" value = <?php if (isset($_SESSION["name"])) echo "\"" . $_SESSION["name"] . "\"" ?> >
                             </div>
                             <div class = "col-md-4">
-                                <h3>Last name</h3>
+                                <h3>Last name<b> *</b></h3>
                                 <input type="text" name="last-name" placeholder="Last name..." class="form-full-name form-control" 
-                                    id="form-full-name" maxlength="50" value = <?php if (isset($_SESSION["last-name"])) echo "\"" . $_SESSION["last-name"] . "\"" ?>>
+                                    id="form-full-name" maxlength="50" value = <?php if (isset($_SESSION["lastName"])) echo "\"" . $_SESSION["lastName"] . "\"" ?> >
                             </div>
                             <div class = "col-md-4">
                                 <h3>Second last name</h3>
                                 <input type="text" name="last-name2" placeholder="Second last name..." class="form-full-name form-control" 
-                                    id="form-full-name" maxlength="50">
+                                    id="form-full-name" maxlength="50" value = <?php if (isset($_SESSION["lastName2"])) echo "\"" . $_SESSION["lastName2"] . "\"" ?> >
                             </div>
                         </div>
                         <div class="row">
                             <div class = "col-md-4">
                                 <h3>Nickname</h3>
                                 <input type="text" name="nickname" placeholder="Nickname..." class="form-surname form-control" 
-                                    id="form-surname" maxlength="25">
+                                    id="form-surname" maxlength="25" value = <?php if (isset($_SESSION["nickname"])) echo "\"" . $_SESSION["nickname"] . "\"" ?> >
                             </div>
                             <div class = "col-md-4">
-                                <h3>Birthdate</h3>
+                                <h3>Birthdate<b> *</b></h3>
                                 <input type="date" name="bday" class="form-control">
                             </div>
                             <div class = "col-md-4">
-                                <h3>Zodiac Sign</h3>
+                                <h3>Zodiac Sign<b> *</b></h3>
                                 <select name = "zodiac"> <?php
                                     $cursor = oci_new_cursor($connection);
                                     $query = 'BEGIN getCatalog.zodiacSign(:cursor); END;';
                                     $compiled = oci_parse($connection, $query);
                                     oci_bind_by_name($compiled, ':cursor', $cursor, -1, OCI_B_CURSOR);
                                     oci_execute($compiled);
-
                                     oci_execute($cursor, OCI_DEFAULT);       //execute the cursor like a normal statement
-                                    while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
-                                        echo "<option value=" . $row['TYPENAMEID'] . ">" . $row['TYPENAME'] . "</option>";
+                                    if (isset($_SESSION["zodiacID"])) {
+                                        while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
+                                            if ($row['TYPENAMEID'] == $_SESSION["zodiacID"]) {
+                                                echo "<option value=" . $row['TYPENAMEID'] . " selected = \"selected\" " . ">" . 
+                                                    $row['TYPENAME'] . "</option>";
+                                            }
+                                            else {
+                                                echo "<option value=" . $row['TYPENAMEID'] . ">" . $row['TYPENAME'] . "</option>";
+                                            }
+                                        }
+                                    }
+                                    else {
+                                        while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
+                                            echo "<option value=" . $row['TYPENAMEID'] . ">" . $row['TYPENAME'] . "</option>";
+                                        }
                                     }
                                     oci_free_statement($compiled);
                                     oci_free_statement($cursor);
@@ -192,45 +223,72 @@
                         </div>
 
                         <h3>Tagline</h3>
-                        <input type="text" name = "tagline" placeholder = "Describe yourself in a few words..." maxlength="200"> 
+                        <input type="text" name = "tagline" placeholder = "Describe yourself in a few words..." maxlength="200"
+                             value = <?php if (isset($_SESSION["tagline"])) echo "\"" . $_SESSION["tagline"] . "\"" ?> > 
                            
                         <div class="row">
                             <div class = "col-md-4">
-                                <h3>Gender</h3>
+                                <h3>Gender<b> *</b></h3>
                                 <select name = "gender"><?php
                                     $cursor = oci_new_cursor($connection);
                                     $query = 'BEGIN getCatalog.gender(:cursor); END;';
                                     $compiled = oci_parse($connection, $query);
                                     oci_bind_by_name($compiled, ':cursor', $cursor, -1, OCI_B_CURSOR);
                                     oci_execute($compiled);
-
                                     oci_execute($cursor, OCI_DEFAULT);       //execute the cursor like a normal statement
-                                    while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
-                                        echo "<option value=" . $row['TYPENAMEID'] . ">" . $row['TYPENAME'] . "</option>";
+                                    if (isset($_SESSION["genderID"])) {
+                                        while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
+                                            if ($row['TYPENAMEID'] == $_SESSION["genderID"]) {
+                                                echo "<option value=" . $row['TYPENAMEID'] . " selected = \"selected\" " . ">" . 
+                                                    $row['TYPENAME'] . "</option>";
+                                            }
+                                            else {
+                                                echo "<option value=" . $row['TYPENAMEID'] . ">" . $row['TYPENAME'] . "</option>";
+                                            }
+                                        }
+                                    }
+                                    else {
+                                        while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
+                                            echo "<option value=" . $row['TYPENAMEID'] . ">" . $row['TYPENAME'] . "</option>";
+                                        }
                                     }
                                     oci_free_statement($compiled);
                                     oci_free_statement($cursor);
                                 ?></select>
                             </div>
+                            
                             <div class = "col-md-4">
-                                <h3>Sexual Orientation</h3>
+                                <h3>Sexual Orientation<b> *</b></h3>
                                 <select name = "sexual-orientation"><?php
                                     $cursor = oci_new_cursor($connection);
                                     $query = 'BEGIN getCatalog.sexualorientation(:cursor); END;';
                                     $compiled = oci_parse($connection, $query);
                                     oci_bind_by_name($compiled, ':cursor', $cursor, -1, OCI_B_CURSOR);
                                     oci_execute($compiled);
-
                                     oci_execute($cursor, OCI_DEFAULT);       //execute the cursor like a normal statement
-                                    while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
-                                        echo "<option value=" . $row['TYPENAMEID'] . ">" . $row['TYPENAME'] . "</option>";
+                                    if (isset($_SESSION["sexualOrientationID"])) {
+                                        while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
+                                            if ($row['TYPENAMEID'] == $_SESSION["sexualOrientationID"]) {
+                                                echo "<option value=" . $row['TYPENAMEID'] . " selected = \"selected\" " . ">" . 
+                                                    $row['TYPENAME'] . "</option>";
+                                            }
+                                            else {
+                                                echo "<option value=" . $row['TYPENAMEID'] . ">" . $row['TYPENAME'] . "</option>";
+                                            }
+                                        }
+                                    }
+                                    else {
+                                        while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
+                                            echo "<option value=" . $row['TYPENAMEID'] . ">" . $row['TYPENAME'] . "</option>";
+                                        }
                                     }
                                     oci_free_statement($compiled);
                                     oci_free_statement($cursor);
                                 ?></select>
                             </div>
+                            
                             <div class = "col-md-4">
-                                <h3>Relationship status</h3>
+                                <h3>Relationship status<b> *</b></h3>
                                 <select name = "relationship-status"><?php
                                     $cursor = oci_new_cursor($connection);
                                     $query = 'BEGIN getCatalog.relationshipstatus(:cursor); END;';
@@ -239,8 +297,21 @@
                                     oci_execute($compiled);
 
                                     oci_execute($cursor, OCI_DEFAULT);       //execute the cursor like a normal statement
-                                    while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
-                                        echo "<option value=" . $row['TYPENAMEID'] . ">" . $row['TYPENAME'] . "</option>";
+                                    if (isset($_SESSION["relationshipStatusID"])) {
+                                        while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
+                                            if ($row['TYPENAMEID'] == $_SESSION["relationshipStatusID"]) {
+                                                echo "<option value=" . $row['TYPENAMEID'] . " selected = \"selected\" " . ">" . 
+                                                    $row['TYPENAME'] . "</option>";
+                                            }
+                                            else {
+                                                echo "<option value=" . $row['TYPENAMEID'] . ">" . $row['TYPENAME'] . "</option>";
+                                            }
+                                        }
+                                    }
+                                    else {
+                                        while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
+                                            echo "<option value=" . $row['TYPENAMEID'] . ">" . $row['TYPENAME'] . "</option>";
+                                        }
                                     }
                                     oci_free_statement($compiled);
                                     oci_free_statement($cursor);
@@ -250,11 +321,11 @@
 
                         <div class="row">
                             <div class = "col-md-6">
-                                <h3>Country</h3>
+                                <h3>Country<b> *</b></h3>
                                 <select id="country" name ="country"></select>
                             </div>
                             <div class = "col-md-6">
-                                <h3>City</h3>
+                                <h3>City<b> *</b></h3>
                                 <select name ="state" id ="state"></select>
                                 <script>
                                     populateCountries("country", "state");
@@ -263,10 +334,12 @@
                         </div>
 
                         <h3>Address</h3>
-                        <input type="text" name = "adress" placeholder = "Address..." maxlength="140">
+                        <input type="text" name = "address" placeholder = "Address..." maxlength="140"
+                            value = <?php if (isset($_SESSION["address"])) echo "\"" . $_SESSION["address"] . "\"" ?> >
 
-                        <h3><b>Partner information</b></h3><hr>
-                        <h3>Desired age range</h3>
+                        <br><br>
+                        <h3><b>Desired partner information</b></h3><hr>
+                        <h3>Desired age range<b> *</b></h3>
                         <select name = "age-range"><?php
                             $cursor = oci_new_cursor($connection);
                             $query = 'BEGIN getCatalog.agerange(:cursor); END;';
@@ -275,8 +348,21 @@
                             oci_execute($compiled);
 
                             oci_execute($cursor, OCI_DEFAULT);       //execute the cursor like a normal statement
-                            while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
-                                echo "<option value=" . $row['TYPENAMEID'] . ">" . $row['TYPENAME'] . "</option>";
+                            if (isset($_SESSION["ageRangeID"])) {
+                                while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
+                                    if ($row['TYPENAMEID'] == $_SESSION["ageRangeID"]) {
+                                        echo "<option value=" . $row['TYPENAMEID'] . " selected = \"selected\" " . ">" . 
+                                            $row['TYPENAME'] . "</option>";
+                                    }
+                                    else {
+                                        echo "<option value=" . $row['TYPENAMEID'] . ">" . $row['TYPENAME'] . "</option>";
+                                    }
+                                }
+                            }
+                            else {
+                                while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
+                                    echo "<option value=" . $row['TYPENAMEID'] . ">" . $row['TYPENAME'] . "</option>";
+                                }
                             }
                             oci_free_statement($compiled);
                             oci_free_statement($cursor);
@@ -290,11 +376,13 @@
                         <div class="row">
                             <div class = "col-md-6">
                                 <h3>High school</h3>
-                                <input type="text" name = "highschool" placeholder = "High school..." maxlength="100">
+                                <input type="text" name = "highschool" placeholder = "High school..." maxlength="100"
+                                    value = <?php if (isset($_SESSION["highschool"])) echo "\"" . $_SESSION["highschool"] . "\"" ?> >
                             </div>
                             <div class = "col-md-6">
                                 <h3>University</h3>
-                                <input type="text" name = "university" placeholder="University..." maxlength="100">
+                                <input type="text" name = "university" placeholder="University..." maxlength="100"
+                                    value = <?php if (isset($_SESSION["university"])) echo "\"" . $_SESSION["university"] . "\"" ?> >
                             </div>
                         </div>
 
@@ -302,12 +390,14 @@
                             <div class = "col-md-6">
                                 <h3>Work</h3>
                                 <br>
-                                <input type="text" name = "work" placeholder="Workplace..." maxlength="100">
+                                <input type="text" name = "work" placeholder="Workplace..." maxlength="100"
+                                    value = <?php if (isset($_SESSION["work"])) echo "\"" . $_SESSION["work"] . "\"" ?> >
                             </div>
                             <div class = "col-md-6">
                                 <h3>Salary</h3>
                                 <p>How much dollars you earn a year</p>
-                                <input type="number" name = "salary" min="1" max="1000000000">
+                                <input type="number" name = "salary" min="1" max="1000000000"
+                                    value = <?php if (isset($_SESSION["salary"])) echo "\"" . $_SESSION["salary"] . "\"" ?> >
                             </div>
                         </div>
 
@@ -322,6 +412,7 @@
                             oci_execute($compiled);
 
                             oci_execute($cursor, OCI_DEFAULT);       //execute the cursor like a normal statement
+                            $_SESSION['countLanguages'] = $countLanguages;
                             
                             echo "<div class = \"row\">";
                             $currentLanguage = 0;
@@ -332,7 +423,7 @@
                                 if($currentLanguage == round($countLanguages/3*$currentColumn, 0, PHP_ROUND_HALF_DOWN)) {
                                     echo "<div class = \"col-md-4\">";
                                 }
-                                echo "<input type=\"checkbox\" name = \"language" . $row['TYPENAMEID'] . "\" value=\"" . 
+                                echo "<input type=\"checkbox\" name = \"language" . $currentLanguage . "\" value=\"" . 
                                     $row['TYPENAMEID'] . "\">" . $row['TYPENAME'] . "<br>";
                                 $currentLanguage++;
                                 //if the next language to show is the same as the first language number of the next column
@@ -346,7 +437,8 @@
                             oci_free_statement($compiled);
                             oci_free_statement($cursor);
                         ?>
-                        <h3>Religion</h3>
+                        
+                        <h3>Religion<b> *</b></h3>
                         <select name = "religion"><?php
                             $cursor = oci_new_cursor($connection);
                             $query = 'BEGIN getCatalog.religion(:cursor); END;';
@@ -355,8 +447,21 @@
                             oci_execute($compiled);
 
                             oci_execute($cursor, OCI_DEFAULT);       //execute the cursor like a normal statement
-                            while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
-                                echo "<option value=" . $row['TYPENAMEID'] . ">" . $row['TYPENAME'] . "</option>";
+                            if (isset($_SESSION["religionID"])) {
+                                while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
+                                    if ($row['TYPENAMEID'] == $_SESSION["religionID"]) {
+                                        echo "<option value=" . $row['TYPENAMEID'] . " selected = \"selected\" " . ">" . 
+                                            $row['TYPENAME'] . "</option>";
+                                    }
+                                    else {
+                                        echo "<option value=" . $row['TYPENAMEID'] . ">" . $row['TYPENAME'] . "</option>";
+                                    }
+                                }
+                            }
+                            else {
+                                while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
+                                    echo "<option value=" . $row['TYPENAMEID'] . ">" . $row['TYPENAME'] . "</option>";
+                                }
                             }
                             oci_free_statement($compiled);
                             oci_free_statement($cursor);
@@ -368,11 +473,12 @@
                            
                         <div class="row">
                             <div class = "col-md-6">
-                                <h3>Height (meters)</h3>
-                                <input type="number" name="height" min="0.3" max="3" step="0.1">
+                                <h3>Height (meters)<b> *</b></h3>
+                                <input type="number" name="height" min="0.3" max="3" step="0.1"
+                                    value = <?php if (isset($_SESSION["height"])) echo "\"" . $_SESSION["height"] . "\"" ?> >
                             </div>
                             <div class = "col-md-6">
-                                <h3>Body type</h3>
+                                <h3>Body type<b> *</b></h3>
                                 <select name = "body-type"><?php
                                     $cursor = oci_new_cursor($connection);
                                     $query = 'BEGIN getCatalog.bodyType(:cursor); END;';
@@ -381,8 +487,21 @@
                                     oci_execute($compiled);
 
                                     oci_execute($cursor, OCI_DEFAULT);       //execute the cursor like a normal statement
-                                    while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
-                                        echo "<option value=" . $row['TYPENAMEID'] . ">" . $row['TYPENAME'] . "</option>";
+                                    if (isset($_SESSION["bodyTypeID"])) {
+                                        while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
+                                            if ($row['TYPENAMEID'] == $_SESSION["bodyTypeID"]) {
+                                                echo "<option value=" . $row['TYPENAMEID'] . " selected = \"selected\" " . ">" . 
+                                                    $row['TYPENAME'] . "</option>";
+                                            }
+                                            else {
+                                                echo "<option value=" . $row['TYPENAMEID'] . ">" . $row['TYPENAME'] . "</option>";
+                                            }
+                                        }
+                                    }
+                                    else {
+                                        while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
+                                            echo "<option value=" . $row['TYPENAMEID'] . ">" . $row['TYPENAME'] . "</option>";
+                                        }
                                     }
                                     oci_free_statement($compiled);
                                     oci_free_statement($cursor);
@@ -392,7 +511,7 @@
                                 
                         <div class="row">
                             <div class = "col-md-6">
-                                <h3>Skin color</h3>
+                                <h3>Skin color<b> *</b></h3>
                                 <select name = "skin-color"><?php
                                     $cursor = oci_new_cursor($connection);
                                     $query = 'BEGIN getCatalog.skinColor(:cursor); END;';
@@ -401,15 +520,28 @@
                                     oci_execute($compiled);
 
                                     oci_execute($cursor, OCI_DEFAULT);       //execute the cursor like a normal statement
-                                    while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
-                                        echo "<option value=" . $row['TYPENAMEID'] . ">" . $row['TYPENAME'] . "</option>";
+                                    if (isset($_SESSION["skinColorID"])) {
+                                        while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
+                                            if ($row['TYPENAMEID'] == $_SESSION["skinColorID"]) {
+                                                echo "<option value=" . $row['TYPENAMEID'] . " selected = \"selected\" " . ">" . 
+                                                    $row['TYPENAME'] . "</option>";
+                                            }
+                                            else {
+                                                echo "<option value=" . $row['TYPENAMEID'] . ">" . $row['TYPENAME'] . "</option>";
+                                            }
+                                        }
+                                    }
+                                    else {
+                                        while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
+                                            echo "<option value=" . $row['TYPENAMEID'] . ">" . $row['TYPENAME'] . "</option>";
+                                        }
                                     }
                                     oci_free_statement($compiled);
                                     oci_free_statement($cursor);
                                 ?></select>
                             </div>
                             <div class = "col-md-6">
-                                <h3>Eye color</h3>
+                                <h3>Eye color<b> *</b></h3>
                                 <select name = "eye-color"><?php
                                     $cursor = oci_new_cursor($connection);
                                     $query = 'BEGIN getCatalog.eyeColor(:cursor); END;';
@@ -418,8 +550,21 @@
                                     oci_execute($compiled);
 
                                     oci_execute($cursor, OCI_DEFAULT);       //execute the cursor like a normal statement
-                                    while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
-                                        echo "<option value=" . $row['TYPENAMEID'] . ">" . $row['TYPENAME'] . "</option>";
+                                    if (isset($_SESSION["eyeColorID"])) {
+                                        while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
+                                            if ($row['TYPENAMEID'] == $_SESSION["eyeColorID"]) {
+                                                echo "<option value=" . $row['TYPENAMEID'] . " selected = \"selected\" " . ">" . 
+                                                    $row['TYPENAME'] . "</option>";
+                                            }
+                                            else {
+                                                echo "<option value=" . $row['TYPENAMEID'] . ">" . $row['TYPENAME'] . "</option>";
+                                            }
+                                        }
+                                    }
+                                    else {
+                                        while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
+                                            echo "<option value=" . $row['TYPENAMEID'] . ">" . $row['TYPENAME'] . "</option>";
+                                        }
                                     }
                                     oci_free_statement($compiled);
                                     oci_free_statement($cursor);
@@ -429,7 +574,7 @@
                                 
                         <div class="row">
                             <div class = "col-md-6">
-                                <h3>Hair color</h3>
+                                <h3>Hair color<b> *</b></h3>
                                 <select name = "hair-color"><?php
                                     $cursor = oci_new_cursor($connection);
                                     $query = 'BEGIN getCatalog.hairColor(:cursor); END;';
@@ -438,8 +583,21 @@
                                     oci_execute($compiled);
 
                                     oci_execute($cursor, OCI_DEFAULT);       //execute the cursor like a normal statement
-                                    while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
-                                        echo "<option value=" . $row['TYPENAMEID'] . ">" . $row['TYPENAME'] . "</option>";
+                                    if (isset($_SESSION["hairColorID"])) {
+                                        while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
+                                            if ($row['TYPENAMEID'] == $_SESSION["hairColorID"]) {
+                                                echo "<option value=" . $row['TYPENAMEID'] . " selected = \"selected\" " . ">" . 
+                                                    $row['TYPENAME'] . "</option>";
+                                            }
+                                            else {
+                                                echo "<option value=" . $row['TYPENAMEID'] . ">" . $row['TYPENAME'] . "</option>";
+                                            }
+                                        }
+                                    }
+                                    else {
+                                        while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
+                                            echo "<option value=" . $row['TYPENAMEID'] . ">" . $row['TYPENAME'] . "</option>";
+                                        }
                                     }
                                     oci_free_statement($compiled);
                                     oci_free_statement($cursor);
@@ -456,18 +614,18 @@
                         
                         <div class="row">
                             <div class = "col-md-6">
-                                <h3>Smoker</h3>
-                                <input type="radio" name="smoker" value="0" checked> No
-                                <input type="radio" name="smoker" value="1"> Yes
+                                <h3>Smoker<b> *</b></h3>
+                                <input type="radio" name="smoker" value=0 checked> No
+                                <input type="radio" name="smoker" value=1> Yes
                             </div>
                             <div class = "col-md-6">
-                                <h3>Drinker</h3>
-                                <input type="radio" name="drinker" value="0" checked> No
-                                <input type="radio" name="drinker" value="1"> Yes
+                                <h3>Drinker<b> *</b></h3>
+                                <input type="radio" name="drinker" value=0 checked> No
+                                <input type="radio" name="drinker" value=1> Yes
                             </div>
                         </div>        
                          
-                        <h3>Exercise Frequency</h3>
+                        <h3>Exercise Frequency<b> *</b></h3>
                         <p>On a week period</p>
                         <select name = "exercise-frequency"><?php
                             $cursor = oci_new_cursor($connection);
@@ -477,8 +635,21 @@
                             oci_execute($compiled);
 
                             oci_execute($cursor, OCI_DEFAULT);       //execute the cursor like a normal statement
-                            while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
-                                echo "<option value=" . $row['TYPENAMEID'] . ">" . $row['TYPENAME'] . "</option>";
+                            if (isset($_SESSION["exerciseFrequencyID"])) {
+                                while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
+                                    if ($row['TYPENAMEID'] == $_SESSION["exerciseFrequencyID"]) {
+                                        echo "<option value=" . $row['TYPENAMEID'] . " selected = \"selected\" " . ">" . 
+                                            $row['TYPENAME'] . "</option>";
+                                    }
+                                    else {
+                                        echo "<option value=" . $row['TYPENAMEID'] . ">" . $row['TYPENAME'] . "</option>";
+                                    }
+                                }
+                            }
+                            else {
+                                while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
+                                    echo "<option value=" . $row['TYPENAMEID'] . ">" . $row['TYPENAME'] . "</option>";
+                                }
                             }
                             oci_free_statement($compiled);
                             oci_free_statement($cursor);
@@ -486,19 +657,20 @@
 
                         <div class="row">
                             <div class = "col-md-6">
-                                <h3>Number of kids</h3>
-                                <input type="number" name="number-kids" min="0" max="20" step="1">
+                                <h3>Number of kids<b> *</b></h3>
+                                <input type="number" name="number-kids" min="0" max="20" step="1"
+                                    <?php if (isset($_SESSION['numberKids'])) echo "value = " . $_SESSION['numberKids'] ?> >
                             </div>
                             <div class = "col-md-6">
-                                <h3>Interested in having children</h3>
-                                <input type="radio" name="interested-children" value="no" checked> No
-                                <input type="radio" name="interested-children" value="yes"> Yes
+                                <h3>Interested in having children<b> *</b></h3>
+                                <input type="radio" name="interested-children" value=0 checked> No
+                                <input type="radio" name="interested-children" value=1> Yes
                             </div>
                         </div>
                         
-                        <h3>Likes pets</h3>
-                        <input type="radio" name="likes-pets" value="no" checked> No
-                        <input type="radio" name="likes-pets" value="yes"> Yes
+                        <h3>Likes pets<b> *</b></h3>
+                        <input type="radio" name="likes-pets" value=0 checked> No
+                        <input type="radio" name="likes-pets" value=1> Yes
                         <br><br>
                         <h3><b>Interests and hobbies</b></h3>
                         <hr>
@@ -515,7 +687,8 @@
                                 oci_execute($compiled);
 
                                 oci_execute($cursor, OCI_DEFAULT);       //execute the cursor like a normal statement
-                                
+                                $_SESSION['countInterests'] = $countInterests;
+
                                 echo "<div class = \"row\">";
                                 $currentInterest = 0;
                                 $currentColumn = 0;
@@ -525,7 +698,7 @@
                                     if($currentInterest == round($countInterests/3*$currentColumn, 0, PHP_ROUND_HALF_DOWN)) {
                                         echo "<div class = \"col-md-4\">";
                                     }
-                                    echo "<input type=\"checkbox\" name = \"interest" . $row['TYPENAMEID'] . "\" value=\"" . 
+                                    echo "<input type=\"checkbox\" name = \"interest" . $currentInterest . "\" value=\"" . 
                                     $row['TYPENAMEID'] . "\">" . $row['TYPENAME'] . "<br>";
                                     $currentInterest++;
                                     //if the next language to show is the same as the first language number of the next column
@@ -552,7 +725,8 @@
                                 oci_execute($compiled);
 
                                 oci_execute($cursor, OCI_DEFAULT);       //execute the cursor like a normal statement
-                                
+                                $_SESSION['countHobbies'] = $countHobbies;
+
                                 echo "<div class = \"row\">";
                                 $currentHobbie = 0;
                                 $currentColumn = 0;
@@ -562,7 +736,7 @@
                                     if($currentHobbie == round($countHobbies/3*$currentColumn, 0, PHP_ROUND_HALF_DOWN)) {
                                         echo "<div class = \"col-md-4\">";
                                     }
-                                    echo "<input type=\"checkbox\" name = \"hobbie" . $row['TYPENAMEID'] . "\" value=\"" . 
+                                    echo "<input type=\"checkbox\" name = \"hobbie" . $currentHobbie . "\" value=\"" . 
                                     $row['TYPENAMEID'] . "\">" . $row['TYPENAME'] . "<br>";
                                     $currentHobbie++;
                                     //if the next language to show is the same as the first language number of the next column
