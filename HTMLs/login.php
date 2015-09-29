@@ -34,6 +34,7 @@
 
 			oci_execute($compiled, OCI_NO_AUTO_COMMIT);
 			oci_commit($connection);
+			$_SESSION['email'] = $_POST['form-email'];
 
 			if ($passCheck == 1) {
 				$query = 'BEGIN getID(:email, :usernameID); END;';

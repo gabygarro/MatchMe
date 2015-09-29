@@ -1,7 +1,7 @@
 <?php
     //include ('login.php');
-    //include('session.php');
-    //establishes a connection to the db
+    //session_start();
+    include('session.php');
     $connection = oci_connect("ADMINISTRATOR", "ADMINISTRATOR", "(DESCRIPTION = (ADDRESS_LIST =
                                 (ADDRESS = (PROTOCOL = TCP)(HOST = 172.26.50.118)(PORT = 1521)))
                                 (CONNECT_DATA =(SERVICE_NAME = MATCHME)))");
@@ -10,14 +10,12 @@
         die();
     }
 
-    session_start();
     if(!isset($_SESSION['usernameID'])) {
         header("Location: http://localhost/MatchMe/HTMLs/index.php#notloggedin");
     }
     if($_SESSION['userType'] != 2) { //if it's not a normal user
         header("Location: http://localhost/MatchMe/HTMLs/index.php#notnormaluser");
     }
-    //check if person entity for this id is already created
 ?>
 
 <!DOCTYPE html>
@@ -137,7 +135,7 @@
             <li><a href="homepage.html" >match.me</a></li>
         </ul>
         <ul class = "pull-right">
-          <li><a href="#">Profile</a></li>
+          <li><a href="profile.php">Profile</a></li>
           <li><a href="#">Messages</a></li>
           <li><a href="#">Notifications</a></li>
           <li><a href="#">Settings</a></li>
@@ -424,6 +422,7 @@
                                 if($currentLanguage == round($countLanguages/3*$currentColumn, 0, PHP_ROUND_HALF_DOWN)) {
                                     echo "<div class = \"col-md-4\">";
                                 }
+
                                 if (isset($_SESSION['language' . $currentLanguage]) && 
                                     $row['TYPENAMEID'] == $_SESSION['language' . $currentLanguage]) {
 
@@ -717,6 +716,7 @@
                                         echo "<input type=\"checkbox\" name = \"interest" . $currentInterest . "\" value=\"" . 
                                         $row['TYPENAMEID'] . "\">" . $row['TYPENAME'] . "<br>";
                                     }
+                                        
                                     $currentInterest++;
                                     //if the next language to show is the same as the first language number of the next column
                                     if ($currentInterest == round($countInterests/3*($currentColumn+1), 0, PHP_ROUND_HALF_DOWN)) {
@@ -757,7 +757,7 @@
                                         $row['TYPENAMEID'] == $_SESSION['hobbie' . $currentHobbie]) {
 
                                         echo "<input type=\"checkbox\" name = \"hobbie" . $currentHobbie . "\" value=\"" . 
-                                        $row['TYPENAMEID'] . "\" selected = \"selected\">" . $row['TYPENAME'] . "<br>";
+                                        $row['TYPENAMEID'] . "\" checked>" . $row['TYPENAME'] . "<br>";
                                     }
                                     else {
                                         echo "<input type=\"checkbox\" name = \"hobbie" . $currentHobbie . "\" value=\"" . 

@@ -30,6 +30,27 @@
 	if (isset($_POST['interested-children'])) 	$_SESSION['interestedChildren'] = 	intval($_POST['interested-children']);
 	if (isset($_POST['likes-pets'])) 			$_SESSION['likesPets'] = 			intval($_POST['likes-pets']);
 	if (!empty($_POST['age-range'])) 			$_SESSION['ageRangeID'] = 			intval($_POST['age-range']);
+
+	//save the languages
+	for ($i = 0; $i < $_SESSION['countLanguages']; $i++) {
+		if (isset($_POST['language' . $i])) {
+			$_SESSION['language' . $i] = $_POST['language' . $i];
+		}	
+	}
+
+	//save the interests
+	for ($i = 0; $i < $_SESSION['countInterests']; $i++) {
+		if (isset($_POST['interest' . $i])) {
+			$_SESSION['interest' . $i] = $_POST['interest' . $i];
+		}	
+	}
+
+	//save the hobbies
+	for ($i = 0; $i < $_SESSION['countHobbies']; $i++) {
+		if (isset($_POST['hobbie' . $i])) {
+			$_SESSION['hobbie' . $i] = $_POST['hobbie' . $i];
+		}	
+	}
 			
 	//if (isset($_POST["submit"])) {
 		$error = "* Null values: ";
@@ -62,7 +83,7 @@
 			if (empty($_POST['interested-children'])) $error = $error . "interested in children, ";
 			if (empty($_POST['likes-pets'])) $error = $error . "likes pets";
 			
-			$_SESSION['error'] = $error;
+			$_SESSION['error'] = substr($error, 0, -2);
 			header("Location: http://localhost/MatchMe/HTMLs/create-profile.php#invalidData");
 		}
 		else {
@@ -91,6 +112,7 @@
 		    $date = preg_split('/[- :]/',$birthday);
 		    $birthday = $date[2] . "/" . $date[1] . "/" . $date[0];
 		    $_SESSION['birthdayIn'] = $birthday; //write the format to input date to db
+		    $_SESSION['birthday'] = $_SESSION['birthdayIn'];
 
 			$query = 'BEGIN inserts.Person(:usernameID, :firstName, :lastName, :lastName2, :bday, :nickname, :address, :tagline,
 						:highschool, :university, :work, :salary, :height, :smoker, :numberKids, :interestedChildren, :likesPets,

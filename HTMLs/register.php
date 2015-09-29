@@ -37,6 +37,7 @@
 			oci_execute($compiled, OCI_NO_AUTO_COMMIT);
 			oci_commit($connection);
 			$_SESSION['userType'] = $userType; 		//save the user's type
+			$_SESSION['email'] = $_POST['form-email'];
 
 			//get the new user's ID
 			$usernameID = 0;

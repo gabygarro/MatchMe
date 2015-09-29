@@ -257,6 +257,7 @@ input[type=radio] {
   border-bottom: 1px solid #dbdbdb;
   background-color: #efefef;
   text-indent: 15px;
+  border-radius: 10px 10px 0px 0px;
 }
 
 .box-body {
@@ -264,6 +265,7 @@ input[type=radio] {
   padding-top: 10px;
   padding-right: 5px;
   border: 1px solid #dbdbdb;
+  border-radius: 0px 0px 10px 10px;
 }
 .thumbnail-container {
   padding-top: 15px;

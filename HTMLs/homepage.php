@@ -45,7 +45,7 @@
             <li><a href="homepage.html" >match.me</a></li>
         </ul>
         <ul class = "pull-right">
-          <li><a href="#">Profile</a></li>
+          <li><a href="profile.php">Profile</a></li>
           <li><a href="#">Messages</a></li>
           <li><a href="#">Notifications</a></li>
           <li><a href="#">Settings</a></li>
@@ -61,13 +61,13 @@
     			<div class = "profile-overview">
                     <h3><a href = "profile.php">
                         <?php
-                            echo $_SESSION['firstName'];
+                            echo $_SESSION['name'];
                         ?>
                     </a></h3>
     				
     			</div>
-                <form action="edit-profile.php" method="get">
-                    <input type="submit" value="Edit profile" name="Submit" id="frm1_submit"/>
+                <form action="edit-profile.php">
+                    <input type="submit" value="Edit profile">
                 </form>
     		</div>
 
