@@ -193,11 +193,11 @@ procedure LikesPets(pUserID in number, pLikesPets out Number) as
               DBMS_OUTPUT.PUT_LINE ('Person no found:' || pUserID);
        END;
 -------------------------------------------------------------------------------
-procedure EyeColor(pUserID in number, pEyeColor out Varchar2) as
+procedure EyeColor(pUserID in number, pEyeColor out Varchar2, pEyeColorID out number) as
    --obtein through the userid the  EyeColor and return for the out parameter pEyeColor.
         BEGIN
-         select EyeColor 
-         into pEyeColor
+         select EyeColor, eyecolorid 
+         into pEyeColor, pEyeColorID
          from EyeColorCatalog ECC
          where ECC.eyecolorid = (select eyecolorid
                                  from person P
@@ -207,11 +207,11 @@ procedure EyeColor(pUserID in number, pEyeColor out Varchar2) as
               DBMS_OUTPUT.PUT_LINE ('Person no found:' || pUserID);
        END;
 -------------------------------------------------------------------------------
-procedure Gender(pUserID in number, pGender out Varchar2) as
+procedure Gender(pUserID in number, pGender out Varchar2, pGenderID out number) as
    --obtein through the userid the  Gender and return for the out parameter pGender.
         BEGIN
-         select Gender 
-         into pGender
+         select GC.GENDER,gc.genderid
+         into pGender, pGenderID
          from GenderCatalog GC
          where GC.genderid = (select genderId
                                  from person P
@@ -221,11 +221,11 @@ procedure Gender(pUserID in number, pGender out Varchar2) as
               DBMS_OUTPUT.PUT_LINE ('Person no found:' || pUserID);
        END;
 -------------------------------------------------------------------------------
-procedure Orientation(pUserID in number, pOrientation out Varchar2) as
+procedure Orientation(pUserID in number, pOrientation out Varchar2, pOrientationID out number) as
    --obtein through the userid the  Orientation and return for the out parameter pOrientation.
        BEGIN
-         select OrientationName 
-         into pOrientation
+         select SOC.ORIENTATIONNAME,SOC.ORIENTATIONID 
+         into pOrientationID,pOrientation
          from Sexualorientationcatalog SOC
          where SOC.OrientationId = (select OrientationId
                                  from person P
@@ -235,11 +235,11 @@ procedure Orientation(pUserID in number, pOrientation out Varchar2) as
               DBMS_OUTPUT.PUT_LINE ('Person no found:' || pUserID);
        END;
 -------------------------------------------------------------------------------
-procedure Age_Range(pUserID in number, pAgeRange out Varchar2) as
+procedure Age_Range(pUserID in number, pAgeRange out Varchar2, pAgeRangeID out number) as
    --obtein through the userid the  Age_Range and return for the out parameter pAgeRange.
        BEGIN
-         select AgeRange 
-         into pAgeRange
+         select arc.agerange, arc.rangeid
+         into pAgeRange, pAgeRangeID
          from AgeRangeCatalog ARC
          where ARC.RangeId = (select RangeId
                                  from person P
@@ -249,11 +249,11 @@ procedure Age_Range(pUserID in number, pAgeRange out Varchar2) as
               DBMS_OUTPUT.PUT_LINE ('Person no found:' || pUserID);
        END;
 -------------------------------------------------------------------------------
-procedure SkinColor(pUserID in number, pSkinColor out Varchar2) as
+procedure SkinColor(pUserID in number, pSkinColor out Varchar2, pSkinColorID out number) as
    --obtein through the userid the  SkinColor and return for the out parameter pSkinColor.
        BEGIN
-         select SkinColor 
-         into pSkinColor
+         select ecc.skincolor, ecc.skincolorid 
+         into pSkinColor, pSkinColorID
          from SkinColorCatalog ECC
          where ECC.SkinColorId = (select SkinColorId
                                  from person P
@@ -263,12 +263,12 @@ procedure SkinColor(pUserID in number, pSkinColor out Varchar2) as
               DBMS_OUTPUT.PUT_LINE ('Person no found:' || pUserID);
        END;
 -------------------------------------------------------------------------------
-procedure HairColor(pUserID in number, pHairColor out Varchar2) as
+procedure HairColor(pUserID in number, pHairColor out Varchar2, pHairColorID out number) as
    --obtein through the userid the  HairColor and return for the out parameter pHairColor.
        BEGIN
-         select HairColor 
-         into pHairColor
-         from Haircolorcatalog HCC
+         select hcc.haircolor, hcc.haircolorid
+         into pHairColor, pHairColorID
+         from hairColorcatalog hcc
          where HCC.HairColorId = (select HairColorId
                                   from person P
                                   Where p.userNameID = pUserID);
@@ -277,13 +277,13 @@ procedure HairColor(pUserID in number, pHairColor out Varchar2) as
               DBMS_OUTPUT.PUT_LINE ('Person no found:' || pUserID);
        END;
 -------------------------------------------------------------------------------
-procedure Religion(pUserID in number, pReligion out Varchar2) as
+procedure Religion(pUserID in number, pReligion out Varchar2, pReligionID out number) as
    --obtein through the userid the  Religion and return for the out parameter pReligion.
        BEGIN
-         select ReligionName 
-         into pReligion
-         from Religioncatalog RC
-         where RC.ReligionId = (select ReligionId
+         select rc.ReligionName, rc.religionid 
+         into pReligion, pReligionID
+         from Religioncatalog rc
+         where rc.ReligionId = (select ReligionId
                                   from person P
                                   Where p.userNameID = pUserID);
          Exception
@@ -291,13 +291,13 @@ procedure Religion(pUserID in number, pReligion out Varchar2) as
               DBMS_OUTPUT.PUT_LINE ('Person no found:' || pUserID);
        END;
 -------------------------------------------------------------------------------
-procedure ZodiacSign(pUserID in number, pZodiacSign out Varchar2) as
+procedure ZodiacSign(pUserID in number, pZodiacSign out Varchar2, pZodiacSignID out number) as
    --obtein through the userid the  ZodiacSign and return for the out parameter pZodiacSign.
        BEGIN
-         select ZODIACSIGNNAME 
-         into pZodiacSign
-         from Zodiacsigncatalog ZSC
-         where ZSC.ZODIACSIGNID = (select ZODIACSIGNID
+         select zsc.zodiacsignname, zsc.zodiacsignid 
+         into pZodiacSign, pZodiacSignID
+         from Zodiacsigncatalog zsc
+         where zsc.zodiacsignid = (select p.zodiacsignid
                                   from person P
                                   Where p.userNameID = pUserID);
          Exception
@@ -305,27 +305,27 @@ procedure ZodiacSign(pUserID in number, pZodiacSign out Varchar2) as
               DBMS_OUTPUT.PUT_LINE ('Person no found:' || pUserID);
        END;
 -------------------------------------------------------------------------------
-procedure RelationShipStatus(pUserID in number, pRelationShipStatus out Varchar2) as
+procedure RelationShipStatus(pUserID in number, pRelationShipStatus out Varchar2, pRelationShipStatusID out number) as
    --obtein through the userid the  RelationShipStatus and return for the out parameter pRelationShipStatus.
        BEGIN
-         select RelationShipNAME 
-         into pRelationShipStatus
-         from RelationShipStatusCatalog RSS
-         where RSS.RelationShipStatusId = (select RelationShipStatusId
-                                  from person P
-                                  Where p.userNameID = pUserID);
+         select rss.relationshipname, rss.relationshipstatusid
+         into pRelationShipStatus, pRelationShipStatusID
+         from RelationShipStatusCatalog rss
+         where rss.RelationShipStatusId = (select p.RelationShipStatusId
+                                           from person P
+                                           Where p.userNameID = pUserID);
          Exception
          WHEN NO_DATA_FOUND THEN
               DBMS_OUTPUT.PUT_LINE ('Person no found:' || pUserID);
        END;
 -------------------------------------------------------------------------------
-procedure BodyType(pUserID in number, pBodyType out Varchar2) as
+procedure BodyType(pUserID in number, pBodyType out Varchar2, pBodyTypeID out number) as
    --obtein through the userid the  BodyType and return for the out parameter pBodyType.
        BEGIN
-         select BodyTypeName 
-         into pBodyType
-         from BodyTypecatalog BT
-         where BT.BodyTypeId = (select BodyTypeId
+         select bt.bodytypename,bt.bodytypeid 
+         into pBodyType, pBodyTypeID
+         from BodyTypecatalog bt
+         where bt.BodyTypeId = (select BodyTypeId
                                   from person P
                                   Where p.userNameID = pUserID);
          Exception
@@ -333,15 +333,15 @@ procedure BodyType(pUserID in number, pBodyType out Varchar2) as
               DBMS_OUTPUT.PUT_LINE ('Person no found:' || pUserID);
        END;
 -------------------------------------------------------------------------------
-procedure ExerciseFreq(pUserID in number, pExerciseFreq out Varchar2) as
+procedure ExerciseFreq(pUserID in number, pExerciseFreq out Varchar2, pExerciseFreqID out number) as
    --obtein through the userid the  ExerciseFreq and return for the out parameter pExerciseFreq.
        BEGIN
-         select ExerciseFreqName 
-         into pExerciseFreq
-         from ExerciseFrequencycatalog EFC
-         where EFC.ExerciseFreqId = (select ExerciseFreqId
-                                  from person P
-                                  Where p.userNameID = pUserID);
+         select efc.exercisefreqname, efc.exercisefreqid
+         into pExerciseFreq, pExerciseFreqID
+         from ExerciseFrequencycatalog efc
+         where efc.ExerciseFreqId = (select ExerciseFreqId
+                                     from person P
+                                     Where p.userNameID = pUserID);
          Exception
          WHEN NO_DATA_FOUND THEN
               DBMS_OUTPUT.PUT_LINE ('Person no found:' || pUserID);
@@ -367,7 +367,7 @@ procedure City_Country(pUserID in number, pCity out Varchar2, pCountry out Varch
                                   Where CityC.Cityid = p.Cityid  and p.userNameID = pUserID);
          Exception
          WHEN NO_DATA_FOUND THEN
-              DBMS_OUTPUT.PUT_LINE ('Person no found:' || pUserID);
+              DBMS_OUTPUT.PUT_LINE ('Person not found:' || pUserID);
      
               
        END;
@@ -397,7 +397,8 @@ procedure Got_Married(pUserID in number, pGotMarried out Number) as
        END;
 
 -------------------------------------------------------------------------------
-procedure Person_Drinker(pUserID in number, pDrinker out Number) as
+procedure Drinker(pUserID in number, pDrinker out Number) as
+   --obtein through the userid the  Person_Drinker and return for the out parameter pPerson_Drinker.
        BEGIN
          select Drinker 
          into pDrinker
@@ -410,6 +411,7 @@ procedure Person_Drinker(pUserID in number, pDrinker out Number) as
 
 -------------------------------------------------------------------------------
 procedure interests (pUserNameID in number, pInterestName out sys_refcursor) as
+   --obtein through the userid the  interests and return for the out parameter sys_refcursor.
 begin
   open pInterestName for
   select interestName as interest
@@ -421,6 +423,7 @@ end interests;
 
 -------------------------------------------------------------------------------
 procedure Email (pEmail in varchar2, pUserNameIDs  out sys_refcursor) as
+   --obtein through the userid the  Email and return for the out parameter sys_refcursor.
 begin
   open pUserNameIDs for
   select userNameID
@@ -432,6 +435,7 @@ end email;
 
 -------------------------------------------------------------------------------
 procedure userName (pName in varchar2, pUserIDs  out sys_refcursor) as
+   --obtein through the userid the  userName and return for the out parameter sys_refcursor.
 begin
   open pUserIDs for
   select userNameID, firstName
@@ -442,6 +446,7 @@ begin
 end userName;
 -------------------------------------------------------------------------------
 procedure hobbies (pUserNameID in number, pHobbieName out sys_refcursor) as
+   --obtein through the userid the  hobbies and return for the out parameter sys_refcursor.
 begin
   open pHobbieName for
   select hobbieName as hobbie
@@ -451,7 +456,8 @@ begin
          order by hobbieName;
 end hobbies;
 -------------------------------------------------------------------------------
-procedure lastName2 (pLastName2 in varchar2, pUserIDs  out sys_refcursor) as
+procedure findLastName2 (pLastName2 in varchar2, pUserIDs  out sys_refcursor) as
+   --obtein through the userid the  lastName2 and return for the out parameter sys_refcursor.
 begin
   open pUserIDs for
   select userNameID, lastName2
@@ -459,9 +465,10 @@ begin
   where pLastName2 = lastName2 or lastName1 like '%' || pLastName2 || '%'
   order by userNameID;
 
-end lastName2;
+end findLastName2;
 -------------------------------------------------------------------------------
-procedure lastName1 (pLastName1 in varchar2, pUserIDs  out sys_refcursor) as
+procedure findLastName1 (pLastName1 in varchar2, pUserIDs  out sys_refcursor) as
+   --obtein through the userid the  lastName1 and return for the out parameter sys_refcursor.
 begin
   open pUserIDs for
   select userNameID, lastName1
@@ -469,9 +476,10 @@ begin
   where pLastName1 = lastName1 or lastName1 like '%' || pLastName1 || '%'
   order by userNameID;
 
-end lastName1;
+end findLastName1;
 -------------------------------------------------------------------------------
-procedure nickName (pNickName in varchar2, pNickNameIDs  out sys_refcursor) as
+procedure findNickName (pNickName in varchar2, pNickNameIDs  out sys_refcursor) as
+   --obtein through the userid the  nickName and return for the out parameter sys_refcursor.
 begin
   open pNickNameIDs for
   select userNameID
@@ -479,7 +487,18 @@ begin
   where pNickName = nickName or nickName like '%' || nickName || '%'
   order by userNameID;
 
-end nickName;
+end findNickName;
+-------------------------------------------------------------------------------
+procedure Languages (pUserNameID in number, pLanguages out sys_refcursor) as
+   --obtein through the userid the  Languages that the person speaks and return for the out parameter sys_refcursor.
+begin
+  open pLanguages for
+  select LC.languagename as LanguageName
+         from Languagecatalog LC, LanguagesByPerson LP
+         where LC.LANGUAGECODE = LP.LANGUAGECODE
+               and LP.Personid = pUserNameID
+         order by LanguageName;
+end Languages;
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
 END getperson;

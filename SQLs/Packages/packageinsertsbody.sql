@@ -1,7 +1,7 @@
 CREATE OR REPLACE PACKAGE BODY inserts AS
 -------------------------------------------------------------------------------
 procedure AgeRangeCat (pRangeID number, pAgeRange varchar2)
-  --inserta en la tabla AgeRangeCat de rango de edad
+  --insert a tuple in the table AgeRangeCat
 as
        BEGIN
          insert into agerangecatalog (rangeID,ageRange)
@@ -18,7 +18,7 @@ as
        END;
 -------------------------------------------------------------------------------
 procedure BodyTypeCat (pBodyTypeID number, pBodyTypeName varchar2)
-    --inserta en la tabla BodyTypeCat los tipos de cuerpos
+  --insert a tuple in the table BodyTypeCat
 as
        BEGIN
          insert into bodyTypeCatalog (BodyTypeID,BodyTypeName)
@@ -35,7 +35,7 @@ as
        END;
 -------------------------------------------------------------------------------
 procedure CityCat(pCityName varchar2, pCountryID varchar2)
-   --inserta en la tabla CityCat las ciudades ligados a paises
+  --insert a tuple in the table CityCat
 as
        BEGIN
          insert into cityCatalog (cityid,cityName,countryID)
@@ -52,7 +52,7 @@ as
        END;
 -------------------------------------------------------------------------------
  procedure Country (pCountryID varchar2, pCountryName varchar2)
-    --inserta en la tabla CityCat las ciudades ligados a paises  
+  --insert a tuple in the table Country
 as
        BEGIN
          insert into countryCatalog (countryID,countryName)
@@ -69,7 +69,7 @@ as
        END;
 -------------------------------------------------------------------------------
 procedure EmailsByPerson ( pEmail varchar2, pPersonID number)
-      --inserta en la tabla EmailsByPerson las personas por 
+  --insert a tuple in the table EmailsByPerson
 
 as
        BEGIN
@@ -88,6 +88,7 @@ as
 -------------------------------------------------------------------------------
 procedure Event ( pEventName varchar2, pEventDate date, pCityID number)
 as
+  --insert a tuple in the table Event
        BEGIN
          insert into event (eventID, eventName, eventDate, CityID)
          values(eventID_seq.Nextval,pEventName,pEventDate, pCityID);
@@ -105,6 +106,7 @@ as
 -------------------------------------------------------------------------------
  procedure eventsbyperson (pEventID number, pPersonID number)
 as
+  --insert a tuple in the table eventsbyperson
        BEGIN
          insert into eventsbyperson (eventID,personID)
          values(pEventID,pPersonID);
@@ -121,6 +123,7 @@ as
 -------------------------------------------------------------------------------
 procedure ExerciseFrequencyCat (pexercisefreqName varchar2)
 as
+  --insert a tuple in the table ExerciseFrequencyCat
        BEGIN
          insert into Exercisefrequencycatalog (exercisefreqID,exercisefreqName)
          values(exercisefrequency_seq.nextval,pexercisefreqName);
@@ -137,6 +140,7 @@ as
 -------------------------------------------------------------------------------
 procedure EyeColorCat (pEyeColor varchar2)
 as
+  --insert a tuple in the table EyeColorCat
        BEGIN
          insert into eyeColorCatalog (EyeColorID,EyeColor)
          values(EyeColorID_seq.Nextval,pEyeColor);
@@ -154,6 +158,7 @@ as
 -------------------------------------------------------------------------------
  procedure GenderCat ( pGender varchar2)
 as
+  --insert a tuple in the table GenderCat
        BEGIN
          insert into genderCatalog (genderID,gender)
          values(genderID_seq.nextval,pGender);
@@ -170,6 +175,7 @@ as
 -------------------------------------------------------------------------------
 procedure HairColorCat (pHairColor varchar2)
 as
+  --insert a tuple in the table HairColorCat
        BEGIN
          insert into hairColorCatalog (hairColorID,hairColor)
          values(HairColorID_seq.nextval,pHairColor);
@@ -186,6 +192,7 @@ as
 -------------------------------------------------------------------------------
  procedure HobbieCat (pHobbieName varchar2)
 as
+  --insert a tuple in the table HobbieCat
        BEGIN
          insert into hobbieCatalog (HobbieID,HobbieName)
          values(HobbieID_seq.nextval,pHobbieName);
@@ -202,6 +209,7 @@ as
 -------------------------------------------------------------------------------
 procedure HobbiesByPerson (pHobbieID number,pPersonID number)
 as
+  --insert a tuple in the table HobbiesByPerson
        BEGIN
          insert into HobbiesByPerson (hobbieID,personID)
          values(pHobbieID,pPersonID);
@@ -218,6 +226,7 @@ as
 -------------------------------------------------------------------------------
 procedure InterestCat (pInterestName varchar2)
 as
+  --insert a tuple in the table InterestCat
        BEGIN
          insert into interestCatalog (InterestID,InterestName)
          values(InterestID_seq.nextval,pInterestName);
@@ -234,6 +243,7 @@ as
 -------------------------------------------------------------------------------
  procedure Interestsbyperson (pInterestID number, pPersonID number)
 as
+  --insert a tuple in the table Interestsbyperson
        BEGIN
          insert into interestsbyperson (interestID,personID)
          values(pInterestID,pPersonID);
@@ -251,6 +261,7 @@ as
 -------------------------------------------------------------------------------
 procedure LanguageCat (pLanguageCode varchar2, pLanguageName varchar2)
 as
+  --insert a tuple in the table LanguageCat
        BEGIN
          insert into languagecatalog (LanguageCode,LanguageName)
          values(pLanguageCode,pLanguageName);
@@ -267,6 +278,7 @@ as
 -------------------------------------------------------------------------------
 procedure LanguagesByPerson (pLanguageCode varchar2, pPersonID number)
 as
+  --insert a tuple in the table LanguagesByPerson
        BEGIN
          insert into languagesByPerson (languageCode,personID)
          values(pLanguageCode,pPersonID);
@@ -283,6 +295,7 @@ as
 -------------------------------------------------------------------------------
 procedure MatchedPersons (pMatchedPerson number, pMatcher number)
 as
+  --insert a tuple in the table MatchedPersons
        BEGIN
          insert into matchedPersons (matchedPerson, matcher)
          values(pMatchedPerson,pMatcher);
@@ -299,6 +312,7 @@ as
 -------------------------------------------------------------------------------
 procedure Parameter (pParameterID number, pParameterName varchar2, pParameterValue number, pParameterDescription varchar2)
 as
+  --insert a tuple in the table Parameter
        BEGIN
          insert into parameter (parameterID, parameterName, parameterValue, parameterDescription)
          values(pParameterID,pParameterName, pParameterValue, pParameterDescription);
@@ -315,6 +329,7 @@ as
 -------------------------------------------------------------------------------
 procedure RelationShipStatusCat (pRelationShipStatusName varchar2)
 as
+  --insert a tuple in the table RelationShipStatusCat
        BEGIN
          insert into relationShipStatusCatalog (relationShipStatusID,relationShipName)
          values(RelationShipStatusID_seq.nextval,pRelationShipStatusName);
@@ -331,6 +346,7 @@ as
 -------------------------------------------------------------------------------
 procedure ReligionCat (pReligionName varchar2)
 as
+  --insert a tuple in the table ReligionCat
        BEGIN
          insert into religionCatalog (ReligionID,ReligionName)
          values(ReligionID_seq.nextval,pReligionName);
@@ -347,6 +363,7 @@ as
 -------------------------------------------------------------------------------
  procedure SexualOrientationCat (pOrientationName varchar2)
 as
+  --insert a tuple in the table SexualOrientationCat
        BEGIN
          insert into sexualOrientationCatalog (OrientationID,OrientationName)
          values(SexualOrientationID_seq.nextval,pOrientationName);
@@ -363,6 +380,7 @@ as
 -------------------------------------------------------------------------------
 procedure SkinColorCat (pSkinColor varchar2)
 as
+  --insert a tuple in the table SkinColorCat
        BEGIN
          insert into skinColorCatalog (skinColorID,skinColor)
          values(SkinColorID_seq.Nextval,pSkinColor);
@@ -380,6 +398,7 @@ as
 -------------------------------------------------------------------------------
 procedure Visitlog (logDate date, pVisitor number, pVisitedPerson number)
 as
+  --insert a tuple in the table Visitlog
        BEGIN
          insert into visitLog (LogNumber,logDate,Visitor,Visitedperson)
          values(VisitLogNumber_seq.nextval,logDate,pVisitor,pVisitedPerson);
@@ -396,6 +415,7 @@ as
 -------------------------------------------------------------------------------
  procedure Winkperson (pwinker number, pWinkedPerson number)
 as
+  --insert a tuple in the table Winkperson
        BEGIN
          insert into winkPerson (WinkID,winker,winkedPerson)
          values(WinkID_seq.nextval,pwinker,pWinkedPerson);
@@ -413,6 +433,7 @@ as
 -------------------------------------------------------------------------------
 procedure ZodiacSignCat (pZodiacSignName varchar2)
 as
+  --insert a tuple in the table ZodiacSignCat
        BEGIN
          insert into zodiacSignCatalog (zodiacSignID,zodiacSignName)
          values(ZodiacSignID_seq.nextval, pZodiacSignName);
@@ -430,6 +451,7 @@ as
 -------------------------------------------------------------------------------
  procedure userTypeCat (pUserTypeName Varchar2, puserTypeID number)
 as
+  --insert a tuple in the table userTypeCat
        BEGIN
          insert into userTypeCatalog (UserTypeName,userTypeID)
          values(pUserTypeName, puserTypeID);
@@ -464,6 +486,7 @@ procedure Person (puserNameID number, pFirstName varchar2, pLastName1 varchar2,
                                               
                                        
 as
+  --insert a tuple in the table person
        BEGIN
          insert into person (userNameID, firstName, lastName1,
                              lastName2, birthday, registerDate,

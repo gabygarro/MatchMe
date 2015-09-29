@@ -1,7 +1,7 @@
 create or replace package updateperson is
     
 procedure address (pPersonID number, pAddress varchar2);
-procedure Birthday (pPersonID number, pBirthday date);
+procedure Birthday (pPersonID number, pBirthday varchar2);
 procedure BodyTypeID (pPersonID number, pBodyTypeID number);
 procedure CityID (pPersonID number, pCityID number);
 procedure ExerciseFreqID (pPersonID number, pExerciseFreqID number);
@@ -28,6 +28,7 @@ procedure TagLine (pPersonID number, pTagLine varchar2);
 procedure University (pPersonID number, pUniversity varchar2);
 procedure ZodiacSignID (pPersonID number, pZodiacSignID number);
 
-
+procedure WorkPlace (pPersonID number, pWorkPlace varchar2);
+procedure Drinker (pPersonID number, pDrinker number);
 
 END updateperson;

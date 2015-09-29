@@ -118,7 +118,7 @@ procedure hobbie (pHobbieCatalog  out sys_refcursor, pHobbie out number) as
 -------------------------------------------------------------------------------
 
 procedure interest (pInterestCatalog  out sys_refcursor, pInterest out number) as
-  -- obtiene todos los tipos de intereses  y regresa los nombres en el sys_refcursor.
+ -- Gets all types of interest and return the names in the sys_refcursor.
        BEGIN
          select count(*) into pInterest
          from interestCatalog;
@@ -135,8 +135,8 @@ procedure interest (pInterestCatalog  out sys_refcursor, pInterest out number) a
 -------------------------------------------------------------------------------
 
 procedure languages (pLanguageCatalog  out sys_refcursor, pLanguages out number) as
- -- obtiene todos los tipos de lenguages  y regresa los nombres en el sys_refcursor.  
-       BEGIN
+ -- Gets all types of languages and return the names in the sys_refcursor.
+     BEGIN
          select count(*) into pLanguages
          from languageCatalog;
          
@@ -153,7 +153,7 @@ procedure languages (pLanguageCatalog  out sys_refcursor, pLanguages out number)
 -------------------------------------------------------------------------------
 
 procedure relationShipStatus (pRelationShipStatusCatalog  out sys_refcursor) as
-   -- obtiene todos los tipos de usuarios  y regresa los nombres en el sys_refcursor.
+ -- Gets all types of relationShipStatus and return the names in the sys_refcursor.
        BEGIN
          open pRelationShipStatusCatalog for
          select RELATIONSHIPSTATUSID as typeNameID, RELATIONSHIPNAME as typeName

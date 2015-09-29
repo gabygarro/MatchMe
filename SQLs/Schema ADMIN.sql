@@ -37,4 +37,24 @@ CREATE USER ADMINISTRATOR
   GRANT EXECUTE ON UTILS TO ADMINISTRATOR; --no funciona
   GRANT DEBUG CONNECT SESSION TO ADMINISTRATOR;
   
-   GRANT CREATE sequence TO ADMINISTRATOR;
+  GRANT CREATE sequence TO ADMINISTRATOR;
+  
+  -------------------------------------------------------------------
+  --de aqui en adelante son pruebas para la picture
+  GRANT create any directory TO ge;
+  GRANT drop any directory TO ge;
+  CREATE OR REPLACE DIRECTORY imagen_prueba AS 'D:\';
+  GRANT READ ON DIRECTORY imagen_prueba TO ge WITH GRANT OPTION;
+  GRANT WRITE ON DIRECTORY imagen_prueba TO ge;
+  GRANT READ ON DIRECTORY imagen_prueba to PUBLIC;
+  
+GRANT CREATE sequence TO ge;
+
+--secuencia para manejo de id picture
+
+CREATE SEQUENCE pictureId_seq
+  MINVALUE 1
+  MAXVALUE 999999999999999999999999999
+  START WITH 1
+  INCREMENT BY 1
+  CACHE 20;

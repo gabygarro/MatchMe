@@ -1,0 +1,5 @@
+create or replace package deletes is
+    procedure personlanguage (pUserID in number, planguageID in varchar2);
+    procedure personhobbie (pUserID in number, phobbieID in number);
+    procedure personinterests (pUserID in number, pinterestID in number);
+ END deletes;

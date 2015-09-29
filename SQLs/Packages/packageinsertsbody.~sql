@@ -1,7 +1,7 @@
 CREATE OR REPLACE PACKAGE BODY inserts AS
 -------------------------------------------------------------------------------
 procedure AgeRangeCat (pRangeID number, pAgeRange varchar2)
-  --inserta en la tabla AgeRangeCat de rango de edad
+  --insert in the table AgeRangeCat
 as
        BEGIN
          insert into agerangecatalog (rangeID,ageRange)
@@ -18,7 +18,7 @@ as
        END;
 -------------------------------------------------------------------------------
 procedure BodyTypeCat (pBodyTypeID number, pBodyTypeName varchar2)
-    --inserta en la tabla BodyTypeCat los tipos de cuerpos
+  --insert in the table BodyTypeCat
 as
        BEGIN
          insert into bodyTypeCatalog (BodyTypeID,BodyTypeName)
@@ -35,7 +35,7 @@ as
        END;
 -------------------------------------------------------------------------------
 procedure CityCat(pCityName varchar2, pCountryID varchar2)
-   --inserta en la tabla CityCat las ciudades ligados a paises
+  --insert in the table CityCat
 as
        BEGIN
          insert into cityCatalog (cityid,cityName,countryID)
@@ -52,7 +52,7 @@ as
        END;
 -------------------------------------------------------------------------------
  procedure Country (pCountryID varchar2, pCountryName varchar2)
-    --inserta en la tabla CityCat las ciudades ligados a paises  
+  --insert in the table Country
 as
        BEGIN
          insert into countryCatalog (countryID,countryName)
@@ -69,7 +69,7 @@ as
        END;
 -------------------------------------------------------------------------------
 procedure EmailsByPerson ( pEmail varchar2, pPersonID number)
-      --inserta en la tabla EmailsByPerson las personas por 
+  --insert in the table EmailsByPerson
 
 as
        BEGIN
@@ -492,9 +492,9 @@ as
        Exception
          WHEN INVALID_NUMBER THEN
               DBMS_OUTPUT.PUT_LINE ('Person ID error ');
-         WHEN OTHERS THEN
-              DBMS_OUTPUT.PUT_LINE ('Unexpected error');
-              RAISE;
+         --WHEN OTHERS THEN
+              --DBMS_OUTPUT.PUT_LINE ('Unexpected error');
+              --RAISE;
          commit;
 
        END;

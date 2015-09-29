@@ -1,0 +1,47 @@
+CREATE OR REPLACE PACKAGE BODY deletes AS
+-------------------------------------------------------------------------------
+procedure personlanguage (pUserID in number, planguageID in varchar2)
+  --delete the language that have the table languagesbyperson with parameters pUserID and planguageID
+as
+       BEGIN        
+           DELETE FROM languagesbyperson
+           WHERE languagesbyperson.personid = pUserID and languagesbyperson.languagecode = planguageID;
+         
+        Exception
+         WHEN NO_DATA_FOUND THEN
+              DBMS_OUTPUT.PUT_LINE ('Person not found:' || pUserID);
+         commit;
+
+       END;
+-------------------------------------------------------------------------------
+procedure personhobbie (pUserID in number, phobbieID in number)
+ --delete the hobie that have the table hobbiesbyperson with parameters pUserID and phobbieID
+as
+       BEGIN        
+           DELETE FROM hobbiesbyperson
+           WHERE hobbiesbyperson.personid = pUserID and hobbiesbyperson.hobbieid = phobbieID;
+         
+        Exception
+         WHEN NO_DATA_FOUND THEN
+              DBMS_OUTPUT.PUT_LINE ('Person not found:' || pUserID);
+         commit;
+
+       END;
+-------------------------------------------------------------------------------
+procedure personinterests (pUserID in number, pinterestID in number)
+ --delete the hobie that have the table interestsbyperson with parameters pUserID and pinterestID
+as
+       BEGIN        
+           DELETE FROM interestsbyperson
+           WHERE interestsbyperson.personid = pUserID and interestsbyperson.interestid = pinterestID;
+         
+        Exception
+         WHEN NO_DATA_FOUND THEN
+              DBMS_OUTPUT.PUT_LINE ('Person not found:' || pUserID);
+         commit;
+
+       END;
+-------------------------------------------------------------------------------
+
+
+END deletes;
