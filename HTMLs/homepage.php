@@ -3,10 +3,10 @@
 	//include ('login.php');
 	include('session.php');
 	if(!isset($_SESSION['usernameID'])) {
-		header("Location: http://localhost/MatchMe/HTMLs/index.php#notloggedin");
+		header("Location: index.php#notloggedin");
 	}
     if ($_SESSION['userType'] != 2) { //if it's not a normal user
-        header("Location: http://localhost/MatchMe/HTMLs/index.php#notnormaluser");
+        header("Location: index.php#notnormaluser");
     }
 ?>
 
@@ -42,7 +42,7 @@
       <div class="container">
         <ul class = "pull-left">
             <img src = "imgs/logopeq.png">
-            <li><a href="homepage.html" >match.me</a></li>
+            <li><a href="homepage.php" >match.me</a></li>
         </ul>
         <ul class = "pull-right">
           <li><a href="profile.php">Profile</a></li>

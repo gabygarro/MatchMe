@@ -1,5 +1,5 @@
 <?php
-    //include ('login.php');
+    //include ('register.php');
     //include('session.php');
     //establishes a connection to the db
     $connection = oci_connect("ADMINISTRATOR", "ADMINISTRATOR", "(DESCRIPTION = (ADDRESS_LIST =
@@ -12,10 +12,10 @@
 
     session_start();
     if(!isset($_SESSION['usernameID'])) {
-        header("Location: http://localhost/MatchMe/HTMLs/index.php#notloggedin");
+        header("Location: index.php#notloggedin");
     }
     if($_SESSION['userType'] != 2) { //if it's not a normal user
-        header("Location: http://localhost/MatchMe/HTMLs/index.php#notnormaluser");
+        header("Location: index.php#notnormaluser" . $_SESSION['userType']);
     }
     //check if person entity for this id is already created
 ?>
@@ -134,7 +134,7 @@
       <div class="container">
         <ul class = "pull-left">
             <img src = "imgs/logopeq.png">
-            <li><a href="homepage.html" >match.me</a></li>
+            <li><a href="homepage.php" >match.me</a></li>
         </ul>
         <ul class = "pull-right">
           <li><a href="#">Profile</a></li>
@@ -777,6 +777,7 @@
                             ?>
                             <br>
                             <input type = "submit" value = "Create profile">
+                            <br>
                         </div>
                     </div>
                 </form>

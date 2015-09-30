@@ -72,11 +72,9 @@
     $_SESSION['ageRangeID'] = $ageRangeID;
 
     //Store the user's city and country
-    $city = "";
-    $country = "";
     $query = 'BEGIN getPerson.city_country(:userID, :city, :country); END;';
     $compiled = oci_parse($connection, $query);
-    oci_bind_by_name($compiled, ':userID', $_SESSION['userID'], 5);
+    oci_bind_by_name($compiled, ':userID', $_SESSION['usernameID'], 5);
     oci_bind_by_name($compiled, ':city', $city, 50);
     oci_bind_by_name($compiled, ':country', $country, 50);
     oci_execute($compiled, OCI_NO_AUTO_COMMIT);
@@ -155,7 +153,7 @@
     oci_execute($compiled, OCI_NO_AUTO_COMMIT);
     oci_commit($connection);
     $_SESSION['zodiacSign'] = $zodiacSign;
-    $_SESSION['zodiacSignID'] = $zodiacSignID;
+    $_SESSION['zodiacID'] = $zodiacSignID;
 
 	//Store the user's relationship status
 	$relationshipStatus;
@@ -249,7 +247,7 @@
     oci_bind_by_name($compiled, ':height', $height, 6);
     oci_execute($compiled, OCI_NO_AUTO_COMMIT);
     oci_commit($connection);
-    $_SESSION['height'] = $height;
+    $_SESSION['height'] = str_replace(",", ".", (string) $height); //convert to html format
 
 	//Store the user's skin color
 	$skinColor;
@@ -361,7 +359,98 @@
     oci_commit($connection);
     $_SESSION['likesPets'] = $likesPets;
 
-	//Get and save the user's languages, interests and hobbies
+	//Get and save the user's languages
+	$countLanguages = 0;
+    $cursor = oci_new_cursor($connection);
+    $query = 'BEGIN getCatalog.languages(:cursor, :countLanguages); END;';
+    $compiled = oci_parse($connection, $query);
+    oci_bind_by_name($compiled, ':cursor', $cursor, -1, OCI_B_CURSOR);
+    oci_bind_by_name($compiled, ':countLanguages', $countLanguages, 3);
+    oci_execute($compiled);
+    oci_execute($cursor, OCI_DEFAULT);       //execute the cursor like a normal statement
+    $_SESSION['countLanguages'] = $countLanguages;
+    
+    $currentLanguage = 0;
+    $languageCheck = 0;
+    while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
+        $query1 = 'BEGIN getPerson.checkLanguage(:usernameID,:languageID,:languageCheck); END;';
+	    $compiled1 = oci_parse($connection, $query1);
+	    oci_bind_by_name($compiled1, ':usernameID', $_SESSION['usernameID'], 5);
+	    oci_bind_by_name($compiled1, ':languageID', $row['TYPENAMEID'], 3); //compare to the actual hobbie ID in the catalog
+	    oci_bind_by_name($compiled1, ':languageCheck', $languageCheck, 1);
+	    oci_execute($compiled1, OCI_NO_AUTO_COMMIT);
+	    oci_commit($connection);
+
+	    if ($languageCheck == 1) {
+	    	$_SESSION['language' . $currentLanguage] = $row['TYPENAMEID'];
+	    }
+	    $currentLanguage++;
+    }
+
+    oci_free_statement($compiled);
+    oci_free_statement($cursor);
+
+    //user's hobbies
+	$countHobbies = 0;
+    $cursor = oci_new_cursor($connection);
+    $query = 'BEGIN getCatalog.Hobbie(:cursor, :countHobbies); END;';
+    $compiled = oci_parse($connection, $query);
+    oci_bind_by_name($compiled, ':cursor', $cursor, -1, OCI_B_CURSOR);
+    oci_bind_by_name($compiled, ':countHobbies', $countHobbies, 3);
+    oci_execute($compiled);
+    oci_execute($cursor, OCI_DEFAULT);       //execute the cursor like a normal statement
+    $_SESSION['countHobbies'] = $countHobbies;
+
+    $currentHobbie = 0;
+    $hobbieCheck = 0;	//assume the person doesn't have the hobbie by default
+    while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
+        $query1 = 'BEGIN getPerson.checkHobbie(:usernameID,:hobbieID,:hobbieCheck); END;';
+	    $compiled1 = oci_parse($connection, $query1);
+	    oci_bind_by_name($compiled1, ':usernameID', $_SESSION['usernameID'], 5);
+	    oci_bind_by_name($compiled1, ':hobbieID', $row['TYPENAMEID'], 3); //compare to the actual hobbie ID in the catalog
+	    oci_bind_by_name($compiled1, ':hobbieCheck', $hobbieCheck, 1);
+	    oci_execute($compiled1, OCI_NO_AUTO_COMMIT);
+	    oci_commit($connection);
+
+	    if ($hobbieCheck == 1) {
+	    	$_SESSION['hobbie' . $currentHobbie] = $row['TYPENAMEID'];
+	    }
+	    $currentHobbie++;
+    }
+    
+    oci_free_statement($compiled);
+    oci_free_statement($cursor);
+
+    //user's interests
+    $countInterests = 0;
+    $cursor = oci_new_cursor($connection);
+    $query = 'BEGIN getCatalog.interest(:cursor, :countInterests); END;';
+    $compiled = oci_parse($connection, $query);
+    oci_bind_by_name($compiled, ':cursor', $cursor, -1, OCI_B_CURSOR);
+    oci_bind_by_name($compiled, ':countInterests', $countInterests, 3);
+    oci_execute($compiled);
+    oci_execute($cursor, OCI_DEFAULT);       //execute the cursor like a normal statement
+    $_SESSION['countInterests'] = $countInterests;
+
+    $currentInterest = 0;
+    $interestCheck = 0;
+    while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
+        $query1 = 'BEGIN getPerson.checkInterest(:usernameID,:interestID,:interestCheck); END;';
+	    $compiled1 = oci_parse($connection, $query1);
+	    oci_bind_by_name($compiled1, ':usernameID', $_SESSION['usernameID'], 5);
+	    oci_bind_by_name($compiled1, ':interestID', $row['TYPENAMEID'], 3); //compare to the actual interest ID in the catalog
+	    oci_bind_by_name($compiled1, ':interestCheck', $interestCheck, 1);
+	    oci_execute($compiled1, OCI_NO_AUTO_COMMIT);
+	    oci_commit($connection);
+
+	    if ($interestCheck == 1) {
+	    	$_SESSION['interest' . $currentInterest] = $row['TYPENAMEID'];
+	    }
+	    $currentInterest++;
+    }
+
+    oci_free_statement($compiled);
+    oci_free_statement($cursor);
 
 	//oci_close($connection);
 ?>

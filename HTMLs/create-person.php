@@ -18,7 +18,7 @@
 	if (!empty($_POST['work'])) 				$_SESSION['work'] = 				$_POST['work'];
 	if (!empty($_POST['salary'])) 				$_SESSION['salary'] = 				intval($_POST['salary']);
 	if (!empty($_POST['religion'])) 			$_SESSION['religionID'] = 			intval($_POST['religion']);
-	if (!empty($_POST['height'])) 				$_SESSION['height'] = 				intval($_POST['height']);
+	if (!empty($_POST['height'])) 				$_SESSION['height'] = 				str_replace(".", ",", (string) $_POST['height']);
 	if (!empty($_POST['body-type'])) 			$_SESSION['bodyTypeID'] = 			intval($_POST['body-type']);
 	if (!empty($_POST['skin-color'])) 			$_SESSION['skinColorID'] = 			intval($_POST['skin-color']);
 	if (!empty($_POST['eye-color'])) 			$_SESSION['eyeColorID'] = 			intval($_POST['eye-color']);
@@ -81,10 +81,10 @@
 			if (empty($_POST['exercise-frequency'])) $error = $error . "exercise frequency, ";
 			if (empty($_POST['number-kids'])) $error = $error . "number of kids, ";
 			if (empty($_POST['interested-children'])) $error = $error . "interested in children, ";
-			if (empty($_POST['likes-pets'])) $error = $error . "likes pets";
+			if (empty($_POST['likes-pets'])) $error = $error . "likes pets, ";
 			
 			$_SESSION['error'] = substr($error, 0, -2);
-			header("Location: http://localhost/MatchMe/HTMLs/create-profile.php#invalidData");
+			header("Location: create-profile.php#invalidData");
 		}
 		else {
 			//establishes a connection to the db
@@ -201,7 +201,7 @@
 			}
 
 
-			header("Location: http://localhost/MatchMe/HTMLs/homepage.php");
+			header("Location: homepage.php");
 		}
 	//}
 	//else {		//if the submit action wasn't set, redirect

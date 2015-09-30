@@ -1,9 +1,10 @@
 <?php
+	session_start();
 	$registerError = " ";
 	if (empty($_POST["form-email"]) || empty($_POST["password1"]) || empty($_POST["password2"])) {
 		$registerError = "Username or Passwords are invalid";
 		$_POST['registerError'] = $registerError;
-		header("Location: http://localhost/MatchMe/HTMLs/index.php#invaliddata");
+		header("Location: index.php#invaliddata");
     }
     else { //if the data wasn't empty
     	$connection = oci_connect("ADMINISTRATOR", "ADMINISTRATOR", "(DESCRIPTION = (ADDRESS_LIST =
@@ -47,14 +48,14 @@
 			oci_bind_by_name($compiled, ':usernameID', $usernameID, 5);
 			oci_execute($compiled, OCI_NO_AUTO_COMMIT);
 			oci_commit($connection);
-			header("Location: http://localhost/MatchMe/HTMLs/create-profile.php");
 			$_SESSION['usernameID'] = $usernameID; 	//save the usernameID
+			header("Location: create-profile.php");
 		}
 		else {					//if passwords don't match
 			$registerError = "Passwords did not match";
 			$_POST['registerError'] = $registerError;
 			oci_close($connection);
-			header("Location: http://localhost/MatchMe/HTMLs/index.php#passwordsdontnotmatch");
+			header("Location: index.php#passwordsdontnotmatch");
 		}
 		oci_close($connection);
     }

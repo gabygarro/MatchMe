@@ -11,10 +11,10 @@
     }
 
     if(!isset($_SESSION['usernameID'])) {
-        header("Location: http://localhost/MatchMe/HTMLs/index.php#notloggedin");
+        header("Location: index.php#notloggedin");
     }
     if($_SESSION['userType'] != 2) { //if it's not a normal user
-        header("Location: http://localhost/MatchMe/HTMLs/index.php#notnormaluser");
+        header("Location: index.php#notnormaluser");
     }
 ?>
 
@@ -132,7 +132,7 @@
       <div class="container">
         <ul class = "pull-left">
             <img src = "imgs/logopeq.png">
-            <li><a href="homepage.html" >match.me</a></li>
+            <li><a href="homepage.php" >match.me</a></li>
         </ul>
         <ul class = "pull-right">
           <li><a href="profile.php">Profile</a></li>
@@ -147,7 +147,7 @@
     <div class = "profile-body">
         <div class = "container">
             <div class="panel with-nav-tabs panel-default">
-                <form role="form" action="create-person.php" method="POST">
+                <form role="form" action="change-profile.php" method="POST">
                     <div class = "create-profile-container">
                         <div class = "obligatory-field">
                             <p>* indicates an obligatory field</p> 
@@ -427,7 +427,7 @@
                                     $row['TYPENAMEID'] == $_SESSION['language' . $currentLanguage]) {
 
                                     echo "<input type=\"checkbox\" name = \"language" . $currentLanguage . "\" value=\"" . 
-                                    $row['TYPENAMEID'] . "\" selected = \"selected\">" . $row['TYPENAME'] . "<br>";
+                                    $row['TYPENAMEID'] . "\" checked>" . $row['TYPENAME'] . "<br>";
                                 }
                                 else {
                                     echo "<input type=\"checkbox\" name = \"language" . $currentLanguage . "\" value=\"" . 
@@ -710,7 +710,7 @@
                                         $row['TYPENAMEID'] == $_SESSION['interest' . $currentInterest]) {
 
                                         echo "<input type=\"checkbox\" name = \"interest" . $currentInterest . "\" value=\"" . 
-                                        $row['TYPENAMEID'] . "\" selected = \"selected\">" . $row['TYPENAME'] . "<br>";
+                                        $row['TYPENAMEID'] . "\" checked>" . $row['TYPENAME'] . "<br>";
                                     }
                                     else {
                                         echo "<input type=\"checkbox\" name = \"interest" . $currentInterest . "\" value=\"" . 
@@ -777,6 +777,7 @@
                             ?>
                             <br>
                             <input type = "submit" value = "Create profile">
+                            <br>
                         </div>
                     </div>
                 </form>

@@ -3,10 +3,10 @@
     //include ('login.php');
     include('session.php');
     if(!isset($_SESSION['usernameID'])) {
-        header("Location: http://localhost/MatchMe/HTMLs/index.php#notloggedin");
+        header("Location: index.php#notloggedin");
     }
     if ($_SESSION['userType'] != 2) { //if it's not a normal user
-        header("Location: http://localhost/MatchMe/HTMLs/index.php#notnormaluser");
+        header("Location: index.php#notnormaluser");
     }
     //echo $_SESSION['firstName'];
 ?>
@@ -20,7 +20,7 @@
 
   <head>
     <link rel="shortcut icon" href= "imgs/logo (1).png">
-    <title><?php echo $_SESSION['firstName'] ?>'s Profile - match.me</title>
+    <title><?php echo $_SESSION['name'] ?>'s Profile - match.me</title>
 
     <link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>

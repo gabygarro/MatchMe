@@ -1,11 +1,9 @@
 <?php
-	session_start();
     include('session.php');
-
     $error = "* Null values: ";
 	if (empty($_POST['name']) || empty($_POST['last-name']) || empty($_POST['zodiac'])
 		 || empty($_POST['gender']) || empty($_POST['sexual-orientation'])  || empty($_POST['relationship-status'])
-		 || empty($_POST['religion']) || empty($_POST['height'])
+		 || empty($_POST['religion']) || !isset($_POST['height'])
 		 || empty($_POST['body-type']) || empty($_POST['skin-color']) || empty($_POST['eye-color']) 
 		 || empty($_POST['hair-color']) || !isset($_POST['smoker']) || !isset($_POST['drinker'])  
 		 || empty($_POST['exercise-frequency']) || !isset($_POST['number-kids']) || !isset($_POST['interested-children']) 
@@ -23,15 +21,15 @@
 		if (empty($_POST['skin-color'])) $error = $error . "skin color, "; 
 		if (empty($_POST['eye-color'])) $error = $error . "eye color, ";
 		if (empty($_POST['hair-color'])) $error = $error . "hair color, ";
-		if (empty($_POST['smoker'])) $error = $error . "smoker, ";
-		if (empty($_POST['drinker'])) $error = $error . "drinker, "; 
+		if (!isset($_POST['smoker'])) $error = $error . "smoker, ";
+		if (!isset($_POST['drinker'])) $error = $error . "drinker, "; 
 		if (empty($_POST['exercise-frequency'])) $error = $error . "exercise frequency, ";
 		if (empty($_POST['number-kids'])) $error = $error . "number of kids, ";
-		if (empty($_POST['interested-children'])) $error = $error . "interested in children, ";
-		if (empty($_POST['likes-pets'])) $error = $error . "likes pets, ";
+		if (!isset($_POST['interested-children'])) $error = $error . "interested in children, ";
+		if (!isset($_POST['likes-pets'])) $error = $error . "likes pets, ";
 		
 		$_SESSION['error'] = substr($error, 0, -2);
-		header("Location: http://localhost/MatchMe/HTMLs/create-profile.php#invalidData");
+		header("Location: create-profile.php#invalidData");
 	}
 	else {
 		//establishes a connection to the db
@@ -246,14 +244,15 @@
 	    }
 
 	    //update height
+	    $height = str_replace(".", ",", (string) $_POST['height']);
 	    if ($_SESSION['height'] != $_POST['height']) {
 	    	$query = 'BEGIN updatePerson.height(:usernameID, :height); END;';
 			$compiled = oci_parse($connection, $query);
 			oci_bind_by_name($compiled, ':usernameID', $_SESSION['usernameID'], 5);
-			oci_bind_by_name($compiled, ':height', $_POST['height'], 25);
+			oci_bind_by_name($compiled, ':height', $height, 25);
 			oci_execute($compiled, OCI_NO_AUTO_COMMIT);
 			oci_commit($connection);
-			$_SESSION['height'] = $_POST['height'];
+			$_SESSION['height'] = $height;
 	    }
 
 	    //update address
@@ -360,7 +359,7 @@
 	    	if (isset($_POST['language' . $i]) && isset($_SESSION['language' . $i])) {
 	    		//do nothing
 	    	}
-	    	if (!isset($_POST['language' . $i]) && isset($_SESSION['language' . $i])) {
+	    	else if (empty($_POST['language' . $i]) && isset($_SESSION['language' . $i])) {
 	    		//delete the language
 	    		$query = 'BEGIN deletes.personlanguage(:usernameID, :languageID); END;';
 	    		$compiled = oci_parse($connection, $query);
@@ -370,7 +369,7 @@
 				oci_commit($connection);
 				unset($_SESSION['language' . $i]);
 	    	}
-	    	if (isset($_POST['language' . $i]) && !isset($_SESSION['language' . $i]))
+	    	else if (!empty($_POST['language' . $i]) && !isset($_SESSION['language' . $i])) {
 	    		//set the language
 				$query = 'BEGIN inserts.languagesByPerson(:languageID, :usernameID); END;';
             	$compiled = oci_parse($connection, $query);
@@ -378,15 +377,17 @@
 				oci_bind_by_name($compiled, ':languageID', $_POST['language' . $i], 3);
 	            oci_execute($compiled, OCI_NO_AUTO_COMMIT);
 				oci_commit($connection);
+				$_SESSION['language' . $i] = $_POST['language' . $i];
 			}	
 		}
 
 	    //get hobbies
-	    for ($i = 0; $i < $_SESSION['countHobbiess']; $i++) {
-	    	if (isset($_POST['hobbie' . $i]) && isset($_SESSION['hobbie' . $i])) {
+	    for ($i = 0; $i < $_SESSION['countHobbies']; $i++) {
+	    	if (isset($_POST['hobbie' . $i]) && isset($_SESSION['hobbie' . $i])
+	    		) {
 	    		//do nothing
 	    	}
-	    	if (!isset($_POST['hobbie' . $i]) && isset($_SESSION['hobbie' . $i])) {
+	    	else if (empty($_POST['hobbie' . $i]) && isset($_SESSION['hobbie' . $i])) {
 	    		//delete the hobbie
 	    		$query = 'BEGIN deletes.personhobbie(:usernameID, :hobbieID); END;';
 	    		$compiled = oci_parse($connection, $query);
@@ -396,7 +397,7 @@
 				oci_commit($connection);
 				unset($_SESSION['hobbie' . $i]);
 	    	}
-	    	if (isset($_POST['hobbie' . $i]) && !isset($_SESSION['hobbie' . $i]))
+	    	else if (!empty($_POST['hobbie' . $i]) && !isset($_SESSION['hobbie' . $i])) {
 	    		//set the hobbie
 				$query = 'BEGIN inserts.hobbiesByPerson(:hobbieID, :usernameID); END;';
             	$compiled = oci_parse($connection, $query);
@@ -404,6 +405,7 @@
 				oci_bind_by_name($compiled, ':hobbieID', $_POST['hobbie' . $i], 3);
 	            oci_execute($compiled, OCI_NO_AUTO_COMMIT);
 				oci_commit($connection);
+				$_SESSION['hobbie' . $i] = $_POST['hobbie' . $i];
 			}	
 		}
 
@@ -412,7 +414,7 @@
 	    	if (isset($_POST['interest' . $i]) && isset($_SESSION['interest' . $i])) {
 	    		//do nothing
 	    	}
-	    	if (!isset($_POST['interest' . $i]) && isset($_SESSION['interest' . $i])) {
+	    	else if (empty($_POST['interest' . $i]) && isset($_SESSION['interest' . $i])) {
 	    		//delete the interest
 	    		$query = 'BEGIN deletes.personInterest(:usernameID, :interestID); END;';
 	    		$compiled = oci_parse($connection, $query);
@@ -422,7 +424,7 @@
 				oci_commit($connection);
 				unset($_SESSION['interest' . $i]);
 	    	}
-	    	if (isset($_POST['interest' . $i]) && !isset($_SESSION['interest' . $i]))
+	    	else if (!empty($_POST['interest' . $i]) && !isset($_SESSION['interest' . $i])) {
 	    		//set the interest
 				$query = 'BEGIN inserts.interestsByPerson(:interestID, :usernameID); END;';
             	$compiled = oci_parse($connection, $query);
@@ -430,9 +432,10 @@
 				oci_bind_by_name($compiled, ':interestID', $_POST['interest' . $i], 3);
 	            oci_execute($compiled, OCI_NO_AUTO_COMMIT);
 				oci_commit($connection);
+				$_SESSION['interest' . $i] = $_POST['interest' . $i];
 			}	
 		}
 
-		header("Location: http://localhost/MatchMe/HTMLs/homepage.php#changessaved");
+		header("Location: homepage.php#changessaved");
 	}
 ?>

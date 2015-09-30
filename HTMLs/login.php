@@ -7,7 +7,7 @@
 		if (empty($_POST['form-email']) || empty($_POST['password1'])) {
 		$loginerror = "Username or Password is invalid";
 		$_POST['loginerror'] = $loginerror;
-		header("Location: http://localhost/MatchMe/HTMLs/index.php#invalidData");
+		header("Location: index.php#invalidData");
 		}
 		else {
 			//establishes a connection to the db
@@ -61,16 +61,16 @@
 				$_SESSION['usernameID'] = $usernameID;
 
 				if ($userType == 1) { //if user is administrator
-					header("Location: http://localhost/MatchMe/HTMLs/admin-homepage.php");
+					header("Location: admin-homepage.php");
 				}
 				else {
-					header("Location: http://localhost/MatchMe/HTMLs/homepage.php");
+					header("Location: homepage.php");
 				}
 			}
 			else {			//if the combination username+password were denied by the db
 				$loginerror = "Username and password combination were invalid.";
 				$_POST['loginerror'] = $loginerror;
-				header("Location: http://localhost/MatchMe/HTMLs/index.php#username+passworddonotmatch");
+				header("Location: index.php#username+passworddonotmatch");
 			}
 			oci_close($connection);
 		}
