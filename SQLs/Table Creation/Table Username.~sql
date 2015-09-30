@@ -1,6 +1,6 @@
 CREATE TABLE username
   (
-    usernameID      NUMBER (3) NOT NULL ,
+    usernameID      NUMBER (5) NOT NULL ,
     userEmail       VARCHAR2 (30) NOT NULL ,
     usernamePassword VARCHAR2 (50) NOT NULL ,
     userTypeID       NUMBER (1) NOT NULL

@@ -28,7 +28,7 @@ as
 
        END;
 -------------------------------------------------------------------------------
-procedure personinterests (pUserID in number, pinterestID in number)
+procedure personinterest (pUserID in number, pinterestID in number)
  --delete the hobie that have the table interestsbyperson with parameters pUserID and pinterestID
 as
        BEGIN        

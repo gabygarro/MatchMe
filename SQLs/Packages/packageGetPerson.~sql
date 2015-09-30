@@ -40,5 +40,9 @@ create or replace package getperson is
        procedure findNickName (pNickName in varchar2, pNickNameIDs  out sys_refcursor);
        procedure Languages (pUserNameID in number, pLanguages out sys_refcursor);
        
+       procedure checkHobbie(pUserID IN number, phobbieID in number, phobbieCheck out number);
+       procedure checkInterest(pUserID IN number, pinterestID in number, pInterestCheck out number);
+       procedure checkLanguage(pUserID IN number, pLanguageCode in varchar2, pLanguageCheck out number);
+       
       
  END getperson;

@@ -18,7 +18,7 @@ CREATE TABLE Person1 (
     numberOfKids           NUMBER (2) CONSTRAINT numberOfKids_nn NOT NULL ,
     interestedInKids       NUMBER (1) CONSTRAINT interestedInKids_nn NOT NULL ,
     likesPets              NUMBER (1) CONSTRAINT likesPets_nn NOT NULL ,
-    eyesColorId            NUMBER (3) CONSTRAINT eyesColorID_nn NOT NULL ,
+    eyesColorId             NUMBER (3) CONSTRAINT eyesColorID_nn NOT NULL ,
     genderID               NUMBER (3) CONSTRAINT genderID_nn NOT NULL ,
     orientationID          NUMBER (3) CONSTRAINT orientationID_nn NOT NULL ,
     rangeID                NUMBER (3) CONSTRAINT rangeID_nn NOT NULL ,
@@ -42,6 +42,9 @@ CREATE TABLE Person1 (
         TABLESPACE ADMIN_Ind PCTFREE 20
         STORAGE ( INITIAL 10K NEXT 10K PCTINCREASE 0) ;
         
+ALTER TABLE Person ADD CONSTRAINT Person_eyeColorID_FK FOREIGN KEY ( eyeColorID )
+REFERENCES eyecolorcatalog ( eyecolorid ) ; 
+       
 ALTER TABLE Person ADD CONSTRAINT Person_usernameID_FK FOREIGN KEY ( usernameID )
 REFERENCES username ( usernameid ) ;
 
@@ -77,3 +80,4 @@ REFERENCES skinColorCatalog ( skinColorID ) ;
 
 ALTER TABLE Person ADD CONSTRAINT Person_zodiacSignCatalog_FK FOREIGN KEY ( zodiacSignID ) 
 REFERENCES zodiacSignCatalog ( zodiacSignID ) ;
+

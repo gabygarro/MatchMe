@@ -6,14 +6,14 @@ CREATE TABLE Picture
  CONSTRAINT PK_ARCHIVOS PRIMARY KEY (CO_ARCHIVO)
  ) 
  -------------------------------------------------------
- CREATE TABLE "pictureTable" (           
-    ID_IMAGEN NUMBER(5,0),
+ CREATE TABLE picture (           
+    pictureID integer(5),
     MIMETYPE VARCHAR2(255 BYTE),
-    FILENAME VARCHAR2(255 BYTE),
+    FILELocation  VARCHAR2(255 BYTE),
     LAST_UPDATE DATE,
-    CHARSET VARCHAR2(128 BYTE),
+    CHARSET_ VARCHAR2(128 BYTE),
     PHOTO BLOB,
-    NAME VARCHAR2(30 BYTE),
-    CONSTRAINT PK_ARCHIVOS PRIMARY KEY (ID_IMAGEN)
+    NAME_ VARCHAR2(30 BYTE),
+    CONSTRAINT PK_picture PRIMARY KEY (pictureID);
 
 );

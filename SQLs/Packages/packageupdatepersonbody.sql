@@ -148,7 +148,7 @@ procedure Height (pPersonID number, pHeight number)
 as
        BEGIN        
            UPDATE Person
-           SET Height = pHeight
+           SET Height = cast(pHeight as number(3,2))
            WHERE pPersonID = userNameID;
          
         Exception

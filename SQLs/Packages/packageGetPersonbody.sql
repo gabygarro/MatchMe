@@ -500,5 +500,37 @@ begin
          order by LanguageName;
 end Languages;
 -------------------------------------------------------------------------------
+procedure checkHobbie(pUserID IN number, phobbieID in number, phobbieCheck out number) as
+       BEGIN
+         phobbieCheck:= 0;
+         SELECT 1 INTO phobbieCheck
+         FROM hobbiesbyperson hbp
+         WHERE (hbp.personid = pUserID and hbp.hobbieid = phobbieID);
+         exception
+           when no_data_found then
+             phobbieCheck:= 0;
+        END;
+-------------------------------------------------------------------------------
+procedure checkInterest(pUserID IN number, pinterestID in number, pInterestCheck out number) as
+       BEGIN
+         pInterestCheck:= 0;
+         SELECT 1 INTO pInterestCheck
+         FROM interestsbyperson ibp
+         WHERE (ibp.personid = pUserID and ibp.interestid = pinterestID);
+         exception
+           when no_data_found then
+             pInterestCheck:= 0;
+        END;
+-------------------------------------------------------------------------------
+procedure checkLanguage(pUserID IN number, pLanguageCode in varchar2, pLanguageCheck out number) as
+       BEGIN
+         pLanguageCheck:= 0;
+         SELECT 1 INTO pLanguageCheck
+         FROM languagesbyperson lbp
+         WHERE (lbp.personid = pUserID and lbp.languagecode = pLanguageCode);
+         exception
+           when no_data_found then
+             pLanguageCheck:= 0;
+        END;
 -------------------------------------------------------------------------------
 END getperson;

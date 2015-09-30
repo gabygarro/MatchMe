@@ -8,3 +8,6 @@ CREATE TABLE username
 ALTER TABLE username ADD CONSTRAINT usernamePK PRIMARY KEY ( usernameID ) ;
 
 ALTER TABLE username ADD CONSTRAINT username_userTypeCatalog_FK FOREIGN KEY ( userTypeID ) REFERENCES userTypeCatalog ( userTypeID ) ;
+
+alter table username
+modify useremail add constraint useremail_uk unique(useremail);
