@@ -33,7 +33,7 @@ create or replace package getperson is
        procedure interests (pUserNameID in number, pInterestName out sys_refcursor);
        
        procedure Email (pEmail in varchar2, pUserNameIDs  out sys_refcursor);
-       procedure userName (pName in varchar2, pUserIDs  out sys_refcursor);
+       procedure findName (pName in varchar2, pUserIDs  out sys_refcursor);
        procedure hobbies (pUserNameID in number, pHobbieName out sys_refcursor);
        procedure findLastName2 (pLastName2 in varchar2, pUserIDs  out sys_refcursor);
        procedure findLastName1 (pLastName1 in varchar2, pUserIDs  out sys_refcursor);
