@@ -101,7 +101,7 @@
 }
 
 .panel.with-nav-tabs .panel-heading{
-    padding: 5px 5px 0 5px;
+  padding: 5px 5px 0 5px;
 }
 .panel.with-nav-tabs .nav-tabs{
   border-bottom: none;
@@ -128,7 +128,7 @@
 .with-nav-tabs.panel-default .nav-tabs > li > a:hover,
 .with-nav-tabs.panel-default .nav-tabs > li > a:focus {
     color: #FFFFFF;
-  background-color: #fd625e;
+  background-color: #fd625e; 
   border-color: transparent;
 }
 
@@ -162,6 +162,10 @@
   font-weight: bold;
   font-size: 18
   color: #fd625e;
+}
+
+.footer {
+  border-top: 2px solid #efefef;
 }
 
 .done-btn a {
@@ -256,7 +260,7 @@ input[type=radio] {
   border: 1px solid #dbdbdb;
   border-bottom: 1px solid #dbdbdb;
   background-color: #efefef;
-  text-indent: 15px;
+  text-indent: 20px;
   border-radius: 10px 10px 0px 0px;
 }
 

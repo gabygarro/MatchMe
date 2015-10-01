@@ -48,11 +48,12 @@
             <li><a href="homepage.php" >match.me</a></li>
         </ul>
         <ul class = "pull-right">
-          <li><a href="profile.php">Profile</a></li>
-          <li><a href="#">Messages</a></li>
-          <li><a href="#">Notifications</a></li>
-          <li><a href="#">Settings</a></li>
-          <li><a href="logout.php">Log out</a></li>
+            <li><a href="search.php"><img src = "imgs/search.png">Search</a></li>
+            <li><a href="profile.php">Profile</a></li>
+            <li><a href="#">Messages</a></li>
+            <li><a href="#">Notifications</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="logout.php">Log out</a></li>
         </ul>
       </div>
     </div>
@@ -153,18 +154,18 @@
                             <div class="col-md-8">
                                 <div class="panel with-nav-tabs panel-default">
                                     <div class="panel-heading">
-                                            <ul class="nav nav-tabs">
-                                                <li class="active"><a href="#tab1default" data-toggle="tab">Basic Information</a></li>
-                                                <li><a href="#tab2default" data-toggle="tab">Education and Work</a></li>
-                                                <li><a href="#tab3default" data-toggle="tab">Physical Information</a></li>
-                                                <li class="dropdown">
-                                                    <a href="#" data-toggle="dropdown">More <span class="caret"></span></a>
-                                                    <ul class="dropdown-menu" role="menu">
-                                                        <li><a href="#tab4default" data-toggle="tab">LifeStyle</a></li>
-                                                        <li><a href="#tab5default" data-toggle="tab">Interests and Hobbies</a></li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
+                                        <ul class="nav nav-tabs">
+                                            <li class="active"><a href="#tab1default" data-toggle="tab">Basic Information</a></li>
+                                            <li><a href="#tab2default" data-toggle="tab">Education and Work</a></li>
+                                            <li><a href="#tab3default" data-toggle="tab">Physical Information</a></li>
+                                            <li class="dropdown">
+                                                <a href="#" data-toggle="dropdown">More <span class="caret"></span></a>
+                                                <ul class="dropdown-menu" role="menu">
+                                                    <li><a href="#tab4default" data-toggle="tab">LifeStyle</a></li>
+                                                    <li><a href="#tab5default" data-toggle="tab">Interests and Hobbies</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
                                     </div>
                                     <div class="panel-body">
                                         <div class="tab-content">

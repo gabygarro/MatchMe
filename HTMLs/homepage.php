@@ -15,7 +15,6 @@
 <head>
 	<title>Your Home Page</title>
 	<link rel="shortcut icon" href= "imgs/logo (1).png">
-    <title>Admin Homepage</title>
 
     <link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
@@ -45,11 +44,12 @@
             <li><a href="homepage.php" >match.me</a></li>
         </ul>
         <ul class = "pull-right">
-          <li><a href="profile.php">Profile</a></li>
-          <li><a href="#">Messages</a></li>
-          <li><a href="#">Notifications</a></li>
-          <li><a href="#">Settings</a></li>
-          <li><a href="logout.php">Log out</a></li>
+            <li><a href="search.php"><img src = "imgs/search.png">Search</a></li>
+            <li><a href="profile.php">Profile</a></li>
+            <li><a href="#">Messages</a></li>
+            <li><a href="#">Notifications</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="logout.php">Log out</a></li>
         </ul>
       </div>
     </div>

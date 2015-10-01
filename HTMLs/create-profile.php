@@ -96,7 +96,7 @@
         function populateStates( countryElementId, stateElementId ) {
             var selectedCountryIndex = document.getElementById( countryElementId ).selectedIndex;
             var stateElement = document.getElementById( stateElementId );
-            stateElement.length=0;  // Fixed by Julian Woods
+            stateElement.length=0; 
             stateElement.options[0] = new Option('Select State','');
             stateElement.selectedIndex = 0;
             
