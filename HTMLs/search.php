@@ -542,18 +542,24 @@
             input.type = "text";
             searchBar.appendChild(input);
             if (field == "name") {
+                input.name = "searchName";
+                input.max = "50";
                 input.placeholder = "Search for name..."
             }
             else if (field == "lastName") {
+                input.name = "searchLastName";
                 input.placeholder = "Search for last name..."
             }
-            else if (field == "lastName") {
-                input.placeholder = "Search for lastName..."
+            else if (field == "lastName2") {
+                input.name = "searchLastName2";
+                input.placeholder = "Search for second last name..."
             }
             else if (field == "city") {
+                input.name = "searchCity";
                 input.placeholder = "Search for people in a city..."
             }
             else if (field == "country") {
+                input.name = "searchCountry";
                 input.placeholder = "Search for people in a country..."
             }
         }
@@ -580,14 +586,14 @@
     <br>
 
     <div class = "container">
-        <div class = "row">
-            <div class = "col-md-3">
-                <div class = "search-sidebar">
-                    <div class="box-header">
-                        <h3>Search by person's...</h3>
-                    </div>
-                    <div class="box-body">
-                        <form role="form" action="change-profile.php" method="POST">
+        <form action="search.php" method="POST">
+            <div class = "row">
+                <div class = "col-md-3">
+                    <div class = "search-sidebar">
+                        <div class="box-header">
+                            <h3>Search by person's...</h3>
+                        </div>
+                        <div class="box-body">
                             <ul>
                                 <input type="radio" name = "search" value="name" id="name" onchange="createTextField(this.id)">Name<br>
                                 <input type="radio" name = "search" value="lastName" id="lastName" onchange="createTextField(this.id)">Last name<br>
@@ -611,24 +617,55 @@
                                 <input type="radio" name = "search" value="zodiacSign" id="zodiacSign" onchange="populateCatalog(this.id)">Zodiac Sign<br>
                                 <hr>
                             </ul>
-                        </form>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class = "col-md-7">
+                    <div class="search-content">
+                        <div class = "row">
+                            <div class = "col-md-11">
+                                <div id = "search-bar" class = "search-bar">
+                                    <h3>Select a search value on the left...</h3>
+                                </div>
+                                <?php
+                                    if (isset($_POST["searchName"])) {
+                                        $cursor = oci_new_cursor($connection);
+                                        $query = 'BEGIN find.findName(:searchName,:cursor); END;';
+                                        $compiled = oci_parse($connection, $query);
+                                        oci_bind_by_name($compiled, ':cursor', $cursor, -1, OCI_B_CURSOR);
+                                        oci_bind_by_name($compiled, ':searchName', $_POST["searchName"], 50);
+                                        oci_execute($compiled);
+                                        oci_execute($cursor, OCI_DEFAULT);       //execute the cursor like a normal statement
+                                        while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
+                                            echo "<h3><b>" . $row['FNAME'] . " " . $row['LNAME'] . " " . $row['LNAME2'] 
+                                            . "</b>, " . $row['AGE'] . "</h3>";
+                                            echo "<p>" . $row['TAG'] . "</p>";
+                                            echo "<p>Lives in: " . $row['CITY'] . ", " . $row['COUNTRY'] . "</p>";
+                                            echo "<hr><br>";
+                                        }
+                                        oci_free_statement($compiled);
+                                        oci_free_statement($cursor);
+                                    }
+                                    unset($_POST["searchName"]);
+                                ?>
+                            </div>
+                            <div class = "col-md-1">
+                                <div class = "search-icon">
+                                    <div class = "thumbnail">
+                                        <input type="image" src = "imgs/search-button.png" alt="submit">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>       
                     </div>
                 </div>
-                
-            </div>
-            <div class = "col-md-7">
-                <div class="search-content">
-                    <div id = "search-bar" class = "search-bar">
-                    <input type="text" placeholder="Select a search value on the left...">
-                    </div>
-                        
+                <div class = "col-md-2">
+                    <div class="search-information"></div>
+                    <div class="search-statistics"></div>
                 </div>
             </div>
-            <div class = "col-md-2">
-                <div class="search-information"></div>
-                <div class="search-statistics"></div>
-            </div>
-        </div>
+        </form>
     </div>
     
     <div class = "footer">
