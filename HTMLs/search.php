@@ -436,6 +436,8 @@
             if (catalog == "ageRange") {
                 select.options[0] = new Option('Select age range','-1');
                 select.selectedIndex = 0;
+                select.id = "searchAgeRange";
+                select.name = "searchAgeRange";
                 for(var i = 0; i < ageRangeNames.length; i++) {
                     select.options[select.length] = new Option(ageRangeNames[i], ageRangeIDs[i]);
                 }
@@ -443,6 +445,8 @@
             else if (catalog == "bodyType") {
                 select.options[0] = new Option('Select body type','-1');
                 select.selectedIndex = 0;
+                select.id = "searchBodyType";
+                select.name = "searchBodyType";
                 for(var i = 0; i < bodyTypeNames.length; i++) {
                     select.options[select.length] = new Option(bodyTypeNames[i], bodyTypeIDs[i]);
                 }
@@ -450,6 +454,8 @@
             else if (catalog == "exerciseFrequency") {
                 select.options[0] = new Option('Select exercise frequency','-1');
                 select.selectedIndex = 0;
+                select.id = "searchExerciseFrequency";
+                select.name = "searchExerciseFrequency";
                 for(var i = 0; i < exerciseFrequencyNames.length; i++) {
                     select.options[select.length] = new Option(exerciseFrequencyNames[i], exerciseFrequencyIDs[i]);
                 }
@@ -457,6 +463,8 @@
             else if (catalog == "eyeColor") {
                 select.options[0] = new Option('Select eye color','-1');
                 select.selectedIndex = 0;
+                select.id = "searchEyeColor";
+                select.name = "searchEyeColor";
                 for(var i = 0; i < eyeColorNames.length; i++) {
                     select.options[select.length] = new Option(eyeColorNames[i], eyeColorIDs[i]);
                 }
@@ -464,6 +472,8 @@
             else if (catalog == "gender") {
                 select.options[0] = new Option('Select gender','-1');
                 select.selectedIndex = 0;
+                select.id = "searchGender";
+                select.name = "searchGender";
                 for(var i = 0; i < genderNames.length; i++) {
                     select.options[select.length] = new Option(genderNames[i], genderIDs[i]);
                 }
@@ -471,6 +481,8 @@
             else if (catalog == "hairColor") {
                 select.options[0] = new Option('Select hair color','-1');
                 select.selectedIndex = 0;
+                select.id = "searchHairColor";
+                select.name = "searchHairColor";
                 for(var i = 0; i < hairColorNames.length; i++) {
                     select.options[select.length] = new Option(hairColorNames[i], hairColorIDs[i]);
                 }
@@ -478,6 +490,8 @@
             else if (catalog == "hobbie") {
                 select.options[0] = new Option('Select hobbie','-1');
                 select.selectedIndex = 0;
+                select.id = "searchHobbie";
+                select.name = "searchHobbie";
                 for(var i = 0; i < hobbieNames.length; i++) {
                     select.options[select.length] = new Option(hobbieNames[i], hobbieIDs[i]);
                 }
@@ -485,6 +499,8 @@
             else if (catalog == "interest") {
                 select.options[0] = new Option('Select interest','-1');
                 select.selectedIndex = 0;
+                select.id = "searchInterest";
+                select.name = "searchInterest";
                 for(var i = 0; i < interestNames.length; i++) {
                     select.options[select.length] = new Option(interestNames[i], interestIDs[i]);
                 }
@@ -492,6 +508,8 @@
             else if (catalog == "language") {
                 select.options[0] = new Option('Select language','-1');
                 select.selectedIndex = 0;
+                select.id = "searchLanguage";
+                select.name = "searchLanguage";
                 for(var i = 0; i < languageNames.length; i++) {
                     select.options[select.length] = new Option(languageNames[i], languageIDs[i]);
                 }
@@ -499,6 +517,8 @@
             else if (catalog == "relationshipStatus") {
                 select.options[0] = new Option('Select relationship status','-1');
                 select.selectedIndex = 0;
+                select.id = "searchRelationshipStatus";
+                select.name = "searchRelationshipStatus";
                 for(var i = 0; i < relationshipStatusNames.length; i++) {
                     select.options[select.length] = new Option(relationshipStatusNames[i], relationshipStatusIDs[i]);
                 }
@@ -506,6 +526,8 @@
             else if (catalog == "religion") {
                 select.options[0] = new Option('Select religion','-1');
                 select.selectedIndex = 0;
+                select.id = "searchReligion";
+                select.name = "searchReligion";
                 for(var i = 0; i < religionNames.length; i++) {
                     select.options[select.length] = new Option(religionNames[i], religionIDs[i]);
                 }
@@ -513,6 +535,8 @@
             else if (catalog == "sexualOrientation") {
                 select.options[0] = new Option('Select sexual orientation','-1');
                 select.selectedIndex = 0;
+                select.id = "searchSexualOrientation";
+                select.name = "searchSexualOrientation";
                 for(var i = 0; i < sexualOrientationNames.length; i++) {
                     select.options[select.length] = new Option(sexualOrientationNames[i], sexualOrientationIDs[i]);
                 }
@@ -520,6 +544,8 @@
             else if (catalog == "skinColor") {
                 select.options[0] = new Option('Select skin color','-1');
                 select.selectedIndex = 0;
+                select.id = "searchSkinColor";
+                select.name = "searchSkinColor";
                 for(var i = 0; i < skinColorNames.length; i++) {
                     select.options[select.length] = new Option(skinColorNames[i], skinColorIDs[i]);
                 }
@@ -527,6 +553,8 @@
             else if (catalog == "zodiacSign") {
                 select.options[0] = new Option('Select zodiac sign','-1');
                 select.selectedIndex = 0;
+                select.id = "searchZodiacSign";
+                select.name = "searchZodiacSign";
                 for(var i = 0; i < zodiacSignNames.length; i++) {
                     select.options[select.length] = new Option(zodiacSignNames[i], zodiacSignIDs[i]);
                 }
@@ -544,23 +572,27 @@
             if (field == "name") {
                 input.name = "searchName";
                 input.max = "50";
-                input.placeholder = "Search for name..."
+                input.placeholder = "Search by name..."
             }
             else if (field == "lastName") {
                 input.name = "searchLastName";
-                input.placeholder = "Search for last name..."
+                input.placeholder = "Search by last name..."
             }
             else if (field == "lastName2") {
                 input.name = "searchLastName2";
-                input.placeholder = "Search for second last name..."
+                input.placeholder = "Search by second last name..."
+            }
+            else if (field == "nickname") {
+                input.name = "searchNickname";
+                input.placeholder = "Search by nickname..."
             }
             else if (field == "city") {
                 input.name = "searchCity";
-                input.placeholder = "Search for people in a city..."
+                input.placeholder = "Search for people by city..."
             }
             else if (field == "country") {
                 input.name = "searchCountry";
-                input.placeholder = "Search for people in a country..."
+                input.placeholder = "Search for people by country..."
             }
         }
     </script>
@@ -597,6 +629,8 @@
                             <ul>
                                 <input type="radio" name = "search" value="name" id="name" onchange="createTextField(this.id)">Name<br>
                                 <input type="radio" name = "search" value="lastName" id="lastName" onchange="createTextField(this.id)">Last name<br>
+                                <input type="radio" name = "search" value="lastName2" id="lastName2" onchange="createTextField(this.id)">Second last name<br>
+                                <input type="radio" name = "search" value="nickname" id="nickname" onchange="createTextField(this.id)">Nickname<br>
                                 <input type="radio" name = "search" value="city" id="city" onchange="createTextField(this.id)">City<br>
                                 <input type="radio" name = "search" value="country" id="country" onchange="createTextField(this.id)">Country<br>
                                 <input type="radio" name = "search" value="age" id="age">Age (not implemented)<br>
@@ -629,12 +663,33 @@
                                     <h3>Select a search value on the left...</h3>
                                 </div>
                                 <?php
+                                    //Search for text field values
                                     if (isset($_POST["searchName"])) {
                                         $cursor = oci_new_cursor($connection);
                                         $query = 'BEGIN find.findName(:searchName,:cursor); END;';
                                         $compiled = oci_parse($connection, $query);
                                         oci_bind_by_name($compiled, ':cursor', $cursor, -1, OCI_B_CURSOR);
                                         oci_bind_by_name($compiled, ':searchName', $_POST["searchName"], 50);
+                                        oci_execute($compiled);
+                                        oci_execute($cursor, OCI_DEFAULT);       //execute the cursor like a normal statement
+                                        while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
+                                            echo "<h3><b><a href=\"other-profile.php\"" . $row['FNAME'] . " " . $row['LNAME'] . " " . $row['LNAME2'] 
+                                            . "</a></b>, " . $row['AGE'] . "</h3>";
+                                            echo "<p>" . $row['TAG'] . "</p>";
+                                            echo "<p>Lives in: " . $row['CITY'] . ", " . $row['COUNTRY'] . "</p>";
+                                            echo "<hr><br>";
+
+                                        }
+                                        oci_free_statement($compiled);
+                                        oci_free_statement($cursor);
+                                        unset($_POST["searchName"]);
+                                    }
+                                    else if (isset($_POST["searchLastName"])) {
+                                        $cursor = oci_new_cursor($connection);
+                                        $query = 'BEGIN find.LastName(:searchLastName,:cursor); END;';
+                                        $compiled = oci_parse($connection, $query);
+                                        oci_bind_by_name($compiled, ':cursor', $cursor, -1, OCI_B_CURSOR);
+                                        oci_bind_by_name($compiled, ':searchLastName', $_POST["searchLastName"], 50);
                                         oci_execute($compiled);
                                         oci_execute($cursor, OCI_DEFAULT);       //execute the cursor like a normal statement
                                         while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
@@ -646,9 +701,353 @@
                                         }
                                         oci_free_statement($compiled);
                                         oci_free_statement($cursor);
+                                        unset($_POST["searchLastName"]);
                                     }
-                                    unset($_POST["searchName"]);
+                                    else if (isset($_POST["searchLastName2"])) {
+                                        $cursor = oci_new_cursor($connection);
+                                        $query = 'BEGIN find.LastName2(:searchLastName2,:cursor); END;';
+                                        $compiled = oci_parse($connection, $query);
+                                        oci_bind_by_name($compiled, ':cursor', $cursor, -1, OCI_B_CURSOR);
+                                        oci_bind_by_name($compiled, ':searchLastName2', $_POST["searchLastName2"], 50);
+                                        oci_execute($compiled);
+                                        oci_execute($cursor, OCI_DEFAULT);       //execute the cursor like a normal statement
+                                        while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
+                                            echo "<h3><b>" . $row['FNAME'] . " " . $row['LNAME'] . " " . $row['LNAME2'] 
+                                            . "</b>, " . $row['AGE'] . "</h3>";
+                                            echo "<p>" . $row['TAG'] . "</p>";
+                                            echo "<p>Lives in: " . $row['CITY'] . ", " . $row['COUNTRY'] . "</p>";
+                                            echo "<hr><br>";
+                                        }
+                                        oci_free_statement($compiled);
+                                        oci_free_statement($cursor);
+                                        unset($_POST["searchLastName2"]);
+                                    }
+                                    else if (isset($_POST["searchNickname"])) {
+                                        $cursor = oci_new_cursor($connection);
+                                        $query = 'BEGIN find.nickname(:searchNickname,:cursor); END;';
+                                        $compiled = oci_parse($connection, $query);
+                                        oci_bind_by_name($compiled, ':cursor', $cursor, -1, OCI_B_CURSOR);
+                                        oci_bind_by_name($compiled, ':searchNickname', $_POST["searchNickname"], 50);
+                                        oci_execute($compiled);
+                                        oci_execute($cursor, OCI_DEFAULT);       //execute the cursor like a normal statement
+                                        while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
+                                            echo "<h3><b>" . $row['FNAME'] . " " . $row['LNAME'] . " " . $row['LNAME2'] 
+                                            . "</b>, " . $row['AGE'] . "</h3>";
+                                            echo "<p>" . $row['TAG'] . "</p>";
+                                            echo "<p>Lives in: " . $row['CITY'] . ", " . $row['COUNTRY'] . "</p>";
+                                            echo "<hr><br>";
+                                        }
+                                        oci_free_statement($compiled);
+                                        oci_free_statement($cursor);
+                                        unset($_POST["searchNickname"]);
+                                    }
+                                    else if (isset($_POST["searchCity"])) {
+                                        $cursor = oci_new_cursor($connection);
+                                        $query = 'BEGIN find.city(:searchCity,:cursor); END;';
+                                        $compiled = oci_parse($connection, $query);
+                                        oci_bind_by_name($compiled, ':cursor', $cursor, -1, OCI_B_CURSOR);
+                                        oci_bind_by_name($compiled, ':searchCity', $_POST["searchCity"], 50);
+                                        oci_execute($compiled);
+                                        oci_execute($cursor, OCI_DEFAULT);       //execute the cursor like a normal statement
+                                        while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
+                                            echo "<h3><b>" . $row['FNAME'] . " " . $row['LNAME'] . " " . $row['LNAME2'] 
+                                            . "</b>, " . $row['AGE'] . "</h3>";
+                                            echo "<p>" . $row['TAG'] . "</p>";
+                                            echo "<p>Lives in: " . $row['CITY'] . ", " . $row['COUNTRY'] . "</p>";
+                                            echo "<hr><br>";
+                                        }
+                                        oci_free_statement($compiled);
+                                        oci_free_statement($cursor);
+                                        unset($_POST["searchCity"]);
+                                    }
+                                    else if (isset($_POST["searchCountry"])) {
+                                        $cursor = oci_new_cursor($connection);
+                                        $query = 'BEGIN find.country(:searchCountry,:cursor); END;';
+                                        $compiled = oci_parse($connection, $query);
+                                        oci_bind_by_name($compiled, ':cursor', $cursor, -1, OCI_B_CURSOR);
+                                        oci_bind_by_name($compiled, ':searchCountry', $_POST["searchCountry"], 50);
+                                        oci_execute($compiled);
+                                        oci_execute($cursor, OCI_DEFAULT);       //execute the cursor like a normal statement
+                                        while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
+                                            echo "<h3><b>" . $row['FNAME'] . " " . $row['LNAME'] . " " . $row['LNAME2'] 
+                                            . "</b>, " . $row['AGE'] . "</h3>";
+                                            echo "<p>" . $row['TAG'] . "</p>";
+                                            echo "<p>Lives in: " . $row['CITY'] . ", " . $row['COUNTRY'] . "</p>";
+                                            echo "<hr><br>";
+                                        }
+                                        oci_free_statement($compiled);
+                                        oci_free_statement($cursor);
+                                        unset($_POST["searchCountry"]);
+                                    }
+                                    //Search for catalog values
+                                    else if (isset($_POST["searchAgeRange"])) {
+                                        $cursor = oci_new_cursor($connection);
+                                        $query = 'BEGIN find.ageRange(:searchAgeRange,:cursor); END;';
+                                        $compiled = oci_parse($connection, $query);
+                                        oci_bind_by_name($compiled, ':cursor', $cursor, -1, OCI_B_CURSOR);
+                                        oci_bind_by_name($compiled, ':searchAgeRange', $_POST["searchAgeRange"], 50);
+                                        oci_execute($compiled);
+                                        oci_execute($cursor, OCI_DEFAULT);       //execute the cursor like a normal statement
+                                        while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
+                                            echo "<h3><b>" . $row['FNAME'] . " " . $row['LNAME'] . " " . $row['LNAME2'] 
+                                            . "</b>, " . $row['AGE'] . "</h3>";
+                                            echo "<p>" . $row['TAG'] . "</p>";
+                                            echo "<p>Lives in: " . $row['CITY'] . ", " . $row['COUNTRY'] . "</p>";
+                                            echo "<hr><br>";
+                                        }
+                                        oci_free_statement($compiled);
+                                        oci_free_statement($cursor);
+                                        unset($_POST["searchAgeRange"]);
+                                    }
+                                    else if (isset($_POST["searchBodyType"])) {
+                                        $cursor = oci_new_cursor($connection);
+                                        $query = 'BEGIN find.bodytype(:searchBodyType,:cursor); END;';
+                                        $compiled = oci_parse($connection, $query);
+                                        oci_bind_by_name($compiled, ':cursor', $cursor, -1, OCI_B_CURSOR);
+                                        oci_bind_by_name($compiled, ':searchBodyType', $_POST["searchBodyType"], 50);
+                                        oci_execute($compiled);
+                                        oci_execute($cursor, OCI_DEFAULT);       //execute the cursor like a normal statement
+                                        while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
+                                            echo "<h3><b>" . $row['FNAME'] . " " . $row['LNAME'] . " " . $row['LNAME2'] 
+                                            . "</b>, " . $row['AGE'] . "</h3>";
+                                            echo "<p>" . $row['TAG'] . "</p>";
+                                            echo "<p>Lives in: " . $row['CITY'] . ", " . $row['COUNTRY'] . "</p>";
+                                            echo "<hr><br>";
+                                        }
+                                        oci_free_statement($compiled);
+                                        oci_free_statement($cursor);
+                                        unset($_POST["searchBodyType"]);
+                                    }
+                                    else if (isset($_POST["searchExerciseFrequency"])) {
+                                        $cursor = oci_new_cursor($connection);
+                                        $query = 'BEGIN find.exerciseFrequency(:searchExerciseFrequency,:cursor); END;';
+                                        $compiled = oci_parse($connection, $query);
+                                        oci_bind_by_name($compiled, ':cursor', $cursor, -1, OCI_B_CURSOR);
+                                        oci_bind_by_name($compiled, ':searchExerciseFrequency', $_POST["searchExerciseFrequency"], 50);
+                                        oci_execute($compiled);
+                                        oci_execute($cursor, OCI_DEFAULT);       //execute the cursor like a normal statement
+                                        while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
+                                            echo "<h3><b>" . $row['FNAME'] . " " . $row['LNAME'] . " " . $row['LNAME2'] 
+                                            . "</b>, " . $row['AGE'] . "</h3>";
+                                            echo "<p>" . $row['TAG'] . "</p>";
+                                            echo "<p>Lives in: " . $row['CITY'] . ", " . $row['COUNTRY'] . "</p>";
+                                            echo "<hr><br>";
+                                        }
+                                        oci_free_statement($compiled);
+                                        oci_free_statement($cursor);
+                                        unset($_POST["searchExerciseFrequency"]);
+                                    }
+                                    else if (isset($_POST["searchEyeColor"])) {
+                                        $cursor = oci_new_cursor($connection);
+                                        $query = 'BEGIN find.eyeColor(:searchEyeColor,:cursor); END;';
+                                        $compiled = oci_parse($connection, $query);
+                                        oci_bind_by_name($compiled, ':cursor', $cursor, -1, OCI_B_CURSOR);
+                                        oci_bind_by_name($compiled, ':searchEyeColor', $_POST["searchEyeColor"], 50);
+                                        oci_execute($compiled);
+                                        oci_execute($cursor, OCI_DEFAULT);       //execute the cursor like a normal statement
+                                        while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
+                                            echo "<h3><b>" . $row['FNAME'] . " " . $row['LNAME'] . " " . $row['LNAME2'] 
+                                            . "</b>, " . $row['AGE'] . "</h3>";
+                                            echo "<p>" . $row['TAG'] . "</p>";
+                                            echo "<p>Lives in: " . $row['CITY'] . ", " . $row['COUNTRY'] . "</p>";
+                                            echo "<hr><br>";
+                                        }
+                                        oci_free_statement($compiled);
+                                        oci_free_statement($cursor);
+                                        unset($_POST["searchEyeColor"]);
+                                    }
+                                    else if (isset($_POST["searchGender"])) {
+                                        $cursor = oci_new_cursor($connection);
+                                        $query = 'BEGIN find.gender(:searchGender,:cursor); END;';
+                                        $compiled = oci_parse($connection, $query);
+                                        oci_bind_by_name($compiled, ':cursor', $cursor, -1, OCI_B_CURSOR);
+                                        oci_bind_by_name($compiled, ':searchGender', $_POST["searchGender"], 50);
+                                        oci_execute($compiled);
+                                        oci_execute($cursor, OCI_DEFAULT);       //execute the cursor like a normal statement
+                                        while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
+                                            echo "<h3><b>" . $row['FNAME'] . " " . $row['LNAME'] . " " . $row['LNAME2'] 
+                                            . "</b>, " . $row['AGE'] . "</h3>";
+                                            echo "<p>" . $row['TAG'] . "</p>";
+                                            echo "<p>Lives in: " . $row['CITY'] . ", " . $row['COUNTRY'] . "</p>";
+                                            echo "<hr><br>";
+                                        }
+                                        oci_free_statement($compiled);
+                                        oci_free_statement($cursor);
+                                        unset($_POST["searchGender"]);
+                                    }
+                                    else if (isset($_POST["searchHairColor"])) {
+                                        $cursor = oci_new_cursor($connection);
+                                        $query = 'BEGIN find.hairColor(:searchHairColor,:cursor); END;';
+                                        $compiled = oci_parse($connection, $query);
+                                        oci_bind_by_name($compiled, ':cursor', $cursor, -1, OCI_B_CURSOR);
+                                        oci_bind_by_name($compiled, ':searchHairColor', $_POST["searchHairColor"], 50);
+                                        oci_execute($compiled);
+                                        oci_execute($cursor, OCI_DEFAULT);       //execute the cursor like a normal statement
+                                        while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
+                                            echo "<h3><b>" . $row['FNAME'] . " " . $row['LNAME'] . " " . $row['LNAME2'] 
+                                            . "</b>, " . $row['AGE'] . "</h3>";
+                                            echo "<p>" . $row['TAG'] . "</p>";
+                                            echo "<p>Lives in: " . $row['CITY'] . ", " . $row['COUNTRY'] . "</p>";
+                                            echo "<hr><br>";
+                                        }
+                                        oci_free_statement($compiled);
+                                        oci_free_statement($cursor);
+                                        unset($_POST["searchHairColor"]);
+                                    }
+                                    else if (isset($_POST["searchHobbie"])) {
+                                        $cursor = oci_new_cursor($connection);
+                                        $query = 'BEGIN find.hobbie(:searchHobbie,:cursor); END;';
+                                        $compiled = oci_parse($connection, $query);
+                                        oci_bind_by_name($compiled, ':cursor', $cursor, -1, OCI_B_CURSOR);
+                                        oci_bind_by_name($compiled, ':searchHobbie', $_POST["searchHobbie"], 50);
+                                        oci_execute($compiled);
+                                        oci_execute($cursor, OCI_DEFAULT);       //execute the cursor like a normal statement
+                                        while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
+                                            echo "<h3><b>" . $row['FNAME'] . " " . $row['LNAME'] . " " . $row['LNAME2'] 
+                                            . "</b>, " . $row['AGE'] . "</h3>";
+                                            echo "<p>" . $row['TAG'] . "</p>";
+                                            echo "<p>Lives in: " . $row['CITY'] . ", " . $row['COUNTRY'] . "</p>";
+                                            echo "<hr><br>";
+                                        }
+                                        oci_free_statement($compiled);
+                                        oci_free_statement($cursor);
+                                        unset($_POST["searchHobbie"]);
+                                    }
+                                    else if (isset($_POST["searchInterest"])) {
+                                        $cursor = oci_new_cursor($connection);
+                                        $query = 'BEGIN find.interest(:searchInterest,:cursor); END;';
+                                        $compiled = oci_parse($connection, $query);
+                                        oci_bind_by_name($compiled, ':cursor', $cursor, -1, OCI_B_CURSOR);
+                                        oci_bind_by_name($compiled, ':searchInterest', $_POST["searchInterest"], 50);
+                                        oci_execute($compiled);
+                                        oci_execute($cursor, OCI_DEFAULT);       //execute the cursor like a normal statement
+                                        while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
+                                            echo "<h3><b>" . $row['FNAME'] . " " . $row['LNAME'] . " " . $row['LNAME2'] 
+                                            . "</b>, " . $row['AGE'] . "</h3>";
+                                            echo "<p>" . $row['TAG'] . "</p>";
+                                            echo "<p>Lives in: " . $row['CITY'] . ", " . $row['COUNTRY'] . "</p>";
+                                            echo "<hr><br>";
+                                        }
+                                        oci_free_statement($compiled);
+                                        oci_free_statement($cursor);
+                                        unset($_POST["searchInterest"]);
+                                    }
+                                    else if (isset($_POST["searchLanguage"])) {
+                                        $cursor = oci_new_cursor($connection);
+                                        $query = 'BEGIN find.languages(:searchLanguage,:cursor); END;';
+                                        $compiled = oci_parse($connection, $query);
+                                        oci_bind_by_name($compiled, ':cursor', $cursor, -1, OCI_B_CURSOR);
+                                        oci_bind_by_name($compiled, ':searchLanguage', $_POST["searchLanguage"], 50);
+                                        oci_execute($compiled);
+                                        oci_execute($cursor, OCI_DEFAULT);       //execute the cursor like a normal statement
+                                        while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
+                                            echo "<h3><b>" . $row['FNAME'] . " " . $row['LNAME'] . " " . $row['LNAME2'] 
+                                            . "</b>, " . $row['AGE'] . "</h3>";
+                                            echo "<p>" . $row['TAG'] . "</p>";
+                                            echo "<p>Lives in: " . $row['CITY'] . ", " . $row['COUNTRY'] . "</p>";
+                                            echo "<hr><br>";
+                                        }
+                                        oci_free_statement($compiled);
+                                        oci_free_statement($cursor);
+                                        unset($_POST["searchLanguage"]);
+                                    }
+                                    else if (isset($_POST["searchRelationshipStatus"])) {
+                                        $cursor = oci_new_cursor($connection);
+                                        $query = 'BEGIN find.relationshipStatus(:searchRelationshipStatus,:cursor); END;';
+                                        $compiled = oci_parse($connection, $query);
+                                        oci_bind_by_name($compiled, ':cursor', $cursor, -1, OCI_B_CURSOR);
+                                        oci_bind_by_name($compiled, ':searchRelationshipStatus', $_POST["searchRelationshipStatus"], 50);
+                                        oci_execute($compiled);
+                                        oci_execute($cursor, OCI_DEFAULT);       //execute the cursor like a normal statement
+                                        while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
+                                            echo "<h3><b>" . $row['FNAME'] . " " . $row['LNAME'] . " " . $row['LNAME2'] 
+                                            . "</b>, " . $row['AGE'] . "</h3>";
+                                            echo "<p>" . $row['TAG'] . "</p>";
+                                            echo "<p>Lives in: " . $row['CITY'] . ", " . $row['COUNTRY'] . "</p>";
+                                            echo "<hr><br>";
+                                        }
+                                        oci_free_statement($compiled);
+                                        oci_free_statement($cursor);
+                                        unset($_POST["searchRelationshipStatus"]);
+                                    }
+                                    else if (isset($_POST["searchReligion"])) {
+                                        $cursor = oci_new_cursor($connection);
+                                        $query = 'BEGIN find.religion(:searchReligion,:cursor); END;';
+                                        $compiled = oci_parse($connection, $query);
+                                        oci_bind_by_name($compiled, ':cursor', $cursor, -1, OCI_B_CURSOR);
+                                        oci_bind_by_name($compiled, ':searchReligion', $_POST["searchReligion"], 50);
+                                        oci_execute($compiled);
+                                        oci_execute($cursor, OCI_DEFAULT);       //execute the cursor like a normal statement
+                                        while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
+                                            echo "<h3><b>" . $row['FNAME'] . " " . $row['LNAME'] . " " . $row['LNAME2'] 
+                                            . "</b>, " . $row['AGE'] . "</h3>";
+                                            echo "<p>" . $row['TAG'] . "</p>";
+                                            echo "<p>Lives in: " . $row['CITY'] . ", " . $row['COUNTRY'] . "</p>";
+                                            echo "<hr><br>";
+                                        }
+                                        oci_free_statement($compiled);
+                                        oci_free_statement($cursor);
+                                        unset($_POST["searchReligion"]);
+                                    }
+                                    else if (isset($_POST["searchSexualOrientation"])) {
+                                        $cursor = oci_new_cursor($connection);
+                                        $query = 'BEGIN find.sexualOrientation(:searchSexualOrientation,:cursor); END;';
+                                        $compiled = oci_parse($connection, $query);
+                                        oci_bind_by_name($compiled, ':cursor', $cursor, -1, OCI_B_CURSOR);
+                                        oci_bind_by_name($compiled, ':searchSexualOrientation', $_POST["searchSexualOrientation"], 50);
+                                        oci_execute($compiled);
+                                        oci_execute($cursor, OCI_DEFAULT);       //execute the cursor like a normal statement
+                                        while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
+                                            echo "<h3><b>" . $row['FNAME'] . " " . $row['LNAME'] . " " . $row['LNAME2'] 
+                                            . "</b>, " . $row['AGE'] . "</h3>";
+                                            echo "<p>" . $row['TAG'] . "</p>";
+                                            echo "<p>Lives in: " . $row['CITY'] . ", " . $row['COUNTRY'] . "</p>";
+                                            echo "<hr><br>";
+                                        }
+                                        oci_free_statement($compiled);
+                                        oci_free_statement($cursor);
+                                        unset($_POST["searchSexualOrientation"]);
+                                    }
+                                    else if (isset($_POST["searchSkinColor"])) {
+                                        $cursor = oci_new_cursor($connection);
+                                        $query = 'BEGIN find.skinColor(:searchSkinColor,:cursor); END;';
+                                        $compiled = oci_parse($connection, $query);
+                                        oci_bind_by_name($compiled, ':cursor', $cursor, -1, OCI_B_CURSOR);
+                                        oci_bind_by_name($compiled, ':searchSkinColor', $_POST["searchSkinColor"], 50);
+                                        oci_execute($compiled);
+                                        oci_execute($cursor, OCI_DEFAULT);       //execute the cursor like a normal statement
+                                        while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
+                                            echo "<h3><b>" . $row['FNAME'] . " " . $row['LNAME'] . " " . $row['LNAME2'] 
+                                            . "</b>, " . $row['AGE'] . "</h3>";
+                                            echo "<p>" . $row['TAG'] . "</p>";
+                                            echo "<p>Lives in: " . $row['CITY'] . ", " . $row['COUNTRY'] . "</p>";
+                                            echo "<hr><br>";
+                                        }
+                                        oci_free_statement($compiled);
+                                        oci_free_statement($cursor);
+                                        unset($_POST["searchSkinColor"]);
+                                    }
+                                    else if (isset($_POST["searchZodiacSign"])) {
+                                        $cursor = oci_new_cursor($connection);
+                                        $query = 'BEGIN find.zodiacSign(:searchZodiacSign,:cursor); END;';
+                                        $compiled = oci_parse($connection, $query);
+                                        oci_bind_by_name($compiled, ':cursor', $cursor, -1, OCI_B_CURSOR);
+                                        oci_bind_by_name($compiled, ':searchZodiacSign', $_POST["searchZodiacSign"], 50);
+                                        oci_execute($compiled);
+                                        oci_execute($cursor, OCI_DEFAULT);       //execute the cursor like a normal statement
+                                        while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
+                                            echo "<h3><b>" . $row['FNAME'] . " " . $row['LNAME'] . " " . $row['LNAME2'] 
+                                            . "</b>, " . $row['AGE'] . "</h3>";
+                                            echo "<p>" . $row['TAG'] . "</p>";
+                                            echo "<p>Lives in: " . $row['CITY'] . ", " . $row['COUNTRY'] . "</p>";
+                                            echo "<hr><br>";
+                                        }
+                                        oci_free_statement($compiled);
+                                        oci_free_statement($cursor);
+                                        unset($_POST["searchZodiacSign"]);
+                                    }
                                 ?>
+                                </form>
                             </div>
                             <div class = "col-md-1">
                                 <div class = "search-icon">
