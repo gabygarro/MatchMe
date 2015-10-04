@@ -458,5 +458,37 @@ as
 
        END;
 -------------------------------------------------------------------------------
+procedure foundPartner (pPersonID number, pfoundPartner number)
+    --update the column Partner on the table person using the parameter pfoundPartner 
+as
+       BEGIN
+           UPDATE Person p
+           SET p.foundpartner = pfoundPartner
+           WHERE pPersonID = p.usernameid;
+
+        Exception
+         WHEN NO_DATA_FOUND THEN
+              DBMS_OUTPUT.PUT_LINE ('Person no found:' || pPersonID);
+         commit;
+
+       END;
+-------------------------------------------------------------------------------
+procedure gotMarrried (pPersonID number, pgotMarrried number)
+    --update the column gotMarrried on the table person using the parameter pgotMarrried 
+as
+       BEGIN
+           UPDATE Person p
+           SET p.foundpartner = pgotMarrried
+           WHERE pPersonID = p.usernameid;
+
+        Exception
+         WHEN NO_DATA_FOUND THEN
+              DBMS_OUTPUT.PUT_LINE ('Person no found:' || pPersonID);
+         commit;
+
+       END;
+-------------------------------------------------------------------------------
+
+
 
 END updateperson;

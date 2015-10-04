@@ -30,5 +30,8 @@ procedure ZodiacSignID (pPersonID number, pZodiacSignID number);
 
 procedure WorkPlace (pPersonID number, pWorkPlace varchar2);
 procedure Drinker (pPersonID number, pDrinker number);
+procedure foundPartner (pPersonID number, pfoundPartner number);
+procedure gotMarrried (pPersonID number, pgotMarrried number);
+
 
 END updateperson;
