@@ -487,7 +487,8 @@
                                     value = <?php if (isset($_SESSION["height"])) echo "\"" . $_SESSION["height"] . "\"" ?> >
                             </div>
                             <div class = "col-md-6">
-                                <h3>Body type<b> *</b></h3>
+                                <h3>Body type<b> *</b> <a href = "#" class="btn-link" data-toggle="modal" data-target="#myModal4">
+                                <font size="3"> [i]</font></a></h3>
                                 <select name = "body-type"><?php
                                     $cursor = oci_new_cursor($connection);
                                     $query = 'BEGIN getCatalog.bodyType(:cursor); END;';
@@ -795,6 +796,23 @@
           </div>
           <div class="modal-body">
             <p>We are not responsible for psychopaths contacting you because of your profile</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--BODY TYPE MODAL-->
+    <div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel4">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Body type information</h4>
+          </div>
+          <div class="modal-body">
+            <img src = "http://www.gffi-fitness.org/wp-content/uploads/2015/09/body_types.jpg">
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

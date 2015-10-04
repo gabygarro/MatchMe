@@ -68,10 +68,21 @@
                             <img src = "imgs/dog-of-wisdom-profile-picture.png">
                         </div>
                     </div>
-                    
-                    <h2><?php
-                        echo $_SESSION['name'];
-                    ?></h2>
+                    <div class="row">
+                        <div class = "col-md-10">
+                            <h2><?php
+                                echo $_SESSION['name'];
+                            ?></h2>
+                        </div>
+                        <div class = "col-md-2">
+                            <div class = "edit-thumbnail">
+                            <div class = "thumbnail">
+                                <a href = "edit-profile.php"><img src="imgs/edit.png"></a>
+                            </div>
+                            </div>
+                        </div>
+                    </div>                    
+                            
                     <div class = "tagline">
                         <p><?php
                             echo $_SESSION['tagline'];
@@ -336,7 +347,7 @@
                                                     else echo "Yes";
                                                 ?></p>
                                                 
-                                                <h3>Exercise Frequency</h3>
+                                                <h3>Exercise Frequency (a week)</h3>
                                                 <p><?php
                                                     echo $_SESSION['exerciseFrequency'];
                                                 ?></p>

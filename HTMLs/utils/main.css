@@ -310,3 +310,8 @@ input[type=radio] {
   margin-top: -3px;
 
 }
+.edit-thumbnail .thumbnail {
+  position: relative;
+  margin-top: 50%;
+  margin-bottom: 50%;
+}

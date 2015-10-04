@@ -595,6 +595,11 @@
                 input.placeholder = "Search for people by country..."
             }
         }
+
+        function goToProfile(form, usernameID) {
+            var submit = document.getElementById(form);
+            submit.submit();
+        }
     </script>
 </head>
 <body>
@@ -662,6 +667,7 @@
                                 <div id = "search-bar" class = "search-bar">
                                     <h3>Select a search value on the left...</h3>
                                 </div>
+                                <form id="person" action="other-profile.php" method="POST"></form>
                                 <?php
                                     //Search for text field values
                                     if (isset($_POST["searchName"])) {
@@ -672,13 +678,25 @@
                                         oci_bind_by_name($compiled, ':searchName', $_POST["searchName"], 50);
                                         oci_execute($compiled);
                                         oci_execute($cursor, OCI_DEFAULT);       //execute the cursor like a normal statement
+                                        $count = 0;
                                         while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
-                                            echo "<h3><b><a href=\"other-profile.php\"" . $row['FNAME'] . " " . $row['LNAME'] . " " . $row['LNAME2'] 
-                                            . "</a></b>, " . $row['AGE'] . "</h3>";
+                                            echo "<div class = \"row\">";
+                                            echo "<div class = \"col-md-3\">";
+                                            echo "<div class = \"thumbnail-container\"><div class = \"thumbnail\"><img src = \"imgs/dog-of-wisdom-profile-picture.png\"></div></div>";
+                                            echo "</div>";
+                                            echo "<div class = \"col-md-9\">";
+                                            echo "<form id=\"person" . $count . "\" action=\"other-profile.php\" method=\"POST\">";
+                                            echo "<input type=\"hidden\" name=\"other-usernameID\" value=\"" . $row['UNID'] . "\" />";
+                                            echo "<input type=\"hidden\" name=\"other-name\" value=\"" . $row['FNAME'] . "\" />";
+                                            echo "<h3><b><a href=\"#\" onclick=\"document.getElementById('person" . $count . "').submit();\">" . $row['FNAME'] . " "
+                                            . $row['LNAME'] . " " . $row['LNAME2'] . "</a></b>, " . $row['AGE'] . "</h3>";
                                             echo "<p>" . $row['TAG'] . "</p>";
                                             echo "<p>Lives in: " . $row['CITY'] . ", " . $row['COUNTRY'] . "</p>";
                                             echo "<hr><br>";
-
+                                            echo "</form>";
+                                            echo "</div>";
+                                            echo "</div>";
+                                            $count++;
                                         }
                                         oci_free_statement($compiled);
                                         oci_free_statement($cursor);
@@ -692,12 +710,18 @@
                                         oci_bind_by_name($compiled, ':searchLastName', $_POST["searchLastName"], 50);
                                         oci_execute($compiled);
                                         oci_execute($cursor, OCI_DEFAULT);       //execute the cursor like a normal statement
+                                        $count = 0;
                                         while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
-                                            echo "<h3><b>" . $row['FNAME'] . " " . $row['LNAME'] . " " . $row['LNAME2'] 
-                                            . "</b>, " . $row['AGE'] . "</h3>";
+                                            echo "<form id=\"person" . $count . "\" action=\"other-profile.php\" method=\"POST\">";
+                                            echo "<input type=\"hidden\" name=\"other-usernameID\" value=\"" . $row['UNID'] . "\" />";
+                                            echo "<input type=\"hidden\" name=\"other-name\" value=\"" . $row['FNAME'] . "\" />";
+                                            echo "<h3><b><a href=\"#\" onclick=\"document.getElementById('person" . $count . "').submit();\">" . $row['FNAME'] . " "
+                                            . $row['LNAME'] . " " . $row['LNAME2'] . "</a></b>, " . $row['AGE'] . "</h3>";
                                             echo "<p>" . $row['TAG'] . "</p>";
                                             echo "<p>Lives in: " . $row['CITY'] . ", " . $row['COUNTRY'] . "</p>";
                                             echo "<hr><br>";
+                                            echo "</form>";
+                                            $count++;
                                         }
                                         oci_free_statement($compiled);
                                         oci_free_statement($cursor);
@@ -711,12 +735,18 @@
                                         oci_bind_by_name($compiled, ':searchLastName2', $_POST["searchLastName2"], 50);
                                         oci_execute($compiled);
                                         oci_execute($cursor, OCI_DEFAULT);       //execute the cursor like a normal statement
+                                        $count = 0;
                                         while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
-                                            echo "<h3><b>" . $row['FNAME'] . " " . $row['LNAME'] . " " . $row['LNAME2'] 
-                                            . "</b>, " . $row['AGE'] . "</h3>";
+                                            echo "<form id=\"person" . $count . "\" action=\"other-profile.php\" method=\"POST\">";
+                                            echo "<input type=\"hidden\" name=\"other-usernameID\" value=\"" . $row['UNID'] . "\" />";
+                                            echo "<input type=\"hidden\" name=\"other-name\" value=\"" . $row['FNAME'] . "\" />";
+                                            echo "<h3><b><a href=\"#\" onclick=\"document.getElementById('person" . $count . "').submit();\">" . $row['FNAME'] . " "
+                                            . $row['LNAME'] . " " . $row['LNAME2'] . "</a></b>, " . $row['AGE'] . "</h3>";
                                             echo "<p>" . $row['TAG'] . "</p>";
                                             echo "<p>Lives in: " . $row['CITY'] . ", " . $row['COUNTRY'] . "</p>";
                                             echo "<hr><br>";
+                                            echo "</form>";
+                                            $count++;
                                         }
                                         oci_free_statement($compiled);
                                         oci_free_statement($cursor);
@@ -730,12 +760,18 @@
                                         oci_bind_by_name($compiled, ':searchNickname', $_POST["searchNickname"], 50);
                                         oci_execute($compiled);
                                         oci_execute($cursor, OCI_DEFAULT);       //execute the cursor like a normal statement
+                                        $count = 0;
                                         while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
-                                            echo "<h3><b>" . $row['FNAME'] . " " . $row['LNAME'] . " " . $row['LNAME2'] 
-                                            . "</b>, " . $row['AGE'] . "</h3>";
+                                            echo "<form id=\"person" . $count . "\" action=\"other-profile.php\" method=\"POST\">";
+                                            echo "<input type=\"hidden\" name=\"other-usernameID\" value=\"" . $row['UNID'] . "\" />";
+                                            echo "<input type=\"hidden\" name=\"other-name\" value=\"" . $row['FNAME'] . "\" />";
+                                            echo "<h3><b><a href=\"#\" onclick=\"document.getElementById('person" . $count . "').submit();\">" . $row['FNAME'] . " "
+                                            . $row['LNAME'] . " " . $row['LNAME2'] . "</a></b>, " . $row['AGE'] . "</h3>";
                                             echo "<p>" . $row['TAG'] . "</p>";
                                             echo "<p>Lives in: " . $row['CITY'] . ", " . $row['COUNTRY'] . "</p>";
                                             echo "<hr><br>";
+                                            echo "</form>";
+                                            $count++;
                                         }
                                         oci_free_statement($compiled);
                                         oci_free_statement($cursor);
@@ -749,12 +785,18 @@
                                         oci_bind_by_name($compiled, ':searchCity', $_POST["searchCity"], 50);
                                         oci_execute($compiled);
                                         oci_execute($cursor, OCI_DEFAULT);       //execute the cursor like a normal statement
+                                        $count = 0;
                                         while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
-                                            echo "<h3><b>" . $row['FNAME'] . " " . $row['LNAME'] . " " . $row['LNAME2'] 
-                                            . "</b>, " . $row['AGE'] . "</h3>";
+                                            echo "<form id=\"person" . $count . "\" action=\"other-profile.php\" method=\"POST\">";
+                                            echo "<input type=\"hidden\" name=\"other-usernameID\" value=\"" . $row['UNID'] . "\" />";
+                                            echo "<input type=\"hidden\" name=\"other-name\" value=\"" . $row['FNAME'] . "\" />";
+                                            echo "<h3><b><a href=\"#\" onclick=\"document.getElementById('person" . $count . "').submit();\">" . $row['FNAME'] . " "
+                                            . $row['LNAME'] . " " . $row['LNAME2'] . "</a></b>, " . $row['AGE'] . "</h3>";
                                             echo "<p>" . $row['TAG'] . "</p>";
                                             echo "<p>Lives in: " . $row['CITY'] . ", " . $row['COUNTRY'] . "</p>";
                                             echo "<hr><br>";
+                                            echo "</form>";
+                                            $count++;
                                         }
                                         oci_free_statement($compiled);
                                         oci_free_statement($cursor);
@@ -768,12 +810,18 @@
                                         oci_bind_by_name($compiled, ':searchCountry', $_POST["searchCountry"], 50);
                                         oci_execute($compiled);
                                         oci_execute($cursor, OCI_DEFAULT);       //execute the cursor like a normal statement
+                                        $count = 0;
                                         while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
-                                            echo "<h3><b>" . $row['FNAME'] . " " . $row['LNAME'] . " " . $row['LNAME2'] 
-                                            . "</b>, " . $row['AGE'] . "</h3>";
+                                            echo "<form id=\"person" . $count . "\" action=\"other-profile.php\" method=\"POST\">";
+                                            echo "<input type=\"hidden\" name=\"other-usernameID\" value=\"" . $row['UNID'] . "\" />";
+                                            echo "<input type=\"hidden\" name=\"other-name\" value=\"" . $row['FNAME'] . "\" />";
+                                            echo "<h3><b><a href=\"#\" onclick=\"document.getElementById('person" . $count . "').submit();\">" . $row['FNAME'] . " "
+                                            . $row['LNAME'] . " " . $row['LNAME2'] . "</a></b>, " . $row['AGE'] . "</h3>";
                                             echo "<p>" . $row['TAG'] . "</p>";
                                             echo "<p>Lives in: " . $row['CITY'] . ", " . $row['COUNTRY'] . "</p>";
                                             echo "<hr><br>";
+                                            echo "</form>";
+                                            $count++;
                                         }
                                         oci_free_statement($compiled);
                                         oci_free_statement($cursor);
@@ -788,12 +836,18 @@
                                         oci_bind_by_name($compiled, ':searchAgeRange', $_POST["searchAgeRange"], 50);
                                         oci_execute($compiled);
                                         oci_execute($cursor, OCI_DEFAULT);       //execute the cursor like a normal statement
+                                        $count = 0;
                                         while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
-                                            echo "<h3><b>" . $row['FNAME'] . " " . $row['LNAME'] . " " . $row['LNAME2'] 
-                                            . "</b>, " . $row['AGE'] . "</h3>";
+                                            echo "<form id=\"person" . $count . "\" action=\"other-profile.php\" method=\"POST\">";
+                                            echo "<input type=\"hidden\" name=\"other-usernameID\" value=\"" . $row['UNID'] . "\" />";
+                                            echo "<input type=\"hidden\" name=\"other-name\" value=\"" . $row['FNAME'] . "\" />";
+                                            echo "<h3><b><a href=\"#\" onclick=\"document.getElementById('person" . $count . "').submit();\">" . $row['FNAME'] . " "
+                                            . $row['LNAME'] . " " . $row['LNAME2'] . "</a></b>, " . $row['AGE'] . "</h3>";
                                             echo "<p>" . $row['TAG'] . "</p>";
                                             echo "<p>Lives in: " . $row['CITY'] . ", " . $row['COUNTRY'] . "</p>";
                                             echo "<hr><br>";
+                                            echo "</form>";
+                                            $count++;
                                         }
                                         oci_free_statement($compiled);
                                         oci_free_statement($cursor);
@@ -807,12 +861,18 @@
                                         oci_bind_by_name($compiled, ':searchBodyType', $_POST["searchBodyType"], 50);
                                         oci_execute($compiled);
                                         oci_execute($cursor, OCI_DEFAULT);       //execute the cursor like a normal statement
+                                        $count = 0;
                                         while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
-                                            echo "<h3><b>" . $row['FNAME'] . " " . $row['LNAME'] . " " . $row['LNAME2'] 
-                                            . "</b>, " . $row['AGE'] . "</h3>";
+                                            echo "<form id=\"person" . $count . "\" action=\"other-profile.php\" method=\"POST\">";
+                                            echo "<input type=\"hidden\" name=\"other-usernameID\" value=\"" . $row['UNID'] . "\" />";
+                                            echo "<input type=\"hidden\" name=\"other-name\" value=\"" . $row['FNAME'] . "\" />";
+                                            echo "<h3><b><a href=\"#\" onclick=\"document.getElementById('person" . $count . "').submit();\">" . $row['FNAME'] . " "
+                                            . $row['LNAME'] . " " . $row['LNAME2'] . "</a></b>, " . $row['AGE'] . "</h3>";
                                             echo "<p>" . $row['TAG'] . "</p>";
                                             echo "<p>Lives in: " . $row['CITY'] . ", " . $row['COUNTRY'] . "</p>";
                                             echo "<hr><br>";
+                                            echo "</form>";
+                                            $count++;
                                         }
                                         oci_free_statement($compiled);
                                         oci_free_statement($cursor);
@@ -826,12 +886,18 @@
                                         oci_bind_by_name($compiled, ':searchExerciseFrequency', $_POST["searchExerciseFrequency"], 50);
                                         oci_execute($compiled);
                                         oci_execute($cursor, OCI_DEFAULT);       //execute the cursor like a normal statement
+                                        $count = 0;
                                         while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
-                                            echo "<h3><b>" . $row['FNAME'] . " " . $row['LNAME'] . " " . $row['LNAME2'] 
-                                            . "</b>, " . $row['AGE'] . "</h3>";
+                                            echo "<form id=\"person" . $count . "\" action=\"other-profile.php\" method=\"POST\">";
+                                            echo "<input type=\"hidden\" name=\"other-usernameID\" value=\"" . $row['UNID'] . "\" />";
+                                            echo "<input type=\"hidden\" name=\"other-name\" value=\"" . $row['FNAME'] . "\" />";
+                                            echo "<h3><b><a href=\"#\" onclick=\"document.getElementById('person" . $count . "').submit();\">" . $row['FNAME'] . " "
+                                            . $row['LNAME'] . " " . $row['LNAME2'] . "</a></b>, " . $row['AGE'] . "</h3>";
                                             echo "<p>" . $row['TAG'] . "</p>";
                                             echo "<p>Lives in: " . $row['CITY'] . ", " . $row['COUNTRY'] . "</p>";
                                             echo "<hr><br>";
+                                            echo "</form>";
+                                            $count++;
                                         }
                                         oci_free_statement($compiled);
                                         oci_free_statement($cursor);
@@ -845,12 +911,18 @@
                                         oci_bind_by_name($compiled, ':searchEyeColor', $_POST["searchEyeColor"], 50);
                                         oci_execute($compiled);
                                         oci_execute($cursor, OCI_DEFAULT);       //execute the cursor like a normal statement
+                                        $count = 0;
                                         while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
-                                            echo "<h3><b>" . $row['FNAME'] . " " . $row['LNAME'] . " " . $row['LNAME2'] 
-                                            . "</b>, " . $row['AGE'] . "</h3>";
+                                            echo "<form id=\"person" . $count . "\" action=\"other-profile.php\" method=\"POST\">";
+                                            echo "<input type=\"hidden\" name=\"other-usernameID\" value=\"" . $row['UNID'] . "\" />";
+                                            echo "<input type=\"hidden\" name=\"other-name\" value=\"" . $row['FNAME'] . "\" />";
+                                            echo "<h3><b><a href=\"#\" onclick=\"document.getElementById('person" . $count . "').submit();\">" . $row['FNAME'] . " "
+                                            . $row['LNAME'] . " " . $row['LNAME2'] . "</a></b>, " . $row['AGE'] . "</h3>";
                                             echo "<p>" . $row['TAG'] . "</p>";
                                             echo "<p>Lives in: " . $row['CITY'] . ", " . $row['COUNTRY'] . "</p>";
                                             echo "<hr><br>";
+                                            echo "</form>";
+                                            $count++;
                                         }
                                         oci_free_statement($compiled);
                                         oci_free_statement($cursor);
@@ -864,12 +936,18 @@
                                         oci_bind_by_name($compiled, ':searchGender', $_POST["searchGender"], 50);
                                         oci_execute($compiled);
                                         oci_execute($cursor, OCI_DEFAULT);       //execute the cursor like a normal statement
+                                        $count = 0;
                                         while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
-                                            echo "<h3><b>" . $row['FNAME'] . " " . $row['LNAME'] . " " . $row['LNAME2'] 
-                                            . "</b>, " . $row['AGE'] . "</h3>";
+                                            echo "<form id=\"person" . $count . "\" action=\"other-profile.php\" method=\"POST\">";
+                                            echo "<input type=\"hidden\" name=\"other-usernameID\" value=\"" . $row['UNID'] . "\" />";
+                                            echo "<input type=\"hidden\" name=\"other-name\" value=\"" . $row['FNAME'] . "\" />";
+                                            echo "<h3><b><a href=\"#\" onclick=\"document.getElementById('person" . $count . "').submit();\">" . $row['FNAME'] . " "
+                                            . $row['LNAME'] . " " . $row['LNAME2'] . "</a></b>, " . $row['AGE'] . "</h3>";
                                             echo "<p>" . $row['TAG'] . "</p>";
                                             echo "<p>Lives in: " . $row['CITY'] . ", " . $row['COUNTRY'] . "</p>";
                                             echo "<hr><br>";
+                                            echo "</form>";
+                                            $count++;
                                         }
                                         oci_free_statement($compiled);
                                         oci_free_statement($cursor);
@@ -883,12 +961,18 @@
                                         oci_bind_by_name($compiled, ':searchHairColor', $_POST["searchHairColor"], 50);
                                         oci_execute($compiled);
                                         oci_execute($cursor, OCI_DEFAULT);       //execute the cursor like a normal statement
+                                        $count = 0;
                                         while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
-                                            echo "<h3><b>" . $row['FNAME'] . " " . $row['LNAME'] . " " . $row['LNAME2'] 
-                                            . "</b>, " . $row['AGE'] . "</h3>";
+                                            echo "<form id=\"person" . $count . "\" action=\"other-profile.php\" method=\"POST\">";
+                                            echo "<input type=\"hidden\" name=\"other-usernameID\" value=\"" . $row['UNID'] . "\" />";
+                                            echo "<input type=\"hidden\" name=\"other-name\" value=\"" . $row['FNAME'] . "\" />";
+                                            echo "<h3><b><a href=\"#\" onclick=\"document.getElementById('person" . $count . "').submit();\">" . $row['FNAME'] . " "
+                                            . $row['LNAME'] . " " . $row['LNAME2'] . "</a></b>, " . $row['AGE'] . "</h3>";
                                             echo "<p>" . $row['TAG'] . "</p>";
                                             echo "<p>Lives in: " . $row['CITY'] . ", " . $row['COUNTRY'] . "</p>";
                                             echo "<hr><br>";
+                                            echo "</form>";
+                                            $count++;
                                         }
                                         oci_free_statement($compiled);
                                         oci_free_statement($cursor);
@@ -902,12 +986,18 @@
                                         oci_bind_by_name($compiled, ':searchHobbie', $_POST["searchHobbie"], 50);
                                         oci_execute($compiled);
                                         oci_execute($cursor, OCI_DEFAULT);       //execute the cursor like a normal statement
+                                        $count = 0;
                                         while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
-                                            echo "<h3><b>" . $row['FNAME'] . " " . $row['LNAME'] . " " . $row['LNAME2'] 
-                                            . "</b>, " . $row['AGE'] . "</h3>";
+                                            echo "<form id=\"person" . $count . "\" action=\"other-profile.php\" method=\"POST\">";
+                                            echo "<input type=\"hidden\" name=\"other-usernameID\" value=\"" . $row['UNID'] . "\" />";
+                                            echo "<input type=\"hidden\" name=\"other-name\" value=\"" . $row['FNAME'] . "\" />";
+                                            echo "<h3><b><a href=\"#\" onclick=\"document.getElementById('person" . $count . "').submit();\">" . $row['FNAME'] . " "
+                                            . $row['LNAME'] . " " . $row['LNAME2'] . "</a></b>, " . $row['AGE'] . "</h3>";
                                             echo "<p>" . $row['TAG'] . "</p>";
                                             echo "<p>Lives in: " . $row['CITY'] . ", " . $row['COUNTRY'] . "</p>";
                                             echo "<hr><br>";
+                                            echo "</form>";
+                                            $count++;
                                         }
                                         oci_free_statement($compiled);
                                         oci_free_statement($cursor);
@@ -921,12 +1011,18 @@
                                         oci_bind_by_name($compiled, ':searchInterest', $_POST["searchInterest"], 50);
                                         oci_execute($compiled);
                                         oci_execute($cursor, OCI_DEFAULT);       //execute the cursor like a normal statement
+                                        $count = 0;
                                         while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
-                                            echo "<h3><b>" . $row['FNAME'] . " " . $row['LNAME'] . " " . $row['LNAME2'] 
-                                            . "</b>, " . $row['AGE'] . "</h3>";
+                                            echo "<form id=\"person" . $count . "\" action=\"other-profile.php\" method=\"POST\">";
+                                            echo "<input type=\"hidden\" name=\"other-usernameID\" value=\"" . $row['UNID'] . "\" />";
+                                            echo "<input type=\"hidden\" name=\"other-name\" value=\"" . $row['FNAME'] . "\" />";
+                                            echo "<h3><b><a href=\"#\" onclick=\"document.getElementById('person" . $count . "').submit();\">" . $row['FNAME'] . " "
+                                            . $row['LNAME'] . " " . $row['LNAME2'] . "</a></b>, " . $row['AGE'] . "</h3>";
                                             echo "<p>" . $row['TAG'] . "</p>";
                                             echo "<p>Lives in: " . $row['CITY'] . ", " . $row['COUNTRY'] . "</p>";
                                             echo "<hr><br>";
+                                            echo "</form>";
+                                            $count++;
                                         }
                                         oci_free_statement($compiled);
                                         oci_free_statement($cursor);
@@ -940,12 +1036,18 @@
                                         oci_bind_by_name($compiled, ':searchLanguage', $_POST["searchLanguage"], 50);
                                         oci_execute($compiled);
                                         oci_execute($cursor, OCI_DEFAULT);       //execute the cursor like a normal statement
+                                        $count = 0;
                                         while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
-                                            echo "<h3><b>" . $row['FNAME'] . " " . $row['LNAME'] . " " . $row['LNAME2'] 
-                                            . "</b>, " . $row['AGE'] . "</h3>";
+                                            echo "<form id=\"person" . $count . "\" action=\"other-profile.php\" method=\"POST\">";
+                                            echo "<input type=\"hidden\" name=\"other-usernameID\" value=\"" . $row['UNID'] . "\" />";
+                                            echo "<input type=\"hidden\" name=\"other-name\" value=\"" . $row['FNAME'] . "\" />";
+                                            echo "<h3><b><a href=\"#\" onclick=\"document.getElementById('person" . $count . "').submit();\">" . $row['FNAME'] . " "
+                                            . $row['LNAME'] . " " . $row['LNAME2'] . "</a></b>, " . $row['AGE'] . "</h3>";
                                             echo "<p>" . $row['TAG'] . "</p>";
                                             echo "<p>Lives in: " . $row['CITY'] . ", " . $row['COUNTRY'] . "</p>";
                                             echo "<hr><br>";
+                                            echo "</form>";
+                                            $count++;
                                         }
                                         oci_free_statement($compiled);
                                         oci_free_statement($cursor);
@@ -959,12 +1061,18 @@
                                         oci_bind_by_name($compiled, ':searchRelationshipStatus', $_POST["searchRelationshipStatus"], 50);
                                         oci_execute($compiled);
                                         oci_execute($cursor, OCI_DEFAULT);       //execute the cursor like a normal statement
+                                        $count = 0;
                                         while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
-                                            echo "<h3><b>" . $row['FNAME'] . " " . $row['LNAME'] . " " . $row['LNAME2'] 
-                                            . "</b>, " . $row['AGE'] . "</h3>";
+                                            echo "<form id=\"person" . $count . "\" action=\"other-profile.php\" method=\"POST\">";
+                                            echo "<input type=\"hidden\" name=\"other-usernameID\" value=\"" . $row['UNID'] . "\" />";
+                                            echo "<input type=\"hidden\" name=\"other-name\" value=\"" . $row['FNAME'] . "\" />";
+                                            echo "<h3><b><a href=\"#\" onclick=\"document.getElementById('person" . $count . "').submit();\">" . $row['FNAME'] . " "
+                                            . $row['LNAME'] . " " . $row['LNAME2'] . "</a></b>, " . $row['AGE'] . "</h3>";
                                             echo "<p>" . $row['TAG'] . "</p>";
                                             echo "<p>Lives in: " . $row['CITY'] . ", " . $row['COUNTRY'] . "</p>";
                                             echo "<hr><br>";
+                                            echo "</form>";
+                                            $count++;
                                         }
                                         oci_free_statement($compiled);
                                         oci_free_statement($cursor);
@@ -978,12 +1086,18 @@
                                         oci_bind_by_name($compiled, ':searchReligion', $_POST["searchReligion"], 50);
                                         oci_execute($compiled);
                                         oci_execute($cursor, OCI_DEFAULT);       //execute the cursor like a normal statement
+                                        $count = 0;
                                         while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
-                                            echo "<h3><b>" . $row['FNAME'] . " " . $row['LNAME'] . " " . $row['LNAME2'] 
-                                            . "</b>, " . $row['AGE'] . "</h3>";
+                                            echo "<form id=\"person" . $count . "\" action=\"other-profile.php\" method=\"POST\">";
+                                            echo "<input type=\"hidden\" name=\"other-usernameID\" value=\"" . $row['UNID'] . "\" />";
+                                            echo "<input type=\"hidden\" name=\"other-name\" value=\"" . $row['FNAME'] . "\" />";
+                                            echo "<h3><b><a href=\"#\" onclick=\"document.getElementById('person" . $count . "').submit();\">" . $row['FNAME'] . " "
+                                            . $row['LNAME'] . " " . $row['LNAME2'] . "</a></b>, " . $row['AGE'] . "</h3>";
                                             echo "<p>" . $row['TAG'] . "</p>";
                                             echo "<p>Lives in: " . $row['CITY'] . ", " . $row['COUNTRY'] . "</p>";
                                             echo "<hr><br>";
+                                            echo "</form>";
+                                            $count++;
                                         }
                                         oci_free_statement($compiled);
                                         oci_free_statement($cursor);
@@ -997,12 +1111,18 @@
                                         oci_bind_by_name($compiled, ':searchSexualOrientation', $_POST["searchSexualOrientation"], 50);
                                         oci_execute($compiled);
                                         oci_execute($cursor, OCI_DEFAULT);       //execute the cursor like a normal statement
+                                        $count = 0;
                                         while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
-                                            echo "<h3><b>" . $row['FNAME'] . " " . $row['LNAME'] . " " . $row['LNAME2'] 
-                                            . "</b>, " . $row['AGE'] . "</h3>";
+                                            echo "<form id=\"person" . $count . "\" action=\"other-profile.php\" method=\"POST\">";
+                                            echo "<input type=\"hidden\" name=\"other-usernameID\" value=\"" . $row['UNID'] . "\" />";
+                                            echo "<input type=\"hidden\" name=\"other-name\" value=\"" . $row['FNAME'] . "\" />";
+                                            echo "<h3><b><a href=\"#\" onclick=\"document.getElementById('person" . $count . "').submit();\">" . $row['FNAME'] . " "
+                                            . $row['LNAME'] . " " . $row['LNAME2'] . "</a></b>, " . $row['AGE'] . "</h3>";
                                             echo "<p>" . $row['TAG'] . "</p>";
                                             echo "<p>Lives in: " . $row['CITY'] . ", " . $row['COUNTRY'] . "</p>";
                                             echo "<hr><br>";
+                                            echo "</form>";
+                                            $count++;
                                         }
                                         oci_free_statement($compiled);
                                         oci_free_statement($cursor);
@@ -1016,12 +1136,18 @@
                                         oci_bind_by_name($compiled, ':searchSkinColor', $_POST["searchSkinColor"], 50);
                                         oci_execute($compiled);
                                         oci_execute($cursor, OCI_DEFAULT);       //execute the cursor like a normal statement
+                                        $count = 0;
                                         while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
-                                            echo "<h3><b>" . $row['FNAME'] . " " . $row['LNAME'] . " " . $row['LNAME2'] 
-                                            . "</b>, " . $row['AGE'] . "</h3>";
+                                            echo "<form id=\"person" . $count . "\" action=\"other-profile.php\" method=\"POST\">";
+                                            echo "<input type=\"hidden\" name=\"other-usernameID\" value=\"" . $row['UNID'] . "\" />";
+                                            echo "<input type=\"hidden\" name=\"other-name\" value=\"" . $row['FNAME'] . "\" />";
+                                            echo "<h3><b><a href=\"#\" onclick=\"document.getElementById('person" . $count . "').submit();\">" . $row['FNAME'] . " "
+                                            . $row['LNAME'] . " " . $row['LNAME2'] . "</a></b>, " . $row['AGE'] . "</h3>";
                                             echo "<p>" . $row['TAG'] . "</p>";
                                             echo "<p>Lives in: " . $row['CITY'] . ", " . $row['COUNTRY'] . "</p>";
                                             echo "<hr><br>";
+                                            echo "</form>";
+                                            $count++;
                                         }
                                         oci_free_statement($compiled);
                                         oci_free_statement($cursor);
@@ -1035,19 +1161,24 @@
                                         oci_bind_by_name($compiled, ':searchZodiacSign', $_POST["searchZodiacSign"], 50);
                                         oci_execute($compiled);
                                         oci_execute($cursor, OCI_DEFAULT);       //execute the cursor like a normal statement
+                                        $count = 0;
                                         while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
-                                            echo "<h3><b>" . $row['FNAME'] . " " . $row['LNAME'] . " " . $row['LNAME2'] 
-                                            . "</b>, " . $row['AGE'] . "</h3>";
+                                            echo "<form id=\"person" . $count . "\" action=\"other-profile.php\" method=\"POST\">";
+                                            echo "<input type=\"hidden\" name=\"other-usernameID\" value=\"" . $row['UNID'] . "\" />";
+                                            echo "<input type=\"hidden\" name=\"other-name\" value=\"" . $row['FNAME'] . "\" />";
+                                            echo "<h3><b><a href=\"#\" onclick=\"document.getElementById('person" . $count . "').submit();\">" . $row['FNAME'] . " "
+                                            . $row['LNAME'] . " " . $row['LNAME2'] . "</a></b>, " . $row['AGE'] . "</h3>";
                                             echo "<p>" . $row['TAG'] . "</p>";
                                             echo "<p>Lives in: " . $row['CITY'] . ", " . $row['COUNTRY'] . "</p>";
                                             echo "<hr><br>";
+                                            echo "</form>";
+                                            $count++;
                                         }
                                         oci_free_statement($compiled);
                                         oci_free_statement($cursor);
                                         unset($_POST["searchZodiacSign"]);
                                     }
                                 ?>
-                                </form>
                             </div>
                             <div class = "col-md-1">
                                 <div class = "search-icon">

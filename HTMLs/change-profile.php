@@ -354,6 +354,28 @@
 			$_SESSION['likesPets'] = $_POST['likes-pets'];
 	    }
 
+	    //update if person found partner
+	    if ($_SESSION['foundPartner'] != $_POST['found-partner']) {
+	    	$query = 'BEGIN updatePerson.foundPartner(:usernameID, :foundPartner); END;';
+			$compiled = oci_parse($connection, $query);
+			oci_bind_by_name($compiled, ':usernameID', $_SESSION['usernameID'], 5);
+			oci_bind_by_name($compiled, ':foundPartner', $_POST['found-partner'], 25);
+			oci_execute($compiled, OCI_NO_AUTO_COMMIT);
+			oci_commit($connection);
+			$_SESSION['foundPartner'] = $_POST['found-partner'];
+	    }
+
+	    //update if person got married
+	    if ($_SESSION['gotMarried'] != $_POST['got-married']) {
+	    	$query = 'BEGIN updatePerson.gotMarried(:usernameID, :gotMarried); END;';
+			$compiled = oci_parse($connection, $query);
+			oci_bind_by_name($compiled, ':usernameID', $_SESSION['usernameID'], 5);
+			oci_bind_by_name($compiled, ':gotMarried', $_POST['got-married'], 25);
+			oci_execute($compiled, OCI_NO_AUTO_COMMIT);
+			oci_commit($connection);
+			$_SESSION['gotMarried'] = $_POST['got-married'];
+	    }
+
 	    //get languages
 	    for ($i = 0; $i < $_SESSION['countLanguages']; $i++) {
 	    	if (isset($_POST['language' . $i]) && isset($_SESSION['language' . $i])) {

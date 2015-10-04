@@ -337,8 +337,8 @@
                             value = <?php if (isset($_SESSION["address"])) echo "\"" . $_SESSION["address"] . "\"" ?> >
 
                         <br><br>
-                        <h3><b>Desired partner information</b></h3><hr>
-                        <h3>Desired age range<b> *</b></h3>
+                        <h3><b>Match information</b></h3><hr>
+                        <h3>Desired partner's age range<b> *</b></h3>
                         <select name = "age-range"><?php
                             $cursor = oci_new_cursor($connection);
                             $query = 'BEGIN getCatalog.agerange(:cursor); END;';
@@ -366,6 +366,13 @@
                             oci_free_statement($compiled);
                             oci_free_statement($cursor);
                         ?></select>
+                        <h3>Have you found a partner through this network?<b> *</b></h3>
+                            <input type="radio" name="found-partner" value=0 <?php if ($_SESSION["foundPartner"] == 0) echo "checked"?>> No
+                            <input type="radio" name="found-partner" value=1 <?php if ($_SESSION["foundPartner"] == 1) echo "checked"?>> Yes
+                        <h3>Have you got married through this network?<b> *</b></h3>
+                            <input type="radio" name="got-married" value=0 <?php if ($_SESSION["gotMarried"] == 0) echo "checked"?>> No
+                            <input type="radio" name="got-married" value=1 <?php if ($_SESSION["gotMarried"] == 1) echo "checked"?>> Yes
+
 
 
                         <br><br>
@@ -486,7 +493,8 @@
                                     value = <?php if (isset($_SESSION["height"])) echo "\"" . $_SESSION["height"] . "\"" ?> >
                             </div>
                             <div class = "col-md-6">
-                                <h3>Body type<b> *</b></h3>
+                                <h3>Body type<b> *</b> <a href = "#" class="btn-link" data-toggle="modal" data-target="#myModal4">
+                                <font size="3"> [i]</font></a></h3>
                                 <select name = "body-type"><?php
                                     $cursor = oci_new_cursor($connection);
                                     $query = 'BEGIN getCatalog.bodyType(:cursor); END;';
@@ -623,13 +631,13 @@
                         <div class="row">
                             <div class = "col-md-6">
                                 <h3>Smoker<b> *</b></h3>
-                                <input type="radio" name="smoker" value=0 checked> No
-                                <input type="radio" name="smoker" value=1> Yes
+                                <input type="radio" name="smoker" value=0 <?php if ($_SESSION["smoker"] == 0) echo "checked"?> > No
+                                <input type="radio" name="smoker" value=1 <?php if ($_SESSION["smoker"] == 1) echo "checked"?> > Yes
                             </div>
                             <div class = "col-md-6">
                                 <h3>Drinker<b> *</b></h3>
-                                <input type="radio" name="drinker" value=0 checked> No
-                                <input type="radio" name="drinker" value=1> Yes
+                                <input type="radio" name="drinker" value=0 <?php if ($_SESSION["drinker"] == 0) echo "checked"?> > No
+                                <input type="radio" name="drinker" value=1 <?php if ($_SESSION["drinker"] == 1) echo "checked"?> > Yes
                             </div>
                         </div>        
                          
@@ -671,14 +679,14 @@
                             </div>
                             <div class = "col-md-6">
                                 <h3>Interested in having children<b> *</b></h3>
-                                <input type="radio" name="interested-children" value=0 checked> No
-                                <input type="radio" name="interested-children" value=1> Yes
+                                <input type="radio" name="interested-children" value=0 <?php if ($_SESSION["interestedChildren"] == 0) echo "checked"?>> No
+                                <input type="radio" name="interested-children" value=1 <?php if ($_SESSION["interestedChildren"] == 1) echo "checked"?>> Yes
                             </div>
                         </div>
                         
                         <h3>Likes pets<b> *</b></h3>
-                        <input type="radio" name="likes-pets" value=0 checked> No
-                        <input type="radio" name="likes-pets" value=1> Yes
+                        <input type="radio" name="likes-pets" value=0 <?php if ($_SESSION["likesPets"] == 0) echo "checked"?>> No
+                        <input type="radio" name="likes-pets" value=1 <?php if ($_SESSION["likesPets"] == 1) echo "checked"?>> Yes
                         <br><br>
                         <h3><b>Interests and hobbies</b></h3>
                         <hr>
@@ -776,7 +784,7 @@
                                 oci_free_statement($cursor);
                             ?>
                             <br>
-                            <input type = "submit" value = "Create profile">
+                            <input type = "submit" value = "Edit profile">
                             <br>
                         </div>
                     </div>
@@ -802,6 +810,24 @@
         </div>
       </div>
     </div>
+    <!--BODY TYPE MODAL-->
+    <div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel4">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Body type information</h4>
+          </div>
+          <div class="modal-body">
+            <img src = "http://www.gffi-fitness.org/wp-content/uploads/2015/09/body_types.jpg">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
 
     <div class = "footer">
         <a href = "#" class="btn-link" data-toggle="modal" data-target="#myModal3">Legal Disclaimer</a>
