@@ -1,7 +1,7 @@
 <?php
 	//include ('login.php');
 	include('session.php');
-	if (!isset($_SESSION['userID'])) {
+	if (!isset($_SESSION['usernameID'])) {
 		header("Location: http://localhost/MatchMe/HTMLs/index.php#notloggedin");
 	}
     if ($_SESSION['userType'] != 1) { //if it's not an admin
@@ -44,10 +44,6 @@
             <li><a href="index.php" >match.me</a></li>
         </ul>
         <ul class = "pull-right">
-          <li><a href="#">Profile</a></li>
-          <li><a href="#">Messages</a></li>
-          <li><a href="#">Notifications</a></li>
-          <li><a href="#">Settings</a></li>
           <li><a href="logout.php">Log out</a></li>
         </ul>
       </div>
@@ -63,28 +59,80 @@
     				</div>
     				<div class = "box-body">
     					<ul>
-    						<li><a href="admin/catalogs/age-range.php">Age range</a></li>
-		    				<li><a href="admin/catalogs/body-type.php">Body type</a></li>
-		    				<li><a href="admin/catalogs/city.php">City</a></li>
-		    				<li><a href="admin/catalogs/country.php">Country</a></li>
-		    				<li><a href="admin/catalogs/exercise-frequency.php">Exercise frequency</a></li>
-		    				<li><a href="admin/catalogs/eye-color.php">Eye color</a></li>
-		    				<li><a href="admin/catalogs/gender.php">Gender</a></li>
-		    				<li><a href="admin/catalogs/hair-color.php">Hair color</a></li>
-		    				<li><a href="admin/catalogs/hobbie.php">Hobbie</a></li>
-		    				<li><a href="admin/catalogs/interest.php">Interest</a></li>
-		    				<li><a href="admin/catalogs/language.php">Language</a></li>
-		    				<li><a href="admin/catalogs/relationship-status.php">Relationship Status</a></li>
-		    				<li><a href="admin/catalogs/religion.php">Religion</a></li>
-		    				<li><a href="admin/catalogs/sexual-orientation.php">Sexual orientation</a></li>
-		    				<li><a href="admin/catalogs/skin-color.php">Skin color</a></li>
-		    				<li><a href="admin/catalogs/user-type.php">User type</a></li>
-		    				<li><a href="admin/catalogs/zodiac-sign.php">Zodiac Sign</a></li>
+                            <form id="ageRangeCatalog" action = "modify-catalog.php" method = "POST">
+                                <input type="hidden" name="catalog" value="ageRange"/>
+                                <li><a href="#" onclick = "document.getElementById('ageRangeCatalog').submit();">Age range</a></li> 
+                            </form>
+    						<form id="bodyTypeCatalog" action = "modify-catalog.php" method = "POST">
+                                <input type="hidden" name="catalog" value="bodyType"/>
+                                <li><a href="#" onclick = "document.getElementById('bodyTypeCatalog').submit();">Body type</a></li>
+                            </form>
+		    				<form id="cityCatalog" action = "modify-catalog.php" method = "POST">
+                                <input type="hidden" name="catalog" value="city"/>
+                                <li><a href="#" onclick = "document.getElementById('cityCatalog').submit();">City</a></li>
+                            </form>
+		    				<form id="countryCatalog" action = "modify-catalog.php" method = "POST">
+                                <input type="hidden" name="catalog" value="country"/>
+                                <li><a href="#" onclick = "document.getElementById('countryCatalog').submit();">Country</a></li>
+                            </form>
+		    				<form id="exerciseFrequencyCatalog" action = "modify-catalog.php" method = "POST">
+                                <input type="hidden" name="catalog" value="exerciseFrequency"/>
+                                <li><a href="#" onclick = "document.getElementById('exerciseFrequencyCatalog').submit();">Exercise frequency</a></li>
+                            </form>
+		    				<form id="eyeColorCatalog" action = "modify-catalog.php" method = "POST">
+                                <input type="hidden" name="catalog" value="eyeColor"/>
+                                <li><a href="#" onclick = "document.getElementById('eyeColorCatalog').submit();">Eye color</a></li>
+                            </form>
+		    				<form id="genderCatalog" action = "modify-catalog.php" method = "POST">
+                                <input type="hidden" name="catalog" value="gender"/>
+                                <li><a href="#" onclick = "document.getElementById('genderCatalog').submit();">Gender</a></li>
+                            </form>
+		    				<form id="hairColorCatalog" action = "modify-catalog.php" method = "POST">
+                                <input type="hidden" name="catalog" value="hairColor"/>
+                                <li><a href="#" onclick = "document.getElementById('hairColorCatalog').submit();">Hair color</a></li>
+                            </form>
+		    				<form id="hobbieCatalog" action = "modify-catalog.php" method = "POST">
+                                <input type="hidden" name="catalog" value="hobbie"/>
+                                <li><a href="#" onclick = "document.getElementById('hobbieCatalog').submit();">Hobbie</a></li>
+                            </form>
+		    				<form id="interestCatalog" action = "modify-catalog.php" method = "POST">
+                                <input type="hidden" name="catalog" value="interest"/>
+                                <li><a href="#" onclick = "document.getElementById('interestCatalog').submit();">Interest</a></li>
+                            </form>
+		    				<form id="languageCatalog" action = "modify-catalog.php" method = "POST">
+                                <input type="hidden" name="catalog" value="language"/>
+                                <li><a href="#" onclick = "document.getElementById('languageCatalog').submit();">Language</a></li>
+                            </form>
+		    				<form id="relationshipStatusCatalog" action = "modify-catalog.php" method = "POST">
+                                <input type="hidden" name="catalog" value="relationshipStatus"/>
+                                <li><a href="#" onclick = "document.getElementById('relationshipStatusCatalog').submit();">Relationship Status</a></li>
+                            </form>
+		    				<form id="religionCatalog" action = "modify-catalog.php" method = "POST">
+                                <input type="hidden" name="catalog" value="religion"/>
+                                <li><a href="#" onclick = "document.getElementById('religionCatalog').submit();">Religion</a></li>
+                            </form>
+		    				<form id="sexualOrientationCatalog" action = "modify-catalog.php" method = "POST">
+                                <input type="hidden" name="catalog" value="sexualOrientation"/>
+                                <li><a href="#" onclick = "document.getElementById('sexualOrientationCatalog').submit();">Sexual orientation</a></li>
+                            </form>
+		    				<form id="skinColorCatalog" action = "modify-catalog.php" method = "POST">
+                                <input type="hidden" name="catalog" value="skinColor"/>
+                                <li><a href="#" onclick = "document.getElementById('skinColorCatalog').submit();">Skin color</a></li>
+                            </form>
+		    				<form id="zodiacSignCatalog" action = "modify-catalog.php" method = "POST">
+                                <input type="hidden" name="catalog" value="zodiacSign"/>
+                                <li><a href="#" onclick = "document.getElementById('zodiacSignCatalog').submit();">Zodiac Sign</a></li>
+                            </form>
     					</ul>
     				</div>
     			</div>
     		</div>
     		<div class = "col-md-6">
+                <div class = "create-event">
+                    <form action="admin/create-event.php" method="get">
+                        <input type="submit" value="Create an event" name="Submit" id="frm1_submit"/>
+                    </form>
+                </div><br>
     			<div class = "statistics">
     				<div class = "box-header">
     					<h3>Statistics</h3>
@@ -108,12 +156,6 @@
 		    				<li><a href="admin/statistics/most-wanted-age-range.php">Most wanted age range</a></li>
     					</ul>
     				</div>
-    			</div>
-    			<br>
-    			<div class = "create-event">
-    				<form action="admin/create-event.php" method="get">
-					    <input type="submit" value="Create an event" name="Submit" id="frm1_submit"/>
-					</form>
     			</div>
     		</div>
     	</div>
