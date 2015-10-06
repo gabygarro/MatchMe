@@ -65,7 +65,7 @@
                 <div class = "col-md-4">
                     <div class = "thumbnail-container">
                         <div class = "thumbnail">
-                            <img src = "imgs/dog-of-wisdom-profile-picture.png">
+                            <img src = <?php if (isset($_SESSION['picture'])) echo $_SESSION['picture']; ?>>
                         </div>
                     </div>
                     <div class="row">

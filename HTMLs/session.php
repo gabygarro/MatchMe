@@ -14,11 +14,22 @@
 	//Store userID
 	$usernameID = $_SESSION['usernameID'];
 
+	//store the user's picture
+	if ($_SESSION['userType'] != 1) {
+		$query = 'BEGIN getPicture(:usernameID, :fileLocation); END;';
+		$compiled = oci_parse($connection, $query);
+		oci_bind_by_name($compiled, ':usernameID', $_SESSION['usernameID'], 5);
+		oci_bind_by_name($compiled, ':fileLocation', $picture, 200);
+		oci_execute($compiled, OCI_NO_AUTO_COMMIT);
+		oci_commit($connection);
+		$_SESSION['picture'] = $picture;
+	}
+
 	//Store the user's first name
 	$userFirstName = "";
 	$query = 'BEGIN getPerson.FirstName(:usernameID, :userFirstName); END;';
 	$compiled = oci_parse($connection, $query);
-	oci_bind_by_name($compiled, ':usernameID', $usernameID, 5);
+	oci_bind_by_name($compiled, ':usernameID', $_SESSION['usernameID'], 5);
 	oci_bind_by_name($compiled, ':userFirstName', $userFirstName, 50);
 	oci_execute($compiled, OCI_NO_AUTO_COMMIT);
 	oci_commit($connection);

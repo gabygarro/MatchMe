@@ -34,6 +34,27 @@
     <script src="utils/jquery-1.11.1.min.js"></script>
     <script src="utils/bootstrap.min.js"></script>
     <link rel="stylesheet" type="css" href="utils/main.css"/>
+    <script>
+    	var entryCount = 0;
+    	function addEntry() {
+    		//delete button from div
+    		var element = document.getElementById("entryButton");
+			element.parentNode.removeChild(element);
+            //get the div to which the function will append a select object
+            var addEntry = document.getElementById("add-entry"); 
+            var newEntry = document.createElement("input");
+            newEntry.type = "text";
+            newEntry.name = "entry" + entryCount;
+            addEntry.appendChild(newEntry);
+            //create the button again
+            var button = document.createElement("button");
+            button.id = "entryButton"; 
+            button.onclick = addEntry();
+            button.innerHTML = "Add another entry"
+            //addEntry.appendChild(button);
+            entryCount++;
+    	}
+    </script>
 </head>
 <body>
 
@@ -79,10 +100,17 @@
                     echo "</div>";
                     oci_free_statement($compiled);
                     oci_free_statement($cursor);
-                    echo "<br><input type=\"submit\" value=\"Submit catalog changes\">";
     				break;
     			}
     		?>
+    		<div class = "row">
+    			<div class = "col-md-11">
+    				<div id = "add-entry">
+    					<button id="entryButton" onclick="addEntry()">Add another</button>
+    				</div>
+    			</div>
+    		</div>
+    		<br><input type="submit" value="Submit catalog changes">
     		</form>
     	</div>
     </div>

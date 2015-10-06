@@ -41,7 +41,7 @@
       <div class="container">
         <ul class = "pull-left">
             <img src = "imgs/logopeq.png">
-            <li><a href="index.php" >match.me</a></li>
+            <li><a href="admin-homepage.php" >match.me</a></li>
         </ul>
         <ul class = "pull-right">
           <li><a href="logout.php">Log out</a></li>

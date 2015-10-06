@@ -147,7 +147,7 @@
     <div class = "profile-body">
         <div class = "container">
             <div class="panel with-nav-tabs panel-default">
-                <form role="form" action="change-profile.php" method="POST">
+                <form role="form" action="change-profile.php" method="POST" enctype="multipart/form-data">
                     <div class = "create-profile-container">
                         <div class = "obligatory-field">
                             <p>* indicates an obligatory field</p> 
@@ -164,7 +164,13 @@
                         <hr>
 
                         <div class = "row">
+                            <div class="container">
+                                <h3>Profile picture</h3>
+                                <input type="file" name="picture" id = "picture" accept="image/*">
+                            </div>
+                                
                             <div class = "col-md-4">
+
                                 <h3>Name<b> *</b></h3>
                                 <input type="text" name="name" placeholder="Name..." class="form-full-name form-control" 
                                     id="form-full-name" maxlength="50" value = <?php if (isset($_SESSION["name"])) echo "\"" . $_SESSION["name"] . "\"" ?> >

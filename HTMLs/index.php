@@ -67,9 +67,9 @@
                       <input type="password" name = "password2" class="form-control" id="exampleInputPassword1" placeholder="Confirm password..."
                         >
                   </div>
-                  <div class = "form-group">
+                  <!--<div class = "form-group">
                      <input type = "checkbox" name = "admin"><b> Administrator</b><br>
-                  </div>
+                  </div>-->
                   <div class="modal-footer">
                      <div class = "container">
                         <div class ="row">

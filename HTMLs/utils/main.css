@@ -278,9 +278,6 @@ input[type=radio] {
   padding-top: 15px;
 }
 .thumbnail-container .thumbnail {
-  -moz-border-radius: 50%;
-  -webkit-border-radius: 50%;
-  border-radius: 50%;
 }
 .create-profile-container {
   right: 0px;

@@ -166,6 +166,10 @@
                         <hr>
 
                         <div class = "row">
+                            <div class="container">
+                                <h3>Profile picture</h3>
+                                <input type="file" name="picture" id = "picture" accept="image/*">
+                            </div>
                             <div class = "col-md-4">
                                 <h3>Name<b> *</b></h3>
                                 <input type="text" name="name" placeholder="Name..." class="form-full-name form-control" 
