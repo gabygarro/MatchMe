@@ -340,6 +340,14 @@ is 'Got married';
 Comment on column person.drinker
 is 'Drinker';
 
+Comment on table picture
+is 'This is a table for picture of profile.';
+Comment on column picture.pictureid
+is 'Identify picture of the user, primary key and foreign key';
+Comment on column picture.fileLocation
+is 'Is file location';
+
+
 select comment * from person
 select * from user_tab_comments; 
 SELECT *FROM user_col_comments

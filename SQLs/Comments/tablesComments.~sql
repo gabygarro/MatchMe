@@ -228,7 +228,7 @@ Comment on column username.usertypeid
 is 'Identify user type and foreign key';
 ---------------------------------------------------------
 
-Comment on table usertypecatalog}
+Comment on table usertypecatalog
 is 'This is a table for user type catalog.';
 Comment on column usertypecatalog.usertypeid
 is 'Identify user type and primary key';
@@ -279,7 +279,7 @@ Comment on column person.firstname
 is 'First name';
 Comment on column person.lastname1
 is 'First last name';
-Comment on column person.firstname2
+Comment on column person.lastname2
 is 'Second last name';
 Comment on column person.birthday
 is 'Birthday';
@@ -339,3 +339,7 @@ Comment on column person.gotmarried
 is 'Got married';
 Comment on column person.drinker
 is 'Drinker';
+
+select comment * from person
+select * from user_tab_comments; 
+SELECT *FROM user_col_comments
