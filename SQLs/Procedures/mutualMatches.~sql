@@ -1,0 +1,12 @@
+create or replace procedure mutualMatch (pUserNameID in number, pName out sys_refcursor)as
+begin
+open pName for
+       select p.firstname, p.lastname1, p.lastname2
+       from person p
+       where p.usernameid in (SELECT a.MatchedPerson
+                              FROM   MatchedPersons a
+                                     INNER JOIN MatchedPersons b
+                                       ON a.matchedperson = b.matcher
+                              WHERE  a.matcher = pUserNameID
+                                     AND b.matchedperson = pUserNameID);
+end;

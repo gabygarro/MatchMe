@@ -1,5 +1,5 @@
 PL/SQL Developer Test script 3.0
-13
+12
 -- Created on 24/09/2015 by ADMINISTRADOR 
 declare 
   -- Local variables here
@@ -9,8 +9,7 @@ begin
   --inserts.MatchedPersons(5,8);
   --inserts.MatchedPersons(5,9);
   --inserts.MatchedPersons(10,7);
-  insertmatch(5,8);
-  insertmatch(8,5);
+  insertmatch(5,5);
   
 end;
 0

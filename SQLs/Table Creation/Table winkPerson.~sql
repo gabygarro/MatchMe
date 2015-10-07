@@ -1,8 +1,8 @@
 CREATE TABLE winkPerson
   (
     winkID           NUMBER (3) NOT NULL ,
-    winker           NUMBER (3) NOT NULL ,
-    winkedPerson     NUMBER (3) NOT NULL
+    winker           NUMBER (5) NOT NULL ,
+    winkedPerson     NUMBER (5) NOT NULL
   ) ;
 ALTER TABLE winkPerson ADD CONSTRAINT winkPersonPK PRIMARY KEY ( winkID ) ;
 

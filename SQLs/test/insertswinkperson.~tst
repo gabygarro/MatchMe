@@ -6,12 +6,12 @@ declare
   i integer;
 begin
   -- Test statements here
-  insertWink(5,8);
-  insertWink(5,9);
-  insertWink(10,7);
-  insertWink(7,6);
-  insertWink(6,8);
-  insertWink(10,8);
+  inserts.winkperson(5,8);
+  inserts.winkperson(5,9);
+  inserts.winkperson(10,7);
+  inserts.winkperson(7,6);
+  inserts.winkperson(6,8);
+  inserts.winkperson(10,8);
   
   
   
