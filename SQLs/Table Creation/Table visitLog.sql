@@ -2,8 +2,8 @@ CREATE TABLE visitLog
   (
     logNumber        NUMBER (8) NOT NULL ,
     logDate          DATE NOT NULL ,
-    visitor          NUMBER (3) NOT NULL ,
-    visitedPerson    NUMBER (3) NOT NULL
+    visitor          NUMBER (5) NOT NULL ,
+    visitedPerson    NUMBER (5) NOT NULL
   ) ;
 ALTER TABLE visitLog ADD CONSTRAINT visitLogPK PRIMARY KEY ( logNumber ) ;
 

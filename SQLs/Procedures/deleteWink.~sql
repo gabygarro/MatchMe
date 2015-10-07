@@ -1,0 +1,14 @@
+create or replace procedure checkWink (pwinker number, pWinkedPerson number, pCheck out number)
+as
+  --insert a tuple in the table Winkperson
+       BEGIN
+         select 1 into pCheck
+         from winkperson wp
+         where wp.winker = pwinker and wp.winkedperson = pWinkedPerson;
+
+        Exception
+         WHEN NO_DATA_FOUND THEN
+              pcheck:= 0;
+
+       END;
+       

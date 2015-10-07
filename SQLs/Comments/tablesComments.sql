@@ -348,6 +348,6 @@ Comment on column picture.fileLocation
 is 'Is file location';
 
 
-select comment * from person
+select comment * from PICTURE
 select * from user_tab_comments; 
 SELECT *FROM user_col_comments

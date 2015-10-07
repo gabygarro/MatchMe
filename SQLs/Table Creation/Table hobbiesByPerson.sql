@@ -1,7 +1,7 @@
 CREATE TABLE hobbiesByPerson
   (
     hobbieID        NUMBER (3) NOT NULL ,
-    personID        NUMBER (3) NOT NULL
+    personID        NUMBER (5) NOT NULL
   ) ;
 
 ALTER TABLE hobbiesByPerson ADD CONSTRAINT hobbiesByPerson_Person_FK FOREIGN KEY ( personID ) REFERENCES Person ( personID ) ;
