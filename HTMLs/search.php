@@ -680,9 +680,15 @@
                                         oci_execute($cursor, OCI_DEFAULT);       //execute the cursor like a normal statement
                                         $count = 0;
                                         while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
+                                            $query = 'BEGIN getPicture(:usernameID, :fileLocation); END;';
+                                            $compiled = oci_parse($connection, $query);
+                                            oci_bind_by_name($compiled, ':usernameID', $row['UNID'], 5);
+                                            oci_bind_by_name($compiled, ':fileLocation', $picture, 200);
+                                            oci_execute($compiled, OCI_NO_AUTO_COMMIT);
+                                            oci_commit($connection);
                                             echo "<div class = \"row\">";
                                             echo "<div class = \"col-md-3\">";
-                                            echo "<div class = \"thumbnail-container\"><div class = \"thumbnail\"><img src = \"imgs/dog-of-wisdom-profile-picture.png\"></div></div>";
+                                            echo "<div class = \"thumbnail-container\"><div class = \"thumbnail\"><img src =" . $picture . "></div></div>";
                                             echo "</div>";
                                             echo "<div class = \"col-md-9\">";
                                             echo "<form id=\"person" . $count . "\" action=\"other-profile.php\" method=\"POST\">";
@@ -712,6 +718,17 @@
                                         oci_execute($cursor, OCI_DEFAULT);       //execute the cursor like a normal statement
                                         $count = 0;
                                         while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
+                                            $query = 'BEGIN getPicture(:usernameID, :fileLocation); END;';
+                                            $compiled = oci_parse($connection, $query);
+                                            oci_bind_by_name($compiled, ':usernameID', $row['UNID'], 5);
+                                            oci_bind_by_name($compiled, ':fileLocation', $picture, 200);
+                                            oci_execute($compiled, OCI_NO_AUTO_COMMIT);
+                                            oci_commit($connection);
+                                            echo "<div class = \"row\">";
+                                            echo "<div class = \"col-md-3\">";
+                                            echo "<div class = \"thumbnail-container\"><div class = \"thumbnail\"><img src =" . $picture . "></div></div>";
+                                            echo "</div>";
+                                            echo "<div class = \"col-md-9\">";
                                             echo "<form id=\"person" . $count . "\" action=\"other-profile.php\" method=\"POST\">";
                                             echo "<input type=\"hidden\" name=\"other-usernameID\" value=\"" . $row['UNID'] . "\" />";
                                             echo "<input type=\"hidden\" name=\"other-name\" value=\"" . $row['FNAME'] . "\" />";
@@ -721,6 +738,8 @@
                                             echo "<p>Lives in: " . $row['CITY'] . ", " . $row['COUNTRY'] . "</p>";
                                             echo "<hr><br>";
                                             echo "</form>";
+                                            echo "</div>";
+                                            echo "</div>";
                                             $count++;
                                         }
                                         oci_free_statement($compiled);
@@ -737,6 +756,17 @@
                                         oci_execute($cursor, OCI_DEFAULT);       //execute the cursor like a normal statement
                                         $count = 0;
                                         while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
+                                            $query = 'BEGIN getPicture(:usernameID, :fileLocation); END;';
+                                            $compiled = oci_parse($connection, $query);
+                                            oci_bind_by_name($compiled, ':usernameID', $row['UNID'], 5);
+                                            oci_bind_by_name($compiled, ':fileLocation', $picture, 200);
+                                            oci_execute($compiled, OCI_NO_AUTO_COMMIT);
+                                            oci_commit($connection);
+                                            echo "<div class = \"row\">";
+                                            echo "<div class = \"col-md-3\">";
+                                            echo "<div class = \"thumbnail-container\"><div class = \"thumbnail\"><img src =" . $picture . "></div></div>";
+                                            echo "</div>";
+                                            echo "<div class = \"col-md-9\">";
                                             echo "<form id=\"person" . $count . "\" action=\"other-profile.php\" method=\"POST\">";
                                             echo "<input type=\"hidden\" name=\"other-usernameID\" value=\"" . $row['UNID'] . "\" />";
                                             echo "<input type=\"hidden\" name=\"other-name\" value=\"" . $row['FNAME'] . "\" />";
@@ -746,6 +776,8 @@
                                             echo "<p>Lives in: " . $row['CITY'] . ", " . $row['COUNTRY'] . "</p>";
                                             echo "<hr><br>";
                                             echo "</form>";
+                                            echo "</div>";
+                                            echo "</div>";
                                             $count++;
                                         }
                                         oci_free_statement($compiled);
@@ -762,6 +794,17 @@
                                         oci_execute($cursor, OCI_DEFAULT);       //execute the cursor like a normal statement
                                         $count = 0;
                                         while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
+                                            $query = 'BEGIN getPicture(:usernameID, :fileLocation); END;';
+                                            $compiled = oci_parse($connection, $query);
+                                            oci_bind_by_name($compiled, ':usernameID', $row['UNID'], 5);
+                                            oci_bind_by_name($compiled, ':fileLocation', $picture, 200);
+                                            oci_execute($compiled, OCI_NO_AUTO_COMMIT);
+                                            oci_commit($connection);
+                                            echo "<div class = \"row\">";
+                                            echo "<div class = \"col-md-3\">";
+                                            echo "<div class = \"thumbnail-container\"><div class = \"thumbnail\"><img src =" . $picture . "></div></div>";
+                                            echo "</div>";
+                                            echo "<div class = \"col-md-9\">";
                                             echo "<form id=\"person" . $count . "\" action=\"other-profile.php\" method=\"POST\">";
                                             echo "<input type=\"hidden\" name=\"other-usernameID\" value=\"" . $row['UNID'] . "\" />";
                                             echo "<input type=\"hidden\" name=\"other-name\" value=\"" . $row['FNAME'] . "\" />";
@@ -771,6 +814,8 @@
                                             echo "<p>Lives in: " . $row['CITY'] . ", " . $row['COUNTRY'] . "</p>";
                                             echo "<hr><br>";
                                             echo "</form>";
+                                            echo "</div>";
+                                            echo "</div>";
                                             $count++;
                                         }
                                         oci_free_statement($compiled);
@@ -787,6 +832,17 @@
                                         oci_execute($cursor, OCI_DEFAULT);       //execute the cursor like a normal statement
                                         $count = 0;
                                         while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
+                                            $query = 'BEGIN getPicture(:usernameID, :fileLocation); END;';
+                                            $compiled = oci_parse($connection, $query);
+                                            oci_bind_by_name($compiled, ':usernameID', $row['UNID'], 5);
+                                            oci_bind_by_name($compiled, ':fileLocation', $picture, 200);
+                                            oci_execute($compiled, OCI_NO_AUTO_COMMIT);
+                                            oci_commit($connection);
+                                            echo "<div class = \"row\">";
+                                            echo "<div class = \"col-md-3\">";
+                                            echo "<div class = \"thumbnail-container\"><div class = \"thumbnail\"><img src =" . $picture . "></div></div>";
+                                            echo "</div>";
+                                            echo "<div class = \"col-md-9\">";
                                             echo "<form id=\"person" . $count . "\" action=\"other-profile.php\" method=\"POST\">";
                                             echo "<input type=\"hidden\" name=\"other-usernameID\" value=\"" . $row['UNID'] . "\" />";
                                             echo "<input type=\"hidden\" name=\"other-name\" value=\"" . $row['FNAME'] . "\" />";
@@ -796,6 +852,8 @@
                                             echo "<p>Lives in: " . $row['CITY'] . ", " . $row['COUNTRY'] . "</p>";
                                             echo "<hr><br>";
                                             echo "</form>";
+                                            echo "</div>";
+                                            echo "</div>";
                                             $count++;
                                         }
                                         oci_free_statement($compiled);
@@ -812,6 +870,17 @@
                                         oci_execute($cursor, OCI_DEFAULT);       //execute the cursor like a normal statement
                                         $count = 0;
                                         while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
+                                            $query = 'BEGIN getPicture(:usernameID, :fileLocation); END;';
+                                            $compiled = oci_parse($connection, $query);
+                                            oci_bind_by_name($compiled, ':usernameID', $row['UNID'], 5);
+                                            oci_bind_by_name($compiled, ':fileLocation', $picture, 200);
+                                            oci_execute($compiled, OCI_NO_AUTO_COMMIT);
+                                            oci_commit($connection);
+                                            echo "<div class = \"row\">";
+                                            echo "<div class = \"col-md-3\">";
+                                            echo "<div class = \"thumbnail-container\"><div class = \"thumbnail\"><img src =" . $picture . "></div></div>";
+                                            echo "</div>";
+                                            echo "<div class = \"col-md-9\">";
                                             echo "<form id=\"person" . $count . "\" action=\"other-profile.php\" method=\"POST\">";
                                             echo "<input type=\"hidden\" name=\"other-usernameID\" value=\"" . $row['UNID'] . "\" />";
                                             echo "<input type=\"hidden\" name=\"other-name\" value=\"" . $row['FNAME'] . "\" />";
@@ -821,6 +890,8 @@
                                             echo "<p>Lives in: " . $row['CITY'] . ", " . $row['COUNTRY'] . "</p>";
                                             echo "<hr><br>";
                                             echo "</form>";
+                                            echo "</div>";
+                                            echo "</div>";
                                             $count++;
                                         }
                                         oci_free_statement($compiled);
@@ -838,6 +909,17 @@
                                         oci_execute($cursor, OCI_DEFAULT);       //execute the cursor like a normal statement
                                         $count = 0;
                                         while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
+                                            $query = 'BEGIN getPicture(:usernameID, :fileLocation); END;';
+                                            $compiled = oci_parse($connection, $query);
+                                            oci_bind_by_name($compiled, ':usernameID', $row['UNID'], 5);
+                                            oci_bind_by_name($compiled, ':fileLocation', $picture, 200);
+                                            oci_execute($compiled, OCI_NO_AUTO_COMMIT);
+                                            oci_commit($connection);
+                                            echo "<div class = \"row\">";
+                                            echo "<div class = \"col-md-3\">";
+                                            echo "<div class = \"thumbnail-container\"><div class = \"thumbnail\"><img src =" . $picture . "></div></div>";
+                                            echo "</div>";
+                                            echo "<div class = \"col-md-9\">";
                                             echo "<form id=\"person" . $count . "\" action=\"other-profile.php\" method=\"POST\">";
                                             echo "<input type=\"hidden\" name=\"other-usernameID\" value=\"" . $row['UNID'] . "\" />";
                                             echo "<input type=\"hidden\" name=\"other-name\" value=\"" . $row['FNAME'] . "\" />";
@@ -847,6 +929,8 @@
                                             echo "<p>Lives in: " . $row['CITY'] . ", " . $row['COUNTRY'] . "</p>";
                                             echo "<hr><br>";
                                             echo "</form>";
+                                            echo "</div>";
+                                            echo "</div>";
                                             $count++;
                                         }
                                         oci_free_statement($compiled);
@@ -863,6 +947,17 @@
                                         oci_execute($cursor, OCI_DEFAULT);       //execute the cursor like a normal statement
                                         $count = 0;
                                         while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
+                                            $query = 'BEGIN getPicture(:usernameID, :fileLocation); END;';
+                                            $compiled = oci_parse($connection, $query);
+                                            oci_bind_by_name($compiled, ':usernameID', $row['UNID'], 5);
+                                            oci_bind_by_name($compiled, ':fileLocation', $picture, 200);
+                                            oci_execute($compiled, OCI_NO_AUTO_COMMIT);
+                                            oci_commit($connection);
+                                            echo "<div class = \"row\">";
+                                            echo "<div class = \"col-md-3\">";
+                                            echo "<div class = \"thumbnail-container\"><div class = \"thumbnail\"><img src =" . $picture . "></div></div>";
+                                            echo "</div>";
+                                            echo "<div class = \"col-md-9\">";
                                             echo "<form id=\"person" . $count . "\" action=\"other-profile.php\" method=\"POST\">";
                                             echo "<input type=\"hidden\" name=\"other-usernameID\" value=\"" . $row['UNID'] . "\" />";
                                             echo "<input type=\"hidden\" name=\"other-name\" value=\"" . $row['FNAME'] . "\" />";
@@ -872,6 +967,8 @@
                                             echo "<p>Lives in: " . $row['CITY'] . ", " . $row['COUNTRY'] . "</p>";
                                             echo "<hr><br>";
                                             echo "</form>";
+                                            echo "</div>";
+                                            echo "</div>";
                                             $count++;
                                         }
                                         oci_free_statement($compiled);
@@ -888,6 +985,17 @@
                                         oci_execute($cursor, OCI_DEFAULT);       //execute the cursor like a normal statement
                                         $count = 0;
                                         while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
+                                            $query = 'BEGIN getPicture(:usernameID, :fileLocation); END;';
+                                            $compiled = oci_parse($connection, $query);
+                                            oci_bind_by_name($compiled, ':usernameID', $row['UNID'], 5);
+                                            oci_bind_by_name($compiled, ':fileLocation', $picture, 200);
+                                            oci_execute($compiled, OCI_NO_AUTO_COMMIT);
+                                            oci_commit($connection);
+                                            echo "<div class = \"row\">";
+                                            echo "<div class = \"col-md-3\">";
+                                            echo "<div class = \"thumbnail-container\"><div class = \"thumbnail\"><img src =" . $picture . "></div></div>";
+                                            echo "</div>";
+                                            echo "<div class = \"col-md-9\">";
                                             echo "<form id=\"person" . $count . "\" action=\"other-profile.php\" method=\"POST\">";
                                             echo "<input type=\"hidden\" name=\"other-usernameID\" value=\"" . $row['UNID'] . "\" />";
                                             echo "<input type=\"hidden\" name=\"other-name\" value=\"" . $row['FNAME'] . "\" />";
@@ -897,6 +1005,8 @@
                                             echo "<p>Lives in: " . $row['CITY'] . ", " . $row['COUNTRY'] . "</p>";
                                             echo "<hr><br>";
                                             echo "</form>";
+                                            echo "</div>";
+                                            echo "</div>";
                                             $count++;
                                         }
                                         oci_free_statement($compiled);
@@ -913,6 +1023,17 @@
                                         oci_execute($cursor, OCI_DEFAULT);       //execute the cursor like a normal statement
                                         $count = 0;
                                         while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
+                                            $query = 'BEGIN getPicture(:usernameID, :fileLocation); END;';
+                                            $compiled = oci_parse($connection, $query);
+                                            oci_bind_by_name($compiled, ':usernameID', $row['UNID'], 5);
+                                            oci_bind_by_name($compiled, ':fileLocation', $picture, 200);
+                                            oci_execute($compiled, OCI_NO_AUTO_COMMIT);
+                                            oci_commit($connection);
+                                            echo "<div class = \"row\">";
+                                            echo "<div class = \"col-md-3\">";
+                                            echo "<div class = \"thumbnail-container\"><div class = \"thumbnail\"><img src =" . $picture . "></div></div>";
+                                            echo "</div>";
+                                            echo "<div class = \"col-md-9\">";
                                             echo "<form id=\"person" . $count . "\" action=\"other-profile.php\" method=\"POST\">";
                                             echo "<input type=\"hidden\" name=\"other-usernameID\" value=\"" . $row['UNID'] . "\" />";
                                             echo "<input type=\"hidden\" name=\"other-name\" value=\"" . $row['FNAME'] . "\" />";
@@ -922,6 +1043,8 @@
                                             echo "<p>Lives in: " . $row['CITY'] . ", " . $row['COUNTRY'] . "</p>";
                                             echo "<hr><br>";
                                             echo "</form>";
+                                            echo "</div>";
+                                            echo "</div>";
                                             $count++;
                                         }
                                         oci_free_statement($compiled);
@@ -938,6 +1061,17 @@
                                         oci_execute($cursor, OCI_DEFAULT);       //execute the cursor like a normal statement
                                         $count = 0;
                                         while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
+                                            $query = 'BEGIN getPicture(:usernameID, :fileLocation); END;';
+                                            $compiled = oci_parse($connection, $query);
+                                            oci_bind_by_name($compiled, ':usernameID', $row['UNID'], 5);
+                                            oci_bind_by_name($compiled, ':fileLocation', $picture, 200);
+                                            oci_execute($compiled, OCI_NO_AUTO_COMMIT);
+                                            oci_commit($connection);
+                                            echo "<div class = \"row\">";
+                                            echo "<div class = \"col-md-3\">";
+                                            echo "<div class = \"thumbnail-container\"><div class = \"thumbnail\"><img src =" . $picture . "></div></div>";
+                                            echo "</div>";
+                                            echo "<div class = \"col-md-9\">";
                                             echo "<form id=\"person" . $count . "\" action=\"other-profile.php\" method=\"POST\">";
                                             echo "<input type=\"hidden\" name=\"other-usernameID\" value=\"" . $row['UNID'] . "\" />";
                                             echo "<input type=\"hidden\" name=\"other-name\" value=\"" . $row['FNAME'] . "\" />";
@@ -947,6 +1081,8 @@
                                             echo "<p>Lives in: " . $row['CITY'] . ", " . $row['COUNTRY'] . "</p>";
                                             echo "<hr><br>";
                                             echo "</form>";
+                                            echo "</div>";
+                                            echo "</div>";
                                             $count++;
                                         }
                                         oci_free_statement($compiled);
@@ -963,6 +1099,17 @@
                                         oci_execute($cursor, OCI_DEFAULT);       //execute the cursor like a normal statement
                                         $count = 0;
                                         while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
+                                            $query = 'BEGIN getPicture(:usernameID, :fileLocation); END;';
+                                            $compiled = oci_parse($connection, $query);
+                                            oci_bind_by_name($compiled, ':usernameID', $row['UNID'], 5);
+                                            oci_bind_by_name($compiled, ':fileLocation', $picture, 200);
+                                            oci_execute($compiled, OCI_NO_AUTO_COMMIT);
+                                            oci_commit($connection);
+                                            echo "<div class = \"row\">";
+                                            echo "<div class = \"col-md-3\">";
+                                            echo "<div class = \"thumbnail-container\"><div class = \"thumbnail\"><img src =" . $picture . "></div></div>";
+                                            echo "</div>";
+                                            echo "<div class = \"col-md-9\">";
                                             echo "<form id=\"person" . $count . "\" action=\"other-profile.php\" method=\"POST\">";
                                             echo "<input type=\"hidden\" name=\"other-usernameID\" value=\"" . $row['UNID'] . "\" />";
                                             echo "<input type=\"hidden\" name=\"other-name\" value=\"" . $row['FNAME'] . "\" />";
@@ -972,6 +1119,8 @@
                                             echo "<p>Lives in: " . $row['CITY'] . ", " . $row['COUNTRY'] . "</p>";
                                             echo "<hr><br>";
                                             echo "</form>";
+                                            echo "</div>";
+                                            echo "</div>";
                                             $count++;
                                         }
                                         oci_free_statement($compiled);
@@ -988,6 +1137,17 @@
                                         oci_execute($cursor, OCI_DEFAULT);       //execute the cursor like a normal statement
                                         $count = 0;
                                         while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
+                                            $query = 'BEGIN getPicture(:usernameID, :fileLocation); END;';
+                                            $compiled = oci_parse($connection, $query);
+                                            oci_bind_by_name($compiled, ':usernameID', $row['UNID'], 5);
+                                            oci_bind_by_name($compiled, ':fileLocation', $picture, 200);
+                                            oci_execute($compiled, OCI_NO_AUTO_COMMIT);
+                                            oci_commit($connection);
+                                            echo "<div class = \"row\">";
+                                            echo "<div class = \"col-md-3\">";
+                                            echo "<div class = \"thumbnail-container\"><div class = \"thumbnail\"><img src =" . $picture . "></div></div>";
+                                            echo "</div>";
+                                            echo "<div class = \"col-md-9\">";
                                             echo "<form id=\"person" . $count . "\" action=\"other-profile.php\" method=\"POST\">";
                                             echo "<input type=\"hidden\" name=\"other-usernameID\" value=\"" . $row['UNID'] . "\" />";
                                             echo "<input type=\"hidden\" name=\"other-name\" value=\"" . $row['FNAME'] . "\" />";
@@ -997,6 +1157,8 @@
                                             echo "<p>Lives in: " . $row['CITY'] . ", " . $row['COUNTRY'] . "</p>";
                                             echo "<hr><br>";
                                             echo "</form>";
+                                            echo "</div>";
+                                            echo "</div>";
                                             $count++;
                                         }
                                         oci_free_statement($compiled);
@@ -1013,6 +1175,17 @@
                                         oci_execute($cursor, OCI_DEFAULT);       //execute the cursor like a normal statement
                                         $count = 0;
                                         while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
+                                            $query = 'BEGIN getPicture(:usernameID, :fileLocation); END;';
+                                            $compiled = oci_parse($connection, $query);
+                                            oci_bind_by_name($compiled, ':usernameID', $row['UNID'], 5);
+                                            oci_bind_by_name($compiled, ':fileLocation', $picture, 200);
+                                            oci_execute($compiled, OCI_NO_AUTO_COMMIT);
+                                            oci_commit($connection);
+                                            echo "<div class = \"row\">";
+                                            echo "<div class = \"col-md-3\">";
+                                            echo "<div class = \"thumbnail-container\"><div class = \"thumbnail\"><img src =" . $picture . "></div></div>";
+                                            echo "</div>";
+                                            echo "<div class = \"col-md-9\">";
                                             echo "<form id=\"person" . $count . "\" action=\"other-profile.php\" method=\"POST\">";
                                             echo "<input type=\"hidden\" name=\"other-usernameID\" value=\"" . $row['UNID'] . "\" />";
                                             echo "<input type=\"hidden\" name=\"other-name\" value=\"" . $row['FNAME'] . "\" />";
@@ -1022,6 +1195,8 @@
                                             echo "<p>Lives in: " . $row['CITY'] . ", " . $row['COUNTRY'] . "</p>";
                                             echo "<hr><br>";
                                             echo "</form>";
+                                            echo "</div>";
+                                            echo "</div>";
                                             $count++;
                                         }
                                         oci_free_statement($compiled);
@@ -1038,6 +1213,17 @@
                                         oci_execute($cursor, OCI_DEFAULT);       //execute the cursor like a normal statement
                                         $count = 0;
                                         while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
+                                            $query = 'BEGIN getPicture(:usernameID, :fileLocation); END;';
+                                            $compiled = oci_parse($connection, $query);
+                                            oci_bind_by_name($compiled, ':usernameID', $row['UNID'], 5);
+                                            oci_bind_by_name($compiled, ':fileLocation', $picture, 200);
+                                            oci_execute($compiled, OCI_NO_AUTO_COMMIT);
+                                            oci_commit($connection);
+                                            echo "<div class = \"row\">";
+                                            echo "<div class = \"col-md-3\">";
+                                            echo "<div class = \"thumbnail-container\"><div class = \"thumbnail\"><img src =" . $picture . "></div></div>";
+                                            echo "</div>";
+                                            echo "<div class = \"col-md-9\">";
                                             echo "<form id=\"person" . $count . "\" action=\"other-profile.php\" method=\"POST\">";
                                             echo "<input type=\"hidden\" name=\"other-usernameID\" value=\"" . $row['UNID'] . "\" />";
                                             echo "<input type=\"hidden\" name=\"other-name\" value=\"" . $row['FNAME'] . "\" />";
@@ -1047,6 +1233,8 @@
                                             echo "<p>Lives in: " . $row['CITY'] . ", " . $row['COUNTRY'] . "</p>";
                                             echo "<hr><br>";
                                             echo "</form>";
+                                            echo "</div>";
+                                            echo "</div>";
                                             $count++;
                                         }
                                         oci_free_statement($compiled);
@@ -1063,6 +1251,17 @@
                                         oci_execute($cursor, OCI_DEFAULT);       //execute the cursor like a normal statement
                                         $count = 0;
                                         while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
+                                            $query = 'BEGIN getPicture(:usernameID, :fileLocation); END;';
+                                            $compiled = oci_parse($connection, $query);
+                                            oci_bind_by_name($compiled, ':usernameID', $row['UNID'], 5);
+                                            oci_bind_by_name($compiled, ':fileLocation', $picture, 200);
+                                            oci_execute($compiled, OCI_NO_AUTO_COMMIT);
+                                            oci_commit($connection);
+                                            echo "<div class = \"row\">";
+                                            echo "<div class = \"col-md-3\">";
+                                            echo "<div class = \"thumbnail-container\"><div class = \"thumbnail\"><img src =" . $picture . "></div></div>";
+                                            echo "</div>";
+                                            echo "<div class = \"col-md-9\">";
                                             echo "<form id=\"person" . $count . "\" action=\"other-profile.php\" method=\"POST\">";
                                             echo "<input type=\"hidden\" name=\"other-usernameID\" value=\"" . $row['UNID'] . "\" />";
                                             echo "<input type=\"hidden\" name=\"other-name\" value=\"" . $row['FNAME'] . "\" />";
@@ -1072,6 +1271,8 @@
                                             echo "<p>Lives in: " . $row['CITY'] . ", " . $row['COUNTRY'] . "</p>";
                                             echo "<hr><br>";
                                             echo "</form>";
+                                            echo "</div>";
+                                            echo "</div>";
                                             $count++;
                                         }
                                         oci_free_statement($compiled);
@@ -1088,6 +1289,17 @@
                                         oci_execute($cursor, OCI_DEFAULT);       //execute the cursor like a normal statement
                                         $count = 0;
                                         while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
+                                            $query = 'BEGIN getPicture(:usernameID, :fileLocation); END;';
+                                            $compiled = oci_parse($connection, $query);
+                                            oci_bind_by_name($compiled, ':usernameID', $row['UNID'], 5);
+                                            oci_bind_by_name($compiled, ':fileLocation', $picture, 200);
+                                            oci_execute($compiled, OCI_NO_AUTO_COMMIT);
+                                            oci_commit($connection);
+                                            echo "<div class = \"row\">";
+                                            echo "<div class = \"col-md-3\">";
+                                            echo "<div class = \"thumbnail-container\"><div class = \"thumbnail\"><img src =" . $picture . "></div></div>";
+                                            echo "</div>";
+                                            echo "<div class = \"col-md-9\">";
                                             echo "<form id=\"person" . $count . "\" action=\"other-profile.php\" method=\"POST\">";
                                             echo "<input type=\"hidden\" name=\"other-usernameID\" value=\"" . $row['UNID'] . "\" />";
                                             echo "<input type=\"hidden\" name=\"other-name\" value=\"" . $row['FNAME'] . "\" />";
@@ -1097,6 +1309,8 @@
                                             echo "<p>Lives in: " . $row['CITY'] . ", " . $row['COUNTRY'] . "</p>";
                                             echo "<hr><br>";
                                             echo "</form>";
+                                            echo "</div>";
+                                            echo "</div>";
                                             $count++;
                                         }
                                         oci_free_statement($compiled);
@@ -1113,6 +1327,17 @@
                                         oci_execute($cursor, OCI_DEFAULT);       //execute the cursor like a normal statement
                                         $count = 0;
                                         while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
+                                            $query = 'BEGIN getPicture(:usernameID, :fileLocation); END;';
+                                            $compiled = oci_parse($connection, $query);
+                                            oci_bind_by_name($compiled, ':usernameID', $row['UNID'], 5);
+                                            oci_bind_by_name($compiled, ':fileLocation', $picture, 200);
+                                            oci_execute($compiled, OCI_NO_AUTO_COMMIT);
+                                            oci_commit($connection);
+                                            echo "<div class = \"row\">";
+                                            echo "<div class = \"col-md-3\">";
+                                            echo "<div class = \"thumbnail-container\"><div class = \"thumbnail\"><img src =" . $picture . "></div></div>";
+                                            echo "</div>";
+                                            echo "<div class = \"col-md-9\">";
                                             echo "<form id=\"person" . $count . "\" action=\"other-profile.php\" method=\"POST\">";
                                             echo "<input type=\"hidden\" name=\"other-usernameID\" value=\"" . $row['UNID'] . "\" />";
                                             echo "<input type=\"hidden\" name=\"other-name\" value=\"" . $row['FNAME'] . "\" />";
@@ -1122,6 +1347,8 @@
                                             echo "<p>Lives in: " . $row['CITY'] . ", " . $row['COUNTRY'] . "</p>";
                                             echo "<hr><br>";
                                             echo "</form>";
+                                            echo "</div>";
+                                            echo "</div>";
                                             $count++;
                                         }
                                         oci_free_statement($compiled);
@@ -1138,6 +1365,17 @@
                                         oci_execute($cursor, OCI_DEFAULT);       //execute the cursor like a normal statement
                                         $count = 0;
                                         while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
+                                            $query = 'BEGIN getPicture(:usernameID, :fileLocation); END;';
+                                            $compiled = oci_parse($connection, $query);
+                                            oci_bind_by_name($compiled, ':usernameID', $row['UNID'], 5);
+                                            oci_bind_by_name($compiled, ':fileLocation', $picture, 200);
+                                            oci_execute($compiled, OCI_NO_AUTO_COMMIT);
+                                            oci_commit($connection);
+                                            echo "<div class = \"row\">";
+                                            echo "<div class = \"col-md-3\">";
+                                            echo "<div class = \"thumbnail-container\"><div class = \"thumbnail\"><img src =" . $picture . "></div></div>";
+                                            echo "</div>";
+                                            echo "<div class = \"col-md-9\">";
                                             echo "<form id=\"person" . $count . "\" action=\"other-profile.php\" method=\"POST\">";
                                             echo "<input type=\"hidden\" name=\"other-usernameID\" value=\"" . $row['UNID'] . "\" />";
                                             echo "<input type=\"hidden\" name=\"other-name\" value=\"" . $row['FNAME'] . "\" />";
@@ -1147,6 +1385,8 @@
                                             echo "<p>Lives in: " . $row['CITY'] . ", " . $row['COUNTRY'] . "</p>";
                                             echo "<hr><br>";
                                             echo "</form>";
+                                            echo "</div>";
+                                            echo "</div>";
                                             $count++;
                                         }
                                         oci_free_statement($compiled);
@@ -1163,6 +1403,17 @@
                                         oci_execute($cursor, OCI_DEFAULT);       //execute the cursor like a normal statement
                                         $count = 0;
                                         while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
+                                            $query = 'BEGIN getPicture(:usernameID, :fileLocation); END;';
+                                            $compiled = oci_parse($connection, $query);
+                                            oci_bind_by_name($compiled, ':usernameID', $row['UNID'], 5);
+                                            oci_bind_by_name($compiled, ':fileLocation', $picture, 200);
+                                            oci_execute($compiled, OCI_NO_AUTO_COMMIT);
+                                            oci_commit($connection);
+                                            echo "<div class = \"row\">";
+                                            echo "<div class = \"col-md-3\">";
+                                            echo "<div class = \"thumbnail-container\"><div class = \"thumbnail\"><img src =" . $picture . "></div></div>";
+                                            echo "</div>";
+                                            echo "<div class = \"col-md-9\">";
                                             echo "<form id=\"person" . $count . "\" action=\"other-profile.php\" method=\"POST\">";
                                             echo "<input type=\"hidden\" name=\"other-usernameID\" value=\"" . $row['UNID'] . "\" />";
                                             echo "<input type=\"hidden\" name=\"other-name\" value=\"" . $row['FNAME'] . "\" />";
@@ -1172,6 +1423,8 @@
                                             echo "<p>Lives in: " . $row['CITY'] . ", " . $row['COUNTRY'] . "</p>";
                                             echo "<hr><br>";
                                             echo "</form>";
+                                            echo "</div>";
+                                            echo "</div>";
                                             $count++;
                                         }
                                         oci_free_statement($compiled);

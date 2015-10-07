@@ -37,11 +37,246 @@
 </head>
 <body>
 
+    <!-- Visit modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+         <div class="modal-content">
+            <div class="modal-header">
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+               <h4 class="modal-title" id="myModalLabel">Visits to my profile</h4>
+            </div>
+            <div class="modal-body">
+              <?php
+                $cursor = oci_new_cursor($connection);
+                $query = 'BEGIN getVisits(:usernameID,:cursor); END;';
+                $compiled = oci_parse($connection, $query);
+                oci_bind_by_name($compiled, ':cursor', $cursor, -1, OCI_B_CURSOR);
+                oci_bind_by_name($compiled, ':usernameID', $_SESSION['usernameID'], 5);
+                oci_execute($compiled);
+                oci_execute($cursor, OCI_DEFAULT);       //execute the cursor like a normal statement
+                echo "<div class = \"row\"><div class = \"col-md-7\"><h3><b>Person</b></h3></div><div class = \"col-md-5\"><h3><b>Visit date</b></h3></div></div>";
+                while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
+                    echo "<div class = \"row\">";
+                    echo "<div class = \"col-md-7\">";
+                    echo "<p>" . $row['FNAME'] . " " . $row['LNAME1'] . " " . $row['LNAME2'] . "</p>";
+                    echo "</div>";
+                    echo "<div class = \"col-md-5\">";
+                    echo "<p>" . $row['VISITDATE'] . "</p>";
+                    echo "</div>";
+                    echo "</div>";
+                }
+                oci_free_statement($compiled);
+                oci_free_statement($cursor);
+              ?>
+              <div class="modal-footer">
+                 <div class = "container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                 </div>
+              </div>
+            </div>
+         </div>
+      </div>
+   </div> 
+
+    <!-- Winks I've got modal -->
+    <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+         <div class="modal-content">
+            <div class="modal-header">
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+               <h4 class="modal-title" id="myModalLabel">Winks I've got</h4>
+            </div>
+            <div class="modal-body">
+              <?php
+                $cursor = oci_new_cursor($connection);
+                $query = 'BEGIN winksIveGot(:usernameID,:cursor); END;';
+                $compiled = oci_parse($connection, $query);
+                oci_bind_by_name($compiled, ':cursor', $cursor, -1, OCI_B_CURSOR);
+                oci_bind_by_name($compiled, ':usernameID', $_SESSION['usernameID'], 5);
+                oci_execute($compiled);
+                oci_execute($cursor, OCI_DEFAULT);       //execute the cursor like a normal statement
+                echo "<h3><b>People who have winked at you</b></h3>";
+                while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
+                    echo "<li><p>" . $row['FNAME'] . " " . $row['LNAME1'] . " " . $row['LNAME2'] . "</p></li>";
+                }
+                oci_free_statement($compiled);
+                oci_free_statement($cursor);
+              ?>
+              <div class="modal-footer">
+                 <div class = "container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                 </div>
+              </div>
+            </div>
+         </div>
+      </div>
+   </div> 
+
+   <!-- Winks I've given modal -->
+    <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+         <div class="modal-content">
+            <div class="modal-header">
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+               <h4 class="modal-title" id="myModalLabel">Winks I've given</h4>
+            </div>
+            <div class="modal-body">
+              <?php
+                $cursor = oci_new_cursor($connection);
+                $query = 'BEGIN winksIveGiven(:usernameID,:cursor); END;';
+                $compiled = oci_parse($connection, $query);
+                oci_bind_by_name($compiled, ':cursor', $cursor, -1, OCI_B_CURSOR);
+                oci_bind_by_name($compiled, ':usernameID', $_SESSION['usernameID'], 5);
+                oci_execute($compiled);
+                oci_execute($cursor, OCI_DEFAULT);       //execute the cursor like a normal statement
+                echo "<h3><b>People you have winked at</b></h3>";
+                while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
+                    echo "<li><p>" . $row['FNAME'] . " " . $row['LNAME1'] . " " . $row['LNAME2'] . "</p></li>";
+                }
+                oci_free_statement($compiled);
+                oci_free_statement($cursor);
+              ?>
+              <div class="modal-footer">
+                 <div class = "container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                 </div>
+              </div>
+            </div>
+         </div>
+      </div>
+   </div> 
+
+   <!-- Matches I've given modal -->
+    <div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+         <div class="modal-content">
+            <div class="modal-header">
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+               <h4 class="modal-title" id="myModalLabel">Winks I've given</h4>
+            </div>
+            <div class="modal-body">
+              <?php
+                $cursor = oci_new_cursor($connection);
+                $query = 'BEGIN matchesIveGiven(:usernameID,:cursor); END;';
+                $compiled = oci_parse($connection, $query);
+                oci_bind_by_name($compiled, ':cursor', $cursor, -1, OCI_B_CURSOR);
+                oci_bind_by_name($compiled, ':usernameID', $_SESSION['usernameID'], 5);
+                oci_execute($compiled);
+                oci_execute($cursor, OCI_DEFAULT);       //execute the cursor like a normal statement
+                echo "<h3><b>Matches I've given</b></h3>";
+                while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
+                    echo "<li><p>" . $row['FNAME'] . " " . $row['LNAME1'] . " " . $row['LNAME2'] . "</p></li>";
+                }
+                oci_free_statement($compiled);
+                oci_free_statement($cursor);
+              ?>
+              <div class="modal-footer">
+                 <div class = "container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                 </div>
+              </div>
+            </div>
+         </div>
+      </div>
+   </div> 
+
+   <!-- Matches I've got modal -->
+    <div class="modal fade" id="myModal5" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+         <div class="modal-content">
+            <div class="modal-header">
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+               <h4 class="modal-title" id="myModalLabel">Winks I've got</h4>
+            </div>
+            <div class="modal-body">
+              <?php
+                $cursor = oci_new_cursor($connection);
+                $query = 'BEGIN matchesIveGot(:usernameID,:cursor); END;';
+                $compiled = oci_parse($connection, $query);
+                oci_bind_by_name($compiled, ':cursor', $cursor, -1, OCI_B_CURSOR);
+                oci_bind_by_name($compiled, ':usernameID', $_SESSION['usernameID'], 5);
+                oci_execute($compiled);
+                oci_execute($cursor, OCI_DEFAULT);       //execute the cursor like a normal statement
+                echo "<h3><b>Matches I've got</b></h3>";
+                while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
+                    echo "<li><p>" . $row['FNAME'] . " " . $row['LNAME1'] . " " . $row['LNAME2'] . "</p></li>";
+                }
+                oci_free_statement($compiled);
+                oci_free_statement($cursor);
+              ?>
+              <div class="modal-footer">
+                 <div class = "container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                 </div>
+              </div>
+            </div>
+         </div>
+      </div>
+   </div> 
+
+   <!-- mutual matches modal -->
+    <div class="modal fade" id="myModal6" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+         <div class="modal-content">
+            <div class="modal-header">
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+               <h4 class="modal-title" id="myModalLabel">Winks I've got</h4>
+            </div>
+            <div class="modal-body">
+              <?php
+                $cursor = oci_new_cursor($connection);
+                $query = 'BEGIN mutualMatches(:usernameID,:cursor); END;';
+                $compiled = oci_parse($connection, $query);
+                oci_bind_by_name($compiled, ':cursor', $cursor, -1, OCI_B_CURSOR);
+                oci_bind_by_name($compiled, ':usernameID', $_SESSION['usernameID'], 5);
+                oci_execute($compiled);
+                oci_execute($cursor, OCI_DEFAULT);       //execute the cursor like a normal statement
+                echo "<h3><b>Mutual matches</b></h3>";
+                while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
+                    echo "<li><p>" . $row['FNAME'] . " " . $row['LNAME1'] . " " . $row['LNAME2'] . "</p></li>";
+                }
+                oci_free_statement($compiled);
+                oci_free_statement($cursor);
+              ?>
+              <div class="modal-footer">
+                 <div class = "container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                 </div>
+              </div>
+            </div>
+         </div>
+      </div>
+   </div>
+
 	<div class="nav">
       <div class="container">
         <ul class = "pull-left">
             <img src = "imgs/logopeq.png">
-            <li><a href="homepage.php" >match.me</a></li>
+            <li><a href="homepage.php">match.me</a></li>
         </ul>
         <ul class = "pull-right">
             <li><a href="search.php"><img src = "imgs/search.png">Search</a></li>
@@ -59,11 +294,21 @@
     	<div class = "row">
     		<div class = "col-md-3">
     			<div class = "profile-overview">
-                    <h3><a href = "profile.php">
-                        <?php
-                            echo $_SESSION['name'];
-                        ?>
-                    </a></h3>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class = "thumbnail-container">
+                                <div class="thumbnail">
+                                    <img src = <?php echo $_SESSION['picture']; ?>>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <h3><a href = "profile.php">
+                                <?php echo $_SESSION['name']; ?>
+                            </a></h3>
+                        </div>
+                    </div>
+                            
     				
     			</div>
                 <form action="edit-profile.php">
@@ -74,7 +319,7 @@
     		<div class = "col-md-6">
     			<div class = "statistics">
     				<div class = "box-header">
-    					
+    					<h3>Statistics</h3>
     				</div>
     				<div class = "box-body">
     					
@@ -93,8 +338,30 @@
                     </div>
                     <div class = "box-body">
                         <ul>
-                            <li><a href="user/people-ive-winked.php">People I've winked</a></li>
-                            <li><a href="user/my-winks.php">People who have winked at me</a></li>
+                            <li><a href="#" class="btn-link" data-toggle="modal" data-target="#myModal3">People I've winked</a></li>
+                            <li><a href="#" class="btn-link" data-toggle="modal" data-target="#myModal2">People who have winked at me</a></li>
+                        </ul>
+                    </div>
+                </div><br>
+                <div class = "visits">
+                    <div class="box-header">
+                        <h3>Visits</h3>
+                    </div>
+                    <div class="box-body">
+                        <ul>
+                            <li><a href="#" class="btn-link" data-toggle="modal" data-target="#myModal">Visits to my profile</a></li>
+                        </ul>
+                    </div>
+                </div><br>
+                <div class="matches">
+                    <div class="box-header">
+                        <h3>Matches</h3>
+                    </div>
+                    <div class="box-body">
+                        <ul>
+                            <li><a href="#" class="btn-link" data-toggle="modal" data-target="#myModal4">People I've matched</a></li>
+                            <li><a href="#" class="btn-link" data-toggle="modal" data-target="#myModal5">People who have matched me</a></li>
+                            <li><a href="#" class="btn-link" data-toggle="modal" data-target="#myModal6">Mutual matches</a></li>
                         </ul>
                     </div>
                 </div>

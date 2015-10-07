@@ -8,6 +8,27 @@
     if ($_SESSION['userType'] != 2) { //if it's not a normal user
         header("Location: index.php#notnormaluser");
     }
+    //check if the post variable is set
+    if (isset($_POST['other-usernameID'])) {
+        $_SESSION['other-usernameID'] = $_POST['other-usernameID'];
+    }
+    else if (isset($_SESSION['other-usernameID'])) {
+        $_POST['other-usernameID'] = $_SESSION['other-usernameID'];
+    }
+    //register visit
+    $query = 'BEGIN visit(:usernameID, :otherUsernameID); END;';
+    $compiled = oci_parse($connection, $query);
+    oci_bind_by_name($compiled, ':usernameID', $_SESSION['usernameID'], 5);
+    oci_bind_by_name($compiled, ':otherUsernameID', $_POST['other-usernameID'], 5);
+    oci_execute($compiled, OCI_NO_AUTO_COMMIT);
+    oci_commit($connection);
+    //get the person's name
+    $query = 'BEGIN getPerson.FirstName(:usernameID, :userFirstName); END;';
+    $compiled = oci_parse($connection, $query);
+    oci_bind_by_name($compiled, ':usernameID', $_POST['other-usernameID'], 5);
+    oci_bind_by_name($compiled, ':userFirstName', $userFirstName, 50);
+    oci_execute($compiled, OCI_NO_AUTO_COMMIT);
+    oci_commit($connection);
 
 ?>
 
@@ -20,7 +41,7 @@
 
   <head>
     <link rel="shortcut icon" href= "imgs/logo (1).png">
-    <title><?php echo $_POST['other-name'] ?>'s Profile - match.me</title>
+    <title><?php echo $userFirstName; ?>'s Profile - match.me</title>
 
     <link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
@@ -65,12 +86,20 @@
                 <div class = "col-md-4">
                     <div class = "thumbnail-container">
                         <div class = "thumbnail">
-                            <img src = "imgs/dog-of-wisdom-profile-picture.png">
+                            <?php
+                                $query = 'BEGIN getPicture(:usernameID, :fileLocation); END;';
+                                $compiled = oci_parse($connection, $query);
+                                oci_bind_by_name($compiled, ':usernameID', $_POST['other-usernameID'], 5);
+                                oci_bind_by_name($compiled, ':fileLocation', $picture, 200);
+                                oci_execute($compiled, OCI_NO_AUTO_COMMIT);
+                                oci_commit($connection);
+                            ?>
+                            <img src = <?php echo $picture; ?>>
                         </div>
                     </div>
                     
                     <h2><?php
-                        echo $_POST['other-name'];
+                        echo $userFirstName;
                     ?></h2>
                     <div class = "tagline">
                         <p><?php
@@ -190,14 +219,54 @@
                     </div>
                     <div class = "row">
                         <div class = "col-md-6">
-                            <div class = "message-button">
-                                <button type="button" class="btn-primary">Match</button>
-                            </div>
+                            <form action = "match.php" method = "POST">
+                                <?php
+                                    $query = 'BEGIN checkMatch(:matcher, :matchedPerson, :check); END;';
+                                    $compiled = oci_parse($connection, $query);
+                                    oci_bind_by_name($compiled, ':matcher', $_SESSION['usernameID'], 5);
+                                    oci_bind_by_name($compiled, ':matchedPerson', $_POST['other-usernameID'], 5);
+                                    oci_bind_by_name($compiled, ':check', $check, 1);
+                                    oci_execute($compiled, OCI_NO_AUTO_COMMIT);
+                                    oci_commit($connection);
+                                    if ($check == 1) {
+                                        $class = "disabledButton";
+                                        $value = "Matched!";
+                                    }
+                                    else {
+                                        $class = "normal";
+                                        $value = "Match";
+                                    }
+                                ?>
+                                <input type="hidden" name = "other-usernameID" value = <?php echo $_POST['other-usernameID']; ?> />
+                                <div class = <?php echo $class; ?> >
+                                    <input type = "submit" name = "submit" value = <?php echo $value; ?> >
+                                </div>
+                            </form>
                         </div>
                         <div class = "col-md-6">
-                            <div class = "message-button">
-                                <button type="button" class="btn-primary">Wink</button>
-                            </div>
+                            <form action = "wink.php" method = "POST">
+                                <?php
+                                    $query = 'BEGIN checkWink(:winker, :winkedPerson, :check); END;';
+                                    $compiled = oci_parse($connection, $query);
+                                    oci_bind_by_name($compiled, ':winker', $_SESSION['usernameID'], 5);
+                                    oci_bind_by_name($compiled, ':winkedPerson', $_POST['other-usernameID'], 5);
+                                    oci_bind_by_name($compiled, ':check', $check, 1);
+                                    oci_execute($compiled, OCI_NO_AUTO_COMMIT);
+                                    oci_commit($connection);
+                                    if ($check == 1) {
+                                        $class = "disabledButton";
+                                        $value = "Winked!";
+                                    }
+                                    else {
+                                        $class = "normal";
+                                        $value = "Wink";
+                                    }
+                                ?>
+                                <input type="hidden" name = "other-usernameID" value = <?php echo $_POST['other-usernameID']; ?> />
+                                <div class = <?php echo $class; ?> >
+                                    <input type = "submit" name = "submit" value = <?php echo $value; ?> >
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -243,7 +312,7 @@
                                                                 oci_bind_by_name($compiled, ':lastname2', $lastName2, 50);
                                                                 oci_execute($compiled, OCI_NO_AUTO_COMMIT);
                                                                 oci_commit($connection);
-                                                                echo $_POST['other-name'] . " " . $lastName . " " . $lastName2;
+                                                                echo $userFirstName . " " . $lastName . " " . $lastName2;
                                                             ?>
                                                         </p>
                                                     </div>
