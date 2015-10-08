@@ -20,5 +20,7 @@ create or replace package getcatalog is
     procedure NumberofCountries (pNumberofCountries  out number); 
     procedure CityID (pcityName in varchar2, pcityID out Number);
     
+    procedure zodiacSignCount(pcount  out number);
+    
  
 END getcatalog;

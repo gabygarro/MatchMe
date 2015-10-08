@@ -42,6 +42,20 @@ as
 
        END;
 -------------------------------------------------------------------------------
+procedure zodiacsign (pzodiacsignID in number)
+ --delete a zodiacsign of the table zodiacsingcatalog with parameters pzodiacsignID 
+as
+       BEGIN        
+           DELETE FROM zodiacsigncatalog zs
+           WHERE zs.zodiacsignid = pzodiacsignID;
+         
+        Exception
+         WHEN NO_DATA_FOUND THEN
+             DBMS_OUTPUT.PUT_LINE('Zodiac Sign not found');
+              
+         commit;
 
+       END;
+-------------------------------------------------------------------------------
 
 END deletes;

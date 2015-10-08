@@ -268,4 +268,22 @@ procedure CityID (pcityName in varchar2, pcityID out Number) as
        END;
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
+procedure zodiacSignCount(pcount  out number) as
+  -- Gets all count of zodiacal sign and return the number pcount.
+       BEGIN
+         
+         select count(*) into pcount
+         from zodiacSignCatalog;
+         --order by typeName;
+         Exception
+         WHEN NO_DATA_FOUND THEN
+              DBMS_OUTPUT.PUT_LINE ('Catalog no found:');
+              pcount:=0;
+       
+       END;
+       
+-------------------------------------------------------------------------------
+
+
+
 END getCatalog;

@@ -7,5 +7,8 @@ create or replace package deletes is
     
     procedure personinterest (pUserID in number, pinterestID in number);
  --delete the hobie that have the table interestsbyperson with parameters pUserID and pinterestID
-    
+ 
+    procedure zodiacsign (pzodiacsignID in number);
+ --delete a zodiacsign of the table zodiacsingcatalog with parameters pzodiacsignID 
+ 
  END deletes;
