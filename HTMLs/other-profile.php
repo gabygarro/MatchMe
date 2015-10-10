@@ -1,6 +1,11 @@
 <?php
-    //user profile
-    //include ('login.php');
+    /* Proyecto I Bases de Datos - Prof. Adriana Álvarez
+     * match.me - Oracle
+     * Alexis Arguedas, Gabriela Garro, Yanil Gómez
+     * -------------------------------------------------
+     * other-profile.php - Created: 03/10/2015
+     * Used to see a person's profile which is not the actual user's.
+     */
     include('session.php');
     if(!isset($_SESSION['usernameID'])) {
         header("Location: index.php#notloggedin");
@@ -29,7 +34,6 @@
     oci_bind_by_name($compiled, ':userFirstName', $userFirstName, 50);
     oci_execute($compiled, OCI_NO_AUTO_COMMIT);
     oci_commit($connection);
-
 ?>
 
 <!DOCTYPE html>
@@ -74,7 +78,7 @@
             <li><a href="#">Messages</a></li>
             <li><a href="#">Notifications</a></li>
             <li><a href="#">Settings</a></li>
-            <li><a href="logout.php">Log out</a></li>
+            <li><a href="logout.php" onclick="return confirm('Are you sure to logout?');">Log out</a></li>
         </ul>
       </div>
     </div>

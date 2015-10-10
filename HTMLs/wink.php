@@ -1,4 +1,11 @@
 <?php
+    /* Proyecto I Bases de Datos - Prof. Adriana Álvarez
+     * match.me - Oracle
+     * Alexis Arguedas, Gabriela Garro, Yanil Gómez
+     * -------------------------------------------------
+     * wink.php - Created: 08/10/2015
+     * Submitted from other-profile.php, registers or unregisters a wink.
+     */
     include('session.php');
 
     //check if user is winking or unwinking

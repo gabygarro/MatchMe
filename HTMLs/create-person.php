@@ -1,8 +1,16 @@
 <?php
-	//Start session
-	session_start();
-	$error = ""; 						// Variable to store error message
-	//tomar todos los campos desde el form y escribirlos en el array Session
+	/* Proyecto I Bases de Datos - Prof. Adriana Álvarez
+   * match.me - Oracle
+   * Alexis Arguedas, Gabriela Garro, Yanil Gómez
+   * -------------------------------------------------
+   * create-person.php - Created: 26/09/2015
+   * Validates that the submitted values aren't null. If they are, redirect to the previous page (create-profile.php),
+   * sends the proper error message. If they aren't null, proceed to create a person entity and redirect to the user homepage.
+   */
+	session_start(); //Start session
+	$error = ""; // Variable to store error message
+	//take every value, only if it isn't null, and write it to the SESSION super array. This is useful in order to not
+	//lose what the user has written on the form.
 	if (!empty($_POST['name'])) 				$_SESSION['name'] = 				$_POST['name'];
 	if (!empty($_POST['last-name'])) 			$_SESSION['lastName'] = 			$_POST['last-name'];
 	if (!empty($_POST['last-name2'])) 			$_SESSION['lastName2'] = 			$_POST['last-name2'];
@@ -30,7 +38,6 @@
 	if (isset($_POST['interested-children'])) 	$_SESSION['interestedChildren'] = 	intval($_POST['interested-children']);
 	if (isset($_POST['likes-pets'])) 			$_SESSION['likesPets'] = 			intval($_POST['likes-pets']);
 	if (!empty($_POST['age-range'])) 			$_SESSION['ageRangeID'] = 			intval($_POST['age-range']);
-	//if (isset($_FILES["picture"]["name"]))		$_SESSION['picture'] =				$_SESSION['usernameID']
 
 	//save the languages
 	for ($i = 0; $i < $_SESSION['countLanguages']; $i++) {
@@ -96,161 +103,150 @@
 		oci_commit($connection);
 		$_SESSION['picture'] = $target_file;
 	}
-			
-	//if (isset($_POST["submit"])) {
-		$error = "* Null values: ";
-		if (empty($_POST['name']) || empty($_POST['last-name']) || empty($_POST['bday']) || empty($_POST['zodiac'])
-			 || empty($_POST['gender']) || empty($_POST['sexual-orientation'])  || empty($_POST['relationship-status'])
-			 || empty($_POST['state']) || empty($_POST['religion']) || empty($_POST['height'])
-			 || empty($_POST['body-type']) || empty($_POST['skin-color']) || empty($_POST['eye-color']) 
-			 || empty($_POST['hair-color']) || !isset($_POST['smoker']) || !isset($_POST['drinker'])  
-			 || empty($_POST['exercise-frequency']) || !isset($_POST['number-kids']) || !isset($_POST['interested-children']) 
-			 || !isset($_POST['likes-pets']) ) {
-
-			if (empty($_POST['name'])) $error = $error . "name, ";
-			if (empty($_POST['last-name'])) $error = $error . "last name, ";
-			if (empty($_POST['bday'])) $error = $error . "birthday, ";
-			if (empty($_POST['zodiac'])) $error = $error . "zodiac sign, ";
-			if (empty($_POST['gender'])) $error = $error . "gender, ";
-			if (empty($_POST['sexual-orientation'])) $error = $error . "sexual orientation, ";  
-			if (empty($_POST['relationship-status'])) $error = $error . "relationship status, ";
-			if (empty($_POST['state'])) $error = $error . "city, ";
-			if (empty($_POST['religion'])) $error = $error . "religion, ";
-			if (empty($_POST['height'])) $error = $error . "height, ";
-			if (empty($_POST['body-type'])) $error = $error . "body type, "; 
-			if (empty($_POST['skin-color'])) $error = $error . "skin color, "; 
-			if (empty($_POST['eye-color'])) $error = $error . "eye color, ";
-			if (empty($_POST['hair-color'])) $error = $error . "hair color, ";
-			if (empty($_POST['smoker'])) $error = $error . "smoker, ";
-			if (empty($_POST['drinker'])) $error = $error . "drinker, "; 
-			if (empty($_POST['exercise-frequency'])) $error = $error . "exercise frequency, ";
-			if (empty($_POST['number-kids'])) $error = $error . "number of kids, ";
-			if (empty($_POST['interested-children'])) $error = $error . "interested in children, ";
-			if (empty($_POST['likes-pets'])) $error = $error . "likes pets, ";
-			
-			$_SESSION['error'] = substr($error, 0, -2);
-			header("Location: create-profile.php#invalidData");
+	
+	//declare the mistakes the user committed when filling out the profile
+	$error = "* Null values: ";
+	if (empty($_POST['name']) || empty($_POST['last-name']) || empty($_POST['bday']) || empty($_POST['zodiac'])
+		 || empty($_POST['gender']) || empty($_POST['sexual-orientation'])  || empty($_POST['relationship-status'])
+		 || empty($_POST['state']) || empty($_POST['religion']) || empty($_POST['height'])
+		 || empty($_POST['body-type']) || empty($_POST['skin-color']) || empty($_POST['eye-color']) 
+		 || empty($_POST['hair-color']) || !isset($_POST['smoker']) || !isset($_POST['drinker'])  
+		 || empty($_POST['exercise-frequency']) || !isset($_POST['number-kids']) || !isset($_POST['interested-children']) 
+		 || !isset($_POST['likes-pets']) ) {
+		if (empty($_POST['name'])) $error = $error . "name, ";
+		if (empty($_POST['last-name'])) $error = $error . "last name, ";
+		if (empty($_POST['bday'])) $error = $error . "birthday, ";
+		if (empty($_POST['zodiac'])) $error = $error . "zodiac sign, ";
+		if (empty($_POST['gender'])) $error = $error . "gender, ";
+		if (empty($_POST['sexual-orientation'])) $error = $error . "sexual orientation, ";  
+		if (empty($_POST['relationship-status'])) $error = $error . "relationship status, ";
+		if (empty($_POST['state'])) $error = $error . "city, ";
+		if (empty($_POST['religion'])) $error = $error . "religion, ";
+		if (empty($_POST['height'])) $error = $error . "height, ";
+		if (empty($_POST['body-type'])) $error = $error . "body type, "; 
+		if (empty($_POST['skin-color'])) $error = $error . "skin color, "; 
+		if (empty($_POST['eye-color'])) $error = $error . "eye color, ";
+		if (empty($_POST['hair-color'])) $error = $error . "hair color, ";
+		if (empty($_POST['smoker'])) $error = $error . "smoker, ";
+		if (empty($_POST['drinker'])) $error = $error . "drinker, "; 
+		if (empty($_POST['exercise-frequency'])) $error = $error . "exercise frequency, ";
+		if (empty($_POST['number-kids'])) $error = $error . "number of kids, ";
+		if (empty($_POST['interested-children'])) $error = $error . "interested in children, ";
+		if (empty($_POST['likes-pets'])) $error = $error . "likes pets, ";
+		$_SESSION['error'] = substr($error, 0, -2); //delete the last two characters, which in every case are a comma and space
+		header("Location: create-profile.php#invalidData"); //proceed to redirect to the previous page
+	}
+	else { //establishes a connection to the db
+		$connection = oci_connect("ADMINISTRATOR", "ADMINISTRATOR", "(DESCRIPTION = (ADDRESS_LIST =
+  							(ADDRESS = (PROTOCOL = TCP)(HOST = 172.26.50.118)(PORT = 1521)))
+							(CONNECT_DATA =(SERVICE_NAME = MATCHME)))");
+		if (!$connection) {
+			echo "Invalid connection " . var_dump(ocierror());
+			die();
 		}
-		else {
-			//establishes a connection to the db
-			$connection = oci_connect("ADMINISTRATOR", "ADMINISTRATOR", "(DESCRIPTION = (ADDRESS_LIST =
-      							(ADDRESS = (PROTOCOL = TCP)(HOST = 172.26.50.118)(PORT = 1521)))
-								(CONNECT_DATA =(SERVICE_NAME = MATCHME)))");
-			if (!$connection) {
-				echo "Invalid connection " . var_dump(ocierror());
-				die();
-			}
 
-			//convert the city's name to its ID and store it
-			$_SESSION['city'] = $_POST['state']; 	//save the city's name
-			$cityID; //this will store the city ID
-			$query = 'BEGIN getCatalog.cityID(:cityName, :cityID); END;';
-			$compiled = oci_parse($connection, $query);
-			oci_bind_by_name($compiled, ':cityname', $_SESSION['city'], 50);
-			oci_bind_by_name($compiled, ':cityID', $cityID, 4);
-			oci_execute($compiled, OCI_NO_AUTO_COMMIT);
-		    oci_commit($connection);
-		    $_SESSION['cityID'] = $cityID;
+		//convert the city's name to its ID and store it
+		$_SESSION['city'] = $_POST['state']; 	//save the city's name
+		$cityID; //this will store the city ID
+		$query = 'BEGIN getCatalog.cityID(:cityName, :cityID); END;';
+		$compiled = oci_parse($connection, $query);
+		oci_bind_by_name($compiled, ':cityname', $_SESSION['city'], 50);
+		oci_bind_by_name($compiled, ':cityID', $cityID, 4);
+		oci_execute($compiled, OCI_NO_AUTO_COMMIT);
+	    oci_commit($connection);
+	    $_SESSION['cityID'] = $cityID;
 
-		    //convert the bday to its db format. HTML format is yyyy-mm-dd
-		    $birthday = $_POST['bday'];
-		    $date = preg_split('/[- :]/',$birthday);
-		    $birthday = $date[2] . "/" . $date[1] . "/" . $date[0];
-		    $_SESSION['birthdayIn'] = $birthday; //write the format to input date to db
-		    $_SESSION['birthday'] = $_SESSION['birthdayIn'];
+	    //convert the bday to its db format. HTML format is yyyy-mm-dd
+	    $birthday = $_POST['bday'];
+	    $date = preg_split('/[- :]/',$birthday);
+	    $birthday = $date[2] . "/" . $date[1] . "/" . $date[0];
+	    $_SESSION['birthdayIn'] = $birthday; //write the format to input date to db
+	    $_SESSION['birthday'] = $_SESSION['birthdayIn'];
 
-			$query = 'BEGIN inserts.Person(:usernameID, :firstName, :lastName, :lastName2, :bday, :nickname, :address, :tagline,
-						:highschool, :university, :work, :salary, :height, :smoker, :numberKids, :interestedChildren, :likesPets,
-						:eyeColor, :gender, :sexualOrientation, :ageRange, :skinColor, :hairColor, :religion, :zodiac, 
-						:relationshipStatus, :bodyType, :exerciseFrequency, :city, :foundPartner, :gotMarried, :drinker); END;';
-			
-			$compiled = oci_parse($connection, $query);
+		$query = 'BEGIN inserts.Person(:usernameID, :firstName, :lastName, :lastName2, :bday, :nickname, :address, :tagline,
+					:highschool, :university, :work, :salary, :height, :smoker, :numberKids, :interestedChildren, :likesPets,
+					:eyeColor, :gender, :sexualOrientation, :ageRange, :skinColor, :hairColor, :religion, :zodiac, 
+					:relationshipStatus, :bodyType, :exerciseFrequency, :city, :foundPartner, :gotMarried, :drinker); END;';
+		$compiled = oci_parse($connection, $query);
+		$_SESSION['foundPartner'] = 0;
+		$_SESSION['gotMarried'] = 0;
+		if (!isset($_SESSION['lastName2'])) $_SESSION['lastName2'] = ""; //if the second last name wasn't set, set it as null.
+		//bind the values to the values filled out by the user
+		oci_bind_by_name($compiled, ':usernameID', 			$_SESSION['usernameID'], 5);
+		oci_bind_by_name($compiled, ':firstName', 			$_SESSION['name'], 50);
+		oci_bind_by_name($compiled, ':lastName', 			$_SESSION['lastName'], 50);
+		oci_bind_by_name($compiled, ':lastName2', 			$_SESSION['lastName2'], 50);
+		oci_bind_by_name($compiled, ':bday', 				$_SESSION['birthdayIn'], 50);
+		oci_bind_by_name($compiled, ':nickname', 			$_SESSION['nickname'], 25);
+		oci_bind_by_name($compiled, ':address', 			$_SESSION['address'], 140);
+		oci_bind_by_name($compiled, ':tagline', 			$_SESSION['tagline'], 200);
+		oci_bind_by_name($compiled, ':highschool', 			$_SESSION['highschool'], 100);
+		oci_bind_by_name($compiled, ':university', 			$_SESSION['university'], 100);
+		oci_bind_by_name($compiled, ':work', 				$_SESSION['work'], 100);
+		oci_bind_by_name($compiled, ':salary', 				$_SESSION['salary'], 7);
+		oci_bind_by_name($compiled, ':height', 				$_SESSION['height'], 4);
+		oci_bind_by_name($compiled, ':smoker', 				$_SESSION['smoker'], 1);
+		oci_bind_by_name($compiled, ':numberKids', 			$_SESSION['numberKids'], 2);
+		oci_bind_by_name($compiled, ':interestedChildren', 	$_SESSION['interestedChildren'], 1);
+		oci_bind_by_name($compiled, ':likesPets', 			$_SESSION['likesPets'], 1);
+		oci_bind_by_name($compiled, ':eyeColor', 			$_SESSION['eyeColorID'], 3);
+		oci_bind_by_name($compiled, ':gender', 				$_SESSION['genderID'], 3);
+		oci_bind_by_name($compiled, ':sexualOrientation', 	$_SESSION['sexualOrientationID'], 3);
+		oci_bind_by_name($compiled, ':ageRange', 			$_SESSION['ageRangeID'], 3);
+		oci_bind_by_name($compiled, ':skinColor', 			$_SESSION['skinColorID'], 3);
+		oci_bind_by_name($compiled, ':hairColor', 			$_SESSION['hairColorID'], 2);
+		oci_bind_by_name($compiled, ':religion', 			$_SESSION['religionID'], 2);
+		oci_bind_by_name($compiled, ':zodiac', 				$_SESSION['zodiacID'], 2);
+		oci_bind_by_name($compiled, ':relationshipStatus',	$_SESSION['relationshipStatusID'], 2);
+		oci_bind_by_name($compiled, ':bodyType', 			$_SESSION['bodyTypeID'], 1);
+		oci_bind_by_name($compiled, ':exerciseFrequency', 	$_SESSION['exerciseFrequencyID'], 1);
+		oci_bind_by_name($compiled, ':city', 				$_SESSION['cityID'], 4);
+		oci_bind_by_name($compiled, ':foundPartner', 		$_SESSION['foundPartner'], 1);
+		oci_bind_by_name($compiled, ':gotMarried', 			$_SESSION['gotMarried'], 1);
+		oci_bind_by_name($compiled, ':drinker', 			$_SESSION['drinker'], 1);
+		oci_execute($compiled, OCI_NO_AUTO_COMMIT);
+		oci_commit($connection);
 
-			$_SESSION['foundPartner'] = 0;
-			$_SESSION['gotMarried'] = 0;
-			$_SESSION['lastName2'] = "";
-
-			oci_bind_by_name($compiled, ':usernameID', 			$_SESSION['usernameID'], 5);
-			oci_bind_by_name($compiled, ':firstName', 			$_SESSION['name'], 50);
-			oci_bind_by_name($compiled, ':lastName', 			$_SESSION['lastName'], 50);
-			oci_bind_by_name($compiled, ':lastName2', 			$_SESSION['lastName2'], 50);
-			oci_bind_by_name($compiled, ':bday', 				$_SESSION['birthdayIn'], 50);
-			oci_bind_by_name($compiled, ':nickname', 			$_SESSION['nickname'], 25);
-			oci_bind_by_name($compiled, ':address', 			$_SESSION['address'], 140);
-			oci_bind_by_name($compiled, ':tagline', 			$_SESSION['tagline'], 200);
-			oci_bind_by_name($compiled, ':highschool', 			$_SESSION['highschool'], 100);
-			oci_bind_by_name($compiled, ':university', 			$_SESSION['university'], 100);
-			oci_bind_by_name($compiled, ':work', 				$_SESSION['work'], 100);
-			oci_bind_by_name($compiled, ':salary', 				$_SESSION['salary'], 7);
-			oci_bind_by_name($compiled, ':height', 				$_SESSION['height'], 4);
-			oci_bind_by_name($compiled, ':smoker', 				$_SESSION['smoker'], 1);
-			oci_bind_by_name($compiled, ':numberKids', 			$_SESSION['numberKids'], 2);
-			oci_bind_by_name($compiled, ':interestedChildren', 	$_SESSION['interestedChildren'], 1);
-			oci_bind_by_name($compiled, ':likesPets', 			$_SESSION['likesPets'], 1);
-			oci_bind_by_name($compiled, ':eyeColor', 			$_SESSION['eyeColorID'], 3);
-			oci_bind_by_name($compiled, ':gender', 				$_SESSION['genderID'], 3);
-			oci_bind_by_name($compiled, ':sexualOrientation', 	$_SESSION['sexualOrientationID'], 3);
-			oci_bind_by_name($compiled, ':ageRange', 			$_SESSION['ageRangeID'], 3);
-			oci_bind_by_name($compiled, ':skinColor', 			$_SESSION['skinColorID'], 3);
-			oci_bind_by_name($compiled, ':hairColor', 			$_SESSION['hairColorID'], 2);
-			oci_bind_by_name($compiled, ':religion', 			$_SESSION['religionID'], 2);
-			oci_bind_by_name($compiled, ':zodiac', 				$_SESSION['zodiacID'], 2);
-			oci_bind_by_name($compiled, ':relationshipStatus',	$_SESSION['relationshipStatusID'], 2);
-			oci_bind_by_name($compiled, ':bodyType', 			$_SESSION['bodyTypeID'], 1);
-			oci_bind_by_name($compiled, ':exerciseFrequency', 	$_SESSION['exerciseFrequencyID'], 1);
-			oci_bind_by_name($compiled, ':city', 				$_SESSION['cityID'], 4);
-			oci_bind_by_name($compiled, ':foundPartner', 		$_SESSION['foundPartner'], 1);
-			oci_bind_by_name($compiled, ':gotMarried', 			$_SESSION['gotMarried'], 1);
-			oci_bind_by_name($compiled, ':drinker', 			$_SESSION['drinker'], 1);
-
-			oci_execute($compiled, OCI_NO_AUTO_COMMIT);
-			oci_commit($connection);
-
-			//input its languages
-			for ($i = 0; $i < $_SESSION['countLanguages']; $i++) {
-				$query = 'BEGIN inserts.languagesByPerson(:languageID, :usernameID); END;';
-	            $compiled = oci_parse($connection, $query);
-	            oci_bind_by_name($compiled, ':usernameID', $_SESSION['usernameID'], 5);
-				if (isset($_POST['language' . $i])) {
-					$languageID = $_POST['language' . $i];
-					oci_bind_by_name($compiled, ':languageID', $languageID, 3);
-		            oci_execute($compiled, OCI_NO_AUTO_COMMIT);
-					oci_commit($connection);
-				}	
-			}
-
-			//input interests
-			for ($i = 0; $i < $_SESSION['countInterests']; $i++) {
-				$query = 'BEGIN inserts.interestsByPerson(:interestID, :usernameID); END;';
-	            $compiled = oci_parse($connection, $query);
-	            oci_bind_by_name($compiled, ':usernameID', $_SESSION['usernameID'], 5);
-				if (isset($_POST['interest' . $i])) {
-					$interestID = $_POST['interest' . $i];
-					oci_bind_by_name($compiled, ':interestID', $interestID, 3);
-		            oci_execute($compiled, OCI_NO_AUTO_COMMIT);
-					oci_commit($connection);
-				}	
-			}
-
-			//input hobbies
-			for ($i = 0; $i < $_SESSION['countHobbies']; $i++) {
-				$query = 'BEGIN inserts.hobbiesByPerson(:hobbieID, :usernameID); END;';
-	            $compiled = oci_parse($connection, $query);
-	            oci_bind_by_name($compiled, ':usernameID', $_SESSION['usernameID'], 5);
-				if (isset($_POST['hobbie' . $i])) {
-					$hobbieID = $_POST['hobbie' . $i];
-					oci_bind_by_name($compiled, ':hobbieID', $hobbieID, 3);
-		            oci_execute($compiled, OCI_NO_AUTO_COMMIT);
-					oci_commit($connection);
-				}	
-			}
-
-
-			header("Location: homepage.php");
+		//input its languages
+		for ($i = 0; $i < $_SESSION['countLanguages']; $i++) {
+			$query = 'BEGIN inserts.languagesByPerson(:languageID, :usernameID); END;';
+            $compiled = oci_parse($connection, $query);
+            oci_bind_by_name($compiled, ':usernameID', $_SESSION['usernameID'], 5);
+			if (isset($_POST['language' . $i])) {
+				$languageID = $_POST['language' . $i];
+				oci_bind_by_name($compiled, ':languageID', $languageID, 3);
+	            oci_execute($compiled, OCI_NO_AUTO_COMMIT);
+				oci_commit($connection);
+			}	
 		}
-	//}
-	//else {		//if the submit action wasn't set, redirect
-	//	echo "?";
-	//	header("Location: http://localhost/MatchMe/HTMLs/index.php#login");
-	//}
+
+		//input interests
+		for ($i = 0; $i < $_SESSION['countInterests']; $i++) {
+			$query = 'BEGIN inserts.interestsByPerson(:interestID, :usernameID); END;';
+            $compiled = oci_parse($connection, $query);
+            oci_bind_by_name($compiled, ':usernameID', $_SESSION['usernameID'], 5);
+			if (isset($_POST['interest' . $i])) {
+				$interestID = $_POST['interest' . $i];
+				oci_bind_by_name($compiled, ':interestID', $interestID, 3);
+	            oci_execute($compiled, OCI_NO_AUTO_COMMIT);
+				oci_commit($connection);
+			}	
+		}
+
+		//input hobbies
+		for ($i = 0; $i < $_SESSION['countHobbies']; $i++) {
+			$query = 'BEGIN inserts.hobbiesByPerson(:hobbieID, :usernameID); END;';
+            $compiled = oci_parse($connection, $query);
+            oci_bind_by_name($compiled, ':usernameID', $_SESSION['usernameID'], 5);
+			if (isset($_POST['hobbie' . $i])) {
+				$hobbieID = $_POST['hobbie' . $i];
+				oci_bind_by_name($compiled, ':hobbieID', $hobbieID, 3);
+	            oci_execute($compiled, OCI_NO_AUTO_COMMIT);
+				oci_commit($connection);
+			}	
+		}
+
+
+		header("Location: homepage.php");
+	}
 ?>

@@ -1,4 +1,12 @@
 <?php
+	/* Proyecto I Bases de Datos - Prof. Adriana Álvarez
+	 * match.me - Oracle
+	 * Alexis Arguedas, Gabriela Garro, Yanil Gómez
+	 * -------------------------------------------------
+	 * session.php - Created: 19/09/2015
+	 * Takes fresh values from the db every time it is included, depending on the usernameID actually set.
+	 */
+
 	//establishes a connection to the db
 	$connection = oci_connect("ADMINISTRATOR", "ADMINISTRATOR", "(DESCRIPTION = (ADDRESS_LIST =
       							(ADDRESS = (PROTOCOL = TCP)(HOST = 172.26.50.118)(PORT = 1521)))
@@ -462,6 +470,4 @@
 
     oci_free_statement($compiled);
     oci_free_statement($cursor);
-
-	//oci_close($connection);
 ?>

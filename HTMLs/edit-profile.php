@@ -1,15 +1,13 @@
 <?php
-    //include ('login.php');
-    //session_start();
+    /* Proyecto I Bases de Datos - Prof. Adriana Álvarez
+   * match.me - Oracle
+   * Alexis Arguedas, Gabriela Garro, Yanil Gómez
+   * -------------------------------------------------
+   * edit-profile.php - Created: 29/09/2015
+   * Lets the user edit its information. It submits to change-profile.php
+   * City, Country and birthday can be left null and it will not affect the profile change.
+   */
     include('session.php');
-    $connection = oci_connect("ADMINISTRATOR", "ADMINISTRATOR", "(DESCRIPTION = (ADDRESS_LIST =
-                                (ADDRESS = (PROTOCOL = TCP)(HOST = 172.26.50.118)(PORT = 1521)))
-                                (CONNECT_DATA =(SERVICE_NAME = MATCHME)))");
-    if (!$connection) {
-        echo "Invalid connection " . var_dump(ocierror());
-        die();
-    }
-
     if(!isset($_SESSION['usernameID'])) {
         header("Location: index.php#notloggedin");
     }
@@ -19,8 +17,6 @@
 ?>
 
 <!DOCTYPE html>
-<!--match.me :: Alexis Arguedas - Gabriela Garro - Yanil Gómez -->
-
 <html>
 
   <head>
@@ -42,7 +38,7 @@
     <script src="utils/bootstrap.min.js"></script>
     <link rel="stylesheet" type="css" href="utils/main.css"/>
 
-    <script>
+    <script> //populate countries and cities selection boxes
         //create countries array
         <?php 
             $countryArray = array();
@@ -128,6 +124,7 @@
 
   <body>
 
+  <!-- Upper navigation bar -->
     <div class="nav">
       <div class="container">
         <ul class = "pull-left">
@@ -139,7 +136,7 @@
           <li><a href="#">Messages</a></li>
           <li><a href="#">Notifications</a></li>
           <li><a href="#">Settings</a></li>
-          <li><a href="logout.php">Log out</a></li>
+          <li><a href="logout.php" onclick="return confirm('Are you sure to logout?');">Log out</a></li>
         </ul>
       </div>
     </div>
@@ -331,10 +328,7 @@
                             </div>
                             <div class = "col-md-6">
                                 <h3>City<b> *</b></h3>
-                                <select name ="state" id ="state"></select>
-                                <script>
-                                    populateCountries("country", "state");
-                                </script>
+                                
                             </div>
                         </div>
 
@@ -716,7 +710,7 @@
                                 $currentColumn = 0;
                                 //$numberColumns = 3;
                                 while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
-                                    //if currentLanguage is the first of the current column
+                                    //if currentInterest is the first of the current column
                                     if($currentInterest == round($countInterests/3*$currentColumn, 0, PHP_ROUND_HALF_DOWN)) {
                                         echo "<div class = \"col-md-4\">";
                                     }
@@ -732,7 +726,7 @@
                                     }
                                         
                                     $currentInterest++;
-                                    //if the next language to show is the same as the first language number of the next column
+                                    //if the next interest to show is the same as the first interest number of the next column
                                     if ($currentInterest == round($countInterests/3*($currentColumn+1), 0, PHP_ROUND_HALF_DOWN)) {
                                         echo "</div>";  //close this column
                                         $currentColumn++;
@@ -763,7 +757,7 @@
                                 $currentColumn = 0;
                                 //$numberColumns = 3;
                                 while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
-                                    //if currentLanguage is the first of the current column
+                                    //if currentHobbie is the first of the current column
                                     if($currentHobbie == round($countHobbies/3*$currentColumn, 0, PHP_ROUND_HALF_DOWN)) {
                                         echo "<div class = \"col-md-4\">";
                                     }
@@ -778,7 +772,7 @@
                                     $row['TYPENAMEID'] . "\">" . $row['TYPENAME'] . "<br>";
                                     }
                                     $currentHobbie++;
-                                    //if the next language to show is the same as the first language number of the next column
+                                    //if the next hobbie to show is the same as the first hobbie number of the next column
                                     if ($currentHobbie == round($countHobbies/3*($currentColumn+1), 0, PHP_ROUND_HALF_DOWN)) {
                                         echo "</div>";  //close this column
                                         $currentColumn++;

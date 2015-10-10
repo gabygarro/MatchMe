@@ -1,9 +1,0 @@
-<?xml version = '1.0' encoding = 'UTF-8'?>
-<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="logicModel" id="80FD002B-ED1F-8EE4-393C-37C4141B3234" version="3.5">
-<createdBy>aarguedas</createdBy>
-<createdTime>2015-09-05 16:50:43 UTC</createdTime>
-<generatorID>Generado por el Usuario</generatorID>
-<ownerDesignName>logicModel</ownerDesignName>
-<capitalNames>false</capitalNames>
-<designId>80FD002B-ED1F-8EE4-393C-37C4141B3234</designId>
-</OSDM_Design>

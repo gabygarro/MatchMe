@@ -1,7 +1,12 @@
 <?php
-    //include ('register.php');
-    //include('session.php');
-    //establishes a connection to the db
+    /* Proyecto I Bases de Datos - Prof. Adriana Álvarez
+   * match.me - Oracle
+   * Alexis Arguedas, Gabriela Garro, Yanil Gómez
+   * -------------------------------------------------
+   * create-profile.php - Created: 26/09/2015
+   * Create an application profile. Submits its data for validation to create-person.php
+   */
+    //connect to the db
     $connection = oci_connect("ADMINISTRATOR", "ADMINISTRATOR", "(DESCRIPTION = (ADDRESS_LIST =
                                 (ADDRESS = (PROTOCOL = TCP)(HOST = 172.26.50.118)(PORT = 1521)))
                                 (CONNECT_DATA =(SERVICE_NAME = MATCHME)))");
@@ -10,21 +15,19 @@
         die();
     }
 
-    session_start();
-    if(!isset($_SESSION['usernameID'])) {
+    session_start(); //start sesion
+    if(!isset($_SESSION['usernameID'])) { //if the usernameID isn't set, it means the user never logged in or even registered.
         header("Location: index.php#notloggedin");
     }
     if($_SESSION['userType'] != 2) { //if it's not a normal user
-        header("Location: index.php#notnormaluser" . $_SESSION['userType']);
+        header("Location: index.php#notnormaluser"); //redirect to the index
     }
-    //check if person entity for this id is already created
+    //Note for future implementation:
+    //check if a person entity was already created for this ID.
 ?>
 
 <!DOCTYPE html>
-<!--match.me :: Alexis Arguedas - Gabriela Garro - Yanil Gómez -->
-
 <html>
-
   <head>
     <link rel="shortcut icon" href= "imgs/logo (1).png">
     <title><?php echo "Create profile - match.me"?></title>
@@ -44,17 +47,16 @@
     <script src="utils/bootstrap.min.js"></script>
     <link rel="stylesheet" type="css" href="utils/main.css"/>
 
-    <script>
-        //create countries array
-        <?php 
+    <script> //Populate countries and cities selection boxes
+        <?php //create countries array from the db
             $countryArray = array();
-            $string = "";           // string that goes on to be echoed to declare the countries array
+            $string = ""; // string that goes on to be echoed to declare the countries array
             $cursor = oci_new_cursor($connection);
             $query = 'BEGIN getCatalog.country(:cursor); END;';
             $compiled = oci_parse($connection, $query);
             oci_bind_by_name($compiled, ':cursor', $cursor, -1, OCI_B_CURSOR);
             oci_execute($compiled);
-            oci_execute($cursor, OCI_DEFAULT);       //execute the cursor like a normal statement
+            oci_execute($cursor, OCI_DEFAULT);
             $count = 1;
             //output the code to $string and save the country name to our own array
             while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
@@ -68,8 +70,8 @@
             $string = substr($string, 0, -2);
             echo "var countryArray = new Array(" . $string . ");";
         ?>
-        var citiesArray = new Array();
-        citiesArray[0] = "";
+        var citiesArray = new Array();  //create cities array
+        citiesArray[0] = ""; //set the first value to null
         <?php
             //start assigning cities to countries
             for ($i = 1; $i <= count($countryArray); $i++) {
@@ -81,10 +83,9 @@
                 oci_bind_by_name($compiled, ':cursor', $cursor, -1, OCI_B_CURSOR);
                 oci_bind_by_name($compiled, ':countryName', $countryName, 50);
                 oci_execute($compiled);
-                oci_execute($cursor, OCI_DEFAULT);       //execute the cursor like a normal statement
-   
+                oci_execute($cursor, OCI_DEFAULT);
                 while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
-                    $string = $string . $row['TYPENAME'] . "|";
+                    $string = $string . $row['TYPENAME'] . "|"; 
                 }
                 oci_free_statement($compiled);
                 oci_free_statement($cursor);
@@ -116,9 +117,7 @@
             for (var i = 0; i < countryArray.length; i++) {
                 countryElement.options[countryElement.length] = new Option(countryArray[i],countryArray[i]);
             }
-
             // Assigned all countries. Now assign event listener for the states.
-
             if( stateElementId ){
                 countryElement.onchange = function(){
                     populateStates(countryElementId, stateElementId );
@@ -129,7 +128,7 @@
   </head>
 
   <body>
-
+    <!-- Upper navigation bar -->
     <div class="nav">
       <div class="container">
         <ul class = "pull-left">
@@ -141,11 +140,12 @@
           <li><a href="#">Messages</a></li>
           <li><a href="#">Notifications</a></li>
           <li><a href="#">Settings</a></li>
-          <li><a href="logout.php">Log out</a></li>
+          <li><a href="logout.php" onclick="return confirm('Are you sure to logout?');">Log out</a></li>
         </ul>
       </div>
     </div>
 
+    <!-- Edition body -->
     <div class = "profile-body">
         <div class = "container">
             <div class="panel with-nav-tabs panel-default">
@@ -165,6 +165,7 @@
                         <h3><b>Basic information</b></h3>
                         <hr>
 
+                        <!-- Profile picture, name, last name 1, last name 2 -->
                         <div class = "row">
                             <div class="container">
                                 <h3>Profile picture</h3>
@@ -186,6 +187,8 @@
                                     id="form-full-name" maxlength="50" value = <?php if (isset($_SESSION["lastName2"])) echo "\"" . $_SESSION["lastName2"] . "\"" ?> >
                             </div>
                         </div>
+
+                        <!-- Nickname, birthday and zodiac sign-->
                         <div class="row">
                             <div class = "col-md-4">
                                 <h3>Nickname</h3>
@@ -230,7 +233,8 @@
                         <h3>Tagline</h3>
                         <input type="text" name = "tagline" placeholder = "Describe yourself in a few words..." maxlength="200"
                              value = <?php if (isset($_SESSION["tagline"])) echo "\"" . $_SESSION["tagline"] . "\"" ?> > 
-                           
+                        
+                        <!-- Gender-->
                         <div class="row">
                             <div class = "col-md-4">
                                 <h3>Gender<b> *</b></h3>
@@ -324,6 +328,7 @@
                             </div>
                         </div>
 
+                        <!-- country, city-->
                         <div class="row">
                             <div class = "col-md-6">
                                 <h3>Country<b> *</b></h3>
@@ -378,6 +383,7 @@
                         <h3><b>Education and work</b></h3>
                         <hr>
 
+                        <!-- high school, university -->
                         <div class="row">
                             <div class = "col-md-6">
                                 <h3>High school</h3>
@@ -391,6 +397,7 @@
                             </div>
                         </div>
 
+                        <!-- workplace, salary -->
                         <div class="row">
                             <div class = "col-md-6">
                                 <h3>Work</h3>
@@ -483,7 +490,8 @@
                         <br><br>
                         <h3><b>Physical information</b></h3>
                         <hr>
-                           
+                        
+                        <!-- height, body type -->   
                         <div class="row">
                             <div class = "col-md-6">
                                 <h3>Height (meters)<b> *</b></h3>
@@ -522,7 +530,8 @@
                                 ?></select>
                             </div>
                         </div>
-                                
+                        
+                        <!-- skin color, eye color -->   
                         <div class="row">
                             <div class = "col-md-6">
                                 <h3>Skin color<b> *</b></h3>
@@ -585,7 +594,8 @@
                                 ?></select>
                             </div>
                         </div>
-                                
+                        
+                        <!-- hair color -->
                         <div class="row">
                             <div class = "col-md-6">
                                 <h3>Hair color<b> *</b></h3>
@@ -626,6 +636,7 @@
                         <h3><b>Lifestyle</b></h3>
                         <hr>
                         
+                        <!-- smoker, drinker -->
                         <div class="row">
                             <div class = "col-md-6">
                                 <h3>Smoker<b> *</b></h3>
@@ -669,6 +680,7 @@
                             oci_free_statement($cursor);
                         ?></select>
 
+                        <!-- number of kids, interested in having children -->
                         <div class="row">
                             <div class = "col-md-6">
                                 <h3>Number of kids<b> *</b></h3>
@@ -685,6 +697,7 @@
                         <h3>Likes pets<b> *</b></h3>
                         <input type="radio" name="likes-pets" value=0 checked> No
                         <input type="radio" name="likes-pets" value=1> Yes
+                        
                         <br><br>
                         <h3><b>Interests and hobbies</b></h3>
                         <hr>
@@ -735,6 +748,7 @@
                                 oci_free_statement($cursor);
                             ?>
                         </div>
+
                         <h3>Hobbies</h3>
                         <div class = "hobbies">
                             <?php
@@ -807,6 +821,7 @@
         </div>
       </div>
     </div>
+
     <!--BODY TYPE MODAL-->
     <div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel4">
       <div class="modal-dialog" role="document">
@@ -831,7 +846,5 @@
         <p>Estudiantes: Alexis Arguedas, Gabriela Garro, Yanil Gomez</p>
         <p>2015, II Semestre</p>
     </div>
-
-
   </body>
 </html>

@@ -1,11 +1,15 @@
-﻿<!--Prototipo de Proyecto I - match.me
-  Alexis Arguedas - Gabriela Garro - Yanil Gómez
-  Pagina principal de la aplicacion -->
-<?php
-  //include('login.php'); // Includes Login Script
-  //include('register.php'); //Includes Register Script
+﻿<?php
+  /* Proyecto I Bases de Datos - Prof. Adriana Álvarez
+   * match.me - Oracle
+   * Alexis Arguedas, Gabriela Garro, Yanil Gómez
+   * -------------------------------------------------
+   * index.php - Created: 06/09/2015
+   * Acts as the website's homepage, where the user can get to know more about the page, register and log in.
+   */
+
+  // Start the session so that it can be destroyed. Added in case a user leaves the website without first logging out.
   session_start();
-  session_destroy(); // Destroying All Sessions
+  session_destroy();
 ?>
 
 <!DOCTYPE html>
@@ -49,8 +53,8 @@
                <form role="form" action="register.php" method="POST" class="registration-form">
                   <div class="form-group">
                      <span>
-                     <?php
-                        if (isset($_POST['registererror'])) echo $_POST['registererror'];
+                     <?php //in case there's a register error redirected from register.php
+                        if (isset($_SESSION['registererror'])) echo $_SESSION['registererror'] . "<br>";;
                      ?>
                   </span>
                      <label for="form-email">Email</label>
@@ -67,9 +71,6 @@
                       <input type="password" name = "password2" class="form-control" id="exampleInputPassword1" placeholder="Confirm password..."
                         >
                   </div>
-                  <!--<div class = "form-group">
-                     <input type = "checkbox" name = "admin"><b> Administrator</b><br>
-                  </div>-->
                   <div class="modal-footer">
                      <div class = "container">
                         <div class ="row">
@@ -100,8 +101,8 @@
                <form role="form" action="login.php" method="POST" class="registration-form">
                   <div class="form-group">
                   <span>
-                     <?php
-                        if (isset($_POST['loginerror'])) echo $_POST['loginerror'];
+                     <?php //in case there's an error redirected from login.php
+                        if (isset($_SESSION['loginerror'])) echo $_SESSION['loginerror']  . "<br>";
                      ?>
                   </span>
                     <label for="form-email">Email</label>
@@ -129,13 +130,50 @@
       </div>
    </div>
 
+   <!-- about us modal-->
+    <div class="modal fade" id="aboutUs" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+         <div class="modal-content">
+            <div class="modal-header">
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+               <h4 class="modal-title" id="myModalLabel">About us</h4>
+            </div>
+            <div class="modal-body">
+            <div class="about-us">
+              <p><b>Project: Match.me - a dating application</b></p>
+              <p>Developers: Alexis Arguedas, Gabriela Garro, Yanil Navarro.</p>
+              <p>Useful links:</p>
+              <ul>
+                <li><a href="https://github.com/gabygarro/MatchMe">GitHub</a></li>
+                <li><a href="../Documentation/UserManual.pdf">User manual</a></li>
+                <li><a href="../Documentation/Data Dictionary.xlsx">Data dictionary</a></li>
+                <li><a href="../Documentation/Tasks division.xlsx">Tasks division</a></li>
+                <li><a href="../Documentation/Use cases.xlsx">Use cases</a></li>
+                <li><a href="../Documentation/Logic Model.jpg">Logic model</a></li>
+                <li><a href="../Documentation/References.pdf">References</a></li>
+              </ul>
+              </div>
+                <div class="modal-footer">
+                    <div class = "container">
+                        <div class ="row">
+                           <div class = "col-md-3">
+                              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                           </div>
+                        </div>
+                     </div>                   
+                  </div>
+            </div>
+         </div>
+      </div>
+   </div>
 
+   <!-- Upper navigation bar -->
     <div class="nav">
       <div class="container">
         <ul class = "pull-left">
             <img src = "imgs/logopeq.png">
             <li><a href="index.php" >match.me</a></li>
-            <li><a href="#">about us</a></li>
+            <li><a href="#" class="btn-link" data-toggle="modal" data-target="#aboutUs">about us</a></li>
         </ul>
         <ul class = "pull-right">
           <a href="#" class="btn-link" data-toggle="modal" data-target="#myModal">Sign Up</a>
@@ -145,6 +183,7 @@
       </div>
     </div>
 
+    <!-- Publicity container -->
     <div class="jumbotron">
       <div class="container">
         <h1>Find your perfect match today.</h1>
@@ -152,7 +191,8 @@
         <a href="#">Learn More</a>
       </div>
     </div> 
-    
+  
+    <!-- picture boxes container -->  
     <div class = "neighborhood-guides">
         <div class = "container">
             <h2>Sign up for match.me now!</h2>
@@ -181,6 +221,7 @@
         </div>
     </div>
 
+    <!-- learn more section -->
     <div class="learn-more">
         <div class="container">
     		<div class = "row">
@@ -223,13 +264,12 @@
       </div>
     </div>
 
+    <!-- footer project description -->
     <div class = "footer">
         <a href = "#" class="btn-link" data-toggle="modal" data-target="#myModal3">Legal Disclaimer</a>
         <p>Bases de Datos 1, Proyecto 1 - Match.Me, Profesora: Adriana Alvarez</p>
         <p>Estudiantes: Alexis Arguedas, Gabriela Garro, Yanil Gomez</p>
         <p>2015, II Semestre</p>
     </div>
-
-    <? oci_close($connection);?>
   </body>
 </html>

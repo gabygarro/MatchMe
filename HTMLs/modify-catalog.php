@@ -1,5 +1,11 @@
 <?php
-	//include ('login.php');
+	/* Proyecto I Bases de Datos - Prof. Adriana Álvarez
+     * match.me - Oracle
+     * Alexis Arguedas, Gabriela Garro, Yanil Gómez
+     * -------------------------------------------------
+     * admin-homepage.php - Created: 04/10/2015
+     * Customization of catalogs. Only working with zodiac sign.
+     */
 	include('session.php');
 	if (!isset($_SESSION['usernameID'])) {
 		header("Location: http://localhost/MatchMe/HTMLs/index.php#notloggedin");
@@ -7,6 +13,40 @@
     if ($_SESSION['userType'] != 1) { //if it's not an admin
         header("Location: http://localhost/MatchMe/HTMLs/index.php#notanadmin");
     }
+    //echo the error message if any
+    if (isset($_POST['error'])) {
+    	echo $_POST['error'];
+    }
+    //check if a catalog changed
+    $query = 'BEGIN getCatalog.zodiacSignCount(:zodiaccount); END;';
+	$compiled = oci_parse($connection, $query);
+	oci_bind_by_name($compiled, ':zodiaccount', $zodiaccount, 2);
+	oci_execute($compiled, OCI_NO_AUTO_COMMIT);
+	oci_commit($connection);
+    if (isset($_POST['submit'])) {
+        for ($i = 2; $i < $zodiaccount + 2; $i++) {
+        	if (isset($_POST['delete' . $i]) && $_POST['delete' . $i] == 1) {
+        		try {
+        			$query = 'BEGIN deletes.zodiacSign(:zodiacSign); END;';
+					$compiled = oci_parse($connection, $query);
+					oci_bind_by_name($compiled, ':zodiacSign', $i, 2);
+					oci_execute($compiled, OCI_NO_AUTO_COMMIT);
+					oci_commit($connection);
+        		}
+		        catch  (Exception $e) {
+		        	//do nothing
+		        }	
+			}
+        }
+        if (isset($_POST['entry'])) {
+        	$query = 'BEGIN inserts.ZodiacSignCat(:zodiacname); END;';
+			$compiled = oci_parse($connection, $query);
+			oci_bind_by_name($compiled, ':zodiacname', $_POST['entry'], 30);
+			oci_execute($compiled, OCI_NO_AUTO_COMMIT);
+			oci_commit($connection);
+        }
+    }
+    
 ?>
 
 <!DOCTYPE html>
@@ -35,7 +75,6 @@
     <script src="utils/bootstrap.min.js"></script>
     <link rel="stylesheet" type="css" href="utils/main.css"/>
     <script>
-    	var entryCount = 0;
     	function addEntry() {
     		//delete button from div
     		var element = document.getElementById("entryButton");
@@ -44,7 +83,7 @@
             var addEntry = document.getElementById("add-entry"); 
             var newEntry = document.createElement("input");
             newEntry.type = "text";
-            newEntry.name = "entry" + entryCount;
+            newEntry.name = "entry";
             addEntry.appendChild(newEntry);
             //create the button again
             var button = document.createElement("button");
@@ -62,10 +101,10 @@
       <div class="container">
         <ul class = "pull-left">
             <img src = "imgs/logopeq.png">
-            <li><a href="index.php" >match.me</a></li>
+            <li><a href="admin-homepage.php" >match.me</a></li>
         </ul>
         <ul class = "pull-right">
-          <li><a href="logout.php">Log out</a></li>
+          <li><a href="logout.php" onclick="return confirm('Are you sure to logout?');">Log out</a></li>
         </ul>
       </div>
     </div>
@@ -110,7 +149,9 @@
     				</div>
     			</div>
     		</div>
-    		<br><input type="submit" value="Submit catalog changes">
+    		<input type="hidden" name="error" value = <?php if (isset($e)) echo $e->getMessage(); ?>>
+    		<input type="hidden" name="catalog" value = <?php echo $_POST['catalog']?>>
+    		<br><input type="submit" name = "submit" value="Submit catalog changes">
     		</form>
     	</div>
     </div>

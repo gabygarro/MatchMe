@@ -1,21 +1,21 @@
 <?php
-    //user profile
-    //include ('login.php');
+    /* Proyecto I Bases de Datos - Prof. Adriana Álvarez
+   * match.me - Oracle
+   * Alexis Arguedas, Gabriela Garro, Yanil Gómez
+   * -------------------------------------------------
+   * profile.php - Created: 26/09/2015
+   * Lets the user see its own information, with a link to edit it.
+   */
     include('session.php');
     if(!isset($_SESSION['usernameID'])) {
         header("Location: index.php#notloggedin");
     }
     if ($_SESSION['userType'] != 2) { //if it's not a normal user
         header("Location: index.php#notnormaluser");
-    }
-    //echo $_SESSION['firstName'];
+    };
 ?>
 
 <!DOCTYPE html>
-<!--match.me
-  Alexis Arguedas - Gabriela Garro - Yanil Gómez
-  Perfil de muestra de la aplicacion -->
-
 <html>
 
   <head>
@@ -40,7 +40,7 @@
   </head>
 
   <body>
-
+  <!-- Upper navigation bar -->
     <div class="nav">
       <div class="container">
         <ul class = "pull-left">
@@ -53,12 +53,12 @@
             <li><a href="#">Messages</a></li>
             <li><a href="#">Notifications</a></li>
             <li><a href="#">Settings</a></li>
-            <li><a href="logout.php">Log out</a></li>
+            <li><a href="logout.php" onclick="return confirm('Are you sure to logout?');">Log out</a></li>
         </ul>
       </div>
     </div>
 
-
+    <!-- Profile body -->
     <div class = "profile-body">
         <div class = "container">
             <div class = "row">

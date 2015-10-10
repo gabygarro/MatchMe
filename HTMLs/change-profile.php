@@ -1,5 +1,14 @@
 <?php
+	/* Proyecto I Bases de Datos - Prof. Adriana Álvarez
+   * match.me - Oracle
+   * Alexis Arguedas, Gabriela Garro, Yanil Gómez
+   * -------------------------------------------------
+   * change-profile.php - Created: 29/09/2015
+   * Changes what the user indicated on the db. Redirects to homepage when finished.
+   */
+
     include('session.php');
+    //check for null values and send them back to edit-profile.php properly indicated.
     $error = "* Null values: ";
 	if (empty($_POST['name']) || empty($_POST['last-name']) || empty($_POST['zodiac'])
 		 || empty($_POST['gender']) || empty($_POST['sexual-orientation'])  || empty($_POST['relationship-status'])
@@ -8,7 +17,6 @@
 		 || empty($_POST['hair-color']) || !isset($_POST['smoker']) || !isset($_POST['drinker'])  
 		 || empty($_POST['exercise-frequency']) || !isset($_POST['number-kids']) || !isset($_POST['interested-children']) 
 		 || !isset($_POST['likes-pets']) ) {
-
 		if (empty($_POST['name'])) $error = $error . "name, ";
 		if (empty($_POST['last-name'])) $error = $error . "last name, ";
 		if (empty($_POST['zodiac'])) $error = $error . "zodiac sign, ";
@@ -27,12 +35,10 @@
 		if (empty($_POST['number-kids'])) $error = $error . "number of kids, ";
 		if (!isset($_POST['interested-children'])) $error = $error . "interested in children, ";
 		if (!isset($_POST['likes-pets'])) $error = $error . "likes pets, ";
-		
 		$_SESSION['error'] = substr($error, 0, -2);
 		header("Location: create-profile.php#invalidData");
 	}
-	else {
-		//establishes a connection to the db
+	else {//establishes a connection to the db
 		$connection = oci_connect("ADMINISTRATOR", "ADMINISTRATOR", "(DESCRIPTION = (ADDRESS_LIST =
   							(ADDRESS = (PROTOCOL = TCP)(HOST = 172.26.50.118)(PORT = 1521)))
 							(CONNECT_DATA =(SERVICE_NAME = MATCHME)))");
@@ -41,9 +47,10 @@
 			die();
 		}
 
+		//if the value was changed, change it on the db
 		//update picture
-		$target_dir = "pictures/";
-		if (isset($_FILES["picture"]["name"])) {
+		if (!empty($_FILES["picture"]["name"])) { //only if the user submitted a new picture
+			$target_dir = "pictures/";
 			$target_file = $target_dir . basename($_FILES["picture"]["name"]);
 			$uploadOk = 1;
 			$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
@@ -426,7 +433,7 @@
 	    	$query = 'BEGIN updatePerson.gotMarried(:usernameID, :gotMarried); END;';
 			$compiled = oci_parse($connection, $query);
 			oci_bind_by_name($compiled, ':usernameID', $_SESSION['usernameID'], 5);
-			oci_bind_by_name($compiled, ':gotMarried', $_POST['got-married'], 25);
+			oci_bind_by_name($compiled, ':gotMarried', $_POST['got-married'], 1);
 			oci_execute($compiled, OCI_NO_AUTO_COMMIT);
 			oci_commit($connection);
 			$_SESSION['gotMarried'] = $_POST['got-married'];

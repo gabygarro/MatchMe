@@ -1,6 +1,11 @@
 <?php
-    //user homepage
-	//include ('login.php');
+    /* Proyecto I Bases de Datos - Prof. Adriana Álvarez
+   * match.me - Oracle
+   * Alexis Arguedas, Gabriela Garro, Yanil Gómez
+   * -------------------------------------------------
+   * search.php - Created: 30/09/2015
+   * Searches users on the db on every defined value.
+   */
 	include('session.php');
 	if(!isset($_SESSION['usernameID'])) {
 		header("Location: index.php#notloggedin");
@@ -36,7 +41,6 @@
     <link rel="stylesheet" href="utils/main.css"/>
     <script>
         <?php //Definition of the catalog arrays
-
             //ageRange
             $ageRangeNames = array();
             $ageRangeIDs = array();
@@ -616,13 +620,20 @@
             <li><a href="#">Messages</a></li>
             <li><a href="#">Notifications</a></li>
             <li><a href="#">Settings</a></li>
-            <li><a href="logout.php">Log out</a></li>
+            <li><a href="logout.php" onclick="return confirm('Are you sure to logout?');">Log out</a></li>
         </ul>
       </div>
     </div>
     <br>
 
     <div class = "container">
+        <div class = "row">
+            <div class = "col-md-3">
+                <form action="search.php" method="POST">
+                    <input type="submit" name="matchme" value="Match me!"><br><br>
+                </form>
+            </div>
+        </div>
         <form action="search.php" method="POST">
             <div class = "row">
                 <div class = "col-md-3">
@@ -640,7 +651,7 @@
                                 <input type="radio" name = "search" value="country" id="country" onchange="createTextField(this.id)">Country<br>
                                 <input type="radio" name = "search" value="age" id="age">Age (not implemented)<br>
                                 <hr>
-                                <input type="radio" name = "search" value="ageRange" id="ageRange" onchange="populateCatalog(this.id)">Age range<br>
+                                <input type="radio" name = "search" value="ageRange" id="ageRange" onchange="populateCatalog(this.id)">Looked for age range<br>
                                 <input type="radio" name = "search" value="bodyType" id="bodyType" onchange="populateCatalog(this.id)">Body type<br>
                                 <input type="radio" name = "search" value="exerciseFrequency" id="exerciseFrequency" onchange="populateCatalog(this.id)">Exercise frequency<br>
                                 <input type="radio" name = "search" value="eyeColor" id="eyeColor" onchange="populateCatalog(this.id)">Eye Color<br>
@@ -667,10 +678,60 @@
                                 <div id = "search-bar" class = "search-bar">
                                     <h3>Select a search value on the left...</h3>
                                 </div>
-                                <form id="person" action="other-profile.php" method="POST"></form>
+                                <form id="person" action="other-profile.php" method="POST"></form><?php//set this way because for some reason the first form doesn't appear?>
                                 <?php
                                     //Search for text field values
-                                    if (isset($_POST["searchName"])) {
+                                    if (isset($_POST['matchme'])) { //if the user asked for the matchme process
+                                        $cursor = oci_new_cursor($connection);
+                                        $query = 'BEGIN match(:usernameID,:cursor); END;';
+                                        $compiled = oci_parse($connection, $query);
+                                        oci_bind_by_name($compiled, ':cursor', $cursor, -1, OCI_B_CURSOR);
+                                        oci_bind_by_name($compiled, ':usernameID', $_SESSION["usernameID"], 5);
+                                        oci_execute($compiled);
+                                        oci_execute($cursor, OCI_DEFAULT);       //execute the cursor like a normal statement
+                                        $count = 0;
+                                        while (($row = oci_fetch_array($cursor, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
+                                            //get the person by its ID
+                                            $cursor1 = oci_new_cursor($connection);
+                                            $query1 = 'BEGIN find.getPersonByID(:usernameID,:cursor); END;';
+                                            $compiled1 = oci_parse($connection, $query1);
+                                            oci_bind_by_name($compiled1, ':cursor', $cursor1, -1, OCI_B_CURSOR);
+                                            oci_bind_by_name($compiled1, ':usernameID', $row['UNID'], 5);
+                                            oci_execute($compiled1);
+                                            oci_execute($cursor1, OCI_DEFAULT);       //execute the cursor like a normal statement
+                                            while (($row = oci_fetch_array($cursor1, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
+                                                $query = 'BEGIN getPicture(:usernameID, :fileLocation); END;';
+                                                $compiled = oci_parse($connection, $query);
+                                                oci_bind_by_name($compiled, ':usernameID', $row['UNID'], 5);
+                                                oci_bind_by_name($compiled, ':fileLocation', $picture, 200);
+                                                oci_execute($compiled, OCI_NO_AUTO_COMMIT);
+                                                oci_commit($connection);
+                                                echo "<div class = \"row\">";
+                                                echo "<div class = \"col-md-3\">";
+                                                echo "<div class = \"thumbnail-container\"><div class = \"thumbnail\"><img src =" . $picture . "></div></div>";
+                                                echo "</div>";
+                                                echo "<div class = \"col-md-9\">";
+                                                echo "<form id=\"person" . $count . "\" action=\"other-profile.php\" method=\"POST\">";
+                                                echo "<input type=\"hidden\" name=\"other-usernameID\" value=\"" . $row['UNID'] . "\" />";
+                                                echo "<input type=\"hidden\" name=\"other-name\" value=\"" . $row['FNAME'] . "\" />";
+                                                echo "<h3><b><a href=\"#\" onclick=\"document.getElementById('person" . $count . "').submit();\">" . $row['FNAME'] . " "
+                                                . $row['LNAME'] . " " . $row['LNAME2'] . "</a></b>, " . $row['AGE'] . "</h3>";
+                                                echo "<p>" . $row['TAG'] . "</p>";
+                                                echo "<p>Lives in: " . $row['CITY'] . ", " . $row['COUNTRY'] . "</p>";
+                                                echo "<hr><br>";
+                                                echo "</form>";
+                                                echo "</div>";
+                                                echo "</div>";
+                                                $count++;
+                                            }
+                                            oci_free_statement($compiled1);
+                                            oci_free_statement($cursor1);
+                                        }
+                                        oci_free_statement($compiled);
+                                        oci_free_statement($cursor);
+                                        unset($_POST["matchme"]);
+                                    }
+                                    else if (isset($_POST["searchName"])) {
                                         $cursor = oci_new_cursor($connection);
                                         $query = 'BEGIN find.findName(:searchName,:cursor); END;';
                                         $compiled = oci_parse($connection, $query);
@@ -1436,7 +1497,7 @@
                             <div class = "col-md-1">
                                 <div class = "search-icon">
                                     <div class = "thumbnail">
-                                        <input type="image" src = "imgs/search-button.png" alt="submit">
+                                        <input type="image" src = "imgs/search-button.png" alt="submit" name="submit">
                                     </div>
                                 </div>
                             </div>
