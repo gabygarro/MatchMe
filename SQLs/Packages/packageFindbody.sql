@@ -25,6 +25,17 @@ begin
 end findName;
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
+procedure emailsByCity (pCityID in number, pEmails out sys_refcursor) as
+  begin
+    open pEmails for
+    select u.useremail as email
+    from username u, person p
+    where p.cityid = pCityID 
+    and p.usernameid = u.usernameid;
+    
+    end;
+-------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
 
 procedure lastName (pLastName in varchar2, pUserIDs  out sys_refcursor) as
    --obtein through the parameter lastName all person when pLastName is in lastName
@@ -504,4 +515,100 @@ begin
 end zodiacSign;
 ------------------------------------------------------------------------------
 ------------------------------------------------------------------------------
+procedure foundPartner (pUserIDs  out sys_refcursor) as
+   --obtein through the parameter pZodiacSignID all person when pZodiacSignID is in ZodiacSignID
+   --and return for the out parameter sys_refcursor with the next data
+   --Name, lastName, lastName2, age, tagline, city and country .
+begin
+  open pUserIDs for
+  select person.userNameID as UNID, person.firstName as fName, person.lastName1 as lname, person.lastName2 as lName2,
+         FLOOR(months_between(TRUNC(sysdate),birthday)/12) as age,
+         person.tagline as tag, citycatalog.cityname as city,
+         countrycatalog.countryname as country   
+  from person, citycatalog, countrycatalog
+  where person.foundpartner = 1
+  and citycatalog.cityid = person.cityid
+  and countrycatalog.countryid = (select countryid from citycatalog where citycatalog.cityid = person.cityid)
+  order by fName,lname;
+  
+   Exception
+     WHEN NO_DATA_FOUND THEN
+      DBMS_OUTPUT.PUT_LINE (' ');
+
+
+end foundPartner;
+------------------------------------------------------------------------------
+------------------------------------------------------------------------------
+procedure gotMarried (pUserIDs  out sys_refcursor) as
+   --obtein through the parameter pUserIDs the peple 
+   --and return for the out parameter sys_refcursor with the next data
+   --Name, lastName, lastName2, age, tagline, city and country .
+begin
+  open pUserIDs for
+  select person.userNameID as UNID, person.firstName as fName, person.lastName1 as lname, person.lastName2 as lName2,
+         FLOOR(months_between(TRUNC(sysdate),birthday)/12) as age,
+         person.tagline as tag, citycatalog.cityname as city,
+         countrycatalog.countryname as country   
+  from person, citycatalog, countrycatalog
+  where person.gotmarried = 1
+  and citycatalog.cityid = person.cityid
+  and countrycatalog.countryid = (select countryid from citycatalog where citycatalog.cityid = person.cityid)
+  order by fName,lname;
+  
+   Exception
+     WHEN NO_DATA_FOUND THEN
+      DBMS_OUTPUT.PUT_LINE (' ');
+
+
+end gotMarried;
+------------------------------------------------------------------------------
+------------------------------------------------------------------------------
+
+procedure top10MostWinked (pUserIDs  out sys_refcursor) as
+   --obtein through the parameter pUserIDs all person with top 10 Most Winked
+   --and return for the out parameter sys_refcursor with the next data
+   --userID, Name, lastName, lastName2 .
+begin
+  open pUserIDs for
+  select person.userNameID as UNID, person.firstName as fName, person.lastName1 as lname, person.lastName2 as lName2, count(winkperson.winkedperson) as winks
+  from person, winkperson
+  where  winkperson.winkedperson = person.usernameid 
+  group by  person.usernameid, person.firstName, person.lastName1, person.lastName2   
+  order by  winks  desc ;
+  
+   Exception
+     WHEN NO_DATA_FOUND THEN
+      DBMS_OUTPUT.PUT_LINE (' ');
+
+
+end top10MostWinked;
+------------------------------------------------------------------------------
+------------------------------------------------------------------------------
+procedure getPersonbyID (pUserID in number, pnames  out sys_refcursor) as
+   --obtein through the parameter pUserID the person 
+   --and return for the out parameter sys_refcursor with the next data
+   --Name, lastName, lastName2.
+begin
+  open pnames for
+  select p.userNameID as UNID, p.firstName as fName, p.lastName1 as lname, p.lastName2 as lName2,
+         FLOOR(months_between(TRUNC(sysdate),birthday)/12) as age,
+         p.tagline as tag, citycatalog.cityname as city,
+         countrycatalog.countryname as country 
+  from person p, citycatalog, countrycatalog
+  where p.usernameid = pUserID
+  and citycatalog.cityid = p.cityid
+  and countrycatalog.countryid = (select countryid from citycatalog where citycatalog.cityid = p.cityid)
+  order by fName,lname;
+  
+   Exception
+     WHEN NO_DATA_FOUND THEN
+      DBMS_OUTPUT.PUT_LINE (' ');
+
+
+end getPersonbyID;
+------------------------------------------------------------------------------
+------------------------------------------------------------------------------
+
+
+
 END find;

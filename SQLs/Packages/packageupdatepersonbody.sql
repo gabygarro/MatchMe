@@ -473,12 +473,12 @@ as
 
        END;
 -------------------------------------------------------------------------------
-procedure gotMarrried (pPersonID number, pgotMarrried number)
+procedure gotMarried (pPersonID number, pgotMarried number)
     --update the column gotMarrried on the table person using the parameter pgotMarrried 
 as
        BEGIN
            UPDATE Person p
-           SET p.foundpartner = pgotMarrried
+           SET p.gotmarried = pgotMarried
            WHERE pPersonID = p.usernameid;
 
         Exception

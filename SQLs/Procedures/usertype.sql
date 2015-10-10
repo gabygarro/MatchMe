@@ -1,4 +1,5 @@
 create or replace procedure userTypeCat (pUserTypeName Varchar2, puserTypeID number)
+--insert in the table catalog of user type an user type 
 as
        BEGIN
          insert into userTypeCatalog (UserTypeName,userTypeID)

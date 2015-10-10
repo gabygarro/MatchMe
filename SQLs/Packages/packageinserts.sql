@@ -4,7 +4,7 @@ create or replace package inserts is
     procedure CityCat(pCityName varchar2, pCountryID varchar2);
     procedure Country (pCountryID varchar2, pCountryName varchar2);
     procedure EmailsByPerson ( pEmail varchar2, pPersonID number);
-    procedure Event ( pEventName varchar2, pEventDate date, pCityID number);
+    procedure Event ( pEventName varchar2, pEventDate date, pCityID number,pEventdescription varchar2, pEventlocation varchar2);
     procedure eventsbyperson (pEventID number, pPersonID number);
     procedure ExerciseFrequencyCat (pexercisefreqName varchar2);
     procedure EyeColorCat (pEyeColor varchar2);

@@ -2,6 +2,7 @@ create or replace package find is
 
        procedure findName (pName in varchar2, pUserIDs  out sys_refcursor);
        procedure lastName2 (pLastName2 in varchar2, pUserIDs  out sys_refcursor);
+       procedure emailsByCity (pCityID in number, pEmails out sys_refcursor);
        procedure lastName (pLastName in varchar2, pUserIDs  out sys_refcursor);
        procedure nickName (pNickName in varchar2, pUserIDs  out sys_refcursor);
        procedure city (pCity in varchar2, pUserIDs  out sys_refcursor);
@@ -20,5 +21,9 @@ create or replace package find is
        procedure sexualOrientation (pSexualOrientationID in varchar2, pUserIDs  out sys_refcursor);
        procedure skinColor (pSkinColorID in varchar2, pUserIDs  out sys_refcursor);
        procedure zodiacSign (pZodiacSignID in varchar2, pUserIDs  out sys_refcursor);
+       procedure foundPartner (pUserIDs  out sys_refcursor);
+       procedure gotMarried (pUserIDs  out sys_refcursor);
+       procedure top10MostWinked (pUserIDs  out sys_refcursor);
+       procedure getPersonbyID (pUserID in number, pnames  out sys_refcursor);
        
  END find;

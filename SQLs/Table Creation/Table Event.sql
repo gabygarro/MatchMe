@@ -8,3 +8,14 @@ CREATE TABLE event
 ALTER TABLE event ADD CONSTRAINT eventPK PRIMARY KEY ( eventID ) ;
 
 ALTER TABLE event ADD CONSTRAINT event_city_FK FOREIGN KEY ( cityId ) REFERENCES cityCatalog ( cityID ) ;
+
+alter table event
+add eventLocation varchar2 (300);
+
+alter table event
+add eventDescription varchar2 (300);
+
+alter table event
+modify cityId number (4);
+
+ 

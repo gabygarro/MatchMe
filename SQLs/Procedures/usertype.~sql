@@ -7,9 +7,9 @@ as
        Exception
          WHEN INVALID_NUMBER THEN
               DBMS_OUTPUT.PUT_LINE ('Type UserID error ' || puserTypeID);
-         WHEN OTHERS THEN
-              DBMS_OUTPUT.PUT_LINE ('Unexpected error');
-              RAISE;
+        -- WHEN OTHERS THEN
+          --    DBMS_OUTPUT.PUT_LINE ('Unexpected error');
+            --  RAISE;
          commit;
 
        END;

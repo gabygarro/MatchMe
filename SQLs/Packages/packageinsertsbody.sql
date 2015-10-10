@@ -86,12 +86,12 @@ as
 
        END;
 -------------------------------------------------------------------------------
-procedure Event ( pEventName varchar2, pEventDate date, pCityID number)
+procedure Event ( pEventName varchar2, pEventDate date, pCityID number, pEventdescription varchar2, pEventlocation varchar2)
 as
   --insert a tuple in the table Event
        BEGIN
-         insert into event (eventID, eventName, eventDate, CityID)
-         values(eventID_seq.Nextval,pEventName,pEventDate, pCityID);
+         insert into event (eventID, eventName, eventDate, CityID, eventDescription, eventLocation)
+         values(eventID_seq.Nextval,pEventName,pEventDate, pCityID, pEventdescription, pEventlocation);
 
         Exception
          WHEN INVALID_NUMBER THEN

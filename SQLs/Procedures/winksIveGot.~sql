@@ -1,5 +1,4 @@
 create or replace procedure winksIvegot (pUserNameId in number, pName out sys_refcursor) as
---using the parameter pUserNameId in the table person return un cursor with all person than has have winks I've ot
 begin
   open pName for
          select p.firstname as fname, p.lastname1 as lname1, p.lastname2 as lname2

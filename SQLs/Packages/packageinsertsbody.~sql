@@ -417,8 +417,8 @@ as
 as
   --insert a tuple in the table Winkperson
        BEGIN
-         insert into winkPerson (WinkID,winker,winkedPerson)
-         values(WinkID_seq.nextval,pwinker,pWinkedPerson);
+         insert into winkPerson (winker,winkedPerson)
+         values(Pwinker,pWinkedPerson);
 
         Exception
          WHEN INVALID_NUMBER THEN
